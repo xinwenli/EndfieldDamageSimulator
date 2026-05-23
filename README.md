@@ -1,6 +1,6 @@
 # Endfield Damage Simulator
 
-A web-based damage calculator and skill rotation timeline tool for **Arknights: Endfield**.
+A web-based damage calculator and skill rotation timeline tool for **Arknights: Endfield**. Use https://xinwenli.github.io/EndfieldDamageSimulator/ to start
 
 ## Tech Stack
 
