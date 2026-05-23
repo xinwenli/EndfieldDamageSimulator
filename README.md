@@ -1,8 +1,8 @@
 # Endfield Damage Simulator
 
-A web-based damage calculator and skill rotation timeline tool for **Arknights: Endfield**.
+A web-based damage calculator and skill rotation timeline tool for **Arknights: Endfield**. You can use this tool click below link:
 
-**[Launch App](https://xinwenli.github.io/EndFieldDamageSimulator/)**
+**[Open Endfield Damage Simulator Web](https://xinwenli.github.io/EndfieldDamageSimulator/)**
 
 ## Features
 
@@ -41,9 +41,9 @@ MIT
 
 # 终末地伤害模拟器
 
-基于 Web 的《明日方舟：终末地》伤害计算与技能循环时间轴工具。
+基于 Web 的《明日方舟：终末地》伤害计算与技能循环时间轴工具。你可以通过下面的链接使用：
 
-**[启动应用](https://xinwenli.github.io/EndFieldDamageSimulator/)**
+**[打开终末地伤害模拟器](https://xinwenli.github.io/EndfieldDamageSimulator/)**
 
 ## 功能
 

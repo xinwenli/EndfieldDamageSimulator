@@ -4,6 +4,7 @@ import { usePartyStore } from "../../stores/partyStore";
 import { getElements } from "../../engine/dataLoader";
 import { computeFinalStats, getOperatorAbilitiesAtLevel } from "../../engine/formulas";
 import { WeaponPicker } from "./WeaponPicker";
+import { assetUrl } from "../../lib/utils";
 import type { PartyMember, Weapon } from "../../engine/types";
 
 const LABEL = "text-[10px] text-[var(--color-text-muted)] uppercase tracking-wide";
@@ -56,7 +57,7 @@ export function OperatorConfigPanel({ member, onChangeOperator }: Props) {
         {/* Operator identity */}
         <div className="flex items-center gap-3">
           {op.avatar ? (
-            <img src={op.avatar} alt={op.name} className="w-16 h-16 rounded-xl object-cover shrink-0" />
+            <img src={assetUrl(op.avatar)} alt={op.name} className="w-16 h-16 rounded-xl object-cover shrink-0" />
           ) : (
             <div className="w-16 h-16 rounded-xl flex items-center justify-center text-lg font-bold shrink-0"
               style={{ backgroundColor: (el?.color ?? "#333") + "33", color: el?.color }}>
@@ -122,7 +123,7 @@ export function OperatorConfigPanel({ member, onChangeOperator }: Props) {
             {member.weapon ? (
               <div className="flex items-center gap-2 mt-1">
                 {member.weapon.cover ? (
-                  <img src={member.weapon.cover} alt={member.weapon.name} className="w-8 h-8 rounded object-cover shrink-0" />
+                  <img src={assetUrl(member.weapon.cover)} alt={member.weapon.name} className="w-8 h-8 rounded object-cover shrink-0" />
                 ) : null}
                 <div className="min-w-0 flex-1">
                   <div className="text-xs font-medium truncate">{member.weapon.name}</div>

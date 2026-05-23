@@ -3,6 +3,7 @@ import { Search, X } from "lucide-react";
 import type { Operator } from "../../engine/types";
 import { getAllOperators } from "../../engine/dataLoader";
 import { getElements } from "../../engine/dataLoader";
+import { assetUrl } from "../../lib/utils";
 
 interface OperatorPickerProps {
   open: boolean;
@@ -65,7 +66,7 @@ export function OperatorPicker({ open, onClose, onSelect, selectedIds }: Operato
                   >
                     {op.avatar ? (
                       <img
-                        src={op.avatar}
+                        src={assetUrl(op.avatar)}
                         alt={op.name}
                         className="w-12 h-12 rounded-lg object-cover shrink-0"
                         loading="lazy"

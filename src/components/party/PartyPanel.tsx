@@ -4,6 +4,7 @@ import { usePartyStore } from "../../stores/partyStore";
 import { getElements } from "../../engine/dataLoader";
 import { OperatorPicker } from "./OperatorPicker";
 import { OperatorConfigPanel } from "./OperatorConfigPanel";
+import { assetUrl } from "../../lib/utils";
 import type { Operator } from "../../engine/types";
 
 export function PartyPanel() {
@@ -81,7 +82,7 @@ export function PartyPanel() {
 
                   {member.operator.avatar ? (
                     <img
-                      src={member.operator.avatar}
+                      src={assetUrl(member.operator.avatar)}
                       alt={member.operator.name}
                       className="w-full aspect-square object-cover rounded-md mb-2"
                       loading="lazy"

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Search, X } from "lucide-react";
 import type { Weapon, WeaponType } from "../../engine/types";
 import { getWeaponsByType } from "../../engine/dataLoader";
+import { assetUrl } from "../../lib/utils";
 
 interface Props {
   open: boolean;
@@ -59,7 +60,7 @@ export function WeaponPicker({ open, onClose, onSelect, weaponType }: Props) {
                   className="flex items-center gap-3 p-3 rounded-lg bg-[var(--color-surface-alt)] hover:bg-[var(--color-border)] border border-transparent hover:border-[var(--color-accent)] text-left transition"
                 >
                   {w.cover ? (
-                    <img src={w.cover} alt={w.name} className="w-12 h-12 rounded-lg object-cover shrink-0" loading="lazy" />
+                    <img src={assetUrl(w.cover)} alt={w.name} className="w-12 h-12 rounded-lg object-cover shrink-0" loading="lazy" />
                   ) : (
                     <div className="w-12 h-12 rounded-lg bg-[var(--color-border)] flex items-center justify-center shrink-0">
                       <span className="text-lg">?</span>
