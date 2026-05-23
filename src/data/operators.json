@@ -1,0 +1,35 @@
+[
+  {
+    "id": "op_001",
+    "name": "Angelina",
+    "rarity": 6,
+    "baseStats": { "hp": 1500, "atk": 600, "def": 200, "res": 15, "aspd": 1.6, "critRate": 0.15, "critDmg": 1.5 },
+    "skills": [
+      { "id": "sk_001_1", "name": "Arcane Blast", "spCost": 20, "initialSp": 0, "castTime": 30, "duration": 0, "cooldown": 0, "multiplier": 2.4, "hits": 4, "type": "arts", "tags": ["aoe", "auto"] },
+      { "id": "sk_001_2", "name": "Gravity Well", "spCost": 60, "initialSp": 30, "castTime": 60, "duration": 180, "cooldown": 0, "multiplier": 1.8, "hits": 10, "type": "arts", "tags": ["aoe", "manual"] }
+    ],
+    "talents": []
+  },
+  {
+    "id": "op_002",
+    "name": "Mountain",
+    "rarity": 6,
+    "baseStats": { "hp": 2500, "atk": 520, "def": 350, "res": 0, "aspd": 0.8, "critRate": 0.1, "critDmg": 1.5 },
+    "skills": [
+      { "id": "sk_002_1", "name": "Sweeping Strikes", "spCost": 0, "initialSp": 0, "castTime": 0, "duration": 0, "cooldown": 0, "multiplier": 1.2, "hits": 1, "type": "physical", "tags": ["aoe", "auto"] },
+      { "id": "sk_002_2", "name": "Earth Shatter", "spCost": 45, "initialSp": 20, "castTime": 45, "duration": 120, "cooldown": 0, "multiplier": 2.0, "hits": 6, "type": "physical", "tags": ["aoe", "manual"] }
+    ],
+    "talents": []
+  },
+  {
+    "id": "op_003",
+    "name": "Surtr",
+    "rarity": 6,
+    "baseStats": { "hp": 1800, "atk": 680, "def": 180, "res": 20, "aspd": 1.2, "critRate": 0.2, "critDmg": 1.6 },
+    "skills": [
+      { "id": "sk_003_1", "name": "Flame Slash", "spCost": 0, "initialSp": 0, "castTime": 0, "duration": 0, "cooldown": 0, "multiplier": 1.5, "hits": 1, "type": "arts", "tags": ["single", "auto"] },
+      { "id": "sk_003_2", "name": "Twilight", "spCost": 80, "initialSp": 40, "castTime": 90, "duration": 300, "cooldown": 0, "multiplier": 3.0, "hits": 8, "type": "arts", "tags": ["single", "manual"] }
+    ],
+    "talents": []
+  }
+]
