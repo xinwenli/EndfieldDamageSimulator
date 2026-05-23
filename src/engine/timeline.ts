@@ -6,23 +6,28 @@ import type {
   OperatorResult,
   SkillDamageResult,
 } from "./types";
-import { calcExpectedHitDamage } from "./formulas";
+
+/**
+ * Estimate total damage from a skill's damage ticks.
+ * Uses stagger as a proxy for damage value per tick.
+ */
+function estimateSkillDamage(ticks: { stagger: number }[]): number {
+  return ticks.reduce((sum, t) => sum + t.stagger, 0);
+}
 
 /**
  * Run a timeline simulation and return DPS results.
- * Processes the timeline frame-by-frame and computes damage.
+ * Processes skill blocks against target DEF/RES.
  */
 export function runSimulation(
   tracks: TimelineTrack[],
   operatorStats: Map<string, Stats>,
   operatorSkills: Map<string, Skill[]>,
-  bossDef?: number,
-  bossRes?: number,
+  _bossDef?: number,
+  _bossRes?: number,
 ): SimulationResult {
   const totalFrames = computeTotalFrames(tracks);
-  const def = bossDef ?? 0;
-  const res = bossRes ?? 0;
-
+  const fps = 30;
   const results: OperatorResult[] = [];
 
   for (const track of tracks) {
@@ -44,26 +49,19 @@ export function runSimulation(
         totalDamage: 0,
       };
 
-      const isArts = skill.type === "arts";
-      const damagePerHit = calcExpectedHitDamage(
-        stats.atk,
-        skill.multiplier,
-        def,
-        res,
-        stats.critRate,
-        stats.critDmg,
-        isArts,
-      );
+      const tickDamage = estimateSkillDamage(skill.damageTicks);
+      const baseDamage = tickDamage * stats.atk / 100;
+      const avgCritMult = 1 + stats.critRate * (stats.critDmg - 1);
+      const skillDmg = baseDamage * avgCritMult;
 
-      const blockDamage = damagePerHit * skill.hits;
       existing.casts += 1;
-      existing.totalDamage += blockDamage;
-      totalDamage += blockDamage;
+      existing.totalDamage += skillDmg;
+      totalDamage += skillDmg;
 
       skillDamageMap.set(block.skillId, existing);
     }
 
-    const trackDps = totalFrames > 0 ? totalDamage / (totalFrames / 30) : 0; // 30fps → seconds
+    const trackDps = totalFrames > 0 ? totalDamage / (totalFrames / fps) : 0;
 
     const skillBreakdown: SkillDamageResult[] = [];
     for (const [skillId, data] of skillDamageMap) {
@@ -73,7 +71,7 @@ export function runSimulation(
         skillName: skill?.name ?? skillId,
         casts: data.casts,
         totalDamage: data.totalDamage,
-        dps: totalFrames > 0 ? data.totalDamage / (totalFrames / 30) : 0,
+        dps: totalFrames > 0 ? data.totalDamage / (totalFrames / fps) : 0,
       });
     }
 
@@ -82,7 +80,7 @@ export function runSimulation(
       operatorName: track.operatorId,
       totalDamage,
       dps: trackDps,
-      damageShare: 0, // computed below
+      damageShare: 0,
       skillBreakdown,
     });
   }
@@ -92,7 +90,7 @@ export function runSimulation(
     r.damageShare = grandTotalDamage > 0 ? r.totalDamage / grandTotalDamage : 0;
   }
 
-  const totalDps = totalFrames > 0 ? grandTotalDamage / (totalFrames / 30) : 0;
+  const totalDps = totalFrames > 0 ? grandTotalDamage / (totalFrames / fps) : 0;
 
   return {
     totalDamage: grandTotalDamage,

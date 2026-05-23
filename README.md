@@ -1,48 +1,75 @@
 # Endfield Damage Simulator
 
-A web-based damage calculator and skill rotation timeline tool for **Arknights: Endfield**. Use https://xinwenli.github.io/EndfieldDamageSimulator/ to start
+A web-based damage calculator and skill rotation timeline tool for **Arknights: Endfield**.
 
-## Tech Stack
+**[Launch App](https://xinwenli.github.io/EndFieldDamageSimulator/)**
 
-- **React 19** + **TypeScript** — UI framework
-- **Vite** — Build tool
-- **Tailwind CSS v4** — Styling
-- **Zustand** — State management
-- **Recharts** — DPS visualization charts
-- **@dnd-kit** — Drag-and-drop for timeline editing
-- **Lucide React** — Icons
+## Features
+
+### Operator Setup
+Configure your party of 4 operators with levels, skill ranks, weapons, and gear.
+
+### Simulator
+*(Planned)* Build skill rotation timelines and simulate damage output.
+
+## Data Pipeline
+
+Operator and weapon data sourced from the [official Endfield wiki](https://wiki.skland.com/endfield/catalog).
+
+## Current Status
+
+- **In Progress** — Operator Setup: party builder, operator configuration panel, weapon selection.
+- **Planned** — Simulator: timeline editor, DPS engine, damage charts.
 
 ## Getting Started
 
 ```bash
 npm install
-npm run dev        # Start dev server at localhost:5173
+npm run dev        # Dev server at localhost:5173
 npm run build      # Production build to dist/
-npm run preview    # Preview production build
 ```
 
-## Deployment
+## License
 
-Pushes to `main` auto-deploy to GitHub Pages via `.github/workflows/deploy.yml`.
+MIT
 
-## Project Structure
+<br>
+<p align="center">
+  <em>— ◆ —</em>
+</p>
+<br>
 
+# 终末地伤害模拟器
+
+基于 Web 的《明日方舟：终末地》伤害计算与技能循环时间轴工具。
+
+**[启动应用](https://xinwenli.github.io/EndFieldDamageSimulator/)**
+
+## 功能
+
+### 干员配置
+配置你的 4 人小队，设置干员等级、技能等级、武器与装备。
+
+### 模拟器
+*(计划中)* 构建技能循环时间轴，模拟伤害输出。
+
+## 数据来源
+
+干员与武器数据来源于[终末地官方 WIKI](https://wiki.skland.com/endfield/catalog)。
+
+## 开发进度
+
+- **进行中** — 干员配置：队伍构建、配置面板、武器选择。
+- **计划中** — 模拟器：时间轴编辑器、DPS 引擎、伤害图表。
+
+## 快速开始
+
+```bash
+npm install
+npm run dev        # 开发服务器 localhost:5173
+npm run build      # 生产构建至 dist/
 ```
-src/
-  engine/          # Pure TypeScript DPS math & timeline simulation
-    types.ts       # Operator, Skill, Weapon, Timeline types
-    formulas.ts    # Damage formulas
-    timeline.ts    # Timeline simulation engine
-    dataLoader.ts  # Load operator data from JSON
-  stores/          # Zustand state management
-    partyStore.ts  # Party configuration state
-    timelineStore.ts # Timeline & simulation state
-  components/
-    layout/        # Header, sidebar
-    party/         # Operator slots, operator picker
-    timeline/      # Timeline canvas, tracks, skill blocks
-    dps/           # DPS result charts and breakdowns
-  data/            # Static JSON game data
-  pages/           # Route pages (Home, Simulator)
-  lib/             # Shared utilities
-```
+
+## 许可证
+
+MIT

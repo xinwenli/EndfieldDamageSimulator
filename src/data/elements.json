@@ -1,0 +1,7 @@
+{
+  "physical": { "name": "Physical", "color": "#c4a35a", "token": "sandstone" },
+  "heat": { "name": "Heat", "color": "#e87040", "token": "orange" },
+  "electric": { "name": "Electric", "color": "#f0c040", "token": "yellow" },
+  "cryo": { "name": "Cryo", "color": "#5bc0de", "token": "turquoise" },
+  "nature": { "name": "Nature", "color": "#6db36d", "token": "green" }
+}
