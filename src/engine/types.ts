@@ -100,7 +100,11 @@ export interface Stats {
   cryoDmgBonus: number;
   natureDmgBonus: number;
   basicDmgBonus: number;
+  battleSkillDmgBonus: number;
+  comboSkillDmgBonus: number;
   ultimateDmgBonus: number;
+  allSkillDmgBonus: number;
+  staggeredDmgBonus: number;
   // Defensive
   physicalResistance: number;
   heatResistance: number;
@@ -108,6 +112,7 @@ export interface Stats {
   cryoResistance: number;
   natureResistance: number;
   aetherResistance: number;
+  finalDmgReduction: number;
   // Utility
   treatmentBonus: number;
   treatmentReceivedBonus: number;
@@ -123,11 +128,41 @@ export interface Talent {
   description: string;
 }
 
+export interface WeaponSkillRank {
+  /** Flat stat bonuses at this rank */
+  atk?: number;
+  hp?: number;
+  def?: number;
+  strength?: number;
+  agility?: number;
+  intelligence?: number;
+  will?: number;
+  /** Percentage bonuses at this rank (stored as fraction, e.g. 0.39 = 39%) */
+  atkPercent?: number;
+  hpPercent?: number;
+  defPercent?: number;
+  critRate?: number;
+  critDmg?: number;
+  artsIntensity?: number;
+  ultimateGainEfficiency?: number;
+  treatmentBonus?: number;
+  primaryAbility?: number;
+  secondaryAbility?: number;
+  allElementDmg?: number;
+  /** Elemental damage bonuses at this rank */
+  physicalDmgBonus?: number;
+  heatDmgBonus?: number;
+  electricDmgBonus?: number;
+  cryoDmgBonus?: number;
+  natureDmgBonus?: number;
+  /** Trait description at this rank */
+  trait?: string;
+}
+
 export interface WeaponSkill {
   name: string;
   maxRank: number;
-  /** Effect text at each rank (index 0 = rank 1) */
-  effects: string[];
+  ranks: WeaponSkillRank[];
 }
 
 /** A weapon equipped by an operator */
@@ -146,9 +181,18 @@ export interface Weapon {
   trait: string;
 }
 
-export interface GearConfig {
+export interface GearPiece {
   id: string;
   name: string;
+  rarity: number;
+  quality: string;
+  slot: "Armor" | "Gloves" | "Kit";
+  cover: string;
+  description: string;
+  baseStats: Record<string, string>;
+  refinement: Array<{ name: string; base: string; rank1: string; rank2: string; rank3: string }>;
+  /** Per-stat refinement ranks (index matches refinement array), default all 3 */
+  refinementRanks?: number[];
 }
 
 /** A configured operator in the party */
@@ -156,14 +200,17 @@ export interface PartyMember {
   slotIndex: number;
   operator: Operator | null;
   level: number;
-  skillRank: number;
+  /** Skill ranks for operator skills (normal attack, skill 1, skill 2, ultimate) */
+  skillRanks: number[];
   potential: number;
   weapon: Weapon | null;
   weaponLevel: number;
   /** Skill ranks for weapon skills (index 0/1/2 → weapon skill 1/2/3) */
   weaponSkillRanks: number[];
-  gear: GearConfig | null;
-  gearAssembly: "none" | "partial" | "full";
+  armor: GearPiece | null;
+  gloves: GearPiece | null;
+  kit1: GearPiece | null;
+  kit2: GearPiece | null;
   finalStats: Stats | null;
 }
 

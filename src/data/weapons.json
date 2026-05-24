@@ -7,9 +7,109 @@
     "cover": "/weapons/1382.png",
     "description": "-终末地干员用武器，装备之后可以显著提升干员的作战能力。\n-宏山选剑局研发的施术单元。大胆采用了与息壤相结合的新型材料，优秀的性能可以大幅提高施术效能，但对使用者而言也有着一定的门槛。",
     "trait": "",
-    "baseAtkLv1": 51,
-    "baseAtkLv90": 505,
-    "skills": []
+    "baseAtkLv1": 52,
+    "baseAtkLv90": 510,
+    "skills": [
+      {
+        "name": "意志提升·大",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "will": 20
+          },
+          {
+            "will": 36
+          },
+          {
+            "will": 52
+          },
+          {
+            "will": 68
+          },
+          {
+            "will": 84
+          },
+          {
+            "will": 100
+          },
+          {
+            "will": 116
+          },
+          {
+            "will": 132
+          },
+          {
+            "will": 156
+          }
+        ]
+      },
+      {
+        "name": "攻击提升·大",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "atkPercent": 0.05
+          },
+          {
+            "atkPercent": 0.09
+          },
+          {
+            "atkPercent": 0.13
+          },
+          {
+            "atkPercent": 0.17
+          },
+          {
+            "atkPercent": 0.21
+          },
+          {
+            "atkPercent": 0.25
+          },
+          {
+            "atkPercent": 0.29
+          },
+          {
+            "atkPercent": 0.33
+          },
+          {
+            "atkPercent": 0.39
+          }
+        ]
+      },
+      {
+        "name": "压制·流霆",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "allElementDmg": 0.16
+          },
+          {
+            "allElementDmg": 0.192
+          },
+          {
+            "allElementDmg": 0.224
+          },
+          {
+            "allElementDmg": 0.256
+          },
+          {
+            "allElementDmg": 0.288
+          },
+          {
+            "allElementDmg": 0.32
+          },
+          {
+            "allElementDmg": 0.352
+          },
+          {
+            "allElementDmg": 0.384
+          },
+          {
+            "allElementDmg": 0.448
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "1400",
@@ -19,9 +119,109 @@
     "cover": "/weapons/1400.png",
     "description": "-终末地干员用武器，装备之后可以显著提升干员的作战能力。\n-终末地工业的经典产品，在极点远征时期大量投入使用。金黄色涂装十分醒目，在漫天暴雪中都清晰可见。",
     "trait": "",
-    "baseAtkLv1": 51,
-    "baseAtkLv90": 505,
-    "skills": []
+    "baseAtkLv1": 50,
+    "baseAtkLv90": 490,
+    "skills": [
+      {
+        "name": "电磁伤害提升·大",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "electricDmgBonus": 0.056
+          },
+          {
+            "electricDmgBonus": 0.1
+          },
+          {
+            "electricDmgBonus": 0.144
+          },
+          {
+            "electricDmgBonus": 0.189
+          },
+          {
+            "electricDmgBonus": 0.233
+          },
+          {
+            "electricDmgBonus": 0.278
+          },
+          {
+            "electricDmgBonus": 0.322
+          },
+          {
+            "electricDmgBonus": 0.367
+          },
+          {
+            "electricDmgBonus": 0.433
+          }
+        ]
+      },
+      {
+        "name": "意志提升·大",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "will": 20
+          },
+          {
+            "will": 36
+          },
+          {
+            "will": 52
+          },
+          {
+            "will": 68
+          },
+          {
+            "will": 84
+          },
+          {
+            "will": 100
+          },
+          {
+            "will": 116
+          },
+          {
+            "will": 132
+          },
+          {
+            "will": 156
+          }
+        ]
+      },
+      {
+        "name": "效益・微光层叠",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "atkPercent": 0.07
+          },
+          {
+            "atkPercent": 0.084
+          },
+          {
+            "atkPercent": 0.098
+          },
+          {
+            "atkPercent": 0.112
+          },
+          {
+            "atkPercent": 0.126
+          },
+          {
+            "atkPercent": 0.14
+          },
+          {
+            "atkPercent": 0.154
+          },
+          {
+            "atkPercent": 0.168
+          },
+          {
+            "atkPercent": 0.196
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "1177",
@@ -33,7 +233,107 @@
     "trait": "",
     "baseAtkLv1": 51,
     "baseAtkLv90": 505,
-    "skills": []
+    "skills": [
+      {
+        "name": "敏捷提升·大",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "agility": 20
+          },
+          {
+            "agility": 36
+          },
+          {
+            "agility": 52
+          },
+          {
+            "agility": 68
+          },
+          {
+            "agility": 84
+          },
+          {
+            "agility": 100
+          },
+          {
+            "agility": 116
+          },
+          {
+            "agility": 132
+          },
+          {
+            "agility": 156
+          }
+        ]
+      },
+      {
+        "name": "暴击率提升·大",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "critRate": 0.025
+          },
+          {
+            "critRate": 0.045
+          },
+          {
+            "critRate": 0.065
+          },
+          {
+            "critRate": 0.085
+          },
+          {
+            "critRate": 0.105
+          },
+          {
+            "critRate": 0.125
+          },
+          {
+            "critRate": 0.145
+          },
+          {
+            "critRate": 0.165
+          },
+          {
+            "critRate": 0.195
+          }
+        ]
+      },
+      {
+        "name": "切骨·群狼啃噬",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "atkPercent": 0.16
+          },
+          {
+            "atkPercent": 0.192
+          },
+          {
+            "atkPercent": 0.224
+          },
+          {
+            "atkPercent": 0.256
+          },
+          {
+            "atkPercent": 0.288
+          },
+          {
+            "atkPercent": 0.32
+          },
+          {
+            "atkPercent": 0.352
+          },
+          {
+            "atkPercent": 0.384
+          },
+          {
+            "atkPercent": 0.448
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "1176",
@@ -45,7 +345,107 @@
     "trait": "",
     "baseAtkLv1": 51,
     "baseAtkLv90": 505,
-    "skills": []
+    "skills": [
+      {
+        "name": "攻击提升·大",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "atkPercent": 0.05
+          },
+          {
+            "atkPercent": 0.09
+          },
+          {
+            "atkPercent": 0.13
+          },
+          {
+            "atkPercent": 0.17
+          },
+          {
+            "atkPercent": 0.21
+          },
+          {
+            "atkPercent": 0.25
+          },
+          {
+            "atkPercent": 0.29
+          },
+          {
+            "atkPercent": 0.33
+          },
+          {
+            "atkPercent": 0.39
+          }
+        ]
+      },
+      {
+        "name": "敏捷提升·大",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "agility": 20
+          },
+          {
+            "agility": 36
+          },
+          {
+            "agility": 52
+          },
+          {
+            "agility": 68
+          },
+          {
+            "agility": 84
+          },
+          {
+            "agility": 100
+          },
+          {
+            "agility": 116
+          },
+          {
+            "agility": 132
+          },
+          {
+            "agility": 156
+          }
+        ]
+      },
+      {
+        "name": "迸发·荡寇仇",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "allElementDmg": 0.16
+          },
+          {
+            "allElementDmg": 0.192
+          },
+          {
+            "allElementDmg": 0.224
+          },
+          {
+            "allElementDmg": 0.256
+          },
+          {
+            "allElementDmg": 0.288
+          },
+          {
+            "allElementDmg": 0.32
+          },
+          {
+            "allElementDmg": 0.352
+          },
+          {
+            "allElementDmg": 0.384
+          },
+          {
+            "allElementDmg": 0.448
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "1174",
@@ -55,9 +455,109 @@
     "cover": "/weapons/1174.png",
     "description": "-终末地干员用武器，装备之后可以显著提升干员的作战能力。\n-宏山选剑局研发的铳械。为贴合宏科院武装力量的基本方针，在设计时特别减轻了重量，优化了持握手感。",
     "trait": "",
-    "baseAtkLv1": 51,
-    "baseAtkLv90": 505,
-    "skills": []
+    "baseAtkLv1": 50,
+    "baseAtkLv90": 490,
+    "skills": [
+      {
+        "name": "敏捷提升·大",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "agility": 20
+          },
+          {
+            "agility": 36
+          },
+          {
+            "agility": 52
+          },
+          {
+            "agility": 68
+          },
+          {
+            "agility": 84
+          },
+          {
+            "agility": 100
+          },
+          {
+            "agility": 116
+          },
+          {
+            "agility": 132
+          },
+          {
+            "agility": 156
+          }
+        ]
+      },
+      {
+        "name": "寒冷伤害提升·大",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "cryoDmgBonus": 0.056
+          },
+          {
+            "cryoDmgBonus": 0.1
+          },
+          {
+            "cryoDmgBonus": 0.144
+          },
+          {
+            "cryoDmgBonus": 0.189
+          },
+          {
+            "cryoDmgBonus": 0.233
+          },
+          {
+            "cryoDmgBonus": 0.278
+          },
+          {
+            "cryoDmgBonus": 0.322
+          },
+          {
+            "cryoDmgBonus": 0.367
+          },
+          {
+            "cryoDmgBonus": 0.433
+          }
+        ]
+      },
+      {
+        "name": "压制·旧时月",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "atkPercent": 0.07
+          },
+          {
+            "atkPercent": 0.084
+          },
+          {
+            "atkPercent": 0.098
+          },
+          {
+            "atkPercent": 0.112
+          },
+          {
+            "atkPercent": 0.126
+          },
+          {
+            "atkPercent": 0.14
+          },
+          {
+            "atkPercent": 0.154
+          },
+          {
+            "atkPercent": 0.168
+          },
+          {
+            "atkPercent": 0.196
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "1173",
@@ -67,9 +567,109 @@
     "cover": "/weapons/1173.png",
     "description": "-终末地干员用武器，装备之后可以显著提升干员的作战能力。\n-熔炉要塞铸造的武器之一。造型典雅精致，常用于铁誓军的仪式场合而非前线搏杀，剑身经多重精磨，刃口锋锐至极。",
     "trait": "",
-    "baseAtkLv1": 51,
-    "baseAtkLv90": 505,
-    "skills": []
+    "baseAtkLv1": 50,
+    "baseAtkLv90": 490,
+    "skills": [
+      {
+        "name": "暴击率提升·大",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "critRate": 0.025
+          },
+          {
+            "critRate": 0.045
+          },
+          {
+            "critRate": 0.065
+          },
+          {
+            "critRate": 0.085
+          },
+          {
+            "critRate": 0.105
+          },
+          {
+            "critRate": 0.125
+          },
+          {
+            "critRate": 0.145
+          },
+          {
+            "critRate": 0.165
+          },
+          {
+            "critRate": 0.195
+          }
+        ]
+      },
+      {
+        "name": "敏捷提升·大",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "agility": 20
+          },
+          {
+            "agility": 36
+          },
+          {
+            "agility": 52
+          },
+          {
+            "agility": 68
+          },
+          {
+            "agility": 84
+          },
+          {
+            "agility": 100
+          },
+          {
+            "agility": 116
+          },
+          {
+            "agility": 132
+          },
+          {
+            "agility": 156
+          }
+        ]
+      },
+      {
+        "name": "夜幕·余辉未消",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "atkPercent": 0.07
+          },
+          {
+            "atkPercent": 0.084
+          },
+          {
+            "atkPercent": 0.098
+          },
+          {
+            "atkPercent": 0.112
+          },
+          {
+            "atkPercent": 0.126
+          },
+          {
+            "atkPercent": 0.14
+          },
+          {
+            "atkPercent": 0.154
+          },
+          {
+            "atkPercent": 0.168
+          },
+          {
+            "atkPercent": 0.196
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "112",
@@ -81,7 +681,107 @@
     "trait": "",
     "baseAtkLv1": 51,
     "baseAtkLv90": 505,
-    "skills": []
+    "skills": [
+      {
+        "name": "智识提升·大",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "intelligence": 20
+          },
+          {
+            "intelligence": 36
+          },
+          {
+            "intelligence": 52
+          },
+          {
+            "intelligence": 68
+          },
+          {
+            "intelligence": 84
+          },
+          {
+            "intelligence": 100
+          },
+          {
+            "intelligence": 116
+          },
+          {
+            "intelligence": 132
+          },
+          {
+            "intelligence": 156
+          }
+        ]
+      },
+      {
+        "name": "暴击率提升·大",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "critRate": 0.025
+          },
+          {
+            "critRate": 0.045
+          },
+          {
+            "critRate": 0.065
+          },
+          {
+            "critRate": 0.085
+          },
+          {
+            "critRate": 0.105
+          },
+          {
+            "critRate": 0.125
+          },
+          {
+            "critRate": 0.145
+          },
+          {
+            "critRate": 0.165
+          },
+          {
+            "critRate": 0.195
+          }
+        ]
+      },
+      {
+        "name": "切骨·艺术暴论",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "critDmg": 0.16
+          },
+          {
+            "critDmg": 0.192
+          },
+          {
+            "critDmg": 0.224
+          },
+          {
+            "critDmg": 0.256
+          },
+          {
+            "critDmg": 0.288
+          },
+          {
+            "critDmg": 0.32
+          },
+          {
+            "critDmg": 0.352
+          },
+          {
+            "critDmg": 0.384
+          },
+          {
+            "critDmg": 0.448
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "124",
@@ -92,8 +792,108 @@
     "description": "-终末地干员用武器，装备之后可以显著提升干员的作战能力。\n-雷神工业的经典尖端产品，其原型从第一次天使战争时便投入使用。该产品不断迭代至今，强大的火力意味着安全与保障。",
     "trait": "",
     "baseAtkLv1": 51,
-    "baseAtkLv90": 505,
-    "skills": []
+    "baseAtkLv90": 500,
+    "skills": [
+      {
+        "name": "意志提升·大",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "will": 20
+          },
+          {
+            "will": 36
+          },
+          {
+            "will": 52
+          },
+          {
+            "will": 68
+          },
+          {
+            "will": 84
+          },
+          {
+            "will": 100
+          },
+          {
+            "will": 116
+          },
+          {
+            "will": 132
+          },
+          {
+            "will": 156
+          }
+        ]
+      },
+      {
+        "name": "终结技充能效率提升·大",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "ultimateGainEfficiency": 0.06
+          },
+          {
+            "ultimateGainEfficiency": 0.107
+          },
+          {
+            "ultimateGainEfficiency": 0.155
+          },
+          {
+            "ultimateGainEfficiency": 0.202
+          },
+          {
+            "ultimateGainEfficiency": 0.25
+          },
+          {
+            "ultimateGainEfficiency": 0.298
+          },
+          {
+            "ultimateGainEfficiency": 0.345
+          },
+          {
+            "ultimateGainEfficiency": 0.393
+          },
+          {
+            "ultimateGainEfficiency": 0.464
+          }
+        ]
+      },
+      {
+        "name": "追袭·不辱使命",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "allElementDmg": 0.16
+          },
+          {
+            "allElementDmg": 0.192
+          },
+          {
+            "allElementDmg": 0.224
+          },
+          {
+            "allElementDmg": 0.256
+          },
+          {
+            "allElementDmg": 0.288
+          },
+          {
+            "allElementDmg": 0.32
+          },
+          {
+            "allElementDmg": 0.352
+          },
+          {
+            "allElementDmg": 0.384
+          },
+          {
+            "allElementDmg": 0.448
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "70",
@@ -103,9 +903,109 @@
     "cover": "/weapons/70.png",
     "description": "-终末地干员用武器，装备之后可以显著提升干员的作战能力。\n-巫术时刻锻铸的锋利兵刃之一。特殊精炼使得剑身泛红，施术单元采取独特的液化源石方案，仿佛是熔炉中流下的一滴血泪。",
     "trait": "",
-    "baseAtkLv1": 51,
-    "baseAtkLv90": 505,
-    "skills": []
+    "baseAtkLv1": 52,
+    "baseAtkLv90": 510,
+    "skills": [
+      {
+        "name": "智识提升·大",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "intelligence": 20
+          },
+          {
+            "intelligence": 36
+          },
+          {
+            "intelligence": 52
+          },
+          {
+            "intelligence": 68
+          },
+          {
+            "intelligence": 84
+          },
+          {
+            "intelligence": 100
+          },
+          {
+            "intelligence": 116
+          },
+          {
+            "intelligence": 132
+          },
+          {
+            "intelligence": 156
+          }
+        ]
+      },
+      {
+        "name": "攻击提升·大",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "atkPercent": 0.05
+          },
+          {
+            "atkPercent": 0.09
+          },
+          {
+            "atkPercent": 0.13
+          },
+          {
+            "atkPercent": 0.17
+          },
+          {
+            "atkPercent": 0.21
+          },
+          {
+            "atkPercent": 0.25
+          },
+          {
+            "atkPercent": 0.29
+          },
+          {
+            "atkPercent": 0.33
+          },
+          {
+            "atkPercent": 0.39
+          }
+        ]
+      },
+      {
+        "name": "夜幕·嘶鸣烈火",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "heatDmgBonus": 0.16
+          },
+          {
+            "heatDmgBonus": 0.192
+          },
+          {
+            "heatDmgBonus": 0.224
+          },
+          {
+            "heatDmgBonus": 0.256
+          },
+          {
+            "heatDmgBonus": 0.288
+          },
+          {
+            "heatDmgBonus": 0.32
+          },
+          {
+            "heatDmgBonus": 0.352
+          },
+          {
+            "heatDmgBonus": 0.384
+          },
+          {
+            "heatDmgBonus": 0.448
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "71",
@@ -115,9 +1015,109 @@
     "cover": "/weapons/71.png",
     "description": "-终末地干员用武器，装备之后可以显著提升干员的作战能力。\n-雷神工业推出的新一代轻量化武器。整个剑身均采用特制的合成金属作为材料。深受“专业人士”青睐。",
     "trait": "",
-    "baseAtkLv1": 51,
-    "baseAtkLv90": 505,
-    "skills": []
+    "baseAtkLv1": 50,
+    "baseAtkLv90": 490,
+    "skills": [
+      {
+        "name": "灼热伤害提升·大",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "heatDmgBonus": 0.056
+          },
+          {
+            "heatDmgBonus": 0.1
+          },
+          {
+            "heatDmgBonus": 0.144
+          },
+          {
+            "heatDmgBonus": 0.189
+          },
+          {
+            "heatDmgBonus": 0.233
+          },
+          {
+            "heatDmgBonus": 0.278
+          },
+          {
+            "heatDmgBonus": 0.322
+          },
+          {
+            "heatDmgBonus": 0.367
+          },
+          {
+            "heatDmgBonus": 0.433
+          }
+        ]
+      },
+      {
+        "name": "智识提升·大",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "intelligence": 20
+          },
+          {
+            "intelligence": 36
+          },
+          {
+            "intelligence": 52
+          },
+          {
+            "intelligence": 68
+          },
+          {
+            "intelligence": 84
+          },
+          {
+            "intelligence": 100
+          },
+          {
+            "intelligence": 116
+          },
+          {
+            "intelligence": 132
+          },
+          {
+            "intelligence": 156
+          }
+        ]
+      },
+      {
+        "name": "附术·觊觎堆叠",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "atkPercent": 0.07
+          },
+          {
+            "atkPercent": 0.084
+          },
+          {
+            "atkPercent": 0.098
+          },
+          {
+            "atkPercent": 0.112
+          },
+          {
+            "atkPercent": 0.126
+          },
+          {
+            "atkPercent": 0.14
+          },
+          {
+            "atkPercent": 0.154
+          },
+          {
+            "atkPercent": 0.168
+          },
+          {
+            "atkPercent": 0.196
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "113",
@@ -127,9 +1127,109 @@
     "cover": "/weapons/113.png",
     "description": "-终末地干员用武器，装备之后可以显著提升干员的作战能力。\n-梅什科工业年度概念新品，以此致敬带领我们踏上塔卫二无垠旅途的领航者。",
     "trait": "",
-    "baseAtkLv1": 51,
-    "baseAtkLv90": 505,
-    "skills": []
+    "baseAtkLv1": 50,
+    "baseAtkLv90": 490,
+    "skills": [
+      {
+        "name": "寒冷伤害提升·大",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "cryoDmgBonus": 0.056
+          },
+          {
+            "cryoDmgBonus": 0.1
+          },
+          {
+            "cryoDmgBonus": 0.144
+          },
+          {
+            "cryoDmgBonus": 0.189
+          },
+          {
+            "cryoDmgBonus": 0.233
+          },
+          {
+            "cryoDmgBonus": 0.278
+          },
+          {
+            "cryoDmgBonus": 0.322
+          },
+          {
+            "cryoDmgBonus": 0.367
+          },
+          {
+            "cryoDmgBonus": 0.433
+          }
+        ]
+      },
+      {
+        "name": "智识提升·大",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "intelligence": 20
+          },
+          {
+            "intelligence": 36
+          },
+          {
+            "intelligence": 52
+          },
+          {
+            "intelligence": 68
+          },
+          {
+            "intelligence": 84
+          },
+          {
+            "intelligence": 100
+          },
+          {
+            "intelligence": 116
+          },
+          {
+            "intelligence": 132
+          },
+          {
+            "intelligence": 156
+          }
+        ]
+      },
+      {
+        "name": "附术·远影孤帆",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "critRate": 0.035
+          },
+          {
+            "critRate": 0.042
+          },
+          {
+            "critRate": 0.049
+          },
+          {
+            "critRate": 0.056
+          },
+          {
+            "critRate": 0.063
+          },
+          {
+            "critRate": 0.07
+          },
+          {
+            "critRate": 0.077
+          },
+          {
+            "critRate": 0.084
+          },
+          {
+            "critRate": 0.098
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "126",
@@ -139,9 +1239,109 @@
     "cover": "/weapons/126.png",
     "description": "-终末地干员用武器，装备之后可以显著提升干员的作战能力。\n-轻超域技术实验室签约作品。艺术家亲手錾刻的金属器件与冰碛岩的纹理缀合，形成独一无二的施术回路。",
     "trait": "",
-    "baseAtkLv1": 51,
-    "baseAtkLv90": 505,
-    "skills": []
+    "baseAtkLv1": 49,
+    "baseAtkLv90": 485,
+    "skills": [
+      {
+        "name": "意志提升·大",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "will": 20
+          },
+          {
+            "will": 36
+          },
+          {
+            "will": 52
+          },
+          {
+            "will": 68
+          },
+          {
+            "will": 84
+          },
+          {
+            "will": 100
+          },
+          {
+            "will": 116
+          },
+          {
+            "will": 132
+          },
+          {
+            "will": 156
+          }
+        ]
+      },
+      {
+        "name": "自然伤害提升·大",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "natureDmgBonus": 0.056
+          },
+          {
+            "natureDmgBonus": 0.1
+          },
+          {
+            "natureDmgBonus": 0.144
+          },
+          {
+            "natureDmgBonus": 0.189
+          },
+          {
+            "natureDmgBonus": 0.233
+          },
+          {
+            "natureDmgBonus": 0.278
+          },
+          {
+            "natureDmgBonus": 0.322
+          },
+          {
+            "natureDmgBonus": 0.367
+          },
+          {
+            "natureDmgBonus": 0.433
+          }
+        ]
+      },
+      {
+        "name": "压制·碛岩蚀痕",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "atkPercent": 0.07
+          },
+          {
+            "atkPercent": 0.084
+          },
+          {
+            "atkPercent": 0.098
+          },
+          {
+            "atkPercent": 0.112
+          },
+          {
+            "atkPercent": 0.126
+          },
+          {
+            "atkPercent": 0.14
+          },
+          {
+            "atkPercent": 0.154
+          },
+          {
+            "atkPercent": 0.168
+          },
+          {
+            "atkPercent": 0.196
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "129",
@@ -151,9 +1351,109 @@
     "cover": "/weapons/129.png",
     "description": "-终末地干员用武器，装备之后可以显著提升干员的作战能力。\n-梅什科工业研发的施术单元之一。选用特制D64钢壳，配多款定制模块。这款产品让人联想起昔日竞技场的烟火秀。",
     "trait": "",
-    "baseAtkLv1": 51,
-    "baseAtkLv90": 505,
-    "skills": []
+    "baseAtkLv1": 49,
+    "baseAtkLv90": 485,
+    "skills": [
+      {
+        "name": "生命提升·大",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "hpPercent": 0.1
+          },
+          {
+            "hpPercent": 0.18
+          },
+          {
+            "hpPercent": 0.26
+          },
+          {
+            "hpPercent": 0.34
+          },
+          {
+            "hpPercent": 0.42
+          },
+          {
+            "hpPercent": 0.5
+          },
+          {
+            "hpPercent": 0.58
+          },
+          {
+            "hpPercent": 0.66
+          },
+          {
+            "hpPercent": 0.78
+          }
+        ]
+      },
+      {
+        "name": "意志提升·大",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "will": 20
+          },
+          {
+            "will": 36
+          },
+          {
+            "will": 52
+          },
+          {
+            "will": 68
+          },
+          {
+            "will": 84
+          },
+          {
+            "will": 100
+          },
+          {
+            "will": 116
+          },
+          {
+            "will": 132
+          },
+          {
+            "will": 156
+          }
+        ]
+      },
+      {
+        "name": "医疗·侵蚀性狂热",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "atkPercent": 0.1
+          },
+          {
+            "atkPercent": 0.12
+          },
+          {
+            "atkPercent": 0.14
+          },
+          {
+            "atkPercent": 0.16
+          },
+          {
+            "atkPercent": 0.18
+          },
+          {
+            "atkPercent": 0.2
+          },
+          {
+            "atkPercent": 0.22
+          },
+          {
+            "atkPercent": 0.24
+          },
+          {
+            "atkPercent": 0.28
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "128",
@@ -163,9 +1463,109 @@
     "cover": "/weapons/128.png",
     "description": "-终末地干员用武器，装备之后可以显著提升干员的作战能力。\n-巫术时刻研发的施术单元之一。除了基本源石线路外，一切材质不明。这真的是可以在塔卫二造出来的东西吗？",
     "trait": "",
-    "baseAtkLv1": 51,
-    "baseAtkLv90": 505,
-    "skills": []
+    "baseAtkLv1": 50,
+    "baseAtkLv90": 495,
+    "skills": [
+      {
+        "name": "智识提升·大",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "intelligence": 20
+          },
+          {
+            "intelligence": 36
+          },
+          {
+            "intelligence": 52
+          },
+          {
+            "intelligence": 68
+          },
+          {
+            "intelligence": 84
+          },
+          {
+            "intelligence": 100
+          },
+          {
+            "intelligence": 116
+          },
+          {
+            "intelligence": 132
+          },
+          {
+            "intelligence": 156
+          }
+        ]
+      },
+      {
+        "name": "法术提升·大",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "allElementDmg": 0.056
+          },
+          {
+            "allElementDmg": 0.1
+          },
+          {
+            "allElementDmg": 0.144
+          },
+          {
+            "allElementDmg": 0.189
+          },
+          {
+            "allElementDmg": 0.233
+          },
+          {
+            "allElementDmg": 0.278
+          },
+          {
+            "allElementDmg": 0.322
+          },
+          {
+            "allElementDmg": 0.367
+          },
+          {
+            "allElementDmg": 0.433
+          }
+        ]
+      },
+      {
+        "name": "夜幕·耻辱",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "critRate": 0.05
+          },
+          {
+            "critRate": 0.06
+          },
+          {
+            "critRate": 0.07
+          },
+          {
+            "critRate": 0.08
+          },
+          {
+            "critRate": 0.09
+          },
+          {
+            "critRate": 0.1
+          },
+          {
+            "critRate": 0.11
+          },
+          {
+            "critRate": 0.12
+          },
+          {
+            "critRate": 0.14
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "127",
@@ -175,9 +1575,109 @@
     "cover": "/weapons/127.png",
     "description": "-终末地干员用武器，装备之后可以显著提升干员的作战能力。\n-北进重工支援所开发的施术单元，拥有毫无争议的最佳源石技艺传导性。只有最强壮的使用者才能驾驭这一产品。",
     "trait": "",
-    "baseAtkLv1": 51,
-    "baseAtkLv90": 505,
-    "skills": []
+    "baseAtkLv1": 50,
+    "baseAtkLv90": 490,
+    "skills": [
+      {
+        "name": "主能力提升·大",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "primaryAbility": 17
+          },
+          {
+            "primaryAbility": 30
+          },
+          {
+            "primaryAbility": 44
+          },
+          {
+            "primaryAbility": 57
+          },
+          {
+            "primaryAbility": 71
+          },
+          {
+            "primaryAbility": 85
+          },
+          {
+            "primaryAbility": 98
+          },
+          {
+            "primaryAbility": 112
+          },
+          {
+            "primaryAbility": 132
+          }
+        ]
+      },
+      {
+        "name": "源石技艺强度提升·大",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "artsIntensity": 10
+          },
+          {
+            "artsIntensity": 18
+          },
+          {
+            "artsIntensity": 26
+          },
+          {
+            "artsIntensity": 34
+          },
+          {
+            "artsIntensity": 42
+          },
+          {
+            "artsIntensity": 50
+          },
+          {
+            "artsIntensity": 58
+          },
+          {
+            "artsIntensity": 66
+          },
+          {
+            "artsIntensity": 78
+          }
+        ]
+      },
+      {
+        "name": "迸发·冠军威赫",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "secondaryAbility": 10
+          },
+          {
+            "secondaryAbility": 12
+          },
+          {
+            "secondaryAbility": 14
+          },
+          {
+            "secondaryAbility": 16
+          },
+          {
+            "secondaryAbility": 18
+          },
+          {
+            "secondaryAbility": 20
+          },
+          {
+            "secondaryAbility": 22
+          },
+          {
+            "secondaryAbility": 24
+          },
+          {
+            "secondaryAbility": 28
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "125",
@@ -187,9 +1687,109 @@
     "cover": "/weapons/125.png",
     "description": "-终末地干员用武器，装备之后可以显著提升干员的作战能力。\n-梅什科工业的高端线产品之一。优秀的源石技艺传导性让它不像其他时髦产品那样华而不实。",
     "trait": "",
-    "baseAtkLv1": 51,
-    "baseAtkLv90": 505,
-    "skills": []
+    "baseAtkLv1": 50,
+    "baseAtkLv90": 495,
+    "skills": [
+      {
+        "name": "治疗效率提升·大",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "treatmentBonus": 0.06
+          },
+          {
+            "treatmentBonus": 0.107
+          },
+          {
+            "treatmentBonus": 0.155
+          },
+          {
+            "treatmentBonus": 0.202
+          },
+          {
+            "treatmentBonus": 0.25
+          },
+          {
+            "treatmentBonus": 0.298
+          },
+          {
+            "treatmentBonus": 0.345
+          },
+          {
+            "treatmentBonus": 0.393
+          },
+          {
+            "treatmentBonus": 0.464
+          }
+        ]
+      },
+      {
+        "name": "智识提升·大",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "intelligence": 20
+          },
+          {
+            "intelligence": 36
+          },
+          {
+            "intelligence": 52
+          },
+          {
+            "intelligence": 68
+          },
+          {
+            "intelligence": 84
+          },
+          {
+            "intelligence": 100
+          },
+          {
+            "intelligence": 116
+          },
+          {
+            "intelligence": 132
+          },
+          {
+            "intelligence": 156
+          }
+        ]
+      },
+      {
+        "name": "附术·潮汐低语",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "secondaryAbility": 16
+          },
+          {
+            "secondaryAbility": 19.2
+          },
+          {
+            "secondaryAbility": 22.4
+          },
+          {
+            "secondaryAbility": 25.6
+          },
+          {
+            "secondaryAbility": 28.8
+          },
+          {
+            "secondaryAbility": 32
+          },
+          {
+            "secondaryAbility": 35.2
+          },
+          {
+            "secondaryAbility": 38.4
+          },
+          {
+            "secondaryAbility": 44.8
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "115",
@@ -199,9 +1799,109 @@
     "cover": "/weapons/115.png",
     "description": "-终末地干员用武器，装备之后可以显著提升干员的作战能力。\n-雷神工业制造的特殊铳械，使用难度极高。因为是实验型武器，所以仅在市场上投放了少量样品。",
     "trait": "",
-    "baseAtkLv1": 51,
-    "baseAtkLv90": 505,
-    "skills": []
+    "baseAtkLv1": 50,
+    "baseAtkLv90": 490,
+    "skills": [
+      {
+        "name": "法术提升·大",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "allElementDmg": 0.12
+          },
+          {
+            "allElementDmg": 0.144
+          },
+          {
+            "allElementDmg": 0.168
+          },
+          {
+            "allElementDmg": 0.192
+          },
+          {
+            "allElementDmg": 0.216
+          },
+          {
+            "allElementDmg": 0.24
+          },
+          {
+            "allElementDmg": 0.264
+          },
+          {
+            "allElementDmg": 0.288
+          },
+          {
+            "allElementDmg": 0.336
+          }
+        ]
+      },
+      {
+        "name": "主能力提升·大",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "primaryAbility": 17
+          },
+          {
+            "primaryAbility": 30
+          },
+          {
+            "primaryAbility": 44
+          },
+          {
+            "primaryAbility": 57
+          },
+          {
+            "primaryAbility": 71
+          },
+          {
+            "primaryAbility": 85
+          },
+          {
+            "primaryAbility": 98
+          },
+          {
+            "primaryAbility": 112
+          },
+          {
+            "primaryAbility": 132
+          }
+        ]
+      },
+      {
+        "name": "附术·残酷清洗",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "allElementDmg": 0.056
+          },
+          {
+            "allElementDmg": 0.1
+          },
+          {
+            "allElementDmg": 0.144
+          },
+          {
+            "allElementDmg": 0.189
+          },
+          {
+            "allElementDmg": 0.233
+          },
+          {
+            "allElementDmg": 0.278
+          },
+          {
+            "allElementDmg": 0.322
+          },
+          {
+            "allElementDmg": 0.367
+          },
+          {
+            "allElementDmg": 0.433
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "114",
@@ -212,8 +1912,108 @@
     "description": "-终末地干员用武器，装备之后可以显著提升干员的作战能力。\n-北进重工支援所的传奇产品。完美体现北进重工的风格：强大的破坏力、绝对的可靠性，以及令人头疼的操作性。",
     "trait": "",
     "baseAtkLv1": 51,
-    "baseAtkLv90": 505,
-    "skills": []
+    "baseAtkLv90": 500,
+    "skills": [
+      {
+        "name": "暴击率提升·大",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "critRate": 0.025
+          },
+          {
+            "critRate": 0.045
+          },
+          {
+            "critRate": 0.065
+          },
+          {
+            "critRate": 0.085
+          },
+          {
+            "critRate": 0.105
+          },
+          {
+            "critRate": 0.125
+          },
+          {
+            "critRate": 0.145
+          },
+          {
+            "critRate": 0.165
+          },
+          {
+            "critRate": 0.195
+          }
+        ]
+      },
+      {
+        "name": "主能力提升·大",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "primaryAbility": 17
+          },
+          {
+            "primaryAbility": 30
+          },
+          {
+            "primaryAbility": 44
+          },
+          {
+            "primaryAbility": 57
+          },
+          {
+            "primaryAbility": 71
+          },
+          {
+            "primaryAbility": 85
+          },
+          {
+            "primaryAbility": 98
+          },
+          {
+            "primaryAbility": 112
+          },
+          {
+            "primaryAbility": 132
+          }
+        ]
+      },
+      {
+        "name": "附术·文明楔子",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "allElementDmg": 0.12
+          },
+          {
+            "allElementDmg": 0.144
+          },
+          {
+            "allElementDmg": 0.168
+          },
+          {
+            "allElementDmg": 0.192
+          },
+          {
+            "allElementDmg": 0.216
+          },
+          {
+            "allElementDmg": 0.24
+          },
+          {
+            "allElementDmg": 0.264
+          },
+          {
+            "allElementDmg": 0.288
+          },
+          {
+            "allElementDmg": 0.336
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "105",
@@ -224,8 +2024,108 @@
     "description": "-终末地干员用武器，装备之后可以显著提升干员的作战能力。\n-北进重工支援所的实验型高级产品，原型由其已解散的航空器研究中心设计。它载有源石增压喷射器，性能惊人。",
     "trait": "",
     "baseAtkLv1": 51,
-    "baseAtkLv90": 505,
-    "skills": []
+    "baseAtkLv90": 500,
+    "skills": [
+      {
+        "name": "攻击提升·大",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "atkPercent": 0.05
+          },
+          {
+            "atkPercent": 0.09
+          },
+          {
+            "atkPercent": 0.13
+          },
+          {
+            "atkPercent": 0.17
+          },
+          {
+            "atkPercent": 0.21
+          },
+          {
+            "atkPercent": 0.25
+          },
+          {
+            "atkPercent": 0.29
+          },
+          {
+            "atkPercent": 0.33
+          },
+          {
+            "atkPercent": 0.39
+          }
+        ]
+      },
+      {
+        "name": "主能力提升·大",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "primaryAbility": 17
+          },
+          {
+            "primaryAbility": 30
+          },
+          {
+            "primaryAbility": 44
+          },
+          {
+            "primaryAbility": 57
+          },
+          {
+            "primaryAbility": 71
+          },
+          {
+            "primaryAbility": 85
+          },
+          {
+            "primaryAbility": 98
+          },
+          {
+            "primaryAbility": 112
+          },
+          {
+            "primaryAbility": 132
+          }
+        ]
+      },
+      {
+        "name": "压制·太空物理学",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "allElementDmg": 0.12
+          },
+          {
+            "allElementDmg": 0.144
+          },
+          {
+            "allElementDmg": 0.168
+          },
+          {
+            "allElementDmg": 0.192
+          },
+          {
+            "allElementDmg": 0.216
+          },
+          {
+            "allElementDmg": 0.24
+          },
+          {
+            "allElementDmg": 0.264
+          },
+          {
+            "allElementDmg": 0.288
+          },
+          {
+            "allElementDmg": 0.336
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "104",
@@ -235,9 +2135,109 @@
     "cover": "/weapons/104.png",
     "description": "-终末地于员用武器，装备之后可以显著提升干员的作战能力。\n-梅什科工业的中端线产品之·复古的巨箭型设计以及不俗的实战实用性，使其至今仍有市无价。",
     "trait": "",
-    "baseAtkLv1": 51,
-    "baseAtkLv90": 505,
-    "skills": []
+    "baseAtkLv1": 50,
+    "baseAtkLv90": 495,
+    "skills": [
+      {
+        "name": "物理伤害提升·大",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "physicalDmgBonus": 0.056
+          },
+          {
+            "physicalDmgBonus": 0.1
+          },
+          {
+            "physicalDmgBonus": 0.144
+          },
+          {
+            "physicalDmgBonus": 0.189
+          },
+          {
+            "physicalDmgBonus": 0.233
+          },
+          {
+            "physicalDmgBonus": 0.278
+          },
+          {
+            "physicalDmgBonus": 0.322
+          },
+          {
+            "physicalDmgBonus": 0.367
+          },
+          {
+            "physicalDmgBonus": 0.433
+          }
+        ]
+      },
+      {
+        "name": "敏捷提升·大",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "agility": 20
+          },
+          {
+            "agility": 36
+          },
+          {
+            "agility": 52
+          },
+          {
+            "agility": 68
+          },
+          {
+            "agility": 84
+          },
+          {
+            "agility": 100
+          },
+          {
+            "agility": 116
+          },
+          {
+            "agility": 132
+          },
+          {
+            "agility": 156
+          }
+        ]
+      },
+      {
+        "name": "巧技·美德盈利",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "atkPercent": 0.1
+          },
+          {
+            "atkPercent": 0.12
+          },
+          {
+            "atkPercent": 0.14
+          },
+          {
+            "atkPercent": 0.16
+          },
+          {
+            "atkPercent": 0.18
+          },
+          {
+            "physicalDmgBonus": 0.2
+          },
+          {
+            "atkPercent": 0.22
+          },
+          {
+            "atkPercent": 0.24
+          },
+          {
+            "atkPercent": 0.28
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "103",
@@ -248,8 +2248,90 @@
     "description": "-终末地干员用武器，装备之后可以显著提升干员的作战能力。\n-宏山选剑局研发的实验型长枪。枪杆部位在铸造时混入了极特殊的金合金，在保证强度的同时极大提高了韧性。",
     "trait": "",
     "baseAtkLv1": 51,
-    "baseAtkLv90": 505,
-    "skills": []
+    "baseAtkLv90": 500,
+    "skills": [
+      {
+        "name": "敏捷提升·大",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "agility": 20
+          },
+          {
+            "agility": 36
+          },
+          {
+            "agility": 52
+          },
+          {
+            "agility": 68
+          },
+          {
+            "agility": 84
+          },
+          {
+            "agility": 100
+          },
+          {
+            "agility": 116
+          },
+          {
+            "agility": 132
+          },
+          {
+            "agility": 156
+          }
+        ]
+      },
+      {
+        "name": "物理伤害提升·大",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "physicalDmgBonus": 0.056
+          },
+          {
+            "physicalDmgBonus": 0.1
+          },
+          {
+            "physicalDmgBonus": 0.144
+          },
+          {
+            "physicalDmgBonus": 0.189
+          },
+          {
+            "physicalDmgBonus": 0.233
+          },
+          {
+            "physicalDmgBonus": 0.278
+          },
+          {
+            "physicalDmgBonus": 0.322
+          },
+          {
+            "physicalDmgBonus": 0.367
+          },
+          {
+            "physicalDmgBonus": 0.433
+          }
+        ]
+      },
+      {
+        "name": "效益·山川在我",
+        "maxRank": 9,
+        "ranks": [
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {}
+        ]
+      }
+    ]
   },
   {
     "id": "96",
@@ -259,9 +2341,109 @@
     "cover": "/weapons/96.png",
     "description": "-终末地干员用武器，装备之后可以显著提升干员的作战能力。\n-巫术时刻限量发行的特殊武器之一，似乎是依循着什么古老传说打造的外形，仿佛能捕捉梦境中的呻吟。",
     "trait": "",
-    "baseAtkLv1": 51,
-    "baseAtkLv90": 505,
-    "skills": []
+    "baseAtkLv1": 50,
+    "baseAtkLv90": 490,
+    "skills": [
+      {
+        "name": "暴击率提升·大",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "critRate": 0.025
+          },
+          {
+            "critRate": 0.045
+          },
+          {
+            "critRate": 0.065
+          },
+          {
+            "critRate": 0.085
+          },
+          {
+            "critRate": 0.105
+          },
+          {
+            "critRate": 0.125
+          },
+          {
+            "critRate": 0.145
+          },
+          {
+            "critRate": 0.165
+          },
+          {
+            "critRate": 0.195
+          }
+        ]
+      },
+      {
+        "name": "力量提升·大",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "strength": 20
+          },
+          {
+            "strength": 36
+          },
+          {
+            "strength": 52
+          },
+          {
+            "strength": 68
+          },
+          {
+            "strength": 84
+          },
+          {
+            "strength": 100
+          },
+          {
+            "strength": 116
+          },
+          {
+            "strength": 132
+          },
+          {
+            "strength": 156
+          }
+        ]
+      },
+      {
+        "name": "粉碎·君王威慑",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "atkPercent": 0.1
+          },
+          {
+            "atkPercent": 0.12
+          },
+          {
+            "atkPercent": 0.14
+          },
+          {
+            "atkPercent": 0.16
+          },
+          {
+            "atkPercent": 0.18
+          },
+          {
+            "atkPercent": 0.2
+          },
+          {
+            "atkPercent": 0.22
+          },
+          {
+            "atkPercent": 0.24
+          },
+          {
+            "atkPercent": 0.28
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "86",
@@ -271,9 +2453,109 @@
     "cover": "/weapons/86.png",
     "description": "-终未地干员用武器，装备之后可以显著提升干员的作战能力。\n-北进重工支援所的高端产品。一款采用旧技术设计的链式切割器，目前已不再大规模生产，但设计依然可靠。",
     "trait": "",
-    "baseAtkLv1": 51,
-    "baseAtkLv90": 505,
-    "skills": []
+    "baseAtkLv1": 50,
+    "baseAtkLv90": 495,
+    "skills": [
+      {
+        "name": "生命提升·大",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "hpPercent": 0.1
+          },
+          {
+            "hpPercent": 0.18
+          },
+          {
+            "hpPercent": 0.26
+          },
+          {
+            "hpPercent": 0.34
+          },
+          {
+            "hpPercent": 0.42
+          },
+          {
+            "hpPercent": 0.5
+          },
+          {
+            "hpPercent": 0.58
+          },
+          {
+            "hpPercent": 0.66
+          },
+          {
+            "hpPercent": 0.78
+          }
+        ]
+      },
+      {
+        "name": "意志提升·大",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "will": 20
+          },
+          {
+            "will": 36
+          },
+          {
+            "will": 52
+          },
+          {
+            "will": 68
+          },
+          {
+            "will": 84
+          },
+          {
+            "will": 100
+          },
+          {
+            "will": 116
+          },
+          {
+            "will": 132
+          },
+          {
+            "will": 156
+          }
+        ]
+      },
+      {
+        "name": "效益·切碎疗法",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "hpPercent": 0.1
+          },
+          {
+            "hpPercent": 0.12
+          },
+          {
+            "hpPercent": 0.14
+          },
+          {
+            "hpPercent": 0.16
+          },
+          {
+            "hpPercent": 0.18
+          },
+          {
+            "hpPercent": 0.2
+          },
+          {
+            "hpPercent": 0.22
+          },
+          {
+            "hpPercent": 0.24
+          },
+          {
+            "hpPercent": 0.28
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "85",
@@ -284,8 +2566,108 @@
     "description": "-终末地干员用武器，装备之后可以显著提升干员的作战能力。\n-梅什科工业最新推出的独立产品。据传这款设计源于寂语修会的发掘产物，内含绝密技术，分金裂石，无坚不摧。",
     "trait": "",
     "baseAtkLv1": 51,
-    "baseAtkLv90": 505,
-    "skills": []
+    "baseAtkLv90": 500,
+    "skills": [
+      {
+        "name": "主能力提升·大",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "primaryAbility": 17
+          },
+          {
+            "primaryAbility": 30
+          },
+          {
+            "primaryAbility": 44
+          },
+          {
+            "primaryAbility": 57
+          },
+          {
+            "primaryAbility": 71
+          },
+          {
+            "primaryAbility": 85
+          },
+          {
+            "primaryAbility": 98
+          },
+          {
+            "primaryAbility": 112
+          },
+          {
+            "primaryAbility": 132
+          }
+        ]
+      },
+      {
+        "name": "攻击提升·大",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "atkPercent": 0.05
+          },
+          {
+            "atkPercent": 0.09
+          },
+          {
+            "atkPercent": 0.13
+          },
+          {
+            "atkPercent": 0.17
+          },
+          {
+            "atkPercent": 0.21
+          },
+          {
+            "atkPercent": 0.25
+          },
+          {
+            "atkPercent": 0.29
+          },
+          {
+            "atkPercent": 0.33
+          },
+          {
+            "atkPercent": 0.39
+          }
+        ]
+      },
+      {
+        "name": "压制·多层斩断",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "physicalDmgBonus": 0.1
+          },
+          {
+            "physicalDmgBonus": 0.12
+          },
+          {
+            "physicalDmgBonus": 0.14
+          },
+          {
+            "physicalDmgBonus": 0.16
+          },
+          {
+            "physicalDmgBonus": 0.18
+          },
+          {
+            "physicalDmgBonus": 0.2
+          },
+          {
+            "physicalDmgBonus": 0.22
+          },
+          {
+            "physicalDmgBonus": 0.24
+          },
+          {
+            "physicalDmgBonus": 0.28
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "84",
@@ -297,7 +2679,107 @@
     "trait": "",
     "baseAtkLv1": 51,
     "baseAtkLv90": 505,
-    "skills": []
+    "skills": [
+      {
+        "name": "攻击提升·大",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "atkPercent": 0.05
+          },
+          {
+            "atkPercent": 0.09
+          },
+          {
+            "atkPercent": 0.13
+          },
+          {
+            "atkPercent": 0.17
+          },
+          {
+            "atkPercent": 0.21
+          },
+          {
+            "atkPercent": 0.25
+          },
+          {
+            "atkPercent": 0.29
+          },
+          {
+            "atkPercent": 0.33
+          },
+          {
+            "atkPercent": 0.39
+          }
+        ]
+      },
+      {
+        "name": "力量提升·大",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "strength": 20
+          },
+          {
+            "strength": 36
+          },
+          {
+            "strength": 52
+          },
+          {
+            "strength": 68
+          },
+          {
+            "strength": 84
+          },
+          {
+            "strength": 100
+          },
+          {
+            "strength": 116
+          },
+          {
+            "strength": 132
+          },
+          {
+            "strength": 156
+          }
+        ]
+      },
+      {
+        "name": "迸发·切骨之寒",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "cryoDmgBonus": 0.2
+          },
+          {
+            "cryoDmgBonus": 0.24
+          },
+          {
+            "cryoDmgBonus": 0.28
+          },
+          {
+            "cryoDmgBonus": 0.32
+          },
+          {
+            "cryoDmgBonus": 0.36
+          },
+          {
+            "cryoDmgBonus": 0.4
+          },
+          {
+            "cryoDmgBonus": 0.44
+          },
+          {
+            "cryoDmgBonus": 0.48
+          },
+          {
+            "cryoDmgBonus": 0.56
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "83",
@@ -307,9 +2789,109 @@
     "cover": "/weapons/83.png",
     "description": "-终末地干员用武器，装备之后可以显著提升干员的作战能力。\n-终末地工业制造的特别装备之一。焰形剑搭配的交错式源石线路能提高基质效率。灵感来于观测到的塔罗斯现象。",
     "trait": "",
-    "baseAtkLv1": 51,
-    "baseAtkLv90": 505,
-    "skills": []
+    "baseAtkLv1": 50,
+    "baseAtkLv90": 495,
+    "skills": [
+      {
+        "name": "生命提升·大",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "hpPercent": 0.1
+          },
+          {
+            "hpPercent": 0.18
+          },
+          {
+            "hpPercent": 0.26
+          },
+          {
+            "hpPercent": 0.34
+          },
+          {
+            "hpPercent": 0.42
+          },
+          {
+            "hpPercent": 0.5
+          },
+          {
+            "hpPercent": 0.58
+          },
+          {
+            "hpPercent": 0.66
+          },
+          {
+            "hpPercent": 0.78
+          }
+        ]
+      },
+      {
+        "name": "力量提升·大",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "strength": 20
+          },
+          {
+            "strength": 36
+          },
+          {
+            "strength": 52
+          },
+          {
+            "strength": 68
+          },
+          {
+            "strength": 84
+          },
+          {
+            "strength": 100
+          },
+          {
+            "strength": 116
+          },
+          {
+            "strength": 132
+          },
+          {
+            "strength": 156
+          }
+        ]
+      },
+      {
+        "name": "医疗·塔罗斯之眼",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "hpPercent": 0.24
+          },
+          {
+            "hpPercent": 0.288
+          },
+          {
+            "hpPercent": 0.336
+          },
+          {
+            "hpPercent": 0.384
+          },
+          {
+            "hpPercent": 0.432
+          },
+          {
+            "hpPercent": 0.48
+          },
+          {
+            "hpPercent": 0.528
+          },
+          {
+            "hpPercent": 0.576
+          },
+          {
+            "hpPercent": 0.672
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "75",
@@ -321,7 +2903,107 @@
     "trait": "",
     "baseAtkLv1": 51,
     "baseAtkLv90": 505,
-    "skills": []
+    "skills": [
+      {
+        "name": "源石技艺强度提升·大",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "artsIntensity": 10
+          },
+          {
+            "artsIntensity": 18
+          },
+          {
+            "artsIntensity": 26
+          },
+          {
+            "artsIntensity": 34
+          },
+          {
+            "artsIntensity": 42
+          },
+          {
+            "artsIntensity": 50
+          },
+          {
+            "artsIntensity": 58
+          },
+          {
+            "artsIntensity": 66
+          },
+          {
+            "artsIntensity": 78
+          }
+        ]
+      },
+      {
+        "name": "主能力提升·大",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "primaryAbility": 17
+          },
+          {
+            "primaryAbility": 30
+          },
+          {
+            "primaryAbility": 44
+          },
+          {
+            "primaryAbility": 57
+          },
+          {
+            "primaryAbility": 71
+          },
+          {
+            "primaryAbility": 85
+          },
+          {
+            "primaryAbility": 98
+          },
+          {
+            "primaryAbility": 112
+          },
+          {
+            "primaryAbility": 132
+          }
+        ]
+      },
+      {
+        "name": "附术·白夜新星",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "artsIntensity": 0.12
+          },
+          {
+            "artsIntensity": 0.144
+          },
+          {
+            "artsIntensity": 0.168
+          },
+          {
+            "artsIntensity": 0.192
+          },
+          {
+            "artsIntensity": 0.216
+          },
+          {
+            "artsIntensity": 0.24
+          },
+          {
+            "artsIntensity": 0.264
+          },
+          {
+            "artsIntensity": 0.288
+          },
+          {
+            "artsIntensity": 0.336
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "74",
@@ -331,9 +3013,109 @@
     "cover": "/weapons/74.png",
     "description": "-终末地干员用武器，装备之后可以显著提升干员的作战能力。\n-梅什科工业推出的高品质佩剑，深受环塔商会上流人士的青睐。精细雕琢的外表下，性能同样值得信赖。",
     "trait": "",
-    "baseAtkLv1": 51,
-    "baseAtkLv90": 505,
-    "skills": []
+    "baseAtkLv1": 50,
+    "baseAtkLv90": 490,
+    "skills": [
+      {
+        "name": "物理伤害提升·大",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "physicalDmgBonus": 0.056
+          },
+          {
+            "physicalDmgBonus": 0.1
+          },
+          {
+            "physicalDmgBonus": 0.144
+          },
+          {
+            "physicalDmgBonus": 0.189
+          },
+          {
+            "physicalDmgBonus": 0.233
+          },
+          {
+            "physicalDmgBonus": 0.278
+          },
+          {
+            "physicalDmgBonus": 0.322
+          },
+          {
+            "physicalDmgBonus": 0.367
+          },
+          {
+            "physicalDmgBonus": 0.433
+          }
+        ]
+      },
+      {
+        "name": "主能力提升·大",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "primaryAbility": 17
+          },
+          {
+            "primaryAbility": 30
+          },
+          {
+            "primaryAbility": 44
+          },
+          {
+            "primaryAbility": 57
+          },
+          {
+            "primaryAbility": 71
+          },
+          {
+            "primaryAbility": 85
+          },
+          {
+            "primaryAbility": 98
+          },
+          {
+            "primaryAbility": 112
+          },
+          {
+            "primaryAbility": 132
+          }
+        ]
+      },
+      {
+        "name": "残暴·规行矩止",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "atkPercent": 0.1
+          },
+          {
+            "atkPercent": 0.12
+          },
+          {
+            "atkPercent": 0.14
+          },
+          {
+            "atkPercent": 0.16
+          },
+          {
+            "atkPercent": 0.18
+          },
+          {
+            "atkPercent": 0.2
+          },
+          {
+            "atkPercent": 0.22
+          },
+          {
+            "atkPercent": 0.24
+          },
+          {
+            "atkPercent": 0.28
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "73",
@@ -343,9 +3125,109 @@
     "cover": "/weapons/73.png",
     "description": "-终末地干员用武器，装备之后可以显著提升干员的作战能力。\n-北进重工支援所“开拓者”系列的基础产品。四型热熔切割器采用专利高温材料，切割性能强劲，受到工程人员广泛好评。",
     "trait": "",
-    "baseAtkLv1": 51,
-    "baseAtkLv90": 505,
-    "skills": []
+    "baseAtkLv1": 50,
+    "baseAtkLv90": 490,
+    "skills": [
+      {
+        "name": "攻击提升·大",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "atkPercent": 0.1
+          },
+          {
+            "atkPercent": 0.12
+          },
+          {
+            "atkPercent": 0.14
+          },
+          {
+            "atkPercent": 0.16
+          },
+          {
+            "atkPercent": 0.18
+          },
+          {
+            "atkPercent": 0.2
+          },
+          {
+            "atkPercent": 0.22
+          },
+          {
+            "atkPercent": 0.24
+          },
+          {
+            "atkPercent": 0.28
+          }
+        ]
+      },
+      {
+        "name": "意志提升·大",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "will": 20
+          },
+          {
+            "will": 36
+          },
+          {
+            "will": 52
+          },
+          {
+            "will": 68
+          },
+          {
+            "will": 84
+          },
+          {
+            "will": 100
+          },
+          {
+            "will": 116
+          },
+          {
+            "will": 132
+          },
+          {
+            "will": 156
+          }
+        ]
+      },
+      {
+        "name": "流转·高热解放",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "atkPercent": 0.05
+          },
+          {
+            "atkPercent": 0.09
+          },
+          {
+            "atkPercent": 0.13
+          },
+          {
+            "atkPercent": 0.17
+          },
+          {
+            "atkPercent": 0.21
+          },
+          {
+            "atkPercent": 0.25
+          },
+          {
+            "atkPercent": 0.29
+          },
+          {
+            "atkPercent": 0.33
+          },
+          {
+            "atkPercent": 0.39
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "72",
@@ -355,9 +3237,109 @@
     "cover": "/weapons/72.png",
     "description": "-终末地干员用武器，装备之后可以显著提升干员的作战能力。\n-宏山选剑局的高端佩剑产品，用于表彰有突出贡献的人士，命名由宏科院内部征集确定。",
     "trait": "",
-    "baseAtkLv1": 51,
-    "baseAtkLv90": 505,
-    "skills": []
+    "baseAtkLv1": 50,
+    "baseAtkLv90": 495,
+    "skills": [
+      {
+        "name": "主能力提升·大",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "primaryAbility": 17
+          },
+          {
+            "primaryAbility": 30
+          },
+          {
+            "primaryAbility": 44
+          },
+          {
+            "primaryAbility": 57
+          },
+          {
+            "primaryAbility": 71
+          },
+          {
+            "primaryAbility": 85
+          },
+          {
+            "primaryAbility": 98
+          },
+          {
+            "primaryAbility": 112
+          },
+          {
+            "primaryAbility": 132
+          }
+        ]
+      },
+      {
+        "name": "暴击率提升·大",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "critRate": 0.025
+          },
+          {
+            "critRate": 0.045
+          },
+          {
+            "critRate": 0.065
+          },
+          {
+            "critRate": 0.085
+          },
+          {
+            "critRate": 0.105
+          },
+          {
+            "critRate": 0.125
+          },
+          {
+            "critRate": 0.145
+          },
+          {
+            "critRate": 0.165
+          },
+          {
+            "critRate": 0.195
+          }
+        ]
+      },
+      {
+        "name": "夜幕·青云",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "physicalDmgBonus": 0.15
+          },
+          {
+            "physicalDmgBonus": 0.18
+          },
+          {
+            "physicalDmgBonus": 0.21
+          },
+          {
+            "physicalDmgBonus": 0.24
+          },
+          {
+            "physicalDmgBonus": 0.27
+          },
+          {
+            "physicalDmgBonus": 0.3
+          },
+          {
+            "physicalDmgBonus": 0.33
+          },
+          {
+            "physicalDmgBonus": 0.36
+          },
+          {
+            "physicalDmgBonus": 0.42
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "68",
@@ -368,8 +3350,108 @@
     "description": "-终末地干员用武器，装备之后可以显著提升干员的作战能力。\n-熔炉要塞锻造的武器之一。即使经过反复重铸，锋芒内敛，却依旧蕴含迫人威势。",
     "trait": "",
     "baseAtkLv1": 51,
-    "baseAtkLv90": 505,
-    "skills": []
+    "baseAtkLv90": 500,
+    "skills": [
+      {
+        "name": "攻击提升·大",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "atkPercent": 0.05
+          },
+          {
+            "atkPercent": 0.09
+          },
+          {
+            "atkPercent": 0.13
+          },
+          {
+            "atkPercent": 0.17
+          },
+          {
+            "atkPercent": 0.21
+          },
+          {
+            "atkPercent": 0.25
+          },
+          {
+            "atkPercent": 0.29
+          },
+          {
+            "atkPercent": 0.33
+          },
+          {
+            "atkPercent": 0.39
+          }
+        ]
+      },
+      {
+        "name": "意志提升·大",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "will": 20
+          },
+          {
+            "will": 36
+          },
+          {
+            "will": 52
+          },
+          {
+            "will": 68
+          },
+          {
+            "will": 84
+          },
+          {
+            "will": 100
+          },
+          {
+            "will": 116
+          },
+          {
+            "will": 132
+          },
+          {
+            "will": 156
+          }
+        ]
+      },
+      {
+        "name": "流转·轮回",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "physicalDmgBonus": 0.16
+          },
+          {
+            "physicalDmgBonus": 0.192
+          },
+          {
+            "physicalDmgBonus": 0.224
+          },
+          {
+            "physicalDmgBonus": 0.256
+          },
+          {
+            "physicalDmgBonus": 0.288
+          },
+          {
+            "physicalDmgBonus": 0.32
+          },
+          {
+            "physicalDmgBonus": 0.352
+          },
+          {
+            "physicalDmgBonus": 0.384
+          },
+          {
+            "physicalDmgBonus": 0.448
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "67",
@@ -380,8 +3462,108 @@
     "description": "-终末地干员用武器，装备之后可以显著提升干员的作战能力。\n-终末地工业制造的优质武器，极具创意地将实验型源石材料作为剑身主体，使其拥有了极佳的能量传导性能。",
     "trait": "",
     "baseAtkLv1": 51,
-    "baseAtkLv90": 505,
-    "skills": []
+    "baseAtkLv90": 500,
+    "skills": [
+      {
+        "name": "敏捷提升·大",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "agility": 20
+          },
+          {
+            "agility": 36
+          },
+          {
+            "agility": 52
+          },
+          {
+            "agility": 68
+          },
+          {
+            "agility": 84
+          },
+          {
+            "agility": 100
+          },
+          {
+            "agility": 116
+          },
+          {
+            "agility": 132
+          },
+          {
+            "agility": 156
+          }
+        ]
+      },
+      {
+        "name": "攻击提升·大",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "atkPercent": 0.05
+          },
+          {
+            "atkPercent": 0.09
+          },
+          {
+            "atkPercent": 0.13
+          },
+          {
+            "atkPercent": 0.17
+          },
+          {
+            "atkPercent": 0.21
+          },
+          {
+            "atkPercent": 0.25
+          },
+          {
+            "atkPercent": 0.29
+          },
+          {
+            "atkPercent": 0.33
+          },
+          {
+            "atkPercent": 0.39
+          }
+        ]
+      },
+      {
+        "name": "附术·长愿",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "artsIntensity": 0.3
+          },
+          {
+            "artsIntensity": 0.36
+          },
+          {
+            "artsIntensity": 0.42
+          },
+          {
+            "artsIntensity": 0.48
+          },
+          {
+            "artsIntensity": 0.54
+          },
+          {
+            "artsIntensity": 0.6
+          },
+          {
+            "artsIntensity": 0.66
+          },
+          {
+            "artsIntensity": 0.72
+          },
+          {
+            "artsIntensity": 0.84
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "123",
@@ -392,8 +3574,108 @@
     "description": "-终末地干员用武器，装备之后可以显著提升干员的作战能力。\n-终末地工业出品的系列制式装备。由资深武库工程师奥佩罗所组建的原型创意组设计。功率取决于使用者的源石技艺水平。",
     "trait": "",
     "baseAtkLv1": 42,
-    "baseAtkLv90": 420,
-    "skills": []
+    "baseAtkLv90": 411,
+    "skills": [
+      {
+        "name": "智识提升·中",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "intelligence": 16
+          },
+          {
+            "intelligence": 28
+          },
+          {
+            "intelligence": 41
+          },
+          {
+            "intelligence": 54
+          },
+          {
+            "intelligence": 67
+          },
+          {
+            "intelligence": 80
+          },
+          {
+            "intelligence": 92
+          },
+          {
+            "intelligence": 105
+          },
+          {
+            "intelligence": 124
+          }
+        ]
+      },
+      {
+        "name": "源石技艺强度提升·中",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "artsIntensity": 8
+          },
+          {
+            "artsIntensity": 14
+          },
+          {
+            "artsIntensity": 20
+          },
+          {
+            "artsIntensity": 27
+          },
+          {
+            "artsIntensity": 33
+          },
+          {
+            "artsIntensity": 40
+          },
+          {
+            "artsIntensity": 46
+          },
+          {
+            "artsIntensity": 52
+          },
+          {
+            "artsIntensity": 62
+          }
+        ]
+      },
+      {
+        "name": "追袭·术法升华",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "hpPercent": 0.1
+          },
+          {
+            "hpPercent": 0.12
+          },
+          {
+            "hpPercent": 0.14
+          },
+          {
+            "hpPercent": 0.16
+          },
+          {
+            "hpPercent": 0.18
+          },
+          {
+            "hpPercent": 0.2
+          },
+          {
+            "hpPercent": 0.22
+          },
+          {
+            "hpPercent": 0.24
+          },
+          {
+            "hpPercent": 0.28
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "122",
@@ -404,8 +3686,108 @@
     "description": "-终末地干员用武器，装备之后可以显著提升干员的作战能力。\n-梅什科工业为寂语修会定制的施术单元。该产品从设计、验证到落地生产和调试都在寂语修会修士的指导建议下完成。",
     "trait": "",
     "baseAtkLv1": 42,
-    "baseAtkLv90": 420,
-    "skills": []
+    "baseAtkLv90": 411,
+    "skills": [
+      {
+        "name": "治疗效率提升·中",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "treatmentBonus": 0.048
+          },
+          {
+            "treatmentBonus": 0.086
+          },
+          {
+            "treatmentBonus": 0.124
+          },
+          {
+            "treatmentBonus": 0.162
+          },
+          {
+            "treatmentBonus": 0.2
+          },
+          {
+            "treatmentBonus": 0.238
+          },
+          {
+            "treatmentBonus": 0.276
+          },
+          {
+            "treatmentBonus": 0.314
+          },
+          {
+            "treatmentBonus": 0.371
+          }
+        ]
+      },
+      {
+        "name": "意志提升·中",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "will": 16
+          },
+          {
+            "will": 28
+          },
+          {
+            "will": 41
+          },
+          {
+            "will": 54
+          },
+          {
+            "will": 67
+          },
+          {
+            "will": 80
+          },
+          {
+            "will": 92
+          },
+          {
+            "will": 105
+          },
+          {
+            "will": 124
+          }
+        ]
+      },
+      {
+        "name": "医疗·信仰救赎",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "hpPercent": 0.05
+          },
+          {
+            "hpPercent": 0.06
+          },
+          {
+            "hpPercent": 0.07
+          },
+          {
+            "hpPercent": 0.08
+          },
+          {
+            "hpPercent": 0.09
+          },
+          {
+            "hpPercent": 0.1
+          },
+          {
+            "hpPercent": 0.11
+          },
+          {
+            "hpPercent": 0.12
+          },
+          {
+            "hpPercent": 0.14
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "121",
@@ -416,8 +3798,108 @@
     "description": "-终末地干员用武器，装备之后可以显著提升干员的作战能力。\n-雷神工业研发的一款施术单元，以简洁和轻量著称。其材料用量不足普通施术单元的一半。",
     "trait": "",
     "baseAtkLv1": 42,
-    "baseAtkLv90": 420,
-    "skills": []
+    "baseAtkLv90": 411,
+    "skills": [
+      {
+        "name": "智识提升·中",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "intelligence": 16
+          },
+          {
+            "intelligence": 28
+          },
+          {
+            "intelligence": 41
+          },
+          {
+            "intelligence": 54
+          },
+          {
+            "intelligence": 67
+          },
+          {
+            "intelligence": 80
+          },
+          {
+            "intelligence": 92
+          },
+          {
+            "intelligence": 105
+          },
+          {
+            "intelligence": 124
+          }
+        ]
+      },
+      {
+        "name": "电磁伤害提升·中",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "electricDmgBonus": 0.044
+          },
+          {
+            "electricDmgBonus": 0.08
+          },
+          {
+            "electricDmgBonus": 0.116
+          },
+          {
+            "electricDmgBonus": 0.151
+          },
+          {
+            "electricDmgBonus": 0.187
+          },
+          {
+            "electricDmgBonus": 0.222
+          },
+          {
+            "electricDmgBonus": 0.258
+          },
+          {
+            "electricDmgBonus": 0.293
+          },
+          {
+            "electricDmgBonus": 0.347
+          }
+        ]
+      },
+      {
+        "name": "附术·荒芜集蔟",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "artsIntensity": 0.1
+          },
+          {
+            "artsIntensity": 0.12
+          },
+          {
+            "artsIntensity": 0.14
+          },
+          {
+            "artsIntensity": 0.16
+          },
+          {
+            "artsIntensity": 0.18
+          },
+          {
+            "artsIntensity": 0.2
+          },
+          {
+            "artsIntensity": 0.22
+          },
+          {
+            "artsIntensity": 0.24
+          },
+          {
+            "artsIntensity": 0.28
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "120",
@@ -428,8 +3910,108 @@
     "description": "-终末地干员用武器，装备之后可以显著提升干员的作战能力。\n-宏山选剑局研发的施术单元，采用了珍贵的息壤材料。因其材料特性，使用者必须具备极高的操控准确度。",
     "trait": "",
     "baseAtkLv1": 42,
-    "baseAtkLv90": 420,
-    "skills": []
+    "baseAtkLv90": 411,
+    "skills": [
+      {
+        "name": "终结技充能效率提升·中",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "ultimateGainEfficiency": 0.048
+          },
+          {
+            "ultimateGainEfficiency": 0.086
+          },
+          {
+            "ultimateGainEfficiency": 0.124
+          },
+          {
+            "ultimateGainEfficiency": 0.162
+          },
+          {
+            "ultimateGainEfficiency": 0.2
+          },
+          {
+            "ultimateGainEfficiency": 0.238
+          },
+          {
+            "ultimateGainEfficiency": 0.276
+          },
+          {
+            "ultimateGainEfficiency": 0.314
+          },
+          {
+            "ultimateGainEfficiency": 0.371
+          }
+        ]
+      },
+      {
+        "name": "意志提升·中",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "will": 16
+          },
+          {
+            "will": 28
+          },
+          {
+            "will": 41
+          },
+          {
+            "will": 54
+          },
+          {
+            "will": 67
+          },
+          {
+            "will": 80
+          },
+          {
+            "will": 92
+          },
+          {
+            "will": 105
+          },
+          {
+            "will": 124
+          }
+        ]
+      },
+      {
+        "name": "昂扬·卯分析法",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "primaryAbility": 5
+          },
+          {
+            "primaryAbility": 6
+          },
+          {
+            "primaryAbility": 7
+          },
+          {
+            "primaryAbility": 8
+          },
+          {
+            "primaryAbility": 9
+          },
+          {
+            "primaryAbility": 10
+          },
+          {
+            "primaryAbility": 11
+          },
+          {
+            "primaryAbility": 12
+          },
+          {
+            "primaryAbility": 14
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "119",
@@ -440,8 +4022,108 @@
     "description": "-终末地干员用武器，装备之后可以显著提升干员的作战能力。\n-巫术时刻推出的古怪施术单元之一。反直觉地削弱了源石技艺的适应性，只为强调古老提卡兹巫术的黑暗逻辑。",
     "trait": "",
     "baseAtkLv1": 42,
-    "baseAtkLv90": 420,
-    "skills": []
+    "baseAtkLv90": 411,
+    "skills": [
+      {
+        "name": "智识提升·中",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "intelligence": 16
+          },
+          {
+            "intelligence": 28
+          },
+          {
+            "intelligence": 41
+          },
+          {
+            "intelligence": 54
+          },
+          {
+            "intelligence": 67
+          },
+          {
+            "intelligence": 80
+          },
+          {
+            "intelligence": 92
+          },
+          {
+            "intelligence": 105
+          },
+          {
+            "intelligence": 124
+          }
+        ]
+      },
+      {
+        "name": "攻击提升·中",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "atkPercent": 0.04
+          },
+          {
+            "atkPercent": 0.072
+          },
+          {
+            "atkPercent": 0.104
+          },
+          {
+            "atkPercent": 0.136
+          },
+          {
+            "atkPercent": 0.168
+          },
+          {
+            "atkPercent": 0.2
+          },
+          {
+            "atkPercent": 0.232
+          },
+          {
+            "atkPercent": 0.264
+          },
+          {
+            "atkPercent": 0.312
+          }
+        ]
+      },
+      {
+        "name": "夜幕·冢火成萤",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "atkPercent": 0.1
+          },
+          {
+            "atkPercent": 0.12
+          },
+          {
+            "atkPercent": 0.14
+          },
+          {
+            "atkPercent": 0.16
+          },
+          {
+            "atkPercent": 0.18
+          },
+          {
+            "atkPercent": 0.2
+          },
+          {
+            "atkPercent": 0.22
+          },
+          {
+            "atkPercent": 0.24
+          },
+          {
+            "atkPercent": 0.28
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "111",
@@ -452,8 +4134,108 @@
     "description": "-终末地干员用武器，装备之后可以显著提升干员的作战能力。\n-雷神工业为支持人类对外探索而设计生产的高性能铳械，具有较强的环境适应能力，是大多探索者的标配武器。",
     "trait": "",
     "baseAtkLv1": 42,
-    "baseAtkLv90": 420,
-    "skills": []
+    "baseAtkLv90": 411,
+    "skills": [
+      {
+        "name": "灼热伤害提升·中",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "heatDmgBonus": 0.044
+          },
+          {
+            "heatDmgBonus": 0.08
+          },
+          {
+            "heatDmgBonus": 0.116
+          },
+          {
+            "heatDmgBonus": 0.151
+          },
+          {
+            "heatDmgBonus": 0.187
+          },
+          {
+            "heatDmgBonus": 0.222
+          },
+          {
+            "heatDmgBonus": 0.258
+          },
+          {
+            "heatDmgBonus": 0.293
+          },
+          {
+            "heatDmgBonus": 0.347
+          }
+        ]
+      },
+      {
+        "name": "力量提升·中",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "strength": 16
+          },
+          {
+            "strength": 28
+          },
+          {
+            "strength": 41
+          },
+          {
+            "strength": 54
+          },
+          {
+            "strength": 67
+          },
+          {
+            "strength": 80
+          },
+          {
+            "strength": 92
+          },
+          {
+            "strength": 105
+          },
+          {
+            "strength": 124
+          }
+        ]
+      },
+      {
+        "name": "追袭·旧时之援",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "atkPercent": 0.1
+          },
+          {
+            "atkPercent": 0.12
+          },
+          {
+            "atkPercent": 0.14
+          },
+          {
+            "atkPercent": 0.16
+          },
+          {
+            "atkPercent": 0.18
+          },
+          {
+            "atkPercent": 0.2
+          },
+          {
+            "atkPercent": 0.22
+          },
+          {
+            "atkPercent": 0.24
+          },
+          {
+            "atkPercent": 0.28
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "110",
@@ -464,8 +4246,108 @@
     "description": "-终末地干员用武器，装备之后可以显著提升干员的作战能力。\n-终末地工业出品的系列制式装备。由资深武库工程师奥佩罗所组建的原型创意组设计。采用轻量材质，扎实耐用。",
     "trait": "",
     "baseAtkLv1": 42,
-    "baseAtkLv90": 420,
-    "skills": []
+    "baseAtkLv90": 411,
+    "skills": [
+      {
+        "name": "终结技充能效率提升·中",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "ultimateGainEfficiency": 0.048
+          },
+          {
+            "ultimateGainEfficiency": 0.086
+          },
+          {
+            "ultimateGainEfficiency": 0.124
+          },
+          {
+            "ultimateGainEfficiency": 0.162
+          },
+          {
+            "ultimateGainEfficiency": 0.2
+          },
+          {
+            "ultimateGainEfficiency": 0.238
+          },
+          {
+            "ultimateGainEfficiency": 0.276
+          },
+          {
+            "ultimateGainEfficiency": 0.314
+          },
+          {
+            "ultimateGainEfficiency": 0.371
+          }
+        ]
+      },
+      {
+        "name": "敏捷提升·中",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "agility": 16
+          },
+          {
+            "agility": 28
+          },
+          {
+            "agility": 41
+          },
+          {
+            "agility": 54
+          },
+          {
+            "agility": 67
+          },
+          {
+            "agility": 80
+          },
+          {
+            "agility": 92
+          },
+          {
+            "agility": 105
+          },
+          {
+            "agility": 124
+          }
+        ]
+      },
+      {
+        "name": "迸发·迅击",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "atkPercent": 0.05
+          },
+          {
+            "atkPercent": 0.06
+          },
+          {
+            "atkPercent": 0.07
+          },
+          {
+            "atkPercent": 0.08
+          },
+          {
+            "atkPercent": 0.09
+          },
+          {
+            "atkPercent": 0.1
+          },
+          {
+            "atkPercent": 0.11
+          },
+          {
+            "atkPercent": 0.12
+          },
+          {
+            "atkPercent": 0.14
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "109",
@@ -476,8 +4358,108 @@
     "description": "-终末地干员用武器，装备之后可以显著提升干员的作战能力。\n-轻超域技术实验室受托定制作品。艺术家大胆地使用遗迹残石包覆铳膛，并在残石上刻下了特殊的脉络。",
     "trait": "",
     "baseAtkLv1": 42,
-    "baseAtkLv90": 420,
-    "skills": []
+    "baseAtkLv90": 411,
+    "skills": [
+      {
+        "name": "法术提升·中",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "allElementDmg": 0.044
+          },
+          {
+            "allElementDmg": 0.08
+          },
+          {
+            "allElementDmg": 0.116
+          },
+          {
+            "allElementDmg": 0.151
+          },
+          {
+            "allElementDmg": 0.187
+          },
+          {
+            "allElementDmg": 0.222
+          },
+          {
+            "allElementDmg": 0.258
+          },
+          {
+            "allElementDmg": 0.293
+          },
+          {
+            "allElementDmg": 0.347
+          }
+        ]
+      },
+      {
+        "name": "敏捷提升·中",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "agility": 16
+          },
+          {
+            "agility": 28
+          },
+          {
+            "agility": 41
+          },
+          {
+            "agility": 54
+          },
+          {
+            "agility": 67
+          },
+          {
+            "agility": 80
+          },
+          {
+            "agility": 92
+          },
+          {
+            "agility": 105
+          },
+          {
+            "agility": 124
+          }
+        ]
+      },
+      {
+        "name": "附术·众生的归途",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "atkPercent": 0.03
+          },
+          {
+            "atkPercent": 0.036
+          },
+          {
+            "atkPercent": 0.042
+          },
+          {
+            "atkPercent": 0.048
+          },
+          {
+            "atkPercent": 0.054
+          },
+          {
+            "atkPercent": 0.06
+          },
+          {
+            "atkPercent": 0.066
+          },
+          {
+            "atkPercent": 0.072
+          },
+          {
+            "atkPercent": 0.084
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "102",
@@ -488,8 +4470,108 @@
     "description": "-终末地干员用武器，装备之后可以显著提升干员的作战能力。\n-雷神工业客制化产品线的经典案例。在军用刺枪形制的基础上，增添了多样化的特殊功能和个人化的美学设计。",
     "trait": "",
     "baseAtkLv1": 42,
-    "baseAtkLv90": 420,
-    "skills": []
+    "baseAtkLv90": 411,
+    "skills": [
+      {
+        "name": "意志提升·中",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "will": 16
+          },
+          {
+            "will": 28
+          },
+          {
+            "will": 41
+          },
+          {
+            "will": 54
+          },
+          {
+            "will": 67
+          },
+          {
+            "will": 80
+          },
+          {
+            "will": 92
+          },
+          {
+            "will": 105
+          },
+          {
+            "will": 124
+          }
+        ]
+      },
+      {
+        "name": "电磁伤害提升·中",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "electricDmgBonus": 0.044
+          },
+          {
+            "electricDmgBonus": 0.08
+          },
+          {
+            "electricDmgBonus": 0.116
+          },
+          {
+            "electricDmgBonus": 0.151
+          },
+          {
+            "electricDmgBonus": 0.187
+          },
+          {
+            "electricDmgBonus": 0.222
+          },
+          {
+            "electricDmgBonus": 0.258
+          },
+          {
+            "electricDmgBonus": 0.293
+          },
+          {
+            "electricDmgBonus": 0.347
+          }
+        ]
+      },
+      {
+        "name": "压制·同心圆",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "electricDmgBonus": 0.1
+          },
+          {
+            "electricDmgBonus": 0.12
+          },
+          {
+            "electricDmgBonus": 0.14
+          },
+          {
+            "electricDmgBonus": 0.16
+          },
+          {
+            "electricDmgBonus": 0.18
+          },
+          {
+            "electricDmgBonus": 0.2
+          },
+          {
+            "electricDmgBonus": 0.22
+          },
+          {
+            "electricDmgBonus": 0.24
+          },
+          {
+            "electricDmgBonus": 0.28
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "101",
@@ -500,8 +4582,108 @@
     "description": "-终末地干员用武器，装备之后可以显著提升干员的作战能力。\n-终末地工业出品的系列制式装备。由资深武库工程师奥佩罗所组建的原型创意组设计。使用者可自由调整枪尖的组件。",
     "trait": "",
     "baseAtkLv1": 42,
-    "baseAtkLv90": 420,
-    "skills": []
+    "baseAtkLv90": 411,
+    "skills": [
+      {
+        "name": "物理伤害提升·中",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "physicalDmgBonus": 0.044
+          },
+          {
+            "physicalDmgBonus": 0.08
+          },
+          {
+            "physicalDmgBonus": 0.116
+          },
+          {
+            "physicalDmgBonus": 0.151
+          },
+          {
+            "physicalDmgBonus": 0.187
+          },
+          {
+            "physicalDmgBonus": 0.222
+          },
+          {
+            "physicalDmgBonus": 0.258
+          },
+          {
+            "physicalDmgBonus": 0.293
+          },
+          {
+            "physicalDmgBonus": 0.347
+          }
+        ]
+      },
+      {
+        "name": "意志提升·中",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "will": 16
+          },
+          {
+            "will": 28
+          },
+          {
+            "will": 41
+          },
+          {
+            "will": 54
+          },
+          {
+            "will": 67
+          },
+          {
+            "will": 80
+          },
+          {
+            "will": 92
+          },
+          {
+            "will": 105
+          },
+          {
+            "will": 124
+          }
+        ]
+      },
+      {
+        "name": "附术·攀越冰峰",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "atkPercent": 0.08
+          },
+          {
+            "atkPercent": 0.096
+          },
+          {
+            "atkPercent": 0.112
+          },
+          {
+            "atkPercent": 0.128
+          },
+          {
+            "atkPercent": 0.144
+          },
+          {
+            "atkPercent": 0.16
+          },
+          {
+            "atkPercent": 0.176
+          },
+          {
+            "atkPercent": 0.192
+          },
+          {
+            "atkPercent": 0.224
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "100",
@@ -512,8 +4694,108 @@
     "description": "-终末地干员用武器，装备之后可以显著提升干员的作战能力。\n-终末地工业设计的实验型长枪，实际投产量较少，为了适应复杂多变的战场而采用了便于拆卸拼接的模块化设计。",
     "trait": "",
     "baseAtkLv1": 42,
-    "baseAtkLv90": 420,
-    "skills": []
+    "baseAtkLv90": 411,
+    "skills": [
+      {
+        "name": "终结技充能效率提升·中",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "ultimateGainEfficiency": 0.048
+          },
+          {
+            "ultimateGainEfficiency": 0.086
+          },
+          {
+            "ultimateGainEfficiency": 0.124
+          },
+          {
+            "ultimateGainEfficiency": 0.162
+          },
+          {
+            "ultimateGainEfficiency": 0.2
+          },
+          {
+            "ultimateGainEfficiency": 0.238
+          },
+          {
+            "ultimateGainEfficiency": 0.276
+          },
+          {
+            "ultimateGainEfficiency": 0.314
+          },
+          {
+            "ultimateGainEfficiency": 0.371
+          }
+        ]
+      },
+      {
+        "name": "力量提升·中",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "strength": 16
+          },
+          {
+            "strength": 28
+          },
+          {
+            "strength": 41
+          },
+          {
+            "strength": 54
+          },
+          {
+            "strength": 67
+          },
+          {
+            "strength": 80
+          },
+          {
+            "strength": 92
+          },
+          {
+            "strength": 105
+          },
+          {
+            "strength": 124
+          }
+        ]
+      },
+      {
+        "name": "残暴·愤怒接合",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "atkPercent": 0.03
+          },
+          {
+            "atkPercent": 0.036
+          },
+          {
+            "atkPercent": 0.042
+          },
+          {
+            "atkPercent": 0.048
+          },
+          {
+            "atkPercent": 0.054
+          },
+          {
+            "atkPercent": 0.06
+          },
+          {
+            "atkPercent": 0.066
+          },
+          {
+            "atkPercent": 0.072
+          },
+          {
+            "atkPercent": 0.084
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "82",
@@ -524,8 +4806,108 @@
     "description": "-终末地干员用武器，装备之后可以显著提升干员的作战能力。\n-终末地工业出品的系列制式装备。由资深武库工程师奥佩罗所组建的原型创意组设计。可根据实战需求，装配不同的模块套件。",
     "trait": "",
     "baseAtkLv1": 42,
-    "baseAtkLv90": 420,
-    "skills": []
+    "baseAtkLv90": 411,
+    "skills": [
+      {
+        "name": "生命提升·中",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "hpPercent": 0.08
+          },
+          {
+            "hpPercent": 0.144
+          },
+          {
+            "hpPercent": 0.208
+          },
+          {
+            "hpPercent": 0.272
+          },
+          {
+            "hpPercent": 0.336
+          },
+          {
+            "hpPercent": 0.4
+          },
+          {
+            "hpPercent": 0.464
+          },
+          {
+            "hpPercent": 0.528
+          },
+          {
+            "hpPercent": 0.624
+          }
+        ]
+      },
+      {
+        "name": "力量提升·中",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "strength": 16
+          },
+          {
+            "strength": 28
+          },
+          {
+            "strength": 41
+          },
+          {
+            "strength": 54
+          },
+          {
+            "strength": 67
+          },
+          {
+            "strength": 80
+          },
+          {
+            "strength": 92
+          },
+          {
+            "strength": 105
+          },
+          {
+            "strength": 124
+          }
+        ]
+      },
+      {
+        "name": "效益·坚韧心性",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "defPercent": 0.05
+          },
+          {
+            "defPercent": 0.06
+          },
+          {
+            "defPercent": 0.07
+          },
+          {
+            "defPercent": 0.08
+          },
+          {
+            "defPercent": 0.09
+          },
+          {
+            "defPercent": 0.1
+          },
+          {
+            "defPercent": 0.11
+          },
+          {
+            "defPercent": 0.12
+          },
+          {
+            "defPercent": 0.14
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "81",
@@ -536,8 +4918,108 @@
     "description": "-终末地干员用武器，装备之后可以显著提升干员的作战能力。\n-梅什科工业小规模生产的特别产品。本品是梅什科工业与骑士竞技专家克伦威尔合作系列的最后一款设计。",
     "trait": "",
     "baseAtkLv1": 42,
-    "baseAtkLv90": 420,
-    "skills": []
+    "baseAtkLv90": 411,
+    "skills": [
+      {
+        "name": "力量提升·中",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "strength": 16
+          },
+          {
+            "strength": 28
+          },
+          {
+            "strength": 41
+          },
+          {
+            "strength": 54
+          },
+          {
+            "strength": 67
+          },
+          {
+            "strength": 80
+          },
+          {
+            "strength": 92
+          },
+          {
+            "strength": 105
+          },
+          {
+            "strength": 124
+          }
+        ]
+      },
+      {
+        "name": "生命提升·中",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "hpPercent": 0.08
+          },
+          {
+            "hpPercent": 0.144
+          },
+          {
+            "hpPercent": 0.208
+          },
+          {
+            "hpPercent": 0.272
+          },
+          {
+            "hpPercent": 0.336
+          },
+          {
+            "hpPercent": 0.4
+          },
+          {
+            "hpPercent": 0.464
+          },
+          {
+            "hpPercent": 0.528
+          },
+          {
+            "hpPercent": 0.624
+          }
+        ]
+      },
+      {
+        "name": "医疗·骑士荣光",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "secondaryAbility": 5
+          },
+          {
+            "secondaryAbility": 6
+          },
+          {
+            "secondaryAbility": 7
+          },
+          {
+            "secondaryAbility": 8
+          },
+          {
+            "secondaryAbility": 9
+          },
+          {
+            "secondaryAbility": 10
+          },
+          {
+            "secondaryAbility": 11
+          },
+          {
+            "secondaryAbility": 12
+          },
+          {
+            "secondaryAbility": 14
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "80",
@@ -548,8 +5030,108 @@
     "description": "-终末地干员用武器，装备之后可以显著提升干员的作战能力。\n-宏山选剑局制造的优质大剑。较之同类产品，它更轻盈，但杀伤力却没有降低分毫。",
     "trait": "",
     "baseAtkLv1": 42,
-    "baseAtkLv90": 420,
-    "skills": []
+    "baseAtkLv90": 411,
+    "skills": [
+      {
+        "name": "力量提升·中",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "strength": 16
+          },
+          {
+            "strength": 28
+          },
+          {
+            "strength": 41
+          },
+          {
+            "strength": 54
+          },
+          {
+            "strength": 67
+          },
+          {
+            "strength": 80
+          },
+          {
+            "strength": 92
+          },
+          {
+            "strength": 108
+          },
+          {
+            "strength": 124
+          }
+        ]
+      },
+      {
+        "name": "源石技艺强度提升·中",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "artsIntensity": 0.1
+          },
+          {
+            "artsIntensity": 0.12
+          },
+          {
+            "artsIntensity": 0.14
+          },
+          {
+            "artsIntensity": 0.16
+          },
+          {
+            "artsIntensity": 0.18
+          },
+          {
+            "artsIntensity": 0.2
+          },
+          {
+            "artsIntensity": 0.22
+          },
+          {
+            "artsIntensity": 0.24
+          },
+          {
+            "artsIntensity": 0.28
+          }
+        ]
+      },
+      {
+        "name": "残暴·千秋旧土",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "artsIntensity": 8
+          },
+          {
+            "artsIntensity": 14
+          },
+          {
+            "artsIntensity": 20
+          },
+          {
+            "artsIntensity": 27
+          },
+          {
+            "artsIntensity": 33
+          },
+          {
+            "artsIntensity": 40
+          },
+          {
+            "artsIntensity": 46
+          },
+          {
+            "artsIntensity": 52
+          },
+          {
+            "artsIntensity": 62
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "79",
@@ -560,8 +5142,108 @@
     "description": "-终末地干员用武器，装备之后可以显著提升干员的作战能力。\n-宏山选剑局研发的制式大剑。剑身使用了新型特种涂料，防护能力优良，即使处于极端恶劣环境下也能免受影响。",
     "trait": "",
     "baseAtkLv1": 42,
-    "baseAtkLv90": 420,
-    "skills": []
+    "baseAtkLv90": 411,
+    "skills": [
+      {
+        "name": "终结技充能效率提升·中",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "ultimateGainEfficiency": 0.048
+          },
+          {
+            "ultimateGainEfficiency": 0.086
+          },
+          {
+            "ultimateGainEfficiency": 0.124
+          },
+          {
+            "ultimateGainEfficiency": 0.162
+          },
+          {
+            "ultimateGainEfficiency": 0.2
+          },
+          {
+            "ultimateGainEfficiency": 0.238
+          },
+          {
+            "ultimateGainEfficiency": 0.276
+          },
+          {
+            "ultimateGainEfficiency": 0.314
+          },
+          {
+            "ultimateGainEfficiency": 0.371
+          }
+        ]
+      },
+      {
+        "name": "力量提升·中",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "strength": 16
+          },
+          {
+            "strength": 28
+          },
+          {
+            "strength": 41
+          },
+          {
+            "strength": 54
+          },
+          {
+            "strength": 67
+          },
+          {
+            "strength": 80
+          },
+          {
+            "strength": 92
+          },
+          {
+            "strength": 105
+          },
+          {
+            "strength": 124
+          }
+        ]
+      },
+      {
+        "name": "迸发·钩玄猎秘",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "atkPercent": 0.05
+          },
+          {
+            "atkPercent": 0.06
+          },
+          {
+            "atkPercent": 0.07
+          },
+          {
+            "atkPercent": 0.08
+          },
+          {
+            "atkPercent": 0.09
+          },
+          {
+            "atkPercent": 0.1
+          },
+          {
+            "atkPercent": 0.11
+          },
+          {
+            "atkPercent": 0.12
+          },
+          {
+            "atkPercent": 0.14
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "66",
@@ -572,8 +5254,108 @@
     "description": "-终末地干员用武器，装备之后可以显著提升干员的作战能力。\n-宏山选剑局推出的上等武器，是其所有产品中较受市场欢迎的一款，在荒地上亦有不少仿品。",
     "trait": "",
     "baseAtkLv1": 42,
-    "baseAtkLv90": 420,
-    "skills": []
+    "baseAtkLv90": 411,
+    "skills": [
+      {
+        "name": "敏捷提升·中",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "agility": 16
+          },
+          {
+            "agility": 28
+          },
+          {
+            "agility": 41
+          },
+          {
+            "agility": 54
+          },
+          {
+            "agility": 67
+          },
+          {
+            "agility": 80
+          },
+          {
+            "agility": 92
+          },
+          {
+            "agility": 106
+          },
+          {
+            "agility": 124
+          }
+        ]
+      },
+      {
+        "name": "物理伤害提升·中",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "physicalDmgBonus": 0.044
+          },
+          {
+            "physicalDmgBonus": 0.08
+          },
+          {
+            "physicalDmgBonus": 0.116
+          },
+          {
+            "physicalDmgBonus": 0.151
+          },
+          {
+            "physicalDmgBonus": 0.187
+          },
+          {
+            "physicalDmgBonus": 0.222
+          },
+          {
+            "physicalDmgBonus": 0.258
+          },
+          {
+            "physicalDmgBonus": 0.293
+          },
+          {
+            "physicalDmgBonus": 0.347
+          }
+        ]
+      },
+      {
+        "name": "夜幕·高山仰止",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "physicalDmgBonus": 0.16
+          },
+          {
+            "physicalDmgBonus": 0.192
+          },
+          {
+            "physicalDmgBonus": 0.224
+          },
+          {
+            "physicalDmgBonus": 0.256
+          },
+          {
+            "physicalDmgBonus": 0.288
+          },
+          {
+            "physicalDmgBonus": 0.32
+          },
+          {
+            "physicalDmgBonus": 0.352
+          },
+          {
+            "physicalDmgBonus": 0.348
+          },
+          {
+            "physicalDmgBonus": 0.448
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "65",
@@ -584,8 +5366,108 @@
     "description": "-终末地干员用武器，装备之后可以显著提升干员的作战能力。\n-终末地工业出品的系列制式装备。由资深武库工程师奥佩罗所组建的原型创意组设计。剑柄配有可拆卸的辅助配件。",
     "trait": "",
     "baseAtkLv1": 42,
-    "baseAtkLv90": 420,
-    "skills": []
+    "baseAtkLv90": 411,
+    "skills": [
+      {
+        "name": "攻击提升·中",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "atkPercent": 0.04
+          },
+          {
+            "atkPercent": 0.072
+          },
+          {
+            "atkPercent": 0.104
+          },
+          {
+            "atkPercent": 0.136
+          },
+          {
+            "atkPercent": 0.168
+          },
+          {
+            "atkPercent": 0.2
+          },
+          {
+            "atkPercent": 0.232
+          },
+          {
+            "atkPercent": 0.264
+          },
+          {
+            "atkPercent": 0.312
+          }
+        ]
+      },
+      {
+        "name": "敏捷提升·中",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "agility": 16
+          },
+          {
+            "agility": 28
+          },
+          {
+            "agility": 41
+          },
+          {
+            "agility": 54
+          },
+          {
+            "agility": 67
+          },
+          {
+            "agility": 80
+          },
+          {
+            "agility": 92
+          },
+          {
+            "agility": 106
+          },
+          {
+            "agility": 124
+          }
+        ]
+      },
+      {
+        "name": "流转·不羁锋芒",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "secondaryAbility": 5
+          },
+          {
+            "secondaryAbility": 6
+          },
+          {
+            "secondaryAbility": 7
+          },
+          {
+            "secondaryAbility": 8
+          },
+          {
+            "secondaryAbility": 9
+          },
+          {
+            "secondaryAbility": 10
+          },
+          {
+            "secondaryAbility": 11
+          },
+          {
+            "secondaryAbility": 12
+          },
+          {
+            "secondaryAbility": 14
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "64",
@@ -596,8 +5478,108 @@
     "description": "-终末地干员用武器，装备之后可以显著提升干员的作战能力。\n-产自荒野的锋利长剑。不同的武器工匠在这类武器上缠裹饰品的方式截然不同。",
     "trait": "",
     "baseAtkLv1": 42,
-    "baseAtkLv90": 420,
-    "skills": []
+    "baseAtkLv90": 411,
+    "skills": [
+      {
+        "name": "攻击提升·中",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "atkPercent": 0.04
+          },
+          {
+            "atkPercent": 0.072
+          },
+          {
+            "atkPercent": 0.104
+          },
+          {
+            "atkPercent": 0.136
+          },
+          {
+            "atkPercent": 0.168
+          },
+          {
+            "atkPercent": 0.2
+          },
+          {
+            "atkPercent": 0.232
+          },
+          {
+            "atkPercent": 0.264
+          },
+          {
+            "atkPercent": 0.312
+          }
+        ]
+      },
+      {
+        "name": "敏捷提升·中",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "agility": 16
+          },
+          {
+            "agility": 28
+          },
+          {
+            "agility": 41
+          },
+          {
+            "agility": 54
+          },
+          {
+            "agility": 67
+          },
+          {
+            "agility": 80
+          },
+          {
+            "agility": 92
+          },
+          {
+            "agility": 105
+          },
+          {
+            "agility": 124
+          }
+        ]
+      },
+      {
+        "name": "附术·竭心诘问",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "atkPercent": 0.05
+          },
+          {
+            "atkPercent": 0.06
+          },
+          {
+            "atkPercent": 0.07
+          },
+          {
+            "atkPercent": 0.08
+          },
+          {
+            "atkPercent": 0.09
+          },
+          {
+            "atkPercent": 0.1
+          },
+          {
+            "atkPercent": 0.11
+          },
+          {
+            "atkPercent": 0.12
+          },
+          {
+            "atkPercent": 0.14
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "63",
@@ -608,8 +5590,108 @@
     "description": "-终末地干员用武器，装备之后可以显著提升干员的作战能力。\n-北进重工支援所“户外探索”系列的旗舰产品。因其亲近自然的设计理念和便携的功能性，受到许多探险家与捕鳞爱好者的强烈推荐。",
     "trait": "",
     "baseAtkLv1": 42,
-    "baseAtkLv90": 420,
-    "skills": []
+    "baseAtkLv90": 411,
+    "skills": [
+      {
+        "name": "寒冷伤害提升·中",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "cryoDmgBonus": 0.044
+          },
+          {
+            "cryoDmgBonus": 0.08
+          },
+          {
+            "cryoDmgBonus": 0.116
+          },
+          {
+            "cryoDmgBonus": 0.151
+          },
+          {
+            "cryoDmgBonus": 0.187
+          },
+          {
+            "cryoDmgBonus": 0.222
+          },
+          {
+            "cryoDmgBonus": 0.258
+          },
+          {
+            "cryoDmgBonus": 0.293
+          },
+          {
+            "cryoDmgBonus": 0.347
+          }
+        ]
+      },
+      {
+        "name": "力量提升·中",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "strength": 16
+          },
+          {
+            "strength": 28
+          },
+          {
+            "strength": 41
+          },
+          {
+            "strength": 54
+          },
+          {
+            "strength": 67
+          },
+          {
+            "strength": 80
+          },
+          {
+            "strength": 92
+          },
+          {
+            "strength": 105
+          },
+          {
+            "strength": 124
+          }
+        ]
+      },
+      {
+        "name": "压制·逐鳞意",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "atkPercent": 0.05
+          },
+          {
+            "atkPercent": 0.06
+          },
+          {
+            "atkPercent": 0.07
+          },
+          {
+            "atkPercent": 0.08
+          },
+          {
+            "atkPercent": 0.09
+          },
+          {
+            "atkPercent": 0.1
+          },
+          {
+            "atkPercent": 0.11
+          },
+          {
+            "atkPercent": 0.12
+          },
+          {
+            "atkPercent": 0.14
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "62",
@@ -620,8 +5702,108 @@
     "description": "-终末地干员用武器，装备之后可以显著提升干员的作战能力。\n-熔炉要寒铸诰的武器之旧式的结构设计使其坚实耐用，厚重的剑躯随着战线的推移在冻土上留下了无数痕迹。",
     "trait": "",
     "baseAtkLv1": 42,
-    "baseAtkLv90": 420,
-    "skills": []
+    "baseAtkLv90": 411,
+    "skills": [
+      {
+        "name": "终结技充能效率提升·中",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "ultimateGainEfficiency": 0.048
+          },
+          {
+            "ultimateGainEfficiency": 0.086
+          },
+          {
+            "ultimateGainEfficiency": 0.124
+          },
+          {
+            "ultimateGainEfficiency": 0.162
+          },
+          {
+            "ultimateGainEfficiency": 0.2
+          },
+          {
+            "ultimateGainEfficiency": 0.238
+          },
+          {
+            "ultimateGainEfficiency": 0.276
+          },
+          {
+            "ultimateGainEfficiency": 0.314
+          },
+          {
+            "ultimateGainEfficiency": 0.371
+          }
+        ]
+      },
+      {
+        "name": "智识提升·中",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "intelligence": 16
+          },
+          {
+            "intelligence": 28
+          },
+          {
+            "intelligence": 41
+          },
+          {
+            "intelligence": 54
+          },
+          {
+            "intelligence": 67
+          },
+          {
+            "intelligence": 80
+          },
+          {
+            "intelligence": 92
+          },
+          {
+            "intelligence": 105
+          },
+          {
+            "intelligence": 124
+          }
+        ]
+      },
+      {
+        "name": "昂扬·残城归途",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "atkPercent": 0.05
+          },
+          {
+            "atkPercent": 0.06
+          },
+          {
+            "atkPercent": 0.07
+          },
+          {
+            "atkPercent": 0.08
+          },
+          {
+            "atkPercent": 0.09
+          },
+          {
+            "atkPercent": 0.1
+          },
+          {
+            "atkPercent": 0.11
+          },
+          {
+            "atkPercent": 0.12
+          },
+          {
+            "atkPercent": 0.14
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "61",
@@ -632,8 +5814,108 @@
     "description": "-终末地干员用武器，装备之后可以显著提升干员的作战能力。\n-终末地工业制造的干员高级装备之一。握柄与护手采用一体化设计，应力充能机构储存动能，提高武器的杀伤力。",
     "trait": "",
     "baseAtkLv1": 42,
-    "baseAtkLv90": 420,
-    "skills": []
+    "baseAtkLv90": 411,
+    "skills": [
+      {
+        "name": "敏捷提升·中",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "agility": 16
+          },
+          {
+            "agility": 28
+          },
+          {
+            "agility": 41
+          },
+          {
+            "agility": 54
+          },
+          {
+            "agility": 67
+          },
+          {
+            "agility": 80
+          },
+          {
+            "agility": 92
+          },
+          {
+            "agility": 105
+          },
+          {
+            "agility": 124
+          }
+        ]
+      },
+      {
+        "name": "物理伤害提升·中",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "physicalDmgBonus": 0.044
+          },
+          {
+            "physicalDmgBonus": 0.08
+          },
+          {
+            "physicalDmgBonus": 0.116
+          },
+          {
+            "physicalDmgBonus": 0.151
+          },
+          {
+            "physicalDmgBonus": 0.187
+          },
+          {
+            "physicalDmgBonus": 0.222
+          },
+          {
+            "physicalDmgBonus": 0.258
+          },
+          {
+            "physicalDmgBonus": 0.293
+          },
+          {
+            "physicalDmgBonus": 0.347
+          }
+        ]
+      },
+      {
+        "name": "巧技·旧火余音",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "atkPercent": 0.05
+          },
+          {
+            "atkPercent": 0.06
+          },
+          {
+            "atkPercent": 0.07
+          },
+          {
+            "atkPercent": 0.08
+          },
+          {
+            "atkPercent": 0.09
+          },
+          {
+            "atkPercent": 0.1
+          },
+          {
+            "atkPercent": 0.11
+          },
+          {
+            "atkPercent": 0.12
+          },
+          {
+            "atkPercent": 0.14
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "118",
@@ -643,9 +5925,91 @@
     "cover": "/weapons/118.png",
     "description": "-终末地干员用武器，装备之后可以显著提升干员的作战能力。\n-终末地工业制造的施术单元之一。结构大胆，传导性强，难以驾驭。许多干员将熟练使用它当作小有所成的证明。",
     "trait": "",
-    "baseAtkLv1": 35,
-    "baseAtkLv90": 340,
-    "skills": []
+    "baseAtkLv1": 34,
+    "baseAtkLv90": 341,
+    "skills": [
+      {
+        "name": "攻击提升·小",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "atkPercent": 0.03
+          },
+          {
+            "atkPercent": 0.054
+          },
+          {
+            "atkPercent": 0.078
+          },
+          {
+            "atkPercent": 0.102
+          },
+          {
+            "atkPercent": 0.126
+          },
+          {
+            "atkPercent": 0.15
+          },
+          {
+            "atkPercent": 0.174
+          },
+          {
+            "atkPercent": 0.198
+          },
+          {
+            "atkPercent": 0.234
+          }
+        ]
+      },
+      {
+        "name": "意志提升·小",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "will": 12
+          },
+          {
+            "will": 21
+          },
+          {
+            "will": 31
+          },
+          {
+            "will": 40
+          },
+          {
+            "will": 50
+          },
+          {
+            "will": 60
+          },
+          {
+            "will": 69
+          },
+          {
+            "will": 79
+          },
+          {
+            "will": 93
+          }
+        ]
+      },
+      {
+        "name": "压制·应急强化",
+        "maxRank": 9,
+        "ranks": [
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {}
+        ]
+      }
+    ]
   },
   {
     "id": "117",
@@ -655,9 +6019,109 @@
     "cover": "/weapons/117.png",
     "description": "-终末地干员用武器，装备之后可以显著提升干员的作战能力。\n-终末地工业制造的干员进阶装备之一。武库沿用了安德烈的设计方案，可预存储术式，在紧急情况下快速传导法术。",
     "trait": "",
-    "baseAtkLv1": 35,
-    "baseAtkLv90": 340,
-    "skills": []
+    "baseAtkLv1": 34,
+    "baseAtkLv90": 341,
+    "skills": [
+      {
+        "name": "智识提升·小",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "intelligence": 12
+          },
+          {
+            "intelligence": 21
+          },
+          {
+            "intelligence": 31
+          },
+          {
+            "intelligence": 40
+          },
+          {
+            "intelligence": 50
+          },
+          {
+            "intelligence": 60
+          },
+          {
+            "intelligence": 69
+          },
+          {
+            "intelligence": 79
+          },
+          {
+            "intelligence": 93
+          }
+        ]
+      },
+      {
+        "name": "法术提升·小",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "allElementDmg": 0.033
+          },
+          {
+            "allElementDmg": 0.06
+          },
+          {
+            "allElementDmg": 0.087
+          },
+          {
+            "allElementDmg": 0.113
+          },
+          {
+            "allElementDmg": 0.14
+          },
+          {
+            "allElementDmg": 0.167
+          },
+          {
+            "allElementDmg": 0.193
+          },
+          {
+            "allElementDmg": 0.22
+          },
+          {
+            "allElementDmg": 0.26
+          }
+        ]
+      },
+      {
+        "name": "昂扬·远途起始",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "atkPercent": 0.8
+          },
+          {
+            "atkPercent": 0.8
+          },
+          {
+            "atkPercent": 0.8
+          },
+          {
+            "atkPercent": 0.8
+          },
+          {
+            "atkPercent": 0.8
+          },
+          {
+            "atkPercent": 0.8
+          },
+          {
+            "atkPercent": 0.8
+          },
+          {
+            "atkPercent": 0.8
+          },
+          {
+            "atkPercent": 0.8
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "108",
@@ -667,9 +6131,109 @@
     "cover": "/weapons/108.png",
     "description": "-终末地干员用武器，装备之后可以显著提升干员的作战能力。\n-熔炉要塞为铁誓军基层士兵生产的制式铳械，因其结构简单，输出功率高而备受欢迎。",
     "trait": "",
-    "baseAtkLv1": 35,
-    "baseAtkLv90": 340,
-    "skills": []
+    "baseAtkLv1": 34,
+    "baseAtkLv90": 341,
+    "skills": [
+      {
+        "name": "法术提升·小",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "allElementDmg": 0.033
+          },
+          {
+            "allElementDmg": 0.06
+          },
+          {
+            "allElementDmg": 0.087
+          },
+          {
+            "allElementDmg": 0.113
+          },
+          {
+            "allElementDmg": 0.14
+          },
+          {
+            "allElementDmg": 0.167
+          },
+          {
+            "allElementDmg": 0.193
+          },
+          {
+            "allElementDmg": 0.22
+          },
+          {
+            "allElementDmg": 0.26
+          }
+        ]
+      },
+      {
+        "name": "力量提升·小",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "strength": 12
+          },
+          {
+            "strength": 21
+          },
+          {
+            "strength": 31
+          },
+          {
+            "strength": 40
+          },
+          {
+            "strength": 50
+          },
+          {
+            "strength": 60
+          },
+          {
+            "strength": 69
+          },
+          {
+            "strength": 79
+          },
+          {
+            "strength": 93
+          }
+        ]
+      },
+      {
+        "name": "追袭·生生不息",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "atkPercent": 0.12
+          },
+          {
+            "atkPercent": 0.144
+          },
+          {
+            "atkPercent": 0.168
+          },
+          {
+            "atkPercent": 0.192
+          },
+          {
+            "atkPercent": 0.216
+          },
+          {
+            "atkPercent": 0.24
+          },
+          {
+            "atkPercent": 0.264
+          },
+          {
+            "atkPercent": 0.288
+          },
+          {
+            "atkPercent": 0.336
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "107",
@@ -679,9 +6243,109 @@
     "cover": "/weapons/107.png",
     "description": "-终末地干员用武器，装备之后可以显著提升干员的作战能力。\n-梅什科工业推出的中端产品之一。复古拉特兰结构与现代工业结构的完美融合，蓝色漆面金属勾勒出独特的审美。",
     "trait": "",
-    "baseAtkLv1": 35,
-    "baseAtkLv90": 340,
-    "skills": []
+    "baseAtkLv1": 34,
+    "baseAtkLv90": 341,
+    "skills": [
+      {
+        "name": "智识提升·小",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "intelligence": 12
+          },
+          {
+            "intelligence": 21
+          },
+          {
+            "intelligence": 31
+          },
+          {
+            "intelligence": 40
+          },
+          {
+            "intelligence": 50
+          },
+          {
+            "intelligence": 60
+          },
+          {
+            "intelligence": 69
+          },
+          {
+            "intelligence": 79
+          },
+          {
+            "intelligence": 93
+          }
+        ]
+      },
+      {
+        "name": "攻击提升·小",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "atkPercent": 0.03
+          },
+          {
+            "atkPercent": 0.054
+          },
+          {
+            "atkPercent": 0.078
+          },
+          {
+            "atkPercent": 0.102
+          },
+          {
+            "atkPercent": 0.126
+          },
+          {
+            "atkPercent": 0.15
+          },
+          {
+            "atkPercent": 0.174
+          },
+          {
+            "atkPercent": 0.198
+          },
+          {
+            "atkPercent": 0.234
+          }
+        ]
+      },
+      {
+        "name": "压制·应急强化",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "atkPercent": 0.12
+          },
+          {
+            "atkPercent": 0.144
+          },
+          {
+            "atkPercent": 0.168
+          },
+          {
+            "atkPercent": 0.192
+          },
+          {
+            "atkPercent": 0.216
+          },
+          {
+            "atkPercent": 0.24
+          },
+          {
+            "atkPercent": 0.264
+          },
+          {
+            "atkPercent": 0.288
+          },
+          {
+            "atkPercent": 0.336
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "99",
@@ -691,9 +6355,109 @@
     "cover": "/weapons/99.png",
     "description": "-终末地干员用武器，装备之后可以显著提升干员的作战能力。\n-熔炉要塞为铁誓军基层士兵生产的制式长枪。以锋利著称，专为克制天使而设计。",
     "trait": "",
-    "baseAtkLv1": 35,
-    "baseAtkLv90": 340,
-    "skills": []
+    "baseAtkLv1": 34,
+    "baseAtkLv90": 341,
+    "skills": [
+      {
+        "name": "意志提升·小",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "will": 12
+          },
+          {
+            "will": 21
+          },
+          {
+            "will": 31
+          },
+          {
+            "will": 40
+          },
+          {
+            "will": 50
+          },
+          {
+            "will": 60
+          },
+          {
+            "will": 69
+          },
+          {
+            "will": 79
+          },
+          {
+            "will": 93
+          }
+        ]
+      },
+      {
+        "name": "法术提升·小",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "allElementDmg": 0.033
+          },
+          {
+            "allElementDmg": 0.06
+          },
+          {
+            "allElementDmg": 0.087
+          },
+          {
+            "allElementDmg": 0.113
+          },
+          {
+            "allElementDmg": 0.14
+          },
+          {
+            "allElementDmg": 0.167
+          },
+          {
+            "allElementDmg": 0.193
+          },
+          {
+            "allElementDmg": 0.22
+          },
+          {
+            "allElementDmg": 0.26
+          }
+        ]
+      },
+      {
+        "name": "压制·应急强化",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "atkPercent": 0.12
+          },
+          {
+            "atkPercent": 0.144
+          },
+          {
+            "atkPercent": 0.168
+          },
+          {
+            "atkPercent": 0.192
+          },
+          {
+            "atkPercent": 0.216
+          },
+          {
+            "atkPercent": 0.24
+          },
+          {
+            "atkPercent": 0.264
+          },
+          {
+            "atkPercent": 0.288
+          },
+          {
+            "atkPercent": 0.336
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "98",
@@ -703,9 +6467,109 @@
     "cover": "/weapons/98.png",
     "description": "-终末地干员用武器，装备之后可以显著提升干员的作战能力。\n-终末地工业制造的干员进阶装备之一。造型简洁，携行轻便，平衡性优良，令人想起罗德岛先锋干员的制式长枪。",
     "trait": "",
-    "baseAtkLv1": 35,
-    "baseAtkLv90": 340,
-    "skills": []
+    "baseAtkLv1": 34,
+    "baseAtkLv90": 341,
+    "skills": [
+      {
+        "name": "攻击提升·小",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "atkPercent": 0.03
+          },
+          {
+            "atkPercent": 0.054
+          },
+          {
+            "atkPercent": 0.078
+          },
+          {
+            "atkPercent": 0.102
+          },
+          {
+            "atkPercent": 0.126
+          },
+          {
+            "atkPercent": 0.15
+          },
+          {
+            "atkPercent": 0.174
+          },
+          {
+            "atkPercent": 0.198
+          },
+          {
+            "atkPercent": 0.234
+          }
+        ]
+      },
+      {
+        "name": "敏捷提升·小",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "agility": 12
+          },
+          {
+            "agility": 21
+          },
+          {
+            "agility": 31
+          },
+          {
+            "agility": 40
+          },
+          {
+            "agility": 50
+          },
+          {
+            "agility": 60
+          },
+          {
+            "agility": 69
+          },
+          {
+            "agility": 79
+          },
+          {
+            "agility": 93
+          }
+        ]
+      },
+      {
+        "name": "昂扬·远途起始",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "atkPercent": 0.8
+          },
+          {
+            "atkPercent": 0.8
+          },
+          {
+            "atkPercent": 0.8
+          },
+          {
+            "atkPercent": 0.8
+          },
+          {
+            "atkPercent": 0.8
+          },
+          {
+            "atkPercent": 0.8
+          },
+          {
+            "atkPercent": 0.8
+          },
+          {
+            "atkPercent": 0.8
+          },
+          {
+            "atkPercent": 0.8
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "78",
@@ -715,9 +6579,109 @@
     "cover": "/weapons/78.png",
     "description": "-终末地干员用武器，装备之后可以显著提升干员的作战能力。\n-熔炉要塞出品的制式大剑。虽然精通者廖寥，但由于上手十分简单，历来是新兵的入门武器首选。",
     "trait": "",
-    "baseAtkLv1": 35,
-    "baseAtkLv90": 340,
-    "skills": []
+    "baseAtkLv1": 34,
+    "baseAtkLv90": 341,
+    "skills": [
+      {
+        "name": "意志提升·小",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "will": 12
+          },
+          {
+            "will": 21
+          },
+          {
+            "will": 31
+          },
+          {
+            "will": 40
+          },
+          {
+            "will": 50
+          },
+          {
+            "will": 60
+          },
+          {
+            "will": 69
+          },
+          {
+            "will": 79
+          },
+          {
+            "will": 93
+          }
+        ]
+      },
+      {
+        "name": "生命提升·小",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "hpPercent": 0.06
+          },
+          {
+            "hpPercent": 0.108
+          },
+          {
+            "hpPercent": 0.156
+          },
+          {
+            "hpPercent": 0.204
+          },
+          {
+            "hpPercent": 0.252
+          },
+          {
+            "hpPercent": 0.3
+          },
+          {
+            "hpPercent": 0.348
+          },
+          {
+            "hpPercent": 0.396
+          },
+          {
+            "hpPercent": 0.468
+          }
+        ]
+      },
+      {
+        "name": "粉碎·淬砺成兵",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "atkPercent": 0.12
+          },
+          {
+            "atkPercent": 0.144
+          },
+          {
+            "atkPercent": 0.168
+          },
+          {
+            "atkPercent": 0.192
+          },
+          {
+            "atkPercent": 0.216
+          },
+          {
+            "atkPercent": 0.24
+          },
+          {
+            "atkPercent": 0.264
+          },
+          {
+            "atkPercent": 0.288
+          },
+          {
+            "atkPercent": 0.336
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "77",
@@ -727,9 +6691,109 @@
     "cover": "/weapons/77.png",
     "description": "-终末地干员用武器，装备之后可以显著提升干员的作战能力。\n-在开拓区常见的一种武器类型，基础设计已难以追溯。这种武器制造工艺并不复杂，常见工业设备都可生产。",
     "trait": "",
-    "baseAtkLv1": 35,
-    "baseAtkLv90": 340,
-    "skills": []
+    "baseAtkLv1": 34,
+    "baseAtkLv90": 341,
+    "skills": [
+      {
+        "name": "攻击提升·小",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "atkPercent": 0.03
+          },
+          {
+            "atkPercent": 0.054
+          },
+          {
+            "atkPercent": 0.078
+          },
+          {
+            "atkPercent": 0.102
+          },
+          {
+            "atkPercent": 0.126
+          },
+          {
+            "atkPercent": 0.15
+          },
+          {
+            "atkPercent": 0.174
+          },
+          {
+            "atkPercent": 0.198
+          },
+          {
+            "atkPercent": 0.234
+          }
+        ]
+      },
+      {
+        "name": "力量提升·小",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "strength": 12
+          },
+          {
+            "strength": 21
+          },
+          {
+            "strength": 31
+          },
+          {
+            "strength": 40
+          },
+          {
+            "strength": 50
+          },
+          {
+            "strength": 60
+          },
+          {
+            "strength": 69
+          },
+          {
+            "strength": 79
+          },
+          {
+            "strength": 93
+          }
+        ]
+      },
+      {
+        "name": "压制·应急强化",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "atkPercent": 0.12
+          },
+          {
+            "atkPercent": 0.144
+          },
+          {
+            "atkPercent": 0.168
+          },
+          {
+            "atkPercent": 0.192
+          },
+          {
+            "atkPercent": 0.216
+          },
+          {
+            "atkPercent": 0.24
+          },
+          {
+            "atkPercent": 0.264
+          },
+          {
+            "atkPercent": 0.288
+          },
+          {
+            "atkPercent": 0.336
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "60",
@@ -739,9 +6803,109 @@
     "cover": "/weapons/60.png",
     "description": "-终末地干员用武器，装备之后可以显著提升干员的作战能力。\n-梅什科工业的中端产品之一。潮流新锐的造型，惊人的性价比，使其成为环塔商会的时尚消费新宠。",
     "trait": "",
-    "baseAtkLv1": 35,
-    "baseAtkLv90": 340,
-    "skills": []
+    "baseAtkLv1": 34,
+    "baseAtkLv90": 341,
+    "skills": [
+      {
+        "name": "攻击提升·小",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "atkPercent": 0.03
+          },
+          {
+            "atkPercent": 0.054
+          },
+          {
+            "atkPercent": 0.078
+          },
+          {
+            "atkPercent": 0.102
+          },
+          {
+            "atkPercent": 0.126
+          },
+          {
+            "atkPercent": 0.15
+          },
+          {
+            "atkPercent": 0.174
+          },
+          {
+            "atkPercent": 0.198
+          },
+          {
+            "atkPercent": 0.234
+          }
+        ]
+      },
+      {
+        "name": "智识提升·小",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "intelligence": 12
+          },
+          {
+            "intelligence": 21
+          },
+          {
+            "intelligence": 31
+          },
+          {
+            "intelligence": 40
+          },
+          {
+            "intelligence": 50
+          },
+          {
+            "intelligence": 60
+          },
+          {
+            "intelligence": 69
+          },
+          {
+            "intelligence": 79
+          },
+          {
+            "intelligence": 93
+          }
+        ]
+      },
+      {
+        "name": "追袭·生生不息",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "atkPercent": 0.12
+          },
+          {
+            "atkPercent": 0.144
+          },
+          {
+            "atkPercent": 0.168
+          },
+          {
+            "atkPercent": 0.192
+          },
+          {
+            "atkPercent": 0.216
+          },
+          {
+            "atkPercent": 0.24
+          },
+          {
+            "atkPercent": 0.264
+          },
+          {
+            "atkPercent": 0.288
+          },
+          {
+            "atkPercent": 0.336
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "59",
@@ -751,9 +6915,109 @@
     "cover": "/weapons/59.png",
     "description": "-终末地干员用武器，装备之后可以显著提升干员的作战能力。\n-终末地工业制造的干员进阶装备之一。简洁的模块化构造带来了轻盈平衡的握持体验，剑刃耐用性十足。",
     "trait": "",
-    "baseAtkLv1": 35,
-    "baseAtkLv90": 340,
-    "skills": []
+    "baseAtkLv1": 34,
+    "baseAtkLv90": 341,
+    "skills": [
+      {
+        "name": "物理伤害提升·小",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "physicalDmgBonus": 0.033
+          },
+          {
+            "physicalDmgBonus": 0.06
+          },
+          {
+            "physicalDmgBonus": 0.087
+          },
+          {
+            "physicalDmgBonus": 0.113
+          },
+          {
+            "physicalDmgBonus": 0.14
+          },
+          {
+            "physicalDmgBonus": 0.167
+          },
+          {
+            "physicalDmgBonus": 0.193
+          },
+          {
+            "physicalDmgBonus": 0.22
+          },
+          {
+            "physicalDmgBonus": 0.26
+          }
+        ]
+      },
+      {
+        "name": "敏捷提升·小",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "agility": 12
+          },
+          {
+            "agility": 21
+          },
+          {
+            "agility": 31
+          },
+          {
+            "agility": 40
+          },
+          {
+            "agility": 50
+          },
+          {
+            "agility": 60
+          },
+          {
+            "agility": 69
+          },
+          {
+            "agility": 79
+          },
+          {
+            "agility": 93
+          }
+        ]
+      },
+      {
+        "name": "压制·应急强化",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "atkPercent": 0.12
+          },
+          {
+            "atkPercent": 0.144
+          },
+          {
+            "atkPercent": 0.168
+          },
+          {
+            "atkPercent": 0.192
+          },
+          {
+            "atkPercent": 0.216
+          },
+          {
+            "atkPercent": 0.24
+          },
+          {
+            "atkPercent": 0.264
+          },
+          {
+            "atkPercent": 0.288
+          },
+          {
+            "atkPercent": 0.336
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "116",
@@ -763,9 +7027,76 @@
     "cover": "/weapons/116.png",
     "description": "-终末地干员用武器，装备之后可以显著提升干员的作战能力。\n-终末地工业制造的干员基础装备之一。由武库工程师吉米尼负责设计。这款施术单元格外受新进干员喜爱。",
     "trait": "",
-    "baseAtkLv1": 25,
-    "baseAtkLv90": 250,
-    "skills": []
+    "baseAtkLv1": 29,
+    "baseAtkLv90": 283,
+    "skills": [
+      {
+        "name": "主能力提升·小",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "primaryAbility": 10
+          },
+          {
+            "primaryAbility": 18
+          },
+          {
+            "primaryAbility": 26
+          },
+          {
+            "primaryAbility": 34
+          },
+          {
+            "primaryAbility": 42
+          },
+          {
+            "primaryAbility": 51
+          },
+          {
+            "primaryAbility": 59
+          },
+          {
+            "primaryAbility": 67
+          },
+          {
+            "primaryAbility": 79
+          }
+        ]
+      },
+      {
+        "name": "强攻·武装整备",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "atk": 12
+          },
+          {
+            "atk": 14
+          },
+          {
+            "atk": 17
+          },
+          {
+            "atk": 19
+          },
+          {
+            "atk": 22
+          },
+          {
+            "atk": 24
+          },
+          {
+            "atk": 26
+          },
+          {
+            "atk": 29
+          },
+          {
+            "atk": 34
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "106",
@@ -775,9 +7106,76 @@
     "cover": "/weapons/106.png",
     "description": "-终末地干员用武器，装备之后可以显著提升干员的作战能力。\n-终末地工业制造的干员基础装备之一。由武库工程师佩科负责设计。蚀刻弹药与铳械不再只属于萨科塔。",
     "trait": "",
-    "baseAtkLv1": 25,
-    "baseAtkLv90": 250,
-    "skills": []
+    "baseAtkLv1": 29,
+    "baseAtkLv90": 283,
+    "skills": [
+      {
+        "name": "主能力提升·小",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "primaryAbility": 10
+          },
+          {
+            "primaryAbility": 18
+          },
+          {
+            "primaryAbility": 26
+          },
+          {
+            "primaryAbility": 34
+          },
+          {
+            "primaryAbility": 42
+          },
+          {
+            "primaryAbility": 51
+          },
+          {
+            "primaryAbility": 59
+          },
+          {
+            "primaryAbility": 67
+          },
+          {
+            "primaryAbility": 79
+          }
+        ]
+      },
+      {
+        "name": "强攻·武装整备",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "atk": 12
+          },
+          {
+            "atk": 14
+          },
+          {
+            "atk": 17
+          },
+          {
+            "atk": 19
+          },
+          {
+            "atk": 22
+          },
+          {
+            "atk": 24
+          },
+          {
+            "atk": 26
+          },
+          {
+            "atk": 29
+          },
+          {
+            "atk": 34
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "97",
@@ -787,9 +7185,76 @@
     "cover": "/weapons/97.png",
     "description": "-终末地干员用武器，装备之后可以显著提升干员的作战能力。\n-终末地工业制造的干员基础装备之一。由资深武库工程师奥佩罗亲自设计。其舒适的握持感令新进千员也能运用自如。",
     "trait": "",
-    "baseAtkLv1": 25,
-    "baseAtkLv90": 250,
-    "skills": []
+    "baseAtkLv1": 29,
+    "baseAtkLv90": 283,
+    "skills": [
+      {
+        "name": "主能力提升·小",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "primaryAbility": 10
+          },
+          {
+            "primaryAbility": 18
+          },
+          {
+            "primaryAbility": 26
+          },
+          {
+            "primaryAbility": 34
+          },
+          {
+            "primaryAbility": 42
+          },
+          {
+            "primaryAbility": 51
+          },
+          {
+            "primaryAbility": 59
+          },
+          {
+            "primaryAbility": 67
+          },
+          {
+            "primaryAbility": 79
+          }
+        ]
+      },
+      {
+        "name": "强攻·武装整备",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "atk": 12
+          },
+          {
+            "atk": 14
+          },
+          {
+            "atk": 17
+          },
+          {
+            "atk": 19
+          },
+          {
+            "atk": 22
+          },
+          {
+            "atk": 24
+          },
+          {
+            "atk": 26
+          },
+          {
+            "atk": 29
+          },
+          {
+            "atk": 34
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "76",
@@ -799,9 +7264,76 @@
     "cover": "/weapons/76.png",
     "description": "-终末地干员用武器，装备之后可以显著提升干员的作战能力。\n-终末地工业制造的干员基础装备之一。由武库工程师达尔霍夫负责设计。该设计为攻坚任务提供装备选择，",
     "trait": "",
-    "baseAtkLv1": 25,
-    "baseAtkLv90": 250,
-    "skills": []
+    "baseAtkLv1": 29,
+    "baseAtkLv90": 283,
+    "skills": [
+      {
+        "name": "主能力提升·小",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "primaryAbility": 10
+          },
+          {
+            "primaryAbility": 18
+          },
+          {
+            "primaryAbility": 26
+          },
+          {
+            "primaryAbility": 34
+          },
+          {
+            "primaryAbility": 42
+          },
+          {
+            "primaryAbility": 51
+          },
+          {
+            "primaryAbility": 59
+          },
+          {
+            "primaryAbility": 67
+          },
+          {
+            "primaryAbility": 79
+          }
+        ]
+      },
+      {
+        "name": "强攻·武装整备",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "atk": 12
+          },
+          {
+            "atk": 14
+          },
+          {
+            "atk": 17
+          },
+          {
+            "atk": 19
+          },
+          {
+            "atk": 22
+          },
+          {
+            "atk": 24
+          },
+          {
+            "atk": 26
+          },
+          {
+            "atk": 29
+          },
+          {
+            "atk": 34
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "58",
@@ -811,8 +7343,75 @@
     "cover": "/weapons/58.png",
     "description": "-终末地干员用武器，装备之后可以显著提升干员的作战能力。\n-终末地工业制造的干员基础装备之一。由武库工程师塔尔负责设计。它是许多外勤干员的第一把武器。",
     "trait": "",
-    "baseAtkLv1": 25,
-    "baseAtkLv90": 250,
-    "skills": []
+    "baseAtkLv1": 29,
+    "baseAtkLv90": 283,
+    "skills": [
+      {
+        "name": "主能力提升·小",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "primaryAbility": 10
+          },
+          {
+            "primaryAbility": 18
+          },
+          {
+            "primaryAbility": 26
+          },
+          {
+            "primaryAbility": 34
+          },
+          {
+            "primaryAbility": 42
+          },
+          {
+            "primaryAbility": 51
+          },
+          {
+            "primaryAbility": 59
+          },
+          {
+            "primaryAbility": 67
+          },
+          {
+            "primaryAbility": 79
+          }
+        ]
+      },
+      {
+        "name": "强攻·武装整备",
+        "maxRank": 9,
+        "ranks": [
+          {
+            "atk": 12
+          },
+          {
+            "atk": 14
+          },
+          {
+            "atk": 17
+          },
+          {
+            "atk": 19
+          },
+          {
+            "atk": 22
+          },
+          {
+            "atk": 24
+          },
+          {
+            "atk": 26
+          },
+          {
+            "atk": 29
+          },
+          {
+            "atk": 34
+          }
+        ]
+      }
+    ]
   }
 ]

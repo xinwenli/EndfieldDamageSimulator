@@ -14,7 +14,7 @@ Configure your party of 4 operators with levels, skill ranks, weapons, and gear.
 
 ## Data Pipeline
 
-Operator and weapon data sourced from the [official Endfield wiki](https://wiki.skland.com/endfield/catalog).
+Data sourced from the [official Endfield wiki ENG](https://wiki.skport.com/endfield?header=0).
 
 ## Current Status
 
@@ -55,7 +55,7 @@ MIT
 
 ## 数据来源
 
-干员与武器数据来源于[终末地官方 WIKI](https://wiki.skland.com/endfield/catalog)。
+数据来源于[终末地官方 中文WIKI](https://wiki.skland.com/endfield/catalog)。
 
 ## 开发进度
 

@@ -26,11 +26,11 @@
     ],
     "strength": [
       18,
-      49,
-      81,
-      113,
-      145,
-      161
+      59,
+      106,
+      153,
+      205,
+      221
     ],
     "agility": [
       9,
@@ -55,6 +55,24 @@
       78,
       100,
       111
+    ],
+    "potentials": [
+      {
+        "potential": 1,
+        "strength": 15,
+        "agility": 15,
+        "intelligence": 0,
+        "will": 0,
+        "atkPercent": 0,
+        "critRate": 0,
+        "critDmg": 0,
+        "basicDmgBonus": 0,
+        "physicalDmgBonus": 0,
+        "heatDmgBonus": 0,
+        "electricDmgBonus": 0,
+        "cryoDmgBonus": 0,
+        "natureDmgBonus": 0
+      }
     ]
   },
   "4": {
@@ -84,11 +102,11 @@
     ],
     "strength": [
       21,
-      50,
-      80,
-      110,
-      140,
-      155
+      60,
+      105,
+      150,
+      200,
+      215
     ],
     "agility": [
       8,
@@ -113,6 +131,24 @@
       77,
       98,
       109
+    ],
+    "potentials": [
+      {
+        "potential": 2,
+        "strength": 20,
+        "agility": 0,
+        "intelligence": 0,
+        "will": 0,
+        "atkPercent": 0,
+        "critRate": 0,
+        "critDmg": 0,
+        "basicDmgBonus": 0,
+        "physicalDmgBonus": 0,
+        "heatDmgBonus": 0,
+        "electricDmgBonus": 0,
+        "cryoDmgBonus": 0,
+        "natureDmgBonus": 0
+      }
     ]
   },
   "5": {
@@ -158,11 +194,11 @@
     ],
     "intelligence": [
       21,
-      51,
-      83,
-      114,
-      145,
-      161
+      66,
+      108,
+      154,
+      205,
+      221
     ],
     "will": [
       13,
@@ -171,7 +207,8 @@
       79,
       102,
       113
-    ]
+    ],
+    "potentials": []
   },
   "7": {
     "levels": [
@@ -216,11 +253,11 @@
     ],
     "intelligence": [
       22,
-      55,
-      90,
-      125,
-      160,
-      177
+      70,
+      115,
+      165,
+      220,
+      237
     ],
     "will": [
       9,
@@ -229,6 +266,24 @@
       62,
       80,
       89
+    ],
+    "potentials": [
+      {
+        "potential": 2,
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 20,
+        "will": 0,
+        "atkPercent": 0,
+        "critRate": 0,
+        "critDmg": 0,
+        "basicDmgBonus": 0.15,
+        "physicalDmgBonus": 0,
+        "heatDmgBonus": 0,
+        "electricDmgBonus": 0,
+        "cryoDmgBonus": 0,
+        "natureDmgBonus": 0
+      }
     ]
   },
   "8": {
@@ -266,11 +321,11 @@
     ],
     "agility": [
       23,
-      55,
-      90,
-      124,
-      159,
-      176
+      70,
+      115,
+      164,
+      219,
+      236
     ],
     "intelligence": [
       14,
@@ -287,6 +342,24 @@
       62,
       80,
       89
+    ],
+    "potentials": [
+      {
+        "potential": 2,
+        "strength": 0,
+        "agility": 20,
+        "intelligence": 0,
+        "will": 0,
+        "atkPercent": 0,
+        "critRate": 0.07,
+        "critDmg": 0,
+        "basicDmgBonus": 0,
+        "physicalDmgBonus": 0,
+        "heatDmgBonus": 0,
+        "electricDmgBonus": 0,
+        "cryoDmgBonus": 0,
+        "natureDmgBonus": 0
+      }
     ]
   },
   "11": {
@@ -332,11 +405,11 @@
     ],
     "intelligence": [
       20,
-      46,
-      75,
-      103,
-      131,
-      145
+      61,
+      100,
+      143,
+      191,
+      205
     ],
     "will": [
       15,
@@ -345,7 +418,8 @@
       83,
       106,
       118
-    ]
+    ],
+    "potentials": []
   },
   "12": {
     "levels": [
@@ -382,11 +456,11 @@
     ],
     "agility": [
       20,
-      52,
-      86,
-      120,
-      154,
-      171
+      67,
+      111,
+      160,
+      214,
+      231
     ],
     "intelligence": [
       8,
@@ -403,6 +477,24 @@
       65,
       84,
       93
+    ],
+    "potentials": [
+      {
+        "potential": 2,
+        "strength": 0,
+        "agility": 15,
+        "intelligence": 0,
+        "will": 0,
+        "atkPercent": 0,
+        "critRate": 0,
+        "critDmg": 0,
+        "basicDmgBonus": 0,
+        "physicalDmgBonus": 0.08,
+        "heatDmgBonus": 0,
+        "electricDmgBonus": 0,
+        "cryoDmgBonus": 0,
+        "natureDmgBonus": 0
+      }
     ]
   },
   "13": {
@@ -432,11 +524,11 @@
     ],
     "strength": [
       24,
-      56,
-      90,
-      124,
-      158,
-      175
+      66,
+      115,
+      164,
+      218,
+      235
     ],
     "agility": [
       9,
@@ -461,6 +553,24 @@
       71,
       91,
       102
+    ],
+    "potentials": [
+      {
+        "potential": 3,
+        "strength": 15,
+        "agility": 0,
+        "intelligence": 0,
+        "will": 0,
+        "atkPercent": 0,
+        "critRate": 0,
+        "critDmg": 0,
+        "basicDmgBonus": 0,
+        "physicalDmgBonus": 0.08,
+        "heatDmgBonus": 0,
+        "electricDmgBonus": 0,
+        "cryoDmgBonus": 0,
+        "natureDmgBonus": 0
+      }
     ]
   },
   "24": {
@@ -490,11 +600,11 @@
     ],
     "strength": [
       21,
-      54,
-      89,
-      124,
-      159,
-      176
+      64,
+      114,
+      164,
+      219,
+      236
     ],
     "agility": [
       9,
@@ -519,6 +629,24 @@
       84,
       108,
       120
+    ],
+    "potentials": [
+      {
+        "potential": 2,
+        "strength": 20,
+        "agility": 0,
+        "intelligence": 0,
+        "will": 20,
+        "atkPercent": 0,
+        "critRate": 0,
+        "critDmg": 0,
+        "basicDmgBonus": 0,
+        "physicalDmgBonus": 0,
+        "heatDmgBonus": 0,
+        "electricDmgBonus": 0,
+        "cryoDmgBonus": 0,
+        "natureDmgBonus": 0
+      }
     ]
   },
   "57": {
@@ -556,11 +684,11 @@
     ],
     "agility": [
       14,
-      42,
-      71,
-      101,
-      130,
-      145
+      57,
+      96,
+      141,
+      190,
+      205
     ],
     "intelligence": [
       12,
@@ -577,6 +705,24 @@
       69,
       89,
       100
+    ],
+    "potentials": [
+      {
+        "potential": 2,
+        "strength": 0,
+        "agility": 15,
+        "intelligence": 15,
+        "will": 0,
+        "atkPercent": 0,
+        "critRate": 0,
+        "critDmg": 0,
+        "basicDmgBonus": 0,
+        "physicalDmgBonus": 0,
+        "heatDmgBonus": 0,
+        "electricDmgBonus": 0,
+        "cryoDmgBonus": 0,
+        "natureDmgBonus": 0
+      }
     ]
   },
   "87": {
@@ -606,11 +752,11 @@
     ],
     "strength": [
       20,
-      49,
-      80,
-      111,
-      142,
-      158
+      59,
+      105,
+      151,
+      202,
+      218
     ],
     "agility": [
       9,
@@ -635,6 +781,24 @@
       63,
       81,
       89
+    ],
+    "potentials": [
+      {
+        "potential": 2,
+        "strength": 15,
+        "agility": 0,
+        "intelligence": 15,
+        "will": 0,
+        "atkPercent": 0,
+        "critRate": 0,
+        "critDmg": 0,
+        "basicDmgBonus": 0,
+        "physicalDmgBonus": 0,
+        "heatDmgBonus": 0,
+        "electricDmgBonus": 0,
+        "cryoDmgBonus": 0,
+        "natureDmgBonus": 0
+      }
     ]
   },
   "88": {
@@ -688,11 +852,29 @@
     ],
     "will": [
       15,
-      43,
-      73,
-      103,
-      133,
-      148
+      58,
+      98,
+      143,
+      193,
+      208
+    ],
+    "potentials": [
+      {
+        "potential": 3,
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "will": 15,
+        "atkPercent": 0,
+        "critRate": 0,
+        "critDmg": 0,
+        "basicDmgBonus": 0,
+        "physicalDmgBonus": 0,
+        "heatDmgBonus": 0,
+        "electricDmgBonus": 0.08,
+        "cryoDmgBonus": 0,
+        "natureDmgBonus": 0
+      }
     ]
   },
   "89": {
@@ -730,11 +912,11 @@
     ],
     "agility": [
       14,
-      41,
-      69,
-      98,
-      126,
-      140
+      56,
+      94,
+      138,
+      186,
+      200
     ],
     "intelligence": [
       9,
@@ -751,7 +933,8 @@
       74,
       96,
       107
-    ]
+    ],
+    "potentials": []
   },
   "90": {
     "levels": [
@@ -780,11 +963,11 @@
     ],
     "strength": [
       18,
-      47,
-      78,
-      108,
-      139,
-      154
+      57,
+      103,
+      148,
+      199,
+      214
     ],
     "agility": [
       12,
@@ -809,6 +992,24 @@
       75,
       97,
       108
+    ],
+    "potentials": [
+      {
+        "potential": 4,
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "will": 20,
+        "atkPercent": 0,
+        "critRate": 0,
+        "critDmg": 0,
+        "basicDmgBonus": 0,
+        "physicalDmgBonus": 0,
+        "heatDmgBonus": 0,
+        "electricDmgBonus": 0,
+        "cryoDmgBonus": 0,
+        "natureDmgBonus": 0
+      }
     ]
   },
   "91": {
@@ -854,11 +1055,11 @@
     ],
     "intelligence": [
       15,
-      47,
-      81,
-      114,
-      148,
-      165
+      62,
+      106,
+      154,
+      208,
+      225
     ],
     "will": [
       9,
@@ -867,6 +1068,24 @@
       58,
       74,
       82
+    ],
+    "potentials": [
+      {
+        "potential": 4,
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 10,
+        "will": 0,
+        "atkPercent": 0,
+        "critRate": 0,
+        "critDmg": 0,
+        "basicDmgBonus": 0,
+        "physicalDmgBonus": 0,
+        "heatDmgBonus": 0,
+        "electricDmgBonus": 0,
+        "cryoDmgBonus": 0,
+        "natureDmgBonus": 0
+      }
     ]
   },
   "92": {
@@ -904,11 +1123,11 @@
     ],
     "agility": [
       14,
-      47,
-      81,
-      116,
-      150,
-      168
+      62,
+      106,
+      156,
+      210,
+      228
     ],
     "intelligence": [
       12,
@@ -925,6 +1144,24 @@
       64,
       82,
       91
+    ],
+    "potentials": [
+      {
+        "potential": 1,
+        "strength": 0,
+        "agility": 10,
+        "intelligence": 10,
+        "will": 0,
+        "atkPercent": 0,
+        "critRate": 0,
+        "critDmg": 0,
+        "basicDmgBonus": 0,
+        "physicalDmgBonus": 0,
+        "heatDmgBonus": 0,
+        "electricDmgBonus": 0,
+        "cryoDmgBonus": 0,
+        "natureDmgBonus": 0
+      }
     ]
   },
   "93": {
@@ -978,11 +1215,29 @@
     ],
     "will": [
       15,
-      44,
-      74,
-      105,
-      136,
-      151
+      59,
+      99,
+      145,
+      196,
+      211
+    ],
+    "potentials": [
+      {
+        "potential": 4,
+        "strength": 10,
+        "agility": 0,
+        "intelligence": 0,
+        "will": 10,
+        "atkPercent": 0,
+        "critRate": 0,
+        "critDmg": 0,
+        "basicDmgBonus": 0,
+        "physicalDmgBonus": 0,
+        "heatDmgBonus": 0,
+        "electricDmgBonus": 0,
+        "cryoDmgBonus": 0,
+        "natureDmgBonus": 0
+      }
     ]
   },
   "94": {
@@ -1012,11 +1267,11 @@
     ],
     "strength": [
       21,
-      54,
-      89,
-      124,
-      159,
-      176
+      64,
+      114,
+      164,
+      219,
+      236
     ],
     "agility": [
       9,
@@ -1041,6 +1296,24 @@
       74,
       96,
       106
+    ],
+    "potentials": [
+      {
+        "potential": 2,
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "will": 10,
+        "atkPercent": 0,
+        "critRate": 0,
+        "critDmg": 0,
+        "basicDmgBonus": 0,
+        "physicalDmgBonus": 0,
+        "heatDmgBonus": 0,
+        "electricDmgBonus": 0,
+        "cryoDmgBonus": 0,
+        "natureDmgBonus": 0
+      }
     ]
   },
   "95": {
@@ -1078,11 +1351,11 @@
     ],
     "agility": [
       15,
-      42,
-      70,
-      98,
-      126,
-      140
+      57,
+      95,
+      138,
+      186,
+      200
     ],
     "intelligence": [
       12,
@@ -1099,6 +1372,24 @@
       74,
       96,
       108
+    ],
+    "potentials": [
+      {
+        "potential": 2,
+        "strength": 0,
+        "agility": 10,
+        "intelligence": 10,
+        "will": 0,
+        "atkPercent": 0,
+        "critRate": 0,
+        "critDmg": 0,
+        "basicDmgBonus": 0,
+        "physicalDmgBonus": 0,
+        "heatDmgBonus": 0,
+        "electricDmgBonus": 0,
+        "cryoDmgBonus": 0,
+        "natureDmgBonus": 0
+      }
     ]
   },
   "130": {
@@ -1136,11 +1427,11 @@
     ],
     "agility": [
       20,
-      44,
-      69,
+      59,
       94,
-      119,
-      132
+      134,
+      179,
+      192
     ],
     "intelligence": [
       13,
@@ -1157,7 +1448,8 @@
       82,
       105,
       117
-    ]
+    ],
+    "potentials": []
   },
   "131": {
     "levels": [
@@ -1210,11 +1502,29 @@
     ],
     "will": [
       20,
-      52,
-      87,
-      121,
-      156,
-      173
+      67,
+      112,
+      161,
+      216,
+      233
+    ],
+    "potentials": [
+      {
+        "potential": 2,
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "will": 20,
+        "atkPercent": 0,
+        "critRate": 0,
+        "critDmg": 0,
+        "basicDmgBonus": 0,
+        "physicalDmgBonus": 0.1,
+        "heatDmgBonus": 0,
+        "electricDmgBonus": 0,
+        "cryoDmgBonus": 0,
+        "natureDmgBonus": 0
+      }
     ]
   },
   "150": {
@@ -1268,11 +1578,29 @@
     ],
     "will": [
       15,
-      43,
-      74,
-      104,
-      134,
-      150
+      58,
+      99,
+      144,
+      194,
+      210
+    ],
+    "potentials": [
+      {
+        "potential": 4,
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 15,
+        "will": 0,
+        "atkPercent": 0,
+        "critRate": 0,
+        "critDmg": 0,
+        "basicDmgBonus": 0,
+        "physicalDmgBonus": 0,
+        "heatDmgBonus": 0,
+        "electricDmgBonus": 0,
+        "cryoDmgBonus": 0,
+        "natureDmgBonus": 0
+      }
     ]
   },
   "156": {
@@ -1310,11 +1638,11 @@
     ],
     "agility": [
       14,
-      41,
-      69,
-      98,
-      126,
-      140
+      56,
+      94,
+      138,
+      186,
+      200
     ],
     "intelligence": [
       9,
@@ -1331,7 +1659,8 @@
       74,
       96,
       107
-    ]
+    ],
+    "potentials": []
   },
   "157": {
     "levels": [
@@ -1376,11 +1705,11 @@
     ],
     "intelligence": [
       24,
-      57,
-      91,
-      125,
-      159,
-      176
+      72,
+      116,
+      165,
+      219,
+      236
     ],
     "will": [
       10,
@@ -1389,6 +1718,24 @@
       73,
       94,
       105
+    ],
+    "potentials": [
+      {
+        "potential": 2,
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 20,
+        "will": 0,
+        "atkPercent": 0,
+        "critRate": 0.07,
+        "critDmg": 0,
+        "basicDmgBonus": 0,
+        "physicalDmgBonus": 0,
+        "heatDmgBonus": 0,
+        "electricDmgBonus": 0,
+        "cryoDmgBonus": 0,
+        "natureDmgBonus": 0
+      }
     ]
   },
   "159": {
@@ -1442,12 +1789,13 @@
     ],
     "will": [
       20,
-      52,
-      86,
-      120,
-      154,
-      171
-    ]
+      67,
+      111,
+      160,
+      214,
+      231
+    ],
+    "potentials": []
   },
   "1130": {
     "levels": [
@@ -1484,11 +1832,11 @@
     ],
     "agility": [
       23,
-      56,
-      91,
-      126,
-      162,
-      179
+      71,
+      116,
+      166,
+      222,
+      239
     ],
     "intelligence": [
       8,
@@ -1505,6 +1853,24 @@
       71,
       91,
       102
+    ],
+    "potentials": [
+      {
+        "potential": 2,
+        "strength": 0,
+        "agility": 20,
+        "intelligence": 0,
+        "will": 0,
+        "atkPercent": 0,
+        "critRate": 0,
+        "critDmg": 0,
+        "basicDmgBonus": 0,
+        "physicalDmgBonus": 0,
+        "heatDmgBonus": 0,
+        "electricDmgBonus": 0,
+        "cryoDmgBonus": 0,
+        "natureDmgBonus": 0
+      }
     ]
   },
   "1132": {
@@ -1558,11 +1924,29 @@
     ],
     "will": [
       24,
-      58,
-      94,
-      130,
-      166,
-      184
+      68,
+      124,
+      175,
+      226,
+      244
+    ],
+    "potentials": [
+      {
+        "potential": 2,
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "will": 20,
+        "atkPercent": 0,
+        "critRate": 0,
+        "critDmg": 0,
+        "basicDmgBonus": 0,
+        "physicalDmgBonus": 0,
+        "heatDmgBonus": 0,
+        "electricDmgBonus": 0,
+        "cryoDmgBonus": 0,
+        "natureDmgBonus": 0
+      }
     ]
   }
 }

@@ -71,7 +71,7 @@ export function WeaponPicker({ open, onClose, onSelect, weaponType }: Props) {
                     <div className="flex items-center gap-2 mt-0.5 flex-wrap">
                       <span className="text-xs text-yellow-400">{"★".repeat(w.rarity)}</span>
                       <span className="text-xs text-[var(--color-text-muted)]">{w.weaponType}</span>
-                      <span className="text-xs text-[var(--color-text-muted)]">ATK {w.baseAtkLv1}→{w.baseAtkLv90}</span>
+                      <span className="text-xs text-[var(--color-text-muted)]">ATK {w.baseAtkLv90}</span>
                     </div>
                   </div>
                 </button>

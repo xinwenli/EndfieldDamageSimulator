@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Plus, X } from "lucide-react";
+import { useState, useRef } from "react";
+import { Plus, X, Download, Upload } from "lucide-react";
 import { usePartyStore } from "../../stores/partyStore";
 import { getElements } from "../../engine/dataLoader";
 import { OperatorPicker } from "./OperatorPicker";
@@ -8,9 +8,10 @@ import { assetUrl } from "../../lib/utils";
 import type { Operator } from "../../engine/types";
 
 export function PartyPanel() {
-  const { members, activeSlot, setActiveSlot, setOperator, removeOperator } = usePartyStore();
+  const { members, activeSlot, setActiveSlot, setOperator, removeOperator, restoreParty } = usePartyStore();
   const [pickerOpen, setPickerOpen] = useState(false);
   const [pickerTarget, setPickerTarget] = useState(0);
+  const fileInputRef = useRef<HTMLInputElement>(null);
   const elements = getElements();
 
   function handleSlotClick(slotIndex: number) {
@@ -44,6 +45,45 @@ export function PartyPanel() {
 
   const activeMember = activeSlot !== null ? members[activeSlot] : null;
 
+  function handleExport() {
+    const data = members.filter(m => m.operator).map(m => ({
+      slot: m.slotIndex,
+      operatorId: m.operator!.id,
+      level: m.level,
+      potential: m.potential,
+      skillRanks: m.skillRanks,
+      weaponId: m.weapon?.id ?? null,
+      weaponLevel: m.weaponLevel,
+      weaponSkillRanks: m.weaponSkillRanks,
+      armorId: m.armor?.id ?? null,
+      armorRanks: m.armor?.refinementRanks ?? [],
+      glovesId: m.gloves?.id ?? null,
+      glovesRanks: m.gloves?.refinementRanks ?? [],
+      kit1Id: m.kit1?.id ?? null,
+      kit1Ranks: m.kit1?.refinementRanks ?? [],
+      kit2Id: m.kit2?.id ?? null,
+      kit2Ranks: m.kit2?.refinementRanks ?? [],
+    }));
+    const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url; a.download = "party.json"; a.click();
+    URL.revokeObjectURL(url);
+  }
+
+  function handleImportFile(e: React.ChangeEvent<HTMLInputElement>) {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = () => {
+      try {
+        restoreParty(JSON.parse(reader.result as string));
+      } catch { /* invalid */ }
+    };
+    reader.readAsText(file);
+    e.target.value = "";
+  }
+
   return (
     <div className="space-y-4">
       {/* Party slots grid */}
@@ -52,9 +92,17 @@ export function PartyPanel() {
           <h2 className="text-sm font-semibold uppercase tracking-wide text-[var(--color-text-muted)]">
             Party Setup
           </h2>
-          <span className="text-xs text-[var(--color-text-muted)]">
-            {members.filter((m) => m.operator).length} / {members.length} slots filled
-          </span>
+          <div className="flex items-center gap-2">
+            <button onClick={handleExport}
+              className="flex items-center gap-1 text-[10px] text-[var(--color-text-muted)] hover:text-white transition">
+              <Download className="w-3 h-3" /> Export
+            </button>
+            <input type="file" accept=".json" ref={fileInputRef} onChange={handleImportFile} className="hidden" />
+            <button onClick={() => fileInputRef.current?.click()}
+              className="flex items-center gap-1 text-[10px] text-[var(--color-text-muted)] hover:text-white transition">
+              <Upload className="w-3 h-3" /> Import
+            </button>
+          </div>
         </div>
 
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
@@ -110,6 +158,7 @@ export function PartyPanel() {
             </div>
           ))}
         </div>
+
       </div>
 
       {/* Operator config panel (shown when a filled slot is active) */}
