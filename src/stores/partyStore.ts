@@ -9,6 +9,7 @@ interface ImportData {
   operatorId: string;
   level: number;
   potential: number;
+  talentStage: number;
   skillRanks: number[];
   weaponId: string | null;
   weaponLevel: number;
@@ -32,6 +33,7 @@ interface PartyState {
   setLevel: (slotIndex: number, level: number) => void;
   setSkillRank: (slotIndex: number, skillIndex: number, rank: number) => void;
   setPotential: (slotIndex: number, potential: number) => void;
+  setTalentStage: (slotIndex: number, stage: number) => void;
   setWeapon: (slotIndex: number, weapon: Weapon | null) => void;
   setWeaponLevel: (slotIndex: number, level: number) => void;
   setWeaponSkillRank: (slotIndex: number, skillIndex: number, rank: number) => void;
@@ -50,6 +52,7 @@ function createEmptySlot(index: number): PartyMember {
     operator: null,
     level: 90,
     skillRanks: [12, 12, 12, 12],
+    talentStage: 4,
     potential: 0,
     weapon: null,
     weaponLevel: 90,
@@ -98,6 +101,13 @@ export const usePartyStore = create<PartyState>((set) => ({
     set((state) => {
       const members = [...state.members];
       members[slotIndex] = { ...members[slotIndex], potential };
+      return { members };
+    }),
+
+  setTalentStage: (slotIndex, stage) =>
+    set((state) => {
+      const members = [...state.members];
+      members[slotIndex] = { ...members[slotIndex], talentStage: stage };
       return { members };
     }),
 
@@ -179,6 +189,7 @@ export const usePartyStore = create<PartyState>((set) => ({
           operator: op,
           level: d.level ?? 90,
           potential: d.potential ?? 0,
+          talentStage: d.talentStage ?? 4,
           skillRanks: d.skillRanks ?? [12, 12, 12, 12],
           weapon,
           weaponLevel: d.weaponLevel ?? 90,

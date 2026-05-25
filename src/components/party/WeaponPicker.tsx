@@ -3,6 +3,8 @@ import { Search, X } from "lucide-react";
 import type { Weapon, WeaponType } from "../../engine/types";
 import { getWeaponsByType } from "../../engine/dataLoader";
 import { assetUrl } from "../../lib/utils";
+import { useLangStore } from "../../i18n/context";
+import { t, displayName } from "../../i18n/translations";
 
 interface Props {
   open: boolean;
@@ -13,10 +15,11 @@ interface Props {
 
 export function WeaponPicker({ open, onClose, onSelect, weaponType }: Props) {
   const [search, setSearch] = useState("");
+  const { lang } = useLangStore();
   const weapons = getWeaponsByType(weaponType);
 
   const filtered = weapons.filter((w) => {
-    if (search && !w.name.toLowerCase().includes(search.toLowerCase())) return false;
+    if (search && !w.name.toLowerCase().includes(search.toLowerCase()) && !(w.nameEn||"").toLowerCase().includes(search.toLowerCase())) return false;
     return true;
   });
 
@@ -29,7 +32,7 @@ export function WeaponPicker({ open, onClose, onSelect, weaponType }: Props) {
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex items-center justify-between p-4 border-b border-[var(--color-border)]">
-          <h3 className="font-semibold">Select Weapon</h3>
+          <h3 className="font-semibold">{t("weapon.select", lang)}</h3>
           <button onClick={onClose} className="text-[var(--color-text-muted)] hover:text-white">
             <X className="w-5 h-5" />
           </button>
@@ -42,7 +45,7 @@ export function WeaponPicker({ open, onClose, onSelect, weaponType }: Props) {
               type="text"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              placeholder="Search weapon..."
+              placeholder={t("weapon.search", lang)}
               className="w-full pl-9 pr-3 py-2 bg-[var(--color-surface-alt)] border border-[var(--color-border)] rounded-lg text-sm outline-none focus:border-[var(--color-accent)]"
             />
           </div>
@@ -50,7 +53,7 @@ export function WeaponPicker({ open, onClose, onSelect, weaponType }: Props) {
 
         <div className="flex-1 overflow-auto p-3">
           {filtered.length === 0 ? (
-            <p className="text-center text-[var(--color-text-muted)] py-8 text-sm">No weapons found for this type</p>
+            <p className="text-center text-[var(--color-text-muted)] py-8 text-sm">{t("weapon.none", lang)}</p>
           ) : (
             <div className="grid grid-cols-1 gap-2">
               {filtered.map((w) => (
@@ -67,10 +70,10 @@ export function WeaponPicker({ open, onClose, onSelect, weaponType }: Props) {
                     </div>
                   )}
                   <div className="flex-1 min-w-0">
-                    <div className="font-medium text-sm">{w.name}</div>
+                    <div className="font-medium text-sm">{displayName(w, lang)}</div>
                     <div className="flex items-center gap-2 mt-0.5 flex-wrap">
                       <span className="text-xs text-yellow-400">{"★".repeat(w.rarity)}</span>
-                      <span className="text-xs text-[var(--color-text-muted)]">{w.weaponType}</span>
+                      <span className="text-xs text-[var(--color-text-muted)]">{t(w.weaponType, lang)}</span>
                       <span className="text-xs text-[var(--color-text-muted)]">ATK {w.baseAtkLv90}</span>
                     </div>
                   </div>

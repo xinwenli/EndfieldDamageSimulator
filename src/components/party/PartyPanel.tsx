@@ -5,6 +5,8 @@ import { getElements } from "../../engine/dataLoader";
 import { OperatorPicker } from "./OperatorPicker";
 import { OperatorConfigPanel } from "./OperatorConfigPanel";
 import { assetUrl } from "../../lib/utils";
+import { useLangStore } from "../../i18n/context";
+import { t, displayName } from "../../i18n/translations";
 import type { Operator } from "../../engine/types";
 
 export function PartyPanel() {
@@ -13,6 +15,7 @@ export function PartyPanel() {
   const [pickerTarget, setPickerTarget] = useState(0);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const elements = getElements();
+  const { lang } = useLangStore();
 
   function handleSlotClick(slotIndex: number) {
     const member = members[slotIndex];
@@ -51,6 +54,7 @@ export function PartyPanel() {
       operatorId: m.operator!.id,
       level: m.level,
       potential: m.potential,
+      talentStage: m.talentStage,
       skillRanks: m.skillRanks,
       weaponId: m.weapon?.id ?? null,
       weaponLevel: m.weaponLevel,
@@ -90,17 +94,17 @@ export function PartyPanel() {
       <div className="p-4 rounded-lg bg-[var(--color-surface-alt)] border border-[var(--color-border)]">
         <div className="flex items-center justify-between mb-3">
           <h2 className="text-sm font-semibold uppercase tracking-wide text-[var(--color-text-muted)]">
-            Party Setup
+            {t("party.setup", lang)}
           </h2>
           <div className="flex items-center gap-2">
             <button onClick={handleExport}
               className="flex items-center gap-1 text-[10px] text-[var(--color-text-muted)] hover:text-white transition">
-              <Download className="w-3 h-3" /> Export
+              <Download className="w-3 h-3" /> {t("party.export", lang)}
             </button>
             <input type="file" accept=".json" ref={fileInputRef} onChange={handleImportFile} className="hidden" />
             <button onClick={() => fileInputRef.current?.click()}
               className="flex items-center gap-1 text-[10px] text-[var(--color-text-muted)] hover:text-white transition">
-              <Upload className="w-3 h-3" /> Import
+              <Upload className="w-3 h-3" /> {t("party.import", lang)}
             </button>
           </div>
         </div>
@@ -143,16 +147,16 @@ export function PartyPanel() {
                       {elements[member.operator.element]?.name?.slice(0, 2) ?? "?"}
                     </div>
                   )}
-                  <div className="text-xs font-medium truncate">{member.operator.name}</div>
+                  <div className="text-xs font-medium truncate">{displayName(member.operator, lang)}</div>
                   <div className="text-[10px] text-yellow-400">{"★".repeat(member.operator.rarity)}</div>
                   <div className="text-[10px] text-[var(--color-text-muted)] capitalize mt-0.5">
-                    Lv{member.level} · {member.operator.profession}
+                    Lv{member.level} · {t(member.operator.profession, lang)}
                   </div>
                 </div>
               ) : (
                 <div className="flex flex-col items-center justify-center h-full py-6 text-[var(--color-text-muted)]">
                   <Plus className="w-5 h-5 mb-1" />
-                  <span className="text-xs">Slot {member.slotIndex + 1}</span>
+                  <span className="text-xs">{t("slot", lang)} {member.slotIndex + 1}</span>
                 </div>
               )}
             </div>

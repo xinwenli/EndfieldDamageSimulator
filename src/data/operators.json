@@ -15,7 +15,8 @@
     "ultimate": null,
     "attackSegments": [],
     "talents": [],
-    "acceptTeamGauge": true
+    "acceptTeamGauge": true,
+    "nameEn": "Camille"
   },
   {
     "id": "1358",
@@ -33,7 +34,8 @@
     "ultimate": null,
     "attackSegments": [],
     "talents": [],
-    "acceptTeamGauge": true
+    "acceptTeamGauge": true,
+    "nameEn": "Mi Fu"
   },
   {
     "id": "1132",
@@ -51,7 +53,8 @@
     "ultimate": null,
     "attackSegments": [],
     "talents": [],
-    "acceptTeamGauge": true
+    "acceptTeamGauge": true,
+    "nameEn": "Zhuang Fangyi"
   },
   {
     "id": "8",
@@ -69,7 +72,8 @@
     "ultimate": null,
     "attackSegments": [],
     "talents": [],
-    "acceptTeamGauge": true
+    "acceptTeamGauge": true,
+    "nameEn": "Rossi"
   },
   {
     "id": "1130",
@@ -87,7 +91,8 @@
     "ultimate": null,
     "attackSegments": [],
     "talents": [],
-    "acceptTeamGauge": true
+    "acceptTeamGauge": true,
+    "nameEn": "Tangtang"
   },
   {
     "id": "157",
@@ -105,7 +110,8 @@
     "ultimate": null,
     "attackSegments": [],
     "talents": [],
-    "acceptTeamGauge": true
+    "acceptTeamGauge": true,
+    "nameEn": "Yvonne"
   },
   {
     "id": "159",
@@ -123,7 +129,8 @@
     "ultimate": null,
     "attackSegments": [],
     "talents": [],
-    "acceptTeamGauge": true
+    "acceptTeamGauge": true,
+    "nameEn": "Gilberta"
   },
   {
     "id": "7",
@@ -141,7 +148,8 @@
     "ultimate": null,
     "attackSegments": [],
     "talents": [],
-    "acceptTeamGauge": true
+    "acceptTeamGauge": true,
+    "nameEn": "Laevatain"
   },
   {
     "id": "89",
@@ -159,7 +167,8 @@
     "ultimate": null,
     "attackSegments": [],
     "talents": [],
-    "acceptTeamGauge": true
+    "acceptTeamGauge": true,
+    "nameEn": "Endministrator (M)"
   },
   {
     "id": "156",
@@ -177,7 +186,8 @@
     "ultimate": null,
     "attackSegments": [],
     "talents": [],
-    "acceptTeamGauge": true
+    "acceptTeamGauge": true,
+    "nameEn": "Endministrator (F)"
   },
   {
     "id": "131",
@@ -195,7 +205,8 @@
     "ultimate": null,
     "attackSegments": [],
     "talents": [],
-    "acceptTeamGauge": true
+    "acceptTeamGauge": true,
+    "nameEn": "Pogranichnik"
   },
   {
     "id": "24",
@@ -213,7 +224,8 @@
     "ultimate": null,
     "attackSegments": [],
     "talents": [],
-    "acceptTeamGauge": true
+    "acceptTeamGauge": true,
+    "nameEn": "Ember"
   },
   {
     "id": "4",
@@ -231,7 +243,8 @@
     "ultimate": null,
     "attackSegments": [],
     "talents": [],
-    "acceptTeamGauge": true
+    "acceptTeamGauge": true,
+    "nameEn": "Last Rite"
   },
   {
     "id": "130",
@@ -249,7 +262,8 @@
     "ultimate": null,
     "attackSegments": [],
     "talents": [],
-    "acceptTeamGauge": true
+    "acceptTeamGauge": true,
+    "nameEn": "Lifeng"
   },
   {
     "id": "11",
@@ -267,7 +281,8 @@
     "ultimate": null,
     "attackSegments": [],
     "talents": [],
-    "acceptTeamGauge": true
+    "acceptTeamGauge": true,
+    "nameEn": "Ardelia"
   },
   {
     "id": "5",
@@ -285,7 +300,8 @@
     "ultimate": null,
     "attackSegments": [],
     "talents": [],
-    "acceptTeamGauge": true
+    "acceptTeamGauge": true,
+    "nameEn": "Perlica"
   },
   {
     "id": "12",
@@ -303,7 +319,8 @@
     "ultimate": null,
     "attackSegments": [],
     "talents": [],
-    "acceptTeamGauge": true
+    "acceptTeamGauge": true,
+    "nameEn": "Chen Qianyu"
   },
   {
     "id": "3",
@@ -321,7 +338,8 @@
     "ultimate": null,
     "attackSegments": [],
     "talents": [],
-    "acceptTeamGauge": true
+    "acceptTeamGauge": true,
+    "nameEn": "Wulfgard"
   },
   {
     "id": "57",
@@ -339,7 +357,8 @@
     "ultimate": null,
     "attackSegments": [],
     "talents": [],
-    "acceptTeamGauge": true
+    "acceptTeamGauge": true,
+    "nameEn": "Arclight"
   },
   {
     "id": "150",
@@ -357,7 +376,8 @@
     "ultimate": null,
     "attackSegments": [],
     "talents": [],
-    "acceptTeamGauge": true
+    "acceptTeamGauge": true,
+    "nameEn": "Xaihi"
   },
   {
     "id": "87",
@@ -375,7 +395,8 @@
     "ultimate": null,
     "attackSegments": [],
     "talents": [],
-    "acceptTeamGauge": true
+    "acceptTeamGauge": true,
+    "nameEn": "Alesh"
   },
   {
     "id": "13",
@@ -393,7 +414,8 @@
     "ultimate": null,
     "attackSegments": [],
     "talents": [],
-    "acceptTeamGauge": true
+    "acceptTeamGauge": true,
+    "nameEn": "Da Pan"
   },
   {
     "id": "88",
@@ -411,7 +433,8 @@
     "ultimate": null,
     "attackSegments": [],
     "talents": [],
-    "acceptTeamGauge": true
+    "acceptTeamGauge": true,
+    "nameEn": "Avywenna"
   },
   {
     "id": "90",
@@ -429,7 +452,8 @@
     "ultimate": null,
     "attackSegments": [],
     "talents": [],
-    "acceptTeamGauge": true
+    "acceptTeamGauge": true,
+    "nameEn": "Snowshine"
   },
   {
     "id": "95",
@@ -447,7 +471,8 @@
     "ultimate": null,
     "attackSegments": [],
     "talents": [],
-    "acceptTeamGauge": true
+    "acceptTeamGauge": true,
+    "nameEn": "Akekuri"
   },
   {
     "id": "93",
@@ -465,7 +490,8 @@
     "ultimate": null,
     "attackSegments": [],
     "talents": [],
-    "acceptTeamGauge": true
+    "acceptTeamGauge": true,
+    "nameEn": "Estella"
   },
   {
     "id": "94",
@@ -483,7 +509,8 @@
     "ultimate": null,
     "attackSegments": [],
     "talents": [],
-    "acceptTeamGauge": true
+    "acceptTeamGauge": true,
+    "nameEn": "Catcher"
   },
   {
     "id": "92",
@@ -501,7 +528,8 @@
     "ultimate": null,
     "attackSegments": [],
     "talents": [],
-    "acceptTeamGauge": true
+    "acceptTeamGauge": true,
+    "nameEn": "Fluorite"
   },
   {
     "id": "91",
@@ -519,6 +547,7 @@
     "ultimate": null,
     "attackSegments": [],
     "talents": [],
-    "acceptTeamGauge": true
+    "acceptTeamGauge": true,
+    "nameEn": "Antal"
   }
 ]

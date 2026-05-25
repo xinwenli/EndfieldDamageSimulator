@@ -26,11 +26,11 @@
     ],
     "strength": [
       18,
-      59,
-      106,
-      153,
-      205,
-      221
+      49,
+      81,
+      113,
+      145,
+      161
     ],
     "agility": [
       9,
@@ -56,6 +56,32 @@
       100,
       111
     ],
+    "talentStages": [
+      {
+        "strength": 10,
+        "agility": 0,
+        "intelligence": 0,
+        "will": 0
+      },
+      {
+        "strength": 15,
+        "agility": 0,
+        "intelligence": 0,
+        "will": 0
+      },
+      {
+        "strength": 15,
+        "agility": 0,
+        "intelligence": 0,
+        "will": 0
+      },
+      {
+        "strength": 20,
+        "agility": 0,
+        "intelligence": 0,
+        "will": 0
+      }
+    ],
     "potentials": [
       {
         "potential": 1,
@@ -64,6 +90,8 @@
         "intelligence": 0,
         "will": 0,
         "atkPercent": 0,
+        "hpPercent": 0,
+        "defPercent": 0,
         "critRate": 0,
         "critDmg": 0,
         "basicDmgBonus": 0,
@@ -102,11 +130,11 @@
     ],
     "strength": [
       21,
-      60,
-      105,
-      150,
-      200,
-      215
+      50,
+      80,
+      110,
+      140,
+      155
     ],
     "agility": [
       8,
@@ -132,6 +160,32 @@
       98,
       109
     ],
+    "talentStages": [
+      {
+        "strength": 10,
+        "agility": 0,
+        "intelligence": 0,
+        "will": 0
+      },
+      {
+        "strength": 15,
+        "agility": 0,
+        "intelligence": 0,
+        "will": 0
+      },
+      {
+        "strength": 15,
+        "agility": 0,
+        "intelligence": 0,
+        "will": 0
+      },
+      {
+        "strength": 20,
+        "agility": 0,
+        "intelligence": 0,
+        "will": 0
+      }
+    ],
     "potentials": [
       {
         "potential": 2,
@@ -140,6 +194,8 @@
         "intelligence": 0,
         "will": 0,
         "atkPercent": 0,
+        "hpPercent": 0,
+        "defPercent": 0,
         "critRate": 0,
         "critDmg": 0,
         "basicDmgBonus": 0,
@@ -194,11 +250,11 @@
     ],
     "intelligence": [
       21,
-      66,
-      108,
-      154,
-      205,
-      221
+      51,
+      83,
+      114,
+      145,
+      161
     ],
     "will": [
       13,
@@ -207,6 +263,32 @@
       79,
       102,
       113
+    ],
+    "talentStages": [
+      {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 15,
+        "will": 0
+      },
+      {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 10,
+        "will": 0
+      },
+      {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 15,
+        "will": 0
+      },
+      {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 20,
+        "will": 0
+      }
     ],
     "potentials": []
   },
@@ -253,11 +335,11 @@
     ],
     "intelligence": [
       22,
-      70,
-      115,
-      165,
-      220,
-      237
+      55,
+      90,
+      125,
+      160,
+      177
     ],
     "will": [
       9,
@@ -267,6 +349,32 @@
       80,
       89
     ],
+    "talentStages": [
+      {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 15,
+        "will": 0
+      },
+      {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 10,
+        "will": 0
+      },
+      {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 15,
+        "will": 0
+      },
+      {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 20,
+        "will": 0
+      }
+    ],
     "potentials": [
       {
         "potential": 2,
@@ -275,6 +383,8 @@
         "intelligence": 20,
         "will": 0,
         "atkPercent": 0,
+        "hpPercent": 0,
+        "defPercent": 0,
         "critRate": 0,
         "critDmg": 0,
         "basicDmgBonus": 0.15,
@@ -321,11 +431,11 @@
     ],
     "agility": [
       23,
-      70,
-      115,
-      164,
-      219,
-      236
+      55,
+      90,
+      124,
+      159,
+      176
     ],
     "intelligence": [
       14,
@@ -343,6 +453,32 @@
       80,
       89
     ],
+    "talentStages": [
+      {
+        "strength": 0,
+        "agility": 15,
+        "intelligence": 0,
+        "will": 0
+      },
+      {
+        "strength": 0,
+        "agility": 10,
+        "intelligence": 0,
+        "will": 0
+      },
+      {
+        "strength": 0,
+        "agility": 15,
+        "intelligence": 0,
+        "will": 0
+      },
+      {
+        "strength": 0,
+        "agility": 20,
+        "intelligence": 0,
+        "will": 0
+      }
+    ],
     "potentials": [
       {
         "potential": 2,
@@ -351,6 +487,8 @@
         "intelligence": 0,
         "will": 0,
         "atkPercent": 0,
+        "hpPercent": 0,
+        "defPercent": 0,
         "critRate": 0.07,
         "critDmg": 0,
         "basicDmgBonus": 0,
@@ -405,11 +543,11 @@
     ],
     "intelligence": [
       20,
-      61,
-      100,
-      143,
-      191,
-      205
+      46,
+      75,
+      103,
+      131,
+      145
     ],
     "will": [
       15,
@@ -418,6 +556,32 @@
       83,
       106,
       118
+    ],
+    "talentStages": [
+      {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 15,
+        "will": 0
+      },
+      {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 10,
+        "will": 0
+      },
+      {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 15,
+        "will": 0
+      },
+      {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 20,
+        "will": 0
+      }
     ],
     "potentials": []
   },
@@ -456,11 +620,11 @@
     ],
     "agility": [
       20,
-      67,
-      111,
-      160,
-      214,
-      231
+      52,
+      86,
+      120,
+      154,
+      171
     ],
     "intelligence": [
       8,
@@ -478,6 +642,32 @@
       84,
       93
     ],
+    "talentStages": [
+      {
+        "strength": 0,
+        "agility": 15,
+        "intelligence": 0,
+        "will": 0
+      },
+      {
+        "strength": 0,
+        "agility": 10,
+        "intelligence": 0,
+        "will": 0
+      },
+      {
+        "strength": 0,
+        "agility": 15,
+        "intelligence": 0,
+        "will": 0
+      },
+      {
+        "strength": 0,
+        "agility": 20,
+        "intelligence": 0,
+        "will": 0
+      }
+    ],
     "potentials": [
       {
         "potential": 2,
@@ -486,6 +676,8 @@
         "intelligence": 0,
         "will": 0,
         "atkPercent": 0,
+        "hpPercent": 0,
+        "defPercent": 0,
         "critRate": 0,
         "critDmg": 0,
         "basicDmgBonus": 0,
@@ -524,11 +716,11 @@
     ],
     "strength": [
       24,
-      66,
-      115,
-      164,
-      218,
-      235
+      56,
+      90,
+      124,
+      158,
+      175
     ],
     "agility": [
       9,
@@ -554,6 +746,32 @@
       91,
       102
     ],
+    "talentStages": [
+      {
+        "strength": 10,
+        "agility": 0,
+        "intelligence": 0,
+        "will": 0
+      },
+      {
+        "strength": 15,
+        "agility": 0,
+        "intelligence": 0,
+        "will": 0
+      },
+      {
+        "strength": 15,
+        "agility": 0,
+        "intelligence": 0,
+        "will": 0
+      },
+      {
+        "strength": 20,
+        "agility": 0,
+        "intelligence": 0,
+        "will": 0
+      }
+    ],
     "potentials": [
       {
         "potential": 3,
@@ -562,6 +780,8 @@
         "intelligence": 0,
         "will": 0,
         "atkPercent": 0,
+        "hpPercent": 0,
+        "defPercent": 0,
         "critRate": 0,
         "critDmg": 0,
         "basicDmgBonus": 0,
@@ -600,11 +820,11 @@
     ],
     "strength": [
       21,
-      64,
-      114,
-      164,
-      219,
-      236
+      54,
+      89,
+      124,
+      159,
+      176
     ],
     "agility": [
       9,
@@ -630,6 +850,32 @@
       108,
       120
     ],
+    "talentStages": [
+      {
+        "strength": 10,
+        "agility": 0,
+        "intelligence": 0,
+        "will": 0
+      },
+      {
+        "strength": 15,
+        "agility": 0,
+        "intelligence": 0,
+        "will": 0
+      },
+      {
+        "strength": 15,
+        "agility": 0,
+        "intelligence": 0,
+        "will": 0
+      },
+      {
+        "strength": 20,
+        "agility": 0,
+        "intelligence": 0,
+        "will": 0
+      }
+    ],
     "potentials": [
       {
         "potential": 2,
@@ -638,6 +884,8 @@
         "intelligence": 0,
         "will": 20,
         "atkPercent": 0,
+        "hpPercent": 0,
+        "defPercent": 0,
         "critRate": 0,
         "critDmg": 0,
         "basicDmgBonus": 0,
@@ -684,11 +932,11 @@
     ],
     "agility": [
       14,
-      57,
-      96,
-      141,
-      190,
-      205
+      42,
+      71,
+      101,
+      130,
+      145
     ],
     "intelligence": [
       12,
@@ -706,6 +954,32 @@
       89,
       100
     ],
+    "talentStages": [
+      {
+        "strength": 0,
+        "agility": 15,
+        "intelligence": 0,
+        "will": 0
+      },
+      {
+        "strength": 0,
+        "agility": 10,
+        "intelligence": 0,
+        "will": 0
+      },
+      {
+        "strength": 0,
+        "agility": 15,
+        "intelligence": 0,
+        "will": 0
+      },
+      {
+        "strength": 0,
+        "agility": 20,
+        "intelligence": 0,
+        "will": 0
+      }
+    ],
     "potentials": [
       {
         "potential": 2,
@@ -714,6 +988,8 @@
         "intelligence": 15,
         "will": 0,
         "atkPercent": 0,
+        "hpPercent": 0,
+        "defPercent": 0,
         "critRate": 0,
         "critDmg": 0,
         "basicDmgBonus": 0,
@@ -752,11 +1028,11 @@
     ],
     "strength": [
       20,
-      59,
-      105,
-      151,
-      202,
-      218
+      49,
+      80,
+      111,
+      142,
+      158
     ],
     "agility": [
       9,
@@ -782,6 +1058,32 @@
       81,
       89
     ],
+    "talentStages": [
+      {
+        "strength": 10,
+        "agility": 0,
+        "intelligence": 0,
+        "will": 0
+      },
+      {
+        "strength": 15,
+        "agility": 0,
+        "intelligence": 0,
+        "will": 0
+      },
+      {
+        "strength": 15,
+        "agility": 0,
+        "intelligence": 0,
+        "will": 0
+      },
+      {
+        "strength": 20,
+        "agility": 0,
+        "intelligence": 0,
+        "will": 0
+      }
+    ],
     "potentials": [
       {
         "potential": 2,
@@ -790,6 +1092,8 @@
         "intelligence": 15,
         "will": 0,
         "atkPercent": 0,
+        "hpPercent": 0,
+        "defPercent": 0,
         "critRate": 0,
         "critDmg": 0,
         "basicDmgBonus": 0,
@@ -852,11 +1156,37 @@
     ],
     "will": [
       15,
-      58,
-      98,
-      143,
-      193,
-      208
+      43,
+      73,
+      103,
+      133,
+      148
+    ],
+    "talentStages": [
+      {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "will": 15
+      },
+      {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "will": 10
+      },
+      {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "will": 15
+      },
+      {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "will": 20
+      }
     ],
     "potentials": [
       {
@@ -866,6 +1196,8 @@
         "intelligence": 0,
         "will": 15,
         "atkPercent": 0,
+        "hpPercent": 0,
+        "defPercent": 0,
         "critRate": 0,
         "critDmg": 0,
         "basicDmgBonus": 0,
@@ -912,11 +1244,11 @@
     ],
     "agility": [
       14,
-      56,
-      94,
-      138,
-      186,
-      200
+      41,
+      69,
+      98,
+      126,
+      140
     ],
     "intelligence": [
       9,
@@ -933,6 +1265,32 @@
       74,
       96,
       107
+    ],
+    "talentStages": [
+      {
+        "strength": 0,
+        "agility": 15,
+        "intelligence": 0,
+        "will": 0
+      },
+      {
+        "strength": 0,
+        "agility": 10,
+        "intelligence": 0,
+        "will": 0
+      },
+      {
+        "strength": 0,
+        "agility": 15,
+        "intelligence": 0,
+        "will": 0
+      },
+      {
+        "strength": 0,
+        "agility": 20,
+        "intelligence": 0,
+        "will": 0
+      }
     ],
     "potentials": []
   },
@@ -963,11 +1321,11 @@
     ],
     "strength": [
       18,
-      57,
-      103,
-      148,
-      199,
-      214
+      47,
+      78,
+      108,
+      139,
+      154
     ],
     "agility": [
       12,
@@ -993,6 +1351,32 @@
       97,
       108
     ],
+    "talentStages": [
+      {
+        "strength": 10,
+        "agility": 0,
+        "intelligence": 0,
+        "will": 0
+      },
+      {
+        "strength": 15,
+        "agility": 0,
+        "intelligence": 0,
+        "will": 0
+      },
+      {
+        "strength": 15,
+        "agility": 0,
+        "intelligence": 0,
+        "will": 0
+      },
+      {
+        "strength": 20,
+        "agility": 0,
+        "intelligence": 0,
+        "will": 0
+      }
+    ],
     "potentials": [
       {
         "potential": 4,
@@ -1001,6 +1385,8 @@
         "intelligence": 0,
         "will": 20,
         "atkPercent": 0,
+        "hpPercent": 0,
+        "defPercent": 0,
         "critRate": 0,
         "critDmg": 0,
         "basicDmgBonus": 0,
@@ -1055,11 +1441,11 @@
     ],
     "intelligence": [
       15,
-      62,
-      106,
-      154,
-      208,
-      225
+      47,
+      81,
+      114,
+      148,
+      165
     ],
     "will": [
       9,
@@ -1069,6 +1455,32 @@
       74,
       82
     ],
+    "talentStages": [
+      {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 15,
+        "will": 0
+      },
+      {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 10,
+        "will": 0
+      },
+      {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 15,
+        "will": 0
+      },
+      {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 20,
+        "will": 0
+      }
+    ],
     "potentials": [
       {
         "potential": 4,
@@ -1077,6 +1489,8 @@
         "intelligence": 10,
         "will": 0,
         "atkPercent": 0,
+        "hpPercent": 0.1,
+        "defPercent": 0,
         "critRate": 0,
         "critDmg": 0,
         "basicDmgBonus": 0,
@@ -1123,11 +1537,11 @@
     ],
     "agility": [
       14,
-      62,
-      106,
-      156,
-      210,
-      228
+      47,
+      81,
+      116,
+      150,
+      168
     ],
     "intelligence": [
       12,
@@ -1145,6 +1559,32 @@
       82,
       91
     ],
+    "talentStages": [
+      {
+        "strength": 0,
+        "agility": 15,
+        "intelligence": 0,
+        "will": 0
+      },
+      {
+        "strength": 0,
+        "agility": 10,
+        "intelligence": 0,
+        "will": 0
+      },
+      {
+        "strength": 0,
+        "agility": 15,
+        "intelligence": 0,
+        "will": 0
+      },
+      {
+        "strength": 0,
+        "agility": 20,
+        "intelligence": 0,
+        "will": 0
+      }
+    ],
     "potentials": [
       {
         "potential": 1,
@@ -1153,6 +1593,8 @@
         "intelligence": 10,
         "will": 0,
         "atkPercent": 0,
+        "hpPercent": 0,
+        "defPercent": 0,
         "critRate": 0,
         "critDmg": 0,
         "basicDmgBonus": 0,
@@ -1215,11 +1657,37 @@
     ],
     "will": [
       15,
-      59,
-      99,
-      145,
-      196,
-      211
+      44,
+      74,
+      105,
+      136,
+      151
+    ],
+    "talentStages": [
+      {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "will": 15
+      },
+      {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "will": 10
+      },
+      {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "will": 15
+      },
+      {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "will": 20
+      }
     ],
     "potentials": [
       {
@@ -1229,6 +1697,8 @@
         "intelligence": 0,
         "will": 10,
         "atkPercent": 0,
+        "hpPercent": 0,
+        "defPercent": 0,
         "critRate": 0,
         "critDmg": 0,
         "basicDmgBonus": 0,
@@ -1267,11 +1737,11 @@
     ],
     "strength": [
       21,
-      64,
-      114,
-      164,
-      219,
-      236
+      54,
+      89,
+      124,
+      159,
+      176
     ],
     "agility": [
       9,
@@ -1297,6 +1767,32 @@
       96,
       106
     ],
+    "talentStages": [
+      {
+        "strength": 10,
+        "agility": 0,
+        "intelligence": 0,
+        "will": 0
+      },
+      {
+        "strength": 15,
+        "agility": 0,
+        "intelligence": 0,
+        "will": 0
+      },
+      {
+        "strength": 15,
+        "agility": 0,
+        "intelligence": 0,
+        "will": 0
+      },
+      {
+        "strength": 20,
+        "agility": 0,
+        "intelligence": 0,
+        "will": 0
+      }
+    ],
     "potentials": [
       {
         "potential": 2,
@@ -1305,6 +1801,8 @@
         "intelligence": 0,
         "will": 10,
         "atkPercent": 0,
+        "hpPercent": 0,
+        "defPercent": 0,
         "critRate": 0,
         "critDmg": 0,
         "basicDmgBonus": 0,
@@ -1351,11 +1849,11 @@
     ],
     "agility": [
       15,
-      57,
-      95,
-      138,
-      186,
-      200
+      42,
+      70,
+      98,
+      126,
+      140
     ],
     "intelligence": [
       12,
@@ -1373,6 +1871,32 @@
       96,
       108
     ],
+    "talentStages": [
+      {
+        "strength": 0,
+        "agility": 15,
+        "intelligence": 0,
+        "will": 0
+      },
+      {
+        "strength": 0,
+        "agility": 10,
+        "intelligence": 0,
+        "will": 0
+      },
+      {
+        "strength": 0,
+        "agility": 15,
+        "intelligence": 0,
+        "will": 0
+      },
+      {
+        "strength": 0,
+        "agility": 20,
+        "intelligence": 0,
+        "will": 0
+      }
+    ],
     "potentials": [
       {
         "potential": 2,
@@ -1381,6 +1905,8 @@
         "intelligence": 10,
         "will": 0,
         "atkPercent": 0,
+        "hpPercent": 0,
+        "defPercent": 0,
         "critRate": 0,
         "critDmg": 0,
         "basicDmgBonus": 0,
@@ -1427,11 +1953,11 @@
     ],
     "agility": [
       20,
-      59,
+      44,
+      69,
       94,
-      134,
-      179,
-      192
+      119,
+      132
     ],
     "intelligence": [
       13,
@@ -1448,6 +1974,32 @@
       82,
       105,
       117
+    ],
+    "talentStages": [
+      {
+        "strength": 0,
+        "agility": 15,
+        "intelligence": 0,
+        "will": 0
+      },
+      {
+        "strength": 0,
+        "agility": 10,
+        "intelligence": 0,
+        "will": 0
+      },
+      {
+        "strength": 0,
+        "agility": 15,
+        "intelligence": 0,
+        "will": 0
+      },
+      {
+        "strength": 0,
+        "agility": 20,
+        "intelligence": 0,
+        "will": 0
+      }
     ],
     "potentials": []
   },
@@ -1502,11 +2054,37 @@
     ],
     "will": [
       20,
-      67,
-      112,
-      161,
-      216,
-      233
+      52,
+      87,
+      121,
+      156,
+      173
+    ],
+    "talentStages": [
+      {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "will": 15
+      },
+      {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "will": 10
+      },
+      {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "will": 15
+      },
+      {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "will": 20
+      }
     ],
     "potentials": [
       {
@@ -1516,6 +2094,8 @@
         "intelligence": 0,
         "will": 20,
         "atkPercent": 0,
+        "hpPercent": 0,
+        "defPercent": 0,
         "critRate": 0,
         "critDmg": 0,
         "basicDmgBonus": 0,
@@ -1578,11 +2158,37 @@
     ],
     "will": [
       15,
-      58,
-      99,
-      144,
-      194,
-      210
+      43,
+      74,
+      104,
+      134,
+      150
+    ],
+    "talentStages": [
+      {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "will": 15
+      },
+      {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "will": 10
+      },
+      {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "will": 15
+      },
+      {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "will": 20
+      }
     ],
     "potentials": [
       {
@@ -1592,6 +2198,8 @@
         "intelligence": 15,
         "will": 0,
         "atkPercent": 0,
+        "hpPercent": 0,
+        "defPercent": 0,
         "critRate": 0,
         "critDmg": 0,
         "basicDmgBonus": 0,
@@ -1638,11 +2246,11 @@
     ],
     "agility": [
       14,
-      56,
-      94,
-      138,
-      186,
-      200
+      41,
+      69,
+      98,
+      126,
+      140
     ],
     "intelligence": [
       9,
@@ -1659,6 +2267,32 @@
       74,
       96,
       107
+    ],
+    "talentStages": [
+      {
+        "strength": 0,
+        "agility": 15,
+        "intelligence": 0,
+        "will": 0
+      },
+      {
+        "strength": 0,
+        "agility": 10,
+        "intelligence": 0,
+        "will": 0
+      },
+      {
+        "strength": 0,
+        "agility": 15,
+        "intelligence": 0,
+        "will": 0
+      },
+      {
+        "strength": 0,
+        "agility": 20,
+        "intelligence": 0,
+        "will": 0
+      }
     ],
     "potentials": []
   },
@@ -1705,11 +2339,11 @@
     ],
     "intelligence": [
       24,
-      72,
-      116,
-      165,
-      219,
-      236
+      57,
+      91,
+      125,
+      159,
+      176
     ],
     "will": [
       10,
@@ -1719,6 +2353,32 @@
       94,
       105
     ],
+    "talentStages": [
+      {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 15,
+        "will": 0
+      },
+      {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 10,
+        "will": 0
+      },
+      {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 15,
+        "will": 0
+      },
+      {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 20,
+        "will": 0
+      }
+    ],
     "potentials": [
       {
         "potential": 2,
@@ -1727,6 +2387,8 @@
         "intelligence": 20,
         "will": 0,
         "atkPercent": 0,
+        "hpPercent": 0,
+        "defPercent": 0,
         "critRate": 0.07,
         "critDmg": 0,
         "basicDmgBonus": 0,
@@ -1789,11 +2451,37 @@
     ],
     "will": [
       20,
-      67,
-      111,
-      160,
-      214,
-      231
+      52,
+      86,
+      120,
+      154,
+      171
+    ],
+    "talentStages": [
+      {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "will": 15
+      },
+      {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "will": 10
+      },
+      {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "will": 15
+      },
+      {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "will": 20
+      }
     ],
     "potentials": []
   },
@@ -1832,11 +2520,11 @@
     ],
     "agility": [
       23,
-      71,
-      116,
-      166,
-      222,
-      239
+      56,
+      91,
+      126,
+      162,
+      179
     ],
     "intelligence": [
       8,
@@ -1854,6 +2542,32 @@
       91,
       102
     ],
+    "talentStages": [
+      {
+        "strength": 0,
+        "agility": 15,
+        "intelligence": 0,
+        "will": 0
+      },
+      {
+        "strength": 0,
+        "agility": 10,
+        "intelligence": 0,
+        "will": 0
+      },
+      {
+        "strength": 0,
+        "agility": 15,
+        "intelligence": 0,
+        "will": 0
+      },
+      {
+        "strength": 0,
+        "agility": 20,
+        "intelligence": 0,
+        "will": 0
+      }
+    ],
     "potentials": [
       {
         "potential": 2,
@@ -1862,6 +2576,8 @@
         "intelligence": 0,
         "will": 0,
         "atkPercent": 0,
+        "hpPercent": 0,
+        "defPercent": 0,
         "critRate": 0,
         "critDmg": 0,
         "basicDmgBonus": 0,
@@ -1924,11 +2640,37 @@
     ],
     "will": [
       24,
-      68,
-      124,
-      175,
-      226,
-      244
+      58,
+      94,
+      130,
+      166,
+      184
+    ],
+    "talentStages": [
+      {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "will": 10
+      },
+      {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "will": 20
+      },
+      {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "will": 15
+      },
+      {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "will": 15
+      }
     ],
     "potentials": [
       {
@@ -1938,6 +2680,8 @@
         "intelligence": 0,
         "will": 20,
         "atkPercent": 0,
+        "hpPercent": 0,
+        "defPercent": 0,
         "critRate": 0,
         "critDmg": 0,
         "basicDmgBonus": 0,

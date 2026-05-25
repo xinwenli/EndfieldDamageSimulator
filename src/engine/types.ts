@@ -68,6 +68,7 @@ export interface AttackSegment {
 export interface Operator {
   id: string;
   name: string;
+  nameEn?: string;
   rarity: 4 | 5 | 6;
   element: Element;
   weapon: WeaponType;
@@ -161,6 +162,7 @@ export interface WeaponSkillRank {
 
 export interface WeaponSkill {
   name: string;
+  nameEn?: string;
   maxRank: number;
   ranks: WeaponSkillRank[];
 }
@@ -169,6 +171,7 @@ export interface WeaponSkill {
 export interface Weapon {
   id: string;
   name: string;
+  nameEn?: string;
   rarity: 3 | 4 | 5 | 6;
   weaponType: WeaponType;
   cover: string;
@@ -184,6 +187,7 @@ export interface Weapon {
 export interface GearPiece {
   id: string;
   name: string;
+  nameEn?: string;
   rarity: number;
   quality: string;
   slot: "Armor" | "Gloves" | "Kit";
@@ -202,6 +206,8 @@ export interface PartyMember {
   level: number;
   /** Skill ranks for operator skills (normal attack, skill 1, skill 2, ultimate) */
   skillRanks: number[];
+  /** Talent stage 0-4 (0=none, 4=all stages) */
+  talentStage: number;
   potential: number;
   weapon: Weapon | null;
   weaponLevel: number;

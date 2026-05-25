@@ -45,7 +45,9 @@
         "rank3": "+15.0%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Swordmancer Heavy Armor T1",
+    "setId": "10354"
   },
   {
     "id": "1442",
@@ -93,7 +95,9 @@
         "rank3": "+44"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Swordmancer TAC Gauntlets T1",
+    "setId": "10354"
   },
   {
     "id": "1441",
@@ -141,7 +145,9 @@
         "rank3": "+67.3%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Swordmancer Dagger",
+    "setId": "10354"
   },
   {
     "id": "1440",
@@ -189,7 +195,9 @@
         "rank3": "+24.9%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Bonekrusha Gloves",
+    "setId": "10342"
   },
   {
     "id": "1439",
@@ -237,7 +245,9 @@
         "rank3": "+53.8%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Bonekrusha Figurine T2",
+    "setId": "10342"
   },
   {
     "id": "1438",
@@ -285,7 +295,9 @@
         "rank3": "+26.7%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Frontiers Fiber Gloves T1",
+    "setId": "10350"
   },
   {
     "id": "1437",
@@ -333,7 +345,9 @@
         "rank3": "+26.9%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Frontiers Extra O2 Tube T1",
+    "setId": "10350"
   },
   {
     "id": "1436",
@@ -381,7 +395,9 @@
         "rank3": "+16.0%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Qingbo Heavy Armor",
+    "setId": "10413"
   },
   {
     "id": "1435",
@@ -429,7 +445,9 @@
         "rank3": "+26"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Qingbo Light Armor",
+    "setId": "10413"
   },
   {
     "id": "1434",
@@ -477,7 +495,9 @@
         "rank3": "+29.9%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Qingbo Gauntlets",
+    "setId": "10413"
   },
   {
     "id": "1433",
@@ -525,7 +545,9 @@
         "rank3": "+26.7%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Qingbo Gloves",
+    "setId": "10413"
   },
   {
     "id": "1432",
@@ -573,7 +595,9 @@
         "rank3": "+29.9%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Qingbo Bamboo Cutter",
+    "setId": "10413"
   },
   {
     "id": "1431",
@@ -621,7 +645,9 @@
         "rank3": "+53.8%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Qingbo Positioning Kit",
+    "setId": "10413"
   },
   {
     "id": "1430",
@@ -669,7 +695,9 @@
         "rank3": "+53"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Qingbo Cask",
+    "setId": "10413"
   },
   {
     "id": "1429",
@@ -717,7 +745,9 @@
         "rank3": "+15.0%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Xiranflow Light Armor",
+    "setId": "10412"
   },
   {
     "id": "1428",
@@ -765,7 +795,9 @@
         "rank3": "+53.8%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Xiranflow Baton",
+    "setId": "10412"
   },
   {
     "id": "1236",
@@ -813,7 +845,9 @@
         "rank3": "+29.9%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Frontiers Fiber Gloves",
+    "setId": "10350"
   },
   {
     "id": "1235",
@@ -853,7 +887,9 @@
         "rank3": "+67.3%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Frontiers Analyzer",
+    "setId": "10350"
   },
   {
     "id": "1234",
@@ -893,7 +929,9 @@
         "rank3": "+29.9%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Frontiers O2 Tube",
+    "setId": "10350"
   },
   {
     "id": "1219",
@@ -941,7 +979,9 @@
         "rank3": "+67.3%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Type 50 Yinglung Radar T1",
+    "setId": "10355"
   },
   {
     "id": "1218",
@@ -989,7 +1029,9 @@
         "rank3": "+53.8%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Type 50 Yinglung Radar T2",
+    "setId": "10355"
   },
   {
     "id": "1217",
@@ -1037,7 +1079,9 @@
         "rank3": "+13.5%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "MI Security Scope T1",
+    "setId": "10352"
   },
   {
     "id": "1216",
@@ -1085,7 +1129,9 @@
         "rank3": "+16.0%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Type 50 Yinglung Heavy Armor T1",
+    "setId": "10355"
   },
   {
     "id": "1215",
@@ -1133,7 +1179,9 @@
         "rank3": "+26.9%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Type 50 Yinglung Heavy Armor T2",
+    "setId": "10355"
   },
   {
     "id": "1214",
@@ -1181,7 +1229,9 @@
         "rank3": "+24.9%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Xiranflow Gloves",
+    "setId": "10412"
   },
   {
     "id": "1213",
@@ -1229,7 +1279,9 @@
         "rank3": "+16.0%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Frontiers Protection Suit",
+    "setId": "10350"
   },
   {
     "id": "1212",
@@ -1277,7 +1329,9 @@
         "rank3": "+16.0%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "MI Security Armor T1",
+    "setId": "10352"
   },
   {
     "id": "1210",
@@ -1325,7 +1379,9 @@
         "rank3": "+56.1%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "MI Security Gloves T1",
+    "setId": "10352"
   },
   {
     "id": "1205",
@@ -1373,7 +1429,9 @@
         "rank3": "+15.0%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Bonekrusha Heavy Armor T2",
+    "setId": "10342"
   },
   {
     "id": "1204",
@@ -1421,7 +1479,9 @@
         "rank3": "+24.9%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Bonekrusha Wristband",
+    "setId": "10342"
   },
   {
     "id": "1203",
@@ -1469,7 +1529,9 @@
         "rank3": "+24.9%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Bonekrusha Wristband T1",
+    "setId": "10342"
   },
   {
     "id": "1202",
@@ -1517,7 +1579,9 @@
         "rank3": "+53.8%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Bonekrusha Mask T2",
+    "setId": "10342"
   },
   {
     "id": "1194",
@@ -1557,7 +1621,9 @@
         "rank3": "+18.7%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Redeemer Plates",
+    "setId": null
   },
   {
     "id": "1193",
@@ -1597,7 +1663,9 @@
         "rank3": "+16.7%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Redeemer Armor",
+    "setId": null
   },
   {
     "id": "1192",
@@ -1637,7 +1705,9 @@
         "rank3": "+58.5%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Redeemer Gloves",
+    "setId": null
   },
   {
     "id": "1191",
@@ -1677,7 +1747,9 @@
         "rank3": "+31.2%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Redeemer Hands",
+    "setId": null
   },
   {
     "id": "1189",
@@ -1725,7 +1797,9 @@
         "rank3": "+16.0%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Swordmancer Light Armor",
+    "setId": "10354"
   },
   {
     "id": "1188",
@@ -1765,7 +1839,9 @@
         "rank3": "+53"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Swordmancer NAV Beacon",
+    "setId": "10354"
   },
   {
     "id": "1187",
@@ -1813,7 +1889,9 @@
         "rank3": "+29.9%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Swordmancer Micro Filter",
+    "setId": "10354"
   },
   {
     "id": "1186",
@@ -1853,7 +1931,9 @@
         "rank3": "+53.8%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "LYNX Connector T2",
+    "setId": "10345"
   },
   {
     "id": "1185",
@@ -1901,7 +1981,9 @@
         "rank3": "+29.9%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Æthertech Light Gloves",
+    "setId": "10353"
   },
   {
     "id": "1184",
@@ -1949,7 +2031,9 @@
         "rank3": "+29.9%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Æthertech Stabilizer T1",
+    "setId": "10353"
   },
   {
     "id": "1183",
@@ -1997,7 +2081,9 @@
         "rank3": "+53.8%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Æthertech Watch",
+    "setId": "10353"
   },
   {
     "id": "1182",
@@ -2045,7 +2131,9 @@
         "rank3": "+53"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Pulser Labs Probe",
+    "setId": "10343"
   },
   {
     "id": "1181",
@@ -2085,7 +2173,9 @@
         "rank3": "+67.3%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Pulser Labs Invasion Core",
+    "setId": "10343"
   },
   {
     "id": "1180",
@@ -2133,7 +2223,9 @@
         "rank3": "+15.0%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Hot Work Exo-Rig",
+    "setId": "10338"
   },
   {
     "id": "1179",
@@ -2181,7 +2273,9 @@
         "rank3": "+44"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Hot Work Gloves",
+    "setId": "10338"
   },
   {
     "id": "1002",
@@ -2229,7 +2323,9 @@
         "rank3": "32.1%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Eternal Xiranite Auxiliary Arm",
+    "setId": "10346"
   },
   {
     "id": "1001",
@@ -2277,7 +2373,9 @@
         "rank3": "+26.7%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Eternal Xiranite Gloves T1",
+    "setId": "10346"
   },
   {
     "id": "1000",
@@ -2325,7 +2423,9 @@
         "rank3": "+26.7%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Eternal Xiranite Gloves",
+    "setId": "10346"
   },
   {
     "id": "999",
@@ -2373,7 +2473,9 @@
         "rank3": "+32.1%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Eternal Xiranite Power Core",
+    "setId": "10346"
   },
   {
     "id": "998",
@@ -2421,7 +2523,9 @@
         "rank3": "+26.9%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Eternal Xiranite Power Core T1",
+    "setId": "10346"
   },
   {
     "id": "997",
@@ -2469,7 +2573,9 @@
         "rank3": "+26"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Eternal Xiranite Armor",
+    "setId": "10346"
   },
   {
     "id": "996",
@@ -2517,7 +2623,9 @@
         "rank3": "+35.9%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Turbid Cutting Torch",
+    "setId": "10358"
   },
   {
     "id": "995",
@@ -2565,7 +2673,9 @@
         "rank3": "+29.9%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Hanging River O2 Tube",
+    "setId": "10358"
   },
   {
     "id": "994",
@@ -2613,7 +2723,9 @@
         "rank3": "+24.9%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Tide Surge Gauntlets",
+    "setId": "10358"
   },
   {
     "id": "993",
@@ -2661,7 +2773,9 @@
         "rank3": "+16.0%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Tide Fall Light Armor",
+    "setId": "10358"
   },
   {
     "id": "992",
@@ -2709,7 +2823,9 @@
         "rank3": "+35.9%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Type 50 Yinglung Knife T1",
+    "setId": "10355"
   },
   {
     "id": "991",
@@ -2757,7 +2873,9 @@
         "rank3": "+53.8%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Type 50 Yinglung Knife",
+    "setId": "10355"
   },
   {
     "id": "990",
@@ -2805,7 +2923,9 @@
         "rank3": "+29.9%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Type 50 Yinglung Radar",
+    "setId": "10355"
   },
   {
     "id": "989",
@@ -2853,7 +2973,9 @@
         "rank3": "+44.9%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Type 50 Yinglung Gloves T1",
+    "setId": "10355"
   },
   {
     "id": "988",
@@ -2901,7 +3023,9 @@
         "rank3": "+44.9%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Type 50 Yinglung Gloves",
+    "setId": "10355"
   },
   {
     "id": "987",
@@ -2949,7 +3073,9 @@
         "rank3": "+17.9%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Type 50 Yinglung Light Armor",
+    "setId": "10355"
   },
   {
     "id": "986",
@@ -2997,7 +3123,9 @@
         "rank3": "+15.0%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Type 50 Yinglung Heavy Armor",
+    "setId": "10355"
   },
   {
     "id": "977",
@@ -3045,7 +3173,9 @@
         "rank3": "+53.8%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "MI Security Push Knife T1",
+    "setId": "10352"
   },
   {
     "id": "976",
@@ -3093,7 +3223,9 @@
         "rank3": "+29.9%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "MI Security Push Knife",
+    "setId": "10352"
   },
   {
     "id": "975",
@@ -3141,7 +3273,9 @@
         "rank3": "+13.5%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "MI Security Toolkit",
+    "setId": "10352"
   },
   {
     "id": "974",
@@ -3189,7 +3323,9 @@
         "rank3": "+53.8%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "MI Security Scope",
+    "setId": "10352"
   },
   {
     "id": "973",
@@ -3237,7 +3373,9 @@
         "rank3": "+29.9%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "MI Security Armband",
+    "setId": "10352"
   },
   {
     "id": "972",
@@ -3285,7 +3423,9 @@
         "rank3": "+11.2%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "MI Security Hands PPE T1",
+    "setId": "10352"
   },
   {
     "id": "971",
@@ -3333,7 +3473,9 @@
         "rank3": "+29.9%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "MI Security Hands PPE",
+    "setId": "10352"
   },
   {
     "id": "970",
@@ -3381,7 +3523,9 @@
         "rank3": "+44.9%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "MI Security Gloves",
+    "setId": "10352"
   },
   {
     "id": "968",
@@ -3429,7 +3573,9 @@
         "rank3": "+26.9%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "MI Security Overalls T2",
+    "setId": "10352"
   },
   {
     "id": "967",
@@ -3477,7 +3623,9 @@
         "rank3": "+6.7%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "MI Security Overalls T1",
+    "setId": "10352"
   },
   {
     "id": "966",
@@ -3525,7 +3673,9 @@
         "rank3": "+17.9%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "MI Security Overalls",
+    "setId": "10352"
   },
   {
     "id": "965",
@@ -3573,7 +3723,9 @@
         "rank3": "+26"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "MI Security Armor",
+    "setId": "10352"
   },
   {
     "id": "964",
@@ -3621,7 +3773,9 @@
         "rank3": "+53"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Hot Work Power Cartridge",
+    "setId": "10338"
   },
   {
     "id": "963",
@@ -3661,7 +3815,9 @@
         "rank3": "+53.8%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Hot Work Pyrometer",
+    "setId": "10338"
   },
   {
     "id": "962",
@@ -3709,7 +3865,9 @@
         "rank3": "+53"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Hot Work Power Bank",
+    "setId": "10338"
   },
   {
     "id": "961",
@@ -3757,7 +3915,9 @@
         "rank3": "+24.9%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Hot Work Gauntlets T1",
+    "setId": "10338"
   },
   {
     "id": "960",
@@ -3805,7 +3965,9 @@
         "rank3": "+24.9%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Hot Work Gauntlets",
+    "setId": "10338"
   },
   {
     "id": "959",
@@ -3853,7 +4015,9 @@
         "rank3": "+15.0%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Hot Work Exoskeleton",
+    "setId": "10338"
   },
   {
     "id": "958",
@@ -3901,7 +4065,9 @@
         "rank3": "+53"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Æthertech Stabilizer",
+    "setId": "10353"
   },
   {
     "id": "957",
@@ -3949,7 +4115,9 @@
         "rank3": "+29.9%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Æthertech Analysis Band",
+    "setId": "10353"
   },
   {
     "id": "956",
@@ -3997,7 +4165,9 @@
         "rank3": "+44"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Æthertech Gloves",
+    "setId": "10353"
   },
   {
     "id": "955",
@@ -4045,7 +4215,9 @@
         "rank3": "+26.9%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Æthertech Plating",
+    "setId": "10353"
   },
   {
     "id": "954",
@@ -4093,7 +4265,9 @@
         "rank3": "+26.9%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Frontiers Extra O2 Tube",
+    "setId": "10350"
   },
   {
     "id": "953",
@@ -4141,7 +4315,9 @@
         "rank3": "+29.9%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Frontiers Comm T1",
+    "setId": "10350"
   },
   {
     "id": "952",
@@ -4189,7 +4365,9 @@
         "rank3": "+53.8%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Frontiers Comm",
+    "setId": "10350"
   },
   {
     "id": "951",
@@ -4237,7 +4415,9 @@
         "rank3": "+44.9%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Frontiers Blight RES Gloves",
+    "setId": "10350"
   },
   {
     "id": "950",
@@ -4285,7 +4465,9 @@
         "rank3": "+13.5%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Frontiers Armor T3",
+    "setId": "10350"
   },
   {
     "id": "949",
@@ -4333,7 +4515,9 @@
         "rank3": "+26.9%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Frontiers Armor T2",
+    "setId": "10350"
   },
   {
     "id": "948",
@@ -4381,7 +4565,9 @@
         "rank3": "+26.9%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Frontiers Armor T1",
+    "setId": "10350"
   },
   {
     "id": "947",
@@ -4429,7 +4615,9 @@
         "rank3": "+33.6%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Frontiers Armor",
+    "setId": "10350"
   },
   {
     "id": "946",
@@ -4469,7 +4657,9 @@
         "rank3": "+53"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Pulser Labs Calibrator",
+    "setId": "10343"
   },
   {
     "id": "945",
@@ -4517,7 +4707,9 @@
         "rank3": "+24.9%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Pulser Labs Gloves",
+    "setId": "10343"
   },
   {
     "id": "944",
@@ -4565,7 +4757,9 @@
         "rank3": "+26"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Pulser Labs Disruptor Suit",
+    "setId": "10343"
   },
   {
     "id": "943",
@@ -4613,7 +4807,9 @@
         "rank3": "+53.8%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Bonekrusha Figurine T1",
+    "setId": "10342"
   },
   {
     "id": "942",
@@ -4661,7 +4857,9 @@
         "rank3": "+53.8%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Bonekrusha Figurine",
+    "setId": "10342"
   },
   {
     "id": "941",
@@ -4709,7 +4907,9 @@
         "rank3": "+13.5%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Bonekrusha Mask T1",
+    "setId": "10342"
   },
   {
     "id": "940",
@@ -4757,7 +4957,9 @@
         "rank3": "+53.8%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Bonekrusha Mask",
+    "setId": "10342"
   },
   {
     "id": "939",
@@ -4805,7 +5007,9 @@
         "rank3": "+16.0%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Bonekrusha Poncho T1",
+    "setId": "10342"
   },
   {
     "id": "938",
@@ -4853,7 +5057,9 @@
         "rank3": "+26.9%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Bonekrusha Poncho",
+    "setId": "10342"
   },
   {
     "id": "937",
@@ -4901,7 +5107,9 @@
         "rank3": "+26.9%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Bonekrusha Heavy Armor T1",
+    "setId": "10342"
   },
   {
     "id": "936",
@@ -4949,7 +5157,9 @@
         "rank3": "+16.0%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Bonekrusha Heavy Armor",
+    "setId": "10342"
   },
   {
     "id": "891",
@@ -4989,7 +5199,9 @@
         "rank3": "+26.9%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "LYNX Aegis Injector",
+    "setId": "10345"
   },
   {
     "id": "890",
@@ -5037,7 +5249,9 @@
         "rank3": "+26.9%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "LYNX Slab",
+    "setId": "10345"
   },
   {
     "id": "889",
@@ -5085,7 +5299,9 @@
         "rank3": "+53.8%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "LYNX Connector T1",
+    "setId": "10345"
   },
   {
     "id": "888",
@@ -5133,7 +5349,9 @@
         "rank3": "+21.2%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "LYNX Connector",
+    "setId": "10345"
   },
   {
     "id": "887",
@@ -5181,7 +5399,9 @@
         "rank3": "+22.4%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "LYNX Gloves",
+    "setId": "10345"
   },
   {
     "id": "886",
@@ -5229,7 +5449,9 @@
         "rank3": "+26.7%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "LYNX Gauntlets",
+    "setId": "10345"
   },
   {
     "id": "885",
@@ -5277,7 +5499,9 @@
         "rank3": "+13.5%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "LYNX Cuirass",
+    "setId": "10345"
   },
   {
     "id": "884",
@@ -5325,7 +5549,9 @@
         "rank3": "+13.5%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "LYNX Heavy Armor",
+    "setId": "10345"
   },
   {
     "id": "883",
@@ -5373,7 +5599,9 @@
         "rank3": "+29.9%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Swordmancer Flint",
+    "setId": "10354"
   },
   {
     "id": "882",
@@ -5421,7 +5649,9 @@
         "rank3": "+56.1%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Swordmancer TAC Gauntlets",
+    "setId": "10354"
   },
   {
     "id": "881",
@@ -5469,7 +5699,9 @@
         "rank3": "+24.9%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Swordmancer TAC Gloves",
+    "setId": "10354"
   },
   {
     "id": "880",
@@ -5517,7 +5749,9 @@
         "rank3": "+26"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Swordmancer Heavy Armor",
+    "setId": "10354"
   },
   {
     "id": "879",
@@ -5543,7 +5777,9 @@
       "源石技艺强度": "+29"
     },
     "refinement": [],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Catastrophe Filter",
+    "setId": "10351"
   },
   {
     "id": "878",
@@ -5569,7 +5805,9 @@
       "副能力": "+14.7%"
     },
     "refinement": [],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Catastrophe Gauze Cartridge T1",
+    "setId": "10351"
   },
   {
     "id": "877",
@@ -5595,7 +5833,9 @@
       "终结技伤害加成": "+36.8%"
     },
     "refinement": [],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Catastrophe Gauze Cartridge",
+    "setId": "10351"
   },
   {
     "id": "876",
@@ -5621,7 +5861,9 @@
       "源石技艺强度": "+24"
     },
     "refinement": [],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Catastrophe Gloves",
+    "setId": "10351"
   },
   {
     "id": "875",
@@ -5647,7 +5889,9 @@
       "终结技充能效率": "+8.8%"
     },
     "refinement": [],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Catastrophe Heavy Armor T1",
+    "setId": "10351"
   },
   {
     "id": "874",
@@ -5673,7 +5917,9 @@
       "终结技伤害加成": "+18.4%"
     },
     "refinement": [],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Catastrophe Heavy Armor",
+    "setId": "10351"
   },
   {
     "id": "857",
@@ -5699,7 +5945,9 @@
       "战技伤害加成": "+29.4%"
     },
     "refinement": [],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Aburrey Sensor Chip T1",
+    "setId": "10347"
   },
   {
     "id": "856",
@@ -5725,7 +5973,9 @@
       "战技伤害加成": "+29.4%"
     },
     "refinement": [],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Aburrey Sensor Chip",
+    "setId": "10347"
   },
   {
     "id": "855",
@@ -5751,7 +6001,9 @@
       "终结技充能效率": "+17.5%"
     },
     "refinement": [],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Aburrey Flashlight",
+    "setId": "10347"
   },
   {
     "id": "854",
@@ -5777,7 +6029,9 @@
       "连携技伤害加成": "+29.4%"
     },
     "refinement": [],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Aburrey Auditory Chip T1",
+    "setId": "10347"
   },
   {
     "id": "853",
@@ -5803,7 +6057,9 @@
       "所有技能伤害加成": "+19.6%"
     },
     "refinement": [],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Aburrey UV Lamp",
+    "setId": "10347"
   },
   {
     "id": "852",
@@ -5829,7 +6085,9 @@
       "对失衡目标伤害加成": "+42.0%"
     },
     "refinement": [],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Aburrey Auditory Chip",
+    "setId": "10347"
   },
   {
     "id": "851",
@@ -5855,7 +6113,9 @@
       "对失衡目标伤害加成": "+24.5%"
     },
     "refinement": [],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Aburrey Gauntlets",
+    "setId": "10347"
   },
   {
     "id": "850",
@@ -5881,7 +6141,9 @@
       "战技伤害加成": "+14.7%"
     },
     "refinement": [],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Aburrey Light Armor T1",
+    "setId": "10347"
   },
   {
     "id": "849",
@@ -5907,7 +6169,9 @@
       "终结技充能效率": "+8.8%"
     },
     "refinement": [],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Aburrey Light Armor",
+    "setId": "10347"
   },
   {
     "id": "848",
@@ -5933,7 +6197,9 @@
       "连携技伤害加成": "+14.7%"
     },
     "refinement": [],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Aburrey Heavy Armor T1",
+    "setId": "10347"
   },
   {
     "id": "847",
@@ -5959,7 +6225,9 @@
       "所有技能伤害加成": "+9.8%"
     },
     "refinement": [],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Aburrey Heavy Armor",
+    "setId": "10347"
   },
   {
     "id": "846",
@@ -5985,7 +6253,9 @@
       "治疗效率加成": "+14.7%"
     },
     "refinement": [],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Mordvolt Insulation Battery T1",
+    "setId": "10340"
   },
   {
     "id": "845",
@@ -6011,7 +6281,9 @@
       "攻击力": "+14.7%"
     },
     "refinement": [],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Mordvolt Insulation Wrench T1",
+    "setId": "10340"
   },
   {
     "id": "844",
@@ -6037,7 +6309,9 @@
       "攻击力": "+12.3%"
     },
     "refinement": [],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Mordvolt Insulation Gloves T1",
+    "setId": "10340"
   },
   {
     "id": "843",
@@ -6063,7 +6337,9 @@
       "生命值": "+14.7%"
     },
     "refinement": [],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Mordvolt Insulation Vest T1",
+    "setId": "10340"
   },
   {
     "id": "842",
@@ -6088,7 +6364,9 @@
       "治疗效率加成": "+10.5%"
     },
     "refinement": [],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Mordvolt Insulation Battery",
+    "setId": "10340"
   },
   {
     "id": "841",
@@ -6113,7 +6391,9 @@
       "攻击力": "+10.5%"
     },
     "refinement": [],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Mordvolt Insulation Wrench T2",
+    "setId": "10340"
   },
   {
     "id": "840",
@@ -6139,7 +6419,9 @@
       "治疗效率加成": "+8.8%"
     },
     "refinement": [],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Mordvolt Insulation Gloves",
+    "setId": "10340"
   },
   {
     "id": "839",
@@ -6165,7 +6447,9 @@
       "生命值": "+10.5%"
     },
     "refinement": [],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Mordvolt Insulation Vest T2",
+    "setId": "10340"
   },
   {
     "id": "838",
@@ -6190,7 +6474,9 @@
       "终结技充能效率": "+17.5%"
     },
     "refinement": [],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Mordvolt Resistant Battery T1",
+    "setId": "10337"
   },
   {
     "id": "837",
@@ -6216,7 +6502,9 @@
       "攻击力": "+14.7%"
     },
     "refinement": [],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Mordvolt Resistant Wrench",
+    "setId": "10337"
   },
   {
     "id": "836",
@@ -6242,7 +6530,9 @@
       "攻击力": "+12.3%"
     },
     "refinement": [],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Mordvolt Resistant Gloves T1",
+    "setId": "10337"
   },
   {
     "id": "835",
@@ -6268,7 +6558,9 @@
       "普通攻击伤害加成": "+9.8%"
     },
     "refinement": [],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Mordvolt Resistant Vest T1",
+    "setId": "10337"
   },
   {
     "id": "834",
@@ -6294,7 +6586,9 @@
       "生命值": "+14.7%"
     },
     "refinement": [],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Mordvolt Resistant Vest",
+    "setId": "10337"
   },
   {
     "id": "833",
@@ -6319,7 +6613,9 @@
       "暴击率": "+5.3%"
     },
     "refinement": [],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Mordvolt Resistant Battery",
+    "setId": "10337"
   },
   {
     "id": "832",
@@ -6344,7 +6640,9 @@
       "寒冷和电磁伤害加成": "+11.7%"
     },
     "refinement": [],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Mordvolt Resistant Wrench T1",
+    "setId": "10337"
   },
   {
     "id": "831",
@@ -6369,7 +6667,9 @@
       "攻击力": "+10.5%"
     },
     "refinement": [],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Mordvolt Insulation Wrench",
+    "setId": "10337"
   },
   {
     "id": "830",
@@ -6395,7 +6695,9 @@
       "法术伤害加成": "+9.2%"
     },
     "refinement": [],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Mordvolt Resistant Gloves",
+    "setId": "10337"
   },
   {
     "id": "829",
@@ -6421,7 +6723,9 @@
       "攻击力": "+16"
     },
     "refinement": [],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Mordvolt Insulation Vest",
+    "setId": "10337"
   },
   {
     "id": "828",
@@ -6447,7 +6751,9 @@
       "攻击力": "+14.7%"
     },
     "refinement": [],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Roving MSGR Gyro T1",
+    "setId": "10336"
   },
   {
     "id": "827",
@@ -6473,7 +6779,9 @@
       "连携技伤害加成": "+29.4%"
     },
     "refinement": [],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Roving MSGR Flashlight T1",
+    "setId": "10336"
   },
   {
     "id": "826",
@@ -6499,7 +6807,9 @@
       "终结技伤害加成": "+36.8%"
     },
     "refinement": [],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Roving MSGR Flashlight T2",
+    "setId": "10336"
   },
   {
     "id": "825",
@@ -6525,7 +6835,9 @@
       "攻击力": "+12.3%"
     },
     "refinement": [],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Roving MSGR Fists T1",
+    "setId": "10336"
   },
   {
     "id": "824",
@@ -6551,7 +6863,9 @@
       "生命值": "+14.7%"
     },
     "refinement": [],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Roving MSGR Jacket T1",
+    "setId": "10336"
   },
   {
     "id": "823",
@@ -6576,7 +6890,9 @@
       "攻击力": "+10.5%"
     },
     "refinement": [],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Roving MSGR Gyro",
+    "setId": "10336"
   },
   {
     "id": "822",
@@ -6601,7 +6917,9 @@
       "连携技伤害加成": "+21.0%"
     },
     "refinement": [],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Roving MSGR Flashlight",
+    "setId": "10336"
   },
   {
     "id": "821",
@@ -6627,7 +6945,9 @@
       "物理伤害加成": "+9.7%"
     },
     "refinement": [],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Roving MSGR Fists",
+    "setId": "10336"
   },
   {
     "id": "820",
@@ -6653,7 +6973,9 @@
       "攻击力": "+16"
     },
     "refinement": [],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Roving MSGR Jacket",
+    "setId": "10336"
   },
   {
     "id": "787",
@@ -6679,7 +7001,9 @@
       "攻击力": "+14.7%"
     },
     "refinement": [],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Armored MSGR Gyro T1",
+    "setId": "10356"
   },
   {
     "id": "786",
@@ -6705,7 +7029,9 @@
       "暴击率": "+7.4%"
     },
     "refinement": [],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Armored MSGR Flashlight T1",
+    "setId": "10356"
   },
   {
     "id": "785",
@@ -6731,7 +7057,9 @@
       "连携技伤害加成": "+24.5%"
     },
     "refinement": [],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Armored MSGR Gloves T2",
+    "setId": "10356"
   },
   {
     "id": "784",
@@ -6757,7 +7085,9 @@
       "攻击力": "+12.3%"
     },
     "refinement": [],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Armored MSGR Gloves T1",
+    "setId": "10356"
   },
   {
     "id": "783",
@@ -6783,7 +7113,9 @@
       "生命值": "+14.7%"
     },
     "refinement": [],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Armored MSGR Jacket T1",
+    "setId": "10356"
   },
   {
     "id": "782",
@@ -6808,7 +7140,9 @@
       "攻击力": "+10.5%"
     },
     "refinement": [],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Armored MSGR Gyro",
+    "setId": "10356"
   },
   {
     "id": "781",
@@ -6833,7 +7167,9 @@
       "生命值": "+21.0%"
     },
     "refinement": [],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Armored MSGR Flashlight",
+    "setId": "10356"
   },
   {
     "id": "780",
@@ -6859,7 +7195,9 @@
       "全伤害减免": "8.0%"
     },
     "refinement": [],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Armored MSGR Gloves",
+    "setId": "10356"
   },
   {
     "id": "779",
@@ -6885,7 +7223,9 @@
       "生命值": "+10.5%"
     },
     "refinement": [],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Armored MSGR Jacket",
+    "setId": "10356"
   },
   {
     "id": "778",
@@ -6911,7 +7251,9 @@
       "战技伤害加成": "+8.1%"
     },
     "refinement": [],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "AIC Light Armor",
+    "setId": null
   },
   {
     "id": "777",
@@ -6937,7 +7279,9 @@
       "连携技伤害加成": "+13.5%"
     },
     "refinement": [],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "AIC Tactical Gloves",
+    "setId": null
   },
   {
     "id": "776",
@@ -6962,7 +7306,9 @@
       "连携技伤害加成": "+16.2%"
     },
     "refinement": [],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "AIC Light Plate",
+    "setId": null
   },
   {
     "id": "775",
@@ -6987,7 +7333,9 @@
       "战技伤害加成": "+16.2%"
     },
     "refinement": [],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "AIC Ceramic Plate",
+    "setId": null
   },
   {
     "id": "774",
@@ -7013,7 +7361,9 @@
       "全伤害减免": "3.9%"
     },
     "refinement": [],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "AIC Heavy Armor",
+    "setId": "10339"
   },
   {
     "id": "773",
@@ -7039,7 +7389,9 @@
       "全伤害减免": "6.3%"
     },
     "refinement": [],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "AIC Gauntlets",
+    "setId": "10339"
   },
   {
     "id": "714",
@@ -7079,7 +7431,9 @@
         "rank3": "+21.9%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Redeemer Tag",
+    "setId": null
   },
   {
     "id": "713",
@@ -7119,7 +7473,9 @@
         "rank3": "+56.2%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Redeemer Tag T1",
+    "setId": null
   },
   {
     "id": "712",
@@ -7159,7 +7515,9 @@
         "rank3": "+33.4%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Redeemer Seal",
+    "setId": null
   },
   {
     "id": "711",
@@ -7199,7 +7557,9 @@
         "rank3": "+14.0%"
       }
     ],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Redeemer Seal T1",
+    "setId": null
   },
   {
     "id": "710",
@@ -7224,7 +7584,9 @@
       "治疗效率加成": "+15.6%"
     },
     "refinement": [],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Miner Comm T1",
+    "setId": null
   },
   {
     "id": "709",
@@ -7249,7 +7611,9 @@
       "终结技充能效率": "+18.6%"
     },
     "refinement": [],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Miner Drive Wheel T1",
+    "setId": null
   },
   {
     "id": "708",
@@ -7274,7 +7638,9 @@
       "连携技伤害加成": "+31.2%"
     },
     "refinement": [],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Miner Compression Core T1",
+    "setId": null
   },
   {
     "id": "707",
@@ -7299,7 +7665,9 @@
       "全伤害减免": "13.5%"
     },
     "refinement": [],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Miner Turbine T1",
+    "setId": null
   },
   {
     "id": "706",
@@ -7324,7 +7692,9 @@
       "生命值": "+22.8%"
     },
     "refinement": [],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Miner Comm",
+    "setId": null
   },
   {
     "id": "705",
@@ -7349,7 +7719,9 @@
       "暴击率": "+5.7%"
     },
     "refinement": [],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Miner Compression Core",
+    "setId": null
   },
   {
     "id": "704",
@@ -7374,7 +7746,9 @@
       "暴击率": "+5.7%"
     },
     "refinement": [],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Miner Drive Wheel",
+    "setId": null
   },
   {
     "id": "703",
@@ -7399,7 +7773,9 @@
       "连携技伤害加成": "+22.8%"
     },
     "refinement": [],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Miner Turbine",
+    "setId": null
   },
   {
     "id": "635",
@@ -7424,7 +7800,9 @@
       "全伤害减免": "7.5%"
     },
     "refinement": [],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "AIC Alloy Plate",
+    "setId": "10339"
   },
   {
     "id": "633",
@@ -7449,7 +7827,9 @@
       "全伤害减免": "7.5%"
     },
     "refinement": [],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "AIC Heavy Plate",
+    "setId": "10339"
   },
   {
     "id": "632",
@@ -7472,7 +7852,9 @@
       "攻击力": "+13.2%"
     },
     "refinement": [],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Emergency Compression Core",
+    "setId": null
   },
   {
     "id": "631",
@@ -7495,7 +7877,9 @@
       "暴击率": "+6.6%"
     },
     "refinement": [],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Emergency Comm",
+    "setId": null
   },
   {
     "id": "491",
@@ -7521,7 +7905,9 @@
       "攻击力": "+7.8%"
     },
     "refinement": [],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Miner Overalls T1",
+    "setId": null
   },
   {
     "id": "490",
@@ -7547,7 +7933,9 @@
       "暴击率": "+3.9%"
     },
     "refinement": [],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Miner Armor T1",
+    "setId": null
   },
   {
     "id": "489",
@@ -7573,7 +7961,9 @@
       "攻击力": "+11"
     },
     "refinement": [],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Prototype Heavy Armor",
+    "setId": null
   },
   {
     "id": "488",
@@ -7599,7 +7989,9 @@
       "攻击力": "+11"
     },
     "refinement": [],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Prototype Heavy Armor T1",
+    "setId": null
   },
   {
     "id": "487",
@@ -7625,7 +8017,9 @@
       "生命值": "+9.0%"
     },
     "refinement": [],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Miner Vest",
+    "setId": null
   },
   {
     "id": "486",
@@ -7651,7 +8045,9 @@
       "生命值": "+9.0%"
     },
     "refinement": [],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Miner Overalls",
+    "setId": null
   },
   {
     "id": "485",
@@ -7677,7 +8073,9 @@
       "生命值": "+125"
     },
     "refinement": [],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Miner Armor",
+    "setId": null
   },
   {
     "id": "484",
@@ -7703,7 +8101,9 @@
       "生命值": "+125"
     },
     "refinement": [],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Miner Cleansuit",
+    "setId": null
   },
   {
     "id": "483",
@@ -7729,7 +8129,9 @@
       "生命值": "+46"
     },
     "refinement": [],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Basic Armor",
+    "setId": null
   },
   {
     "id": "482",
@@ -7755,7 +8157,9 @@
       "生命值": "+46"
     },
     "refinement": [],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Basic PPE",
+    "setId": null
   },
   {
     "id": "421",
@@ -7781,7 +8185,9 @@
       "终结技充能效率": "+15.5%"
     },
     "refinement": [],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Miner Gauntlets T1",
+    "setId": null
   },
   {
     "id": "420",
@@ -7807,7 +8213,9 @@
       "攻击力": "+13.0%"
     },
     "refinement": [],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Miner Gloves T2",
+    "setId": null
   },
   {
     "id": "419",
@@ -7833,7 +8241,9 @@
       "生命值": "+19.0%"
     },
     "refinement": [],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Miner Gloves T1",
+    "setId": null
   },
   {
     "id": "418",
@@ -7859,7 +8269,9 @@
       "攻击力": "+9.5%"
     },
     "refinement": [],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Miner Fists T1",
+    "setId": null
   },
   {
     "id": "417",
@@ -7885,7 +8297,9 @@
       "生命值": "+15.0%"
     },
     "refinement": [],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Miner Fists",
+    "setId": null
   },
   {
     "id": "416",
@@ -7911,7 +8325,9 @@
       "生命值": "+15.0%"
     },
     "refinement": [],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Miner Gauntlets",
+    "setId": null
   },
   {
     "id": "415",
@@ -7937,7 +8353,9 @@
       "生命值": "+11.0%"
     },
     "refinement": [],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Miner Wrists",
+    "setId": null
   },
   {
     "id": "414",
@@ -7963,7 +8381,9 @@
       "生命值": "+11.0%"
     },
     "refinement": [],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Miner Gloves",
+    "setId": null
   },
   {
     "id": "413",
@@ -7989,7 +8409,9 @@
       "生命值": "+77"
     },
     "refinement": [],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Basic Gauntlets",
+    "setId": null
   },
   {
     "id": "139",
@@ -8015,6 +8437,8 @@
       "生命值": "+77"
     },
     "refinement": [],
-    "setEffect": ""
+    "setEffect": "",
+    "nameEn": "Basic Gloves",
+    "setId": null
   }
 ]

@@ -1,6 +1,7 @@
 import type { Stats, Weapon } from "./types";
 import operatorStats from "../data/operator_stats.json";
 import operatorsData from "../data/operators.json";
+import setEffects from "../data/set_effects.json";
 
 export interface OperatorStatEntry {
   levels: number[];
@@ -12,6 +13,7 @@ export interface OperatorStatEntry {
   agility?: number[];
   intelligence?: number[];
   will?: number[];
+  talentStages?: Array<{ strength: number; agility: number; intelligence: number; will: number }>;
   potentials?: Array<{
     potential: number;
     strength: number;
@@ -19,6 +21,8 @@ export interface OperatorStatEntry {
     intelligence: number;
     will: number;
     atkPercent?: number;
+    hpPercent?: number;
+    defPercent?: number;
     critRate?: number;
     critDmg?: number;
     basicDmgBonus?: number;
@@ -169,7 +173,8 @@ function computePotentialBonuses(operatorId: string, potential: number) {
   const entry = statsDb[operatorId];
   const bonus = {
     strength: 0, agility: 0, intelligence: 0, will: 0,
-    atkPercent: 0, critRate: 0, critDmg: 0,
+    atkPercent: 0, hpPercent: 0, defPercent: 0,
+    critRate: 0, critDmg: 0,
     basicDmgBonus: 0, physicalDmgBonus: 0, heatDmgBonus: 0,
     electricDmgBonus: 0, cryoDmgBonus: 0, natureDmgBonus: 0,
   };
@@ -181,6 +186,8 @@ function computePotentialBonuses(operatorId: string, potential: number) {
     bonus.intelligence += p.intelligence || 0;
     bonus.will += p.will || 0;
     bonus.atkPercent += p.atkPercent || 0;
+    bonus.hpPercent += p.hpPercent || 0;
+    bonus.defPercent += p.defPercent || 0;
     bonus.critRate += p.critRate || 0;
     bonus.critDmg += p.critDmg || 0;
     bonus.basicDmgBonus += p.basicDmgBonus || 0;
@@ -194,17 +201,27 @@ function computePotentialBonuses(operatorId: string, potential: number) {
 }
 
 /** Get operator ability scores at a given level and potential from the wiki data */
-export function getOperatorAbilitiesAtLevel(operatorId: string, level: number, potential: number = 0): AbilityScores {
+export function getOperatorAbilitiesAtLevel(operatorId: string, level: number, potential: number = 0, talentStage: number = 4): AbilityScores {
   const entry = statsDb[operatorId];
   if (!entry || !entry.strength) {
     return { strength: 0, agility: 0, intelligence: 0, will: 0 };
   }
   const potBonus = computePotentialBonuses(operatorId, potential);
+  // Add active talent stages (talentStage = number of unlocked stages, 0-4)
+  let talentBonus = { strength: 0, agility: 0, intelligence: 0, will: 0 };
+  if (entry.talentStages && talentStage > 0) {
+    for (let s = 0; s < Math.min(talentStage, entry.talentStages.length); s++) {
+      talentBonus.strength += entry.talentStages[s].strength || 0;
+      talentBonus.agility += entry.talentStages[s].agility || 0;
+      talentBonus.intelligence += entry.talentStages[s].intelligence || 0;
+      talentBonus.will += entry.talentStages[s].will || 0;
+    }
+  }
   return {
-    strength: interpolateStat(entry.levels, entry.strength!, level) + potBonus.strength,
-    agility: interpolateStat(entry.levels, entry.agility!, level) + potBonus.agility,
-    intelligence: interpolateStat(entry.levels, entry.intelligence!, level) + potBonus.intelligence,
-    will: interpolateStat(entry.levels, entry.will!, level) + potBonus.will,
+    strength: interpolateStat(entry.levels, entry.strength!, level) + potBonus.strength + talentBonus.strength,
+    agility: interpolateStat(entry.levels, entry.agility!, level) + potBonus.agility + talentBonus.agility,
+    intelligence: interpolateStat(entry.levels, entry.intelligence!, level) + potBonus.intelligence + talentBonus.intelligence,
+    will: interpolateStat(entry.levels, entry.will!, level) + potBonus.will + talentBonus.will,
   };
 }
 
@@ -253,7 +270,7 @@ export function getWeaponAtkAtLevel(weapon: { baseAtkLv1: number; baseAtkLv90: n
   if (level <= 1) return weapon.baseAtkLv1;
   if (level >= 90) return weapon.baseAtkLv90;
   const t = (level - 1) / 89;
-  return Math.round(weapon.baseAtkLv1 + (weapon.baseAtkLv90 - weapon.baseAtkLv1) * t);
+  return Math.floor(weapon.baseAtkLv1 + (weapon.baseAtkLv90 - weapon.baseAtkLv1) * t);
 }
 
 /** Compute cumulative weapon skill bonuses at given ranks */
@@ -314,10 +331,23 @@ export function computeWeaponBonuses(
  * Calculate final stats combining operator base stats with weapon ATK and bonuses.
  * Formula: final ATK = (opATK + weaponATK) * (1 + ATK% bonus) + flat ATK bonus
  */
+export interface StatBreakdown {
+  opBaseAtk: number;
+  weaponBaseAtk: number;
+  atkPercent: number;
+  atkFlatBonus: number;
+  atkBeforeAbility: number;
+  abilityAtkBonus: number;
+  opHp: number;
+  hpFromStr: number;
+  hpPercent: number;
+}
+
 export function computeFinalStats(
   operatorId: string,
   level: number,
   potential: number,
+  talentStage: number,
   weapon: { baseAtkLv1: number; baseAtkLv90: number; skills: Weapon["skills"] } | null,
   weaponLevel: number,
   weaponSkillRanks: number[],
@@ -327,46 +357,90 @@ export function computeFinalStats(
     kit1: typeof gear["armor"];
     kit2: typeof gear["armor"];
   },
-): Stats {
+): { stats: Stats; breakdown: StatBreakdown } {
   const base = getOperatorStatsAtLevel(operatorId, level);
   const weaponAtk = weapon ? getWeaponAtkAtLevel(weapon, weaponLevel) : 0;
   const wpBonus = computeWeaponBonuses(weapon, weaponSkillRanks);
   const potBonus = computePotentialBonuses(operatorId, potential);
   const gearBonus = computeGearBonuses(gear.armor, gear.gloves, gear.kit1, gear.kit2);
 
+  // Gear set bonus: count pieces per set, apply if 3+
+  const gearSetBonus = { atkPercent: 0, hp: 0, strength: 0, agility: 0, intelligence: 0, will: 0, critRate: 0, allSkillDmgBonus: 0, artsIntensity: 0, ultimateGainEfficiency: 0, staggerEfficiencyBonus: 0, treatmentBonus: 0, comboSkillCdReduction: 0 };
+  const setCounts: Record<string, number> = {};
+  for (const g of [gear.armor, gear.gloves, gear.kit1, gear.kit2]) {
+    if (g && (g as any).setId) setCounts[(g as any).setId] = (setCounts[(g as any).setId] || 0) + 1;
+  }
+  const effects = setEffects as Record<string, { name: string; stat: string; trait?: string }>;
+  for (const [setId, count] of Object.entries(setCounts)) {
+    if (count >= 3 && effects[setId]) {
+      const e = effects[setId]?.stat || "";
+      const numMatch = e.match(/([\d.]+)/);
+      const num = numMatch ? parseFloat(numMatch[1]) : 0;
+      if (e.includes("攻击力")) gearSetBonus.atkPercent += num / 100;
+      else if (e.includes("生命值")) gearSetBonus.hp += num;
+      else if (e.includes("力量")) gearSetBonus.strength += num;
+      else if (e.includes("敏捷")) gearSetBonus.agility += num;
+      else if (e.includes("智识")) gearSetBonus.intelligence += num;
+      else if (e.includes("意志")) gearSetBonus.will += num;
+      else if (e.includes("暴击率")) gearSetBonus.critRate += num / 100;
+      else if (e.includes("所有技能伤害")) gearSetBonus.allSkillDmgBonus += num / 100;
+      else if (e.includes("源石技艺强度")) gearSetBonus.artsIntensity += num;
+      else if (e.includes("终结技充能效率")) gearSetBonus.ultimateGainEfficiency += num / 100;
+      else if (e.includes("失衡效率加成")) gearSetBonus.staggerEfficiencyBonus += num / 100;
+      else if (e.includes("治疗效率")) gearSetBonus.treatmentBonus += num / 100;
+      else if (e.includes("连携技冷却缩减")) gearSetBonus.comboSkillCdReduction += num / 100;
+    }
+  }
+  // Apply set ability bonuses to operator's abilities
+  if (gearSetBonus.strength) gearBonus.strength = (gearBonus.strength || 0) + gearSetBonus.strength;
+  if (gearSetBonus.agility) gearBonus.agility = (gearBonus.agility || 0) + gearSetBonus.agility;
+  if (gearSetBonus.intelligence) gearBonus.intelligence = (gearBonus.intelligence || 0) + gearSetBonus.intelligence;
+  if (gearSetBonus.will) gearBonus.will = (gearBonus.will || 0) + gearSetBonus.will;
+
   // Ability bonuses (all formulas use integer part of ability scores)
   // Include weapon skill AND gear bonuses in ability calculations
-  const baseAbilities = getOperatorAbilitiesAtLevel(operatorId, level, potential);
+  const baseAbilities = getOperatorAbilitiesAtLevel(operatorId, level, potential, talentStage);
 
-  // Gear "主能力" boosts operator's declared primary, "副能力" boosts declared secondary
+  // Gear "主能力"/"副能力" are PERCENTAGE boosts applied to total ability (base + flat gear/wp)
+  // Weapon "主能力提升"/"副能力" are FLAT boosts (e.g. +16 to ability)
   const opData = (operatorsData as Array<{ id: string; primaryAbility: string; secondaryAbility: string }>).find(o => o.id === operatorId);
   const primaryKey = opData!.primaryAbility;
   const secondaryKey = opData!.secondaryAbility;
+  // Calculate pre-% ability totals for applying gear % bonuses
+  const prePct = {
+    strength: baseAbilities.strength + wpBonus.strength + gearBonus.strength,
+    agility: baseAbilities.agility + wpBonus.agility + gearBonus.agility,
+    intelligence: baseAbilities.intelligence + wpBonus.intelligence + gearBonus.intelligence,
+    will: baseAbilities.will + wpBonus.will + gearBonus.will,
+  };
   if (gearBonus.primaryAbility) {
-    if (primaryKey === "strength") gearBonus.strength += gearBonus.primaryAbility;
-    else if (primaryKey === "agility") gearBonus.agility += gearBonus.primaryAbility;
-    else if (primaryKey === "intelligence") gearBonus.intelligence += gearBonus.primaryAbility;
-    else if (primaryKey === "will") gearBonus.will += gearBonus.primaryAbility;
+    const pct = gearBonus.primaryAbility;
+    if (primaryKey === "strength") gearBonus.strength += Math.round(prePct.strength * pct);
+    else if (primaryKey === "agility") gearBonus.agility += Math.round(prePct.agility * pct);
+    else if (primaryKey === "intelligence") gearBonus.intelligence += Math.round(prePct.intelligence * pct);
+    else if (primaryKey === "will") gearBonus.will += Math.round(prePct.will * pct);
   }
   if (gearBonus.secondaryAbility) {
-    if (secondaryKey === "strength") gearBonus.strength += gearBonus.secondaryAbility;
-    else if (secondaryKey === "agility") gearBonus.agility += gearBonus.secondaryAbility;
-    else if (secondaryKey === "intelligence") gearBonus.intelligence += gearBonus.secondaryAbility;
-    else if (secondaryKey === "will") gearBonus.will += gearBonus.secondaryAbility;
+    const pct = gearBonus.secondaryAbility;
+    if (secondaryKey === "strength") gearBonus.strength += Math.round(prePct.strength * pct);
+    else if (secondaryKey === "agility") gearBonus.agility += Math.round(prePct.agility * pct);
+    else if (secondaryKey === "intelligence") gearBonus.intelligence += Math.round(prePct.intelligence * pct);
+    else if (secondaryKey === "will") gearBonus.will += Math.round(prePct.will * pct);
   }
-  // Weapon "主能力提升" boosts operator's declared primary ability
+  // Weapon "主能力提升"/"副能力" are also PERCENTAGE boosts (e.g. +11.0% of total ability)
   if (wpBonus.primaryAbility) {
-    if (primaryKey === "strength") gearBonus.strength += wpBonus.primaryAbility;
-    else if (primaryKey === "agility") gearBonus.agility += wpBonus.primaryAbility;
-    else if (primaryKey === "intelligence") gearBonus.intelligence += wpBonus.primaryAbility;
-    else if (primaryKey === "will") gearBonus.will += wpBonus.primaryAbility;
+    const pct = wpBonus.primaryAbility;
+    if (primaryKey === "strength") gearBonus.strength += Math.round(prePct.strength * pct);
+    else if (primaryKey === "agility") gearBonus.agility += Math.round(prePct.agility * pct);
+    else if (primaryKey === "intelligence") gearBonus.intelligence += Math.round(prePct.intelligence * pct);
+    else if (primaryKey === "will") gearBonus.will += Math.round(prePct.will * pct);
   }
-  // Weapon "副能力" boosts operator's declared secondary ability
   if (wpBonus.secondaryAbility) {
-    if (secondaryKey === "strength") gearBonus.strength += wpBonus.secondaryAbility;
-    else if (secondaryKey === "agility") gearBonus.agility += wpBonus.secondaryAbility;
-    else if (secondaryKey === "intelligence") gearBonus.intelligence += wpBonus.secondaryAbility;
-    else if (secondaryKey === "will") gearBonus.will += wpBonus.secondaryAbility;
+    const pct = wpBonus.secondaryAbility;
+    if (secondaryKey === "strength") gearBonus.strength += Math.round(prePct.strength * pct);
+    else if (secondaryKey === "agility") gearBonus.agility += Math.round(prePct.agility * pct);
+    else if (secondaryKey === "intelligence") gearBonus.intelligence += Math.round(prePct.intelligence * pct);
+    else if (secondaryKey === "will") gearBonus.will += Math.round(prePct.will * pct);
   }
   // Calculate final abilities with all bonuses applied
   const finalStr = Math.floor(baseAbilities.strength + wpBonus.strength + gearBonus.strength);
@@ -380,7 +454,7 @@ export function computeFinalStats(
   const secondaryVal = abilityVals[secondaryKey as keyof typeof abilityVals] || finalStr;
 
   // ATK formula:
-  const atkPercentTotal = 1 + wpBonus.atkPercent + potBonus.atkPercent;
+  const atkPercentTotal = 1 + wpBonus.atkPercent + potBonus.atkPercent + gearSetBonus.atkPercent;
   const abilityAtkBonus = primaryVal * 0.005 + secondaryVal * 0.002;
   const step1 = (base.atk + weaponAtk) * atkPercentTotal;
   const step2 = step1 + wpBonus.atk;
@@ -401,22 +475,24 @@ export function computeFinalStats(
   // Helper to round percentage stats to 0.1% precision (3 decimal places)
   const pct = (v: number) => Math.floor(v * 1000) / 1000;
 
-  return {
-    hp: Math.round((base.hp + hpFromStr) * (1 + wpBonus.hpPercent + gearBonus.hpPercent)),
-    atk: finalAtk + gearBonus.atk,
-    def: Math.round((base.def + wpBonus.def + gearBonus.def) * (1 + wpBonus.defPercent)),
-    critRate: pct(base.critRate + potBonus.critRate + wpBonus.critRate + gearBonus.critRate),
+  const atkBeforeAbility = Math.floor((base.atk + weaponAtk) * atkPercentTotal + wpBonus.atk);
+
+  const stats: Stats = {
+    hp: Math.round((base.hp + hpFromStr + gearSetBonus.hp) * (1 + wpBonus.hpPercent + gearBonus.hpPercent + potBonus.hpPercent)),
+    atk: finalAtk + gearBonus.atk + gearSetBonus.atkPercent, // ATK% from set applied differently
+    def: Math.round((base.def + wpBonus.def + gearBonus.def) * (1 + wpBonus.defPercent + potBonus.defPercent)),
+    critRate: pct(base.critRate + potBonus.critRate + wpBonus.critRate + gearBonus.critRate + gearSetBonus.critRate),
     critDmg: pct(base.critDmg + potBonus.critDmg + wpBonus.critDmg + gearBonus.critDmg),
-    artsIntensity: base.artsIntensity + wpBonus.artsIntensity + gearBonus.artsIntensity,
+    artsIntensity: base.artsIntensity + wpBonus.artsIntensity + gearBonus.artsIntensity + gearSetBonus.artsIntensity,
     physicalDmgBonus: pct(base.physicalDmgBonus + wpBonus.physicalDmgBonus + potBonus.physicalDmgBonus + gearBonus.physicalDmgBonus),
     heatDmgBonus: pct(base.heatDmgBonus + wpBonus.heatDmgBonus + potBonus.heatDmgBonus + gearBonus.heatDmgBonus),
     electricDmgBonus: pct(base.electricDmgBonus + wpBonus.electricDmgBonus + potBonus.electricDmgBonus + gearBonus.electricDmgBonus),
     cryoDmgBonus: pct(base.cryoDmgBonus + wpBonus.cryoDmgBonus + potBonus.cryoDmgBonus + gearBonus.cryoDmgBonus),
     natureDmgBonus: pct(base.natureDmgBonus + wpBonus.natureDmgBonus + potBonus.natureDmgBonus + gearBonus.natureDmgBonus),
-    basicDmgBonus: pct(base.basicDmgBonus + potBonus.basicDmgBonus + gearBonus.basicDmgBonus),
-    battleSkillDmgBonus: pct(base.battleSkillDmgBonus + gearBonus.battleSkillDmgBonus),
-    comboSkillDmgBonus: pct(base.comboSkillDmgBonus + gearBonus.comboSkillDmgBonus),
-    ultimateDmgBonus: pct(base.ultimateDmgBonus + gearBonus.ultimateDmgBonus),
+    basicDmgBonus: pct(base.basicDmgBonus + potBonus.basicDmgBonus + gearBonus.basicDmgBonus + gearSetBonus.allSkillDmgBonus),
+    battleSkillDmgBonus: pct(base.battleSkillDmgBonus + gearBonus.battleSkillDmgBonus + gearSetBonus.allSkillDmgBonus),
+    comboSkillDmgBonus: pct(base.comboSkillDmgBonus + gearBonus.comboSkillDmgBonus + gearSetBonus.allSkillDmgBonus),
+    ultimateDmgBonus: pct(base.ultimateDmgBonus + gearBonus.ultimateDmgBonus + gearSetBonus.allSkillDmgBonus),
     allSkillDmgBonus: pct(base.allSkillDmgBonus + gearBonus.allSkillDmgBonus),
     staggeredDmgBonus: pct(base.staggeredDmgBonus + gearBonus.staggeredDmgBonus),
     physicalResistance: base.physicalResistance + physResFromAgi + gearBonus.physicalResistance,
@@ -426,11 +502,26 @@ export function computeFinalStats(
     natureResistance: base.natureResistance + elemResFromInt,
     aetherResistance: base.aetherResistance,
     finalDmgReduction: pct(base.finalDmgReduction + gearBonus.finalDmgReduction),
-    treatmentBonus: pct(base.treatmentBonus + wpBonus.treatmentBonus + gearBonus.treatmentBonus),
+    treatmentBonus: pct(base.treatmentBonus + wpBonus.treatmentBonus + gearBonus.treatmentBonus + gearSetBonus.treatmentBonus),
     treatmentReceivedBonus: pct(base.treatmentReceivedBonus + treatRecvFromWil),
-    comboSkillCdReduction: pct(base.comboSkillCdReduction + gearBonus.comboSkillCdReduction),
-    ultimateGainEfficiency: pct(base.ultimateGainEfficiency + wpBonus.ultimateGainEfficiency + gearBonus.ultimateGainEfficiency),
-    staggerEfficiencyBonus: pct(base.staggerEfficiencyBonus + gearBonus.staggerEfficiencyBonus),
+    comboSkillCdReduction: pct(base.comboSkillCdReduction + gearBonus.comboSkillCdReduction + gearSetBonus.comboSkillCdReduction),
+    ultimateGainEfficiency: pct(base.ultimateGainEfficiency + wpBonus.ultimateGainEfficiency + gearBonus.ultimateGainEfficiency + gearSetBonus.ultimateGainEfficiency),
+    staggerEfficiencyBonus: pct(base.staggerEfficiencyBonus + gearBonus.staggerEfficiencyBonus + gearSetBonus.staggerEfficiencyBonus),
+  };
+
+  return {
+    stats,
+    breakdown: {
+      opBaseAtk: base.atk,
+      weaponBaseAtk: weaponAtk,
+      atkPercent: wpBonus.atkPercent + potBonus.atkPercent,
+      atkFlatBonus: wpBonus.atk,
+      atkBeforeAbility,
+      abilityAtkBonus,
+      opHp: base.hp,
+      hpFromStr,
+      hpPercent: wpBonus.hpPercent + gearBonus.hpPercent,
+    },
   };
 }
 

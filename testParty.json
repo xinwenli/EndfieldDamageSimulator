@@ -1,0 +1,174 @@
+[
+  {
+    "slot": 0,
+    "operatorId": "7",
+    "level": 90,
+    "potential": 5,
+    "talentStage": 4,
+    "skillRanks": [
+      12,
+      12,
+      12,
+      12
+    ],
+    "weaponId": "70",
+    "weaponLevel": 90,
+    "weaponSkillRanks": [
+      9,
+      9,
+      9
+    ],
+    "armorId": "993",
+    "armorRanks": [
+      3,
+      3,
+      3
+    ],
+    "glovesId": "960",
+    "glovesRanks": [
+      3,
+      3,
+      3
+    ],
+    "kit1Id": "712",
+    "kit1Ranks": [
+      3,
+      3
+    ],
+    "kit2Id": "712",
+    "kit2Ranks": [
+      3,
+      3
+    ]
+  },
+  {
+    "slot": 1,
+    "operatorId": "3",
+    "level": 80,
+    "potential": 5,
+    "talentStage": 1,
+    "skillRanks": [
+      12,
+      12,
+      12,
+      12
+    ],
+    "weaponId": "110",
+    "weaponLevel": 80,
+    "weaponSkillRanks": [
+      8,
+      4,
+      7
+    ],
+    "armorId": "993",
+    "armorRanks": [
+      0,
+      0,
+      1
+    ],
+    "glovesId": "1000",
+    "glovesRanks": [
+      0,
+      0,
+      3
+    ],
+    "kit1Id": "999",
+    "kit1Ranks": [
+      0,
+      0,
+      3
+    ],
+    "kit2Id": "999",
+    "kit2Ranks": [
+      1,
+      0,
+      3
+    ]
+  },
+  {
+    "slot": 2,
+    "operatorId": "95",
+    "level": 90,
+    "potential": 5,
+    "talentStage": 4,
+    "skillRanks": [
+      1,
+      6,
+      9,
+      9
+    ],
+    "weaponId": "62",
+    "weaponLevel": 80,
+    "weaponSkillRanks": [
+      9,
+      6,
+      7
+    ],
+    "armorId": "993",
+    "armorRanks": [
+      0,
+      0,
+      2
+    ],
+    "glovesId": "1001",
+    "glovesRanks": [
+      0,
+      0,
+      2
+    ],
+    "kit1Id": "712",
+    "kit1Ranks": [
+      0,
+      0
+    ],
+    "kit2Id": "712",
+    "kit2Ranks": [
+      0,
+      1
+    ]
+  },
+  {
+    "slot": 3,
+    "operatorId": "91",
+    "level": 60,
+    "potential": 5,
+    "talentStage": 0,
+    "skillRanks": [
+      9,
+      9,
+      9,
+      9
+    ],
+    "weaponId": "120",
+    "weaponLevel": 80,
+    "weaponSkillRanks": [
+      5,
+      4,
+      7
+    ],
+    "armorId": "950",
+    "armorRanks": [
+      0,
+      0,
+      0
+    ],
+    "glovesId": "1000",
+    "glovesRanks": [
+      0,
+      0,
+      0
+    ],
+    "kit1Id": "954",
+    "kit1Ranks": [
+      0,
+      0,
+      0
+    ],
+    "kit2Id": "954",
+    "kit2Ranks": [
+      0,
+      0,
+      0
+    ]
+  }
+]

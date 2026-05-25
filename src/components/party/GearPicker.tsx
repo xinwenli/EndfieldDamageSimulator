@@ -3,6 +3,8 @@ import { Search, X } from "lucide-react";
 import type { GearPiece } from "../../engine/types";
 import gearsData from "../../data/gears.json";
 import { assetUrl } from "../../lib/utils";
+import { useLangStore } from "../../i18n/context";
+import { t, displayName } from "../../i18n/translations";
 
 interface Props {
   open: boolean;
@@ -15,10 +17,11 @@ const allGears = gearsData as unknown as GearPiece[];
 
 export function GearPicker({ open, onClose, onSelect, slot }: Props) {
   const [search, setSearch] = useState("");
+  const { lang } = useLangStore();
   const gears = allGears.filter((g) => g.slot === slot);
 
   const filtered = gears.filter((g) => {
-    if (search && !g.name.toLowerCase().includes(search.toLowerCase())) return false;
+    if (search && !g.name.toLowerCase().includes(search.toLowerCase()) && !(g.nameEn||"").toLowerCase().includes(search.toLowerCase())) return false;
     return true;
   });
 
@@ -31,7 +34,7 @@ export function GearPicker({ open, onClose, onSelect, slot }: Props) {
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex items-center justify-between p-4 border-b border-[var(--color-border)]">
-          <h3 className="font-semibold">Select {slot}</h3>
+          <h3 className="font-semibold">{t("gear.select", lang)}</h3>
           <button onClick={onClose} className="text-[var(--color-text-muted)] hover:text-white">
             <X className="w-5 h-5" />
           </button>
@@ -43,7 +46,7 @@ export function GearPicker({ open, onClose, onSelect, slot }: Props) {
             <input
               type="text" value={search}
               onChange={(e) => setSearch(e.target.value)}
-              placeholder="Search gear..."
+              placeholder={t("gear.search", lang)}
               className="w-full pl-9 pr-3 py-2 bg-[var(--color-surface-alt)] border border-[var(--color-border)] rounded-lg text-sm outline-none focus:border-[var(--color-accent)]"
             />
           </div>
@@ -51,7 +54,7 @@ export function GearPicker({ open, onClose, onSelect, slot }: Props) {
 
         <div className="flex-1 overflow-auto p-3">
           {filtered.length === 0 ? (
-            <p className="text-center text-[var(--color-text-muted)] py-8 text-sm">No gear found</p>
+            <p className="text-center text-[var(--color-text-muted)] py-8 text-sm">{t("gear.none", lang)}</p>
           ) : (
             <div className="grid grid-cols-1 gap-2">
               {filtered.map((g) => (
@@ -66,7 +69,7 @@ export function GearPicker({ open, onClose, onSelect, slot }: Props) {
                     <div className="w-12 h-12 rounded-lg bg-[var(--color-border)] shrink-0" />
                   )}
                   <div className="flex-1 min-w-0">
-                    <div className="font-medium text-sm">{g.name}</div>
+                    <div className="font-medium text-sm">{displayName(g, lang)}</div>
                     <div className="flex items-center gap-2 mt-0.5">
                       <span className="text-xs text-yellow-400">{"★".repeat(g.rarity)}</span>
                     </div>

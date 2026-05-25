@@ -4,6 +4,8 @@ import type { Operator } from "../../engine/types";
 import { getAllOperators } from "../../engine/dataLoader";
 import { getElements } from "../../engine/dataLoader";
 import { assetUrl } from "../../lib/utils";
+import { useLangStore } from "../../i18n/context";
+import { t, displayName } from "../../i18n/translations";
 
 interface OperatorPickerProps {
   open: boolean;
@@ -16,10 +18,11 @@ export function OperatorPicker({ open, onClose, onSelect, selectedIds }: Operato
   const [search, setSearch] = useState("");
   const elements = getElements();
   const operators = getAllOperators();
+  const { lang } = useLangStore();
 
   const filtered = operators.filter((op) => {
     if (selectedIds.includes(op.id)) return false;
-    if (search && !op.name.toLowerCase().includes(search.toLowerCase())) return false;
+    if (search && !op.name.toLowerCase().includes(search.toLowerCase()) && !(op.nameEn||"").toLowerCase().includes(search.toLowerCase())) return false;
     return true;
   });
 
@@ -32,7 +35,7 @@ export function OperatorPicker({ open, onClose, onSelect, selectedIds }: Operato
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex items-center justify-between p-4 border-b border-[var(--color-border)]">
-          <h3 className="font-semibold">Select Operator</h3>
+          <h3 className="font-semibold">{t("operator.select", lang)}</h3>
           <button onClick={onClose} className="text-[var(--color-text-muted)] hover:text-white">
             <X className="w-5 h-5" />
           </button>
@@ -45,7 +48,7 @@ export function OperatorPicker({ open, onClose, onSelect, selectedIds }: Operato
               type="text"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              placeholder="Search operator..."
+              placeholder={t("operator.search", lang)}
               className="w-full pl-9 pr-3 py-2 bg-[var(--color-surface-alt)] border border-[var(--color-border)] rounded-lg text-sm outline-none focus:border-[var(--color-accent)]"
             />
           </div>
@@ -53,7 +56,7 @@ export function OperatorPicker({ open, onClose, onSelect, selectedIds }: Operato
 
         <div className="flex-1 overflow-auto p-3">
           {filtered.length === 0 ? (
-            <p className="text-center text-[var(--color-text-muted)] py-8 text-sm">No operators found</p>
+            <p className="text-center text-[var(--color-text-muted)] py-8 text-sm">{t("operator.none", lang)}</p>
           ) : (
             <div className="grid grid-cols-1 gap-2">
               {filtered.map((op) => {
@@ -76,18 +79,18 @@ export function OperatorPicker({ open, onClose, onSelect, selectedIds }: Operato
                         className="w-12 h-12 rounded-lg flex items-center justify-center text-xs font-bold shrink-0"
                         style={{ backgroundColor: (el?.color ?? "#333") + "33", color: el?.color }}
                       >
-                        {el?.name?.slice(0, 2) ?? "?"}
+                        {t(op.element.charAt(0).toUpperCase()+op.element.slice(1), lang).slice(0, 2)}
                       </div>
                     )}
                     <div className="flex-1 min-w-0">
-                      <div className="font-medium text-sm">{op.name}</div>
+                      <div className="font-medium text-sm">{displayName(op, lang)}</div>
                       <div className="flex items-center gap-2 mt-0.5 flex-wrap">
                         <span className="text-xs text-yellow-400">{"★".repeat(op.rarity)}</span>
                         <span className="text-xs" style={{ color: el?.color }}>
-                          {el?.name}
+                          {t(op.element.charAt(0).toUpperCase()+op.element.slice(1), lang)}
                         </span>
-                        <span className="text-xs text-[var(--color-text-muted)]">{op.profession}</span>
-                        <span className="text-xs text-[var(--color-text-muted)]">{op.weapon}</span>
+                        <span className="text-xs text-[var(--color-text-muted)]">{t(op.profession, lang)}</span>
+                        <span className="text-xs text-[var(--color-text-muted)]">{t(op.weapon, lang)}</span>
                       </div>
                     </div>
                   </button>

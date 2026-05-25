@@ -15,3 +15,11 @@ The official wiki has two domains serving the same data in different languages:
 - **EN**: `https://wiki.skport.com/endfield`
 
 Both use the same backend API (`zonai.skland.com`) with the same item IDs. The only difference is the UI language layer. When i18n support is added in the future.
+
+## Ability Score Rounding
+
+**Symptom**: Primary/secondary ability % bonuses (from weapon skills and gear refinement) may differ from the game by ±1 point.
+
+**Cause**: The game uses `Math.round()` for percentage-based ability bonuses (e.g. `289 × 0.11 = 31.79 → 32`), while earlier versions of the simulator used `Math.floor()` (`→ 31`). This was corrected to `Math.round()` in the formulas, but the exact rounding mode used by the game for each stat category has not been independently verified for all cases.
+
+**Status**: Fixed for known cases (weapon primary/secondary ability %, gear primary/secondary ability %). If future discrepancies are found, individual stat categories may need their own rounding modes.

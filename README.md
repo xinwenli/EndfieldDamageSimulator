@@ -9,16 +9,17 @@ A web-based damage calculator and skill rotation timeline tool for **Arknights: 
 ### Operator Setup
 Configure your party of 4 operators with levels, skill ranks, weapons, and gear.
 
-### Simulator
+### Damage Simulation
 *(Planned)* Build skill rotation timelines and simulate damage output.
 
 ## Data Pipeline
 
-Data sourced from the [official Endfield wiki ENG](https://wiki.skport.com/endfield?header=0).
+Data sourced from the [official Endfield wiki ENG](https://wiki.skport.com/endfield).
 
 ## Current Status
 
-- **In Progress** — Operator Setup: party builder, operator configuration panel, weapon selection.
+- **Done** — Operator Setup: party builder, operator configuration panel, weapon selection.
+- **In Progress** — Bug fixing, testing the operater stat with different set up.
 - **Planned** — Simulator: timeline editor, DPS engine, damage charts.
 
 ## Getting Started
@@ -50,7 +51,7 @@ MIT
 ### 干员配置
 配置你的 4 人小队，设置干员等级、技能等级、武器与装备。
 
-### 模拟器
+### 伤害模拟
 *(计划中)* 构建技能循环时间轴，模拟伤害输出。
 
 ## 数据来源
@@ -59,7 +60,8 @@ MIT
 
 ## 开发进度
 
-- **进行中** — 干员配置：队伍构建、配置面板、武器选择。
+- **已完成** — 干员配置：队伍构建、配置面板、武器选择。
+- **进行中** — 修复Bug， 不同干员组合配置数据是否正确测试。
 - **计划中** — 模拟器：时间轴编辑器、DPS 引擎、伤害图表。
 
 ## 快速开始
