@@ -4,6 +4,8 @@ export type Element = "physical" | "heat" | "electric" | "cryo" | "nature";
 export type WeaponType = "Sword" | "ArtsUnit" | "Greatsword" | "Handcannon" | "Polearm";
 export type Profession = "Guard" | "Caster" | "Striker" | "Vanguard" | "Defender" | "Supporter";
 export type Ability = "strength" | "agility" | "intelligence" | "will";
+export type SkillType = "basic" | "battle" | "combo" | "ultimate";
+export type EnemyType = "common" | "advanced" | "elite" | "boss";
 
 /** A damage tick within a skill/attack sequence */
 export interface DamageTick {
@@ -11,6 +13,8 @@ export interface DamageTick {
   stagger: number;      // stagger value
   sp: number;           // SP/gauge gain
   boundEffects: string[];
+  /** Optional per-tick multiplier override. If set, this tick uses its own multiplier instead of the skill's base. */
+  multiplier?: number;
 }
 
 /** An active skill */
@@ -24,6 +28,7 @@ export interface Skill {
   damageTicks: DamageTick[];
   allowedTypes: string[];
   anomalies: Array<{ type: string; stacks: number; duration: number; offset: number }>;
+  multipliers: number[]; // damage multiplier per rank (index 0 = rank 1, length 12)
 }
 
 /** Combo/link skill */
@@ -37,6 +42,17 @@ export interface LinkSkill {
   gaugeGain: number;
   damageTicks: DamageTick[];
   allowedTypes: string[];
+  multipliers: number[]; // damage multiplier per rank (index 0 = rank 1, length 12)
+  /** Parsed trigger condition from combo skill description */
+  comboTrigger?: ComboTrigger;
+}
+
+export interface ComboTrigger {
+  type: "on_status_applied" | "on_heavy_hit" | "on_finisher_hit" | "on_dual_status" | "on_status_hit";
+  /** Status types required (for status-based triggers) */
+  statusTypes?: string[];
+  /** Both statuses must be present (for dual_status trigger) */
+  requireBoth?: boolean;
 }
 
 /** Ultimate skill */
@@ -50,9 +66,12 @@ export interface UltimateSkill {
   gaugeReply: number;
   animationTime: number;
   enhancementTime: number;
+  /** Enhanced basic attack multipliers during ultimate (per rank, same length as attackSegments) */
+  ultEnhancedMultipliers?: number[][];
   gaugeGain: number;
   damageTicks: DamageTick[];
   allowedTypes: string[];
+  multipliers: number[]; // damage multiplier per rank (index 0 = rank 1, length 12)
 }
 
 /** Normal attack segment */
@@ -62,6 +81,7 @@ export interface AttackSegment {
   gaugeGain: number;
   damageTicks: DamageTick[];
   allowedTypes: string[];
+  multipliers: number[]; // damage multiplier per rank (index 0 = rank 1, length 12) for this segment
 }
 
 /** A single operator (character) in the game */
@@ -83,6 +103,10 @@ export interface Operator {
   attackSegments: AttackSegment[];
   talents: Talent[];
   acceptTeamGauge: boolean;
+  /** Per-rank finisher ATK multiplier (from wiki "处决攻击倍率" column) */
+  finisherMultipliers?: number[];
+  /** Per-rank dive ATK multiplier (from wiki "下落攻击倍率" column) */
+  diveMultipliers?: number[];
 }
 
 /** Base stats of an operator */
@@ -206,8 +230,12 @@ export interface PartyMember {
   level: number;
   /** Skill ranks for operator skills (normal attack, skill 1, skill 2, ultimate) */
   skillRanks: number[];
-  /** Talent stage 0-4 (0=none, 4=all stages) */
+  /** Attribute talent stage 0-4 (0=none, 4=all stages) */
   talentStage: number;
+  /** Combat talent skill 1 stage */
+  talentSkill1Stage: number;
+  /** Combat talent skill 2 stage */
+  talentSkill2Stage: number;
   potential: number;
   weapon: Weapon | null;
   weaponLevel: number;
@@ -259,4 +287,122 @@ export interface SkillDamageResult {
   casts: number;
   totalDamage: number;
   dps: number;
+}
+
+// ── Target / Enemy Stats ──
+
+export interface TargetStats {
+  def: number;
+  physicalResist: number;
+  heatResist: number;
+  electricResist: number;
+  cryoResist: number;
+  natureResist: number;
+  aetherResist: number;
+  enemyType: EnemyType;
+  staggerThreshold: number; // stagger HP bar max
+  staggerDuration: number;  // seconds stagger lasts (default 5)
+}
+
+// ── Damage Calculation Context ──
+
+export interface DamageContext {
+  isStaggered: boolean;
+  isFinisher: boolean;
+  finisherEnemyType: EnemyType;
+  linkStacks: number;
+  weakenEffects: number[];        // each is a (1 - weaken%) factor
+  susceptibilityEffects: number[];  // additive susceptibility bonuses
+  incDMGTakenEffects: number[];    // additive "increased DMG taken" bonuses
+  dmgRedEffects: number[];         // each is a (1 - dmgRed%) factor
+  protectEffect: number;           // only strongest applies
+  corrosionEffect: number;         // reduces enemy resist multiplier
+  multiplicativeBonuses: number[];  // each is a (1 + bonus) factor
+  ampEffects: number[];            // additive Amp bonuses (elemental amplification)
+  isArts: boolean;
+}
+
+// ── Simulation Types ──
+
+export interface BuffInstance {
+  id: string;
+  name: string;
+  source: string;       // operatorId that applied it
+  target: "self" | "team" | "enemy";
+  stat: string;         // stat key being modified
+  value: number;        // amount (additive for most, flat for multipliers)
+  remaining: number;    // seconds remaining
+  maxDuration: number;
+}
+
+export interface SimEvent {
+  frame: number;
+  time: number;
+  type: "damage" | "buff_apply" | "buff_expire" | "skill_start" | "skill_end"
+    | "status_apply" | "stagger" | "combo_ready" | "energy_gain" | "sp_gain";
+  operatorId: string;
+  skillId?: string;
+  skillName?: string;
+  damage?: number;
+  isCrit?: boolean;
+  detail?: string;
+}
+
+export interface OperatorSnapshot {
+  operatorId: string;
+  currentSP: number;
+  currentEnergy: number;
+  activeCooldowns: Record<string, number>;  // skillId -> seconds remaining
+  activeBuffs: BuffInstance[];
+  comboSkillReady: boolean;
+  isCasting: boolean;
+  castingSkillId: string | null;
+  castingProgress: number;  // seconds elapsed since cast start
+}
+
+export interface SimFrame {
+  frame: number;
+  time: number;          // seconds from simulation start
+  events: SimEvent[];
+  operators: Record<string, OperatorSnapshot>;
+  targetStagger: number;   // current stagger bar value
+  targetStaggered: boolean;
+}
+
+export interface SimulationResultFull extends SimulationResult {
+  frames: SimFrame[];
+}
+
+// ── Party Synergy (cross-operator aura effects) ──
+
+export interface TalentMetaEntry {
+  talentId: string;
+  name: string;
+  maxStage: number;
+}
+
+export interface OperatorTalentMeta {
+  attribute: TalentMetaEntry;
+  skill1: TalentMetaEntry;
+  skill2: TalentMetaEntry;
+}
+
+export interface PartySynergyEffect {
+  /** Minimum talent stage required for this effect tier */
+  requiredTalentStage: number;
+  /** Minimum potential of source operator for this effect tier */
+  requiredPotential: number;
+  /** Target professions this effect applies to (empty = all professions) */
+  targetProfessions: Profession[];
+  /** Stat bonuses (additive) — keys match Stats fields */
+  bonuses: Record<string, number>;
+}
+
+export interface PartySynergyDef {
+  /** Operator ID that provides this synergy */
+  sourceOperatorId: string;
+  /** Which talent provides this synergy */
+  talentId: string;
+  /** Multiple tiers of this effect (base + potential upgrades) */
+  effects: PartySynergyEffect[];
 }

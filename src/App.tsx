@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Header } from "./components/layout/Header";
 import { OperatorSetupPage } from "./pages/OperatorSetupPage";
 import { SimulatorPage } from "./pages/SimulatorPage";
+import { ErrorBoundary } from "./components/layout/ErrorBoundary";
 
 type Tab = "setup" | "simulator";
 
@@ -11,7 +12,9 @@ function App() {
   return (
     <div className="flex flex-col min-h-svh">
       <Header activeTab={tab} onTabChange={setTab} />
-      {tab === "setup" ? <OperatorSetupPage /> : <SimulatorPage />}
+      <ErrorBoundary key={tab}>
+        {tab === "setup" ? <OperatorSetupPage /> : <SimulatorPage />}
+      </ErrorBoundary>
     </div>
   );
 }

@@ -2,7 +2,8 @@ import { useState } from "react";
 import { X, RefreshCw, Plus } from "lucide-react";
 import { usePartyStore } from "../../stores/partyStore";
 import { getElements } from "../../engine/dataLoader";
-import { computeFinalStats, getOperatorAbilitiesAtLevel, computeWeaponBonuses } from "../../engine/formulas";
+import { computeFinalStats, getOperatorAbilitiesAtLevel, computeWeaponBonuses, computePartySynergies, getOperatorTalentMeta } from "../../engine/formulas";
+import type { PartyMemberInfo } from "../../engine/formulas";
 import { WeaponPicker } from "./WeaponPicker";
 import { GearPicker } from "./GearPicker";
 import { assetUrl } from "../../lib/utils";
@@ -45,6 +46,7 @@ interface Props {
 export function OperatorConfigPanel({ member, onChangeOperator }: Props) {
   const {
     setLevel, setSkillRank, setPotential, setTalentStage,
+    setTalentSkill1Stage, setTalentSkill2Stage,
     setWeapon, setWeaponLevel, setWeaponSkillRank,
     setArmor, setGloves, setKit1, setKit2,
     removeOperator, setActiveSlot,
@@ -76,6 +78,26 @@ export function OperatorConfigPanel({ member, onChangeOperator }: Props) {
     kit1: member.kit1,
     kit2: member.kit2,
   });
+
+  // Compute party synergy bonuses for this operator
+  const partyMembers = usePartyStore(s => s.members);
+  const synergyMembers: PartyMemberInfo[] = partyMembers
+    .filter(m => m.operator)
+    .map(m => ({
+      operatorId: m.operator!.id,
+      profession: m.operator!.profession,
+      potential: m.potential,
+      attributeTalentStage: m.talentStage,
+      talentSkill1Stage: m.talentSkill1Stage,
+      talentSkill2Stage: m.talentSkill2Stage,
+    }));
+  const synergyBonuses = computePartySynergies(synergyMembers);
+  const synergyBonus = synergyBonuses.get(op.id);
+  const synergyUltGain = synergyBonus?.ultimateGainEfficiency || 0;
+  const totalUltGainEff = finalStats.ultimateGainEfficiency + synergyUltGain;
+
+  const talentMeta = getOperatorTalentMeta(op.id);
+
   const baseAbilities = getOperatorAbilitiesAtLevel(op.id, member.level, member.potential, member.talentStage);
   const wpBonus = computeWeaponBonuses(member.weapon, member.weaponSkillRanks);
 
@@ -216,13 +238,34 @@ export function OperatorConfigPanel({ member, onChangeOperator }: Props) {
                 {[0,1,2,3,4,5].map(p=><option key={p} value={p}>{p}/5</option>)}
               </select>
             </span>
+            {/* Attribute Talent */}
             <span className="flex items-center gap-1 flex-1">
-              <span className="text-[var(--color-text-muted)]">{t("talent", lang)}</span>
+              <span className="text-[var(--color-text-muted)] truncate" title={`天赋加成·${talentMeta?.attribute.name ?? t("talent", lang)}`}>天赋加成·{talentMeta?.attribute.name ?? t("talent", lang)}</span>
               <select value={member.talentStage} onChange={(e) => setTalentStage(member.slotIndex, Number(e.target.value))}
                 className="bg-[var(--color-surface-alt)] border border-[var(--color-border)] rounded px-1.5 py-1 flex-1">
-                {[0,1,2,3,4].map(s=><option key={s} value={s}>{s}/4</option>)}
+                {Array.from({length: (talentMeta?.attribute.maxStage ?? 4) + 1}, (_, i) => i).map(s => <option key={s} value={s}>{s}/{talentMeta?.attribute.maxStage ?? 4}</option>)}
               </select>
             </span>
+            {/* Talent Skill 1 */}
+            {talentMeta?.skill1 && talentMeta.skill1.maxStage > 0 && (
+              <span className="flex items-center gap-1 flex-1">
+                <span className="text-[var(--color-text-muted)] truncate" title={`天赋技能1·${talentMeta.skill1.name}`}>天赋技能1·{talentMeta.skill1.name}</span>
+                <select value={Math.min(member.talentSkill1Stage, talentMeta.skill1.maxStage)} onChange={(e) => setTalentSkill1Stage(member.slotIndex, Number(e.target.value))}
+                  className="bg-[var(--color-surface-alt)] border border-[var(--color-border)] rounded px-1.5 py-1 flex-1">
+                  {Array.from({length: talentMeta.skill1.maxStage + 1}, (_, i) => i).map(s => <option key={s} value={s}>{s}/{talentMeta.skill1.maxStage}</option>)}
+                </select>
+              </span>
+            )}
+            {/* Talent Skill 2 */}
+            {talentMeta?.skill2 && talentMeta.skill2.maxStage > 0 && (
+              <span className="flex items-center gap-1 flex-1">
+                <span className="text-[var(--color-text-muted)] truncate" title={`天赋技能2·${talentMeta.skill2.name}`}>天赋技能2·{talentMeta.skill2.name}</span>
+                <select value={Math.min(member.talentSkill2Stage, talentMeta.skill2.maxStage)} onChange={(e) => setTalentSkill2Stage(member.slotIndex, Number(e.target.value))}
+                  className="bg-[var(--color-surface-alt)] border border-[var(--color-border)] rounded px-1.5 py-1 flex-1">
+                  {Array.from({length: talentMeta.skill2.maxStage + 1}, (_, i) => i).map(s => <option key={s} value={s}>{s}/{talentMeta.skill2.maxStage}</option>)}
+                </select>
+              </span>
+            )}
             {SKILL_LABELS.map((label, i) => (
               <span key={i} className="flex items-center gap-1 flex-1">
                 <span className="text-[var(--color-text-muted)] truncate">{label}</span>
@@ -398,11 +441,12 @@ export function OperatorConfigPanel({ member, onChangeOperator }: Props) {
               <div className={STAT_ROW}><span className="text-[var(--color-text-muted)]">{t("Treat Bonus", lang)}</span><span className={VALUE}>{(finalStats.treatmentBonus*100).toFixed(1)}%</span></div>
               <div className={STAT_ROW}><span className="text-[var(--color-text-muted)]">{t("Treat Recv", lang)}</span><span className={VALUE}>{(finalStats.treatmentReceivedBonus*100).toFixed(1)}%</span></div>
               <div className={STAT_ROW}><span className="text-[var(--color-text-muted)]">{t("Combo CDR", lang)}</span><span className={VALUE}>{(finalStats.comboSkillCdReduction*100).toFixed(1)}%</span></div>
-              <HoverTooltip label={t("Ult Gain Eff", lang)} value={(finalStats.ultimateGainEfficiency*100).toFixed(1)+'%'}>
+              <HoverTooltip label={t("Ult Gain Eff", lang)} value={(totalUltGainEff*100).toFixed(1)+'%'}>
                 <div className="text-[var(--color-text-muted)]">{lang==="zh"?"基础":"Base"}<span className="text-white">100%</span></div>
                 {wpBonus.ultimateGainEfficiency > 0 && <div className="text-[var(--color-text-muted)]">{lang==="zh"?"武器":"Weapon"}<span className="text-white">+{(wpBonus.ultimateGainEfficiency*100).toFixed(1)}%</span></div>}
                 {gearUltGain > 0 && <div className="text-[var(--color-text-muted)]">{lang==="zh"?"装备":"Gear"}<span className="text-white">+{gearUltGain.toFixed(1)}%</span></div>}
-                <div className="border-t border-[var(--color-border)] mt-1 pt-1 text-white font-medium">= {(finalStats.ultimateGainEfficiency*100).toFixed(1)}%</div>
+                {synergyUltGain > 0 && <div className="text-[var(--color-text-muted)]">{lang==="zh"?"协同":"Synergy"}<span className="text-[var(--color-accent)]">+{(synergyUltGain*100).toFixed(1)}%</span></div>}
+                <div className="border-t border-[var(--color-border)] mt-1 pt-1 text-white font-medium">= {(totalUltGainEff*100).toFixed(1)}%</div>
               </HoverTooltip>
               <div className={STAT_ROW}><span className="text-[var(--color-text-muted)]">{t("Stagger Eff", lang)}</span><span className={VALUE}>{(finalStats.staggerEfficiencyBonus*100).toFixed(1)}%</span></div>
               <div className={STAT_ROW}><span className="text-[var(--color-text-muted)]">{t("Phys DMG+", lang)}</span><span className={VALUE}>{(finalStats.physicalDmgBonus*100).toFixed(1)}%</span></div>

@@ -24,6 +24,14 @@
       264,
       294
     ],
+    "def": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
     "strength": [
       18,
       49,
@@ -127,6 +135,14 @@
       230,
       298,
       332
+    ],
+    "def": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
     ],
     "strength": [
       21,
@@ -232,6 +248,14 @@
       272,
       303
     ],
+    "def": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
     "strength": [
       9,
       26,
@@ -316,6 +340,14 @@
       221,
       285,
       318
+    ],
+    "def": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
     ],
     "strength": [
       13,
@@ -421,6 +453,14 @@
       291,
       323
     ],
+    "def": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
     "strength": [
       9,
       28,
@@ -525,6 +565,14 @@
       291,
       323
     ],
+    "def": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
     "strength": [
       9,
       31,
@@ -609,6 +657,14 @@
       207,
       267,
       297
+    ],
+    "def": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
     ],
     "strength": [
       10,
@@ -714,6 +770,14 @@
       272,
       303
     ],
+    "def": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
     "strength": [
       24,
       56,
@@ -817,6 +881,14 @@
       225,
       291,
       323
+    ],
+    "def": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
     ],
     "strength": [
       21,
@@ -922,6 +994,14 @@
       275,
       306
     ],
+    "def": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
     "strength": [
       14,
       33,
@@ -1026,6 +1106,14 @@
       277,
       309
     ],
+    "def": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
     "strength": [
       20,
       49,
@@ -1129,6 +1217,14 @@
       217,
       280,
       312
+    ],
+    "def": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
     ],
     "strength": [
       12,
@@ -1319,6 +1415,14 @@
       267,
       297
     ],
+    "def": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
     "strength": [
       18,
       47,
@@ -1422,6 +1526,14 @@
       207,
       267,
       297
+    ],
+    "def": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
     ],
     "strength": [
       15,
@@ -1527,6 +1639,14 @@
       272,
       303
     ],
+    "def": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
     "strength": [
       14,
       30,
@@ -1630,6 +1750,14 @@
       217,
       280,
       312
+    ],
+    "def": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
     ],
     "strength": [
       13,
@@ -1735,6 +1863,14 @@
       270,
       300
     ],
+    "def": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
     "strength": [
       21,
       54,
@@ -1838,6 +1974,14 @@
       222,
       287,
       319
+    ],
+    "def": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
     ],
     "strength": [
       13,
@@ -1943,6 +2087,14 @@
       280,
       312
     ],
+    "def": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
     "strength": [
       14,
       38,
@@ -2027,6 +2179,14 @@
       223,
       288,
       321
+    ],
+    "def": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
     ],
     "strength": [
       12,
@@ -2131,6 +2291,14 @@
       203,
       262,
       291
+    ],
+    "def": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
     ],
     "strength": [
       9,
@@ -2321,6 +2489,14 @@
       288,
       321
     ],
+    "def": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
     "strength": [
       8,
       24,
@@ -2425,6 +2601,14 @@
       296,
       329
     ],
+    "def": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
     "strength": [
       9,
       26,
@@ -2509,6 +2693,14 @@
       223,
       288,
       321
+    ],
+    "def": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
     ],
     "strength": [
       13,
@@ -2614,6 +2806,14 @@
       293,
       326
     ],
+    "def": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
     "strength": [
       10,
       29,
@@ -2692,5 +2892,509 @@
         "natureDmgBonus": 0
       }
     ]
+  },
+  "_talentMeta": {
+    "3": {
+      "attribute": {
+        "talentId": "talent_3_attr",
+        "name": "锤炼",
+        "maxStage": 4
+      },
+      "skill1": {
+        "talentId": "talent_3_skill1",
+        "name": "灼热獠牙",
+        "maxStage": 2
+      },
+      "skill2": {
+        "talentId": "talent_3_skill2",
+        "name": "节制准则",
+        "maxStage": 2
+      }
+    },
+    "4": {
+      "attribute": {
+        "talentId": "talent_4_attr",
+        "name": "锤炼",
+        "maxStage": 4
+      },
+      "skill1": {
+        "talentId": "talent_4_skill1",
+        "name": "低温症",
+        "maxStage": 2
+      },
+      "skill2": {
+        "talentId": "talent_4_skill2",
+        "name": "低温脆性",
+        "maxStage": 2
+      }
+    },
+    "5": {
+      "attribute": {
+        "talentId": "talent_5_attr",
+        "name": "明晰",
+        "maxStage": 4
+      },
+      "skill1": {
+        "talentId": "talent_5_skill1",
+        "name": "歼灭协议",
+        "maxStage": 2
+      },
+      "skill2": {
+        "talentId": "talent_5_skill2",
+        "name": "循环协议",
+        "maxStage": 1
+      }
+    },
+    "7": {
+      "attribute": {
+        "talentId": "talent_7_attr",
+        "name": "明晰",
+        "maxStage": 4
+      },
+      "skill1": {
+        "talentId": "talent_7_skill1",
+        "name": "灼心",
+        "maxStage": 3
+      },
+      "skill2": {
+        "talentId": "talent_7_skill2",
+        "name": "复燃",
+        "maxStage": 2
+      }
+    },
+    "8": {
+      "attribute": {
+        "talentId": "talent_8_attr",
+        "name": "游刃",
+        "maxStage": 4
+      },
+      "skill1": {
+        "talentId": "talent_8_skill1",
+        "name": "斫痕",
+        "maxStage": 2
+      },
+      "skill2": {
+        "talentId": "talent_8_skill2",
+        "name": "沸血",
+        "maxStage": 2
+      }
+    },
+    "11": {
+      "attribute": {
+        "talentId": "talent_11_attr",
+        "name": "明晰",
+        "maxStage": 4
+      },
+      "skill1": {
+        "talentId": "talent_11_skill1",
+        "name": "朋友的身影",
+        "maxStage": 3
+      },
+      "skill2": {
+        "talentId": "talent_11_skill2",
+        "name": "山顶冲浪",
+        "maxStage": 1
+      }
+    },
+    "12": {
+      "attribute": {
+        "talentId": "talent_12_attr",
+        "name": "游刃",
+        "maxStage": 4
+      },
+      "skill1": {
+        "talentId": "talent_12_skill1",
+        "name": "斩锋",
+        "maxStage": 2
+      },
+      "skill2": {
+        "talentId": "talent_12_skill2",
+        "name": "破势",
+        "maxStage": 2
+      }
+    },
+    "13": {
+      "attribute": {
+        "talentId": "talent_13_attr",
+        "name": "锤炼",
+        "maxStage": 4
+      },
+      "skill1": {
+        "talentId": "talent_13_skill1",
+        "name": "勾芡",
+        "maxStage": 2
+      },
+      "skill2": {
+        "talentId": "talent_13_skill2",
+        "name": "尝尝咸淡",
+        "maxStage": 2
+      }
+    },
+    "24": {
+      "attribute": {
+        "talentId": "talent_24_attr",
+        "name": "锤炼",
+        "maxStage": 4
+      },
+      "skill1": {
+        "talentId": "talent_24_skill1",
+        "name": "陷阵之志",
+        "maxStage": 2
+      },
+      "skill2": {
+        "talentId": "talent_24_skill2",
+        "name": "以铁还铁",
+        "maxStage": 2
+      }
+    },
+    "57": {
+      "attribute": {
+        "talentId": "talent_57_attr",
+        "name": "游刃",
+        "maxStage": 4
+      },
+      "skill1": {
+        "talentId": "talent_57_skill1",
+        "name": "荒野游人",
+        "maxStage": 2
+      },
+      "skill2": {
+        "talentId": "talent_57_skill2",
+        "name": "众生智慧",
+        "maxStage": 2
+      }
+    },
+    "87": {
+      "attribute": {
+        "talentId": "talent_87_attr",
+        "name": "锤炼",
+        "maxStage": 4
+      },
+      "skill1": {
+        "talentId": "talent_87_skill1",
+        "name": "闪冻锁鲜",
+        "maxStage": 2
+      },
+      "skill2": {
+        "talentId": "talent_87_skill2",
+        "name": "钓鳞老手",
+        "maxStage": 2
+      }
+    },
+    "88": {
+      "attribute": {
+        "talentId": "talent_88_attr",
+        "name": "守誓",
+        "maxStage": 4
+      },
+      "skill1": {
+        "talentId": "talent_88_skill1",
+        "name": "高效派送",
+        "maxStage": 2
+      },
+      "skill2": {
+        "talentId": "talent_88_skill2",
+        "name": "委婉手段",
+        "maxStage": 2
+      }
+    },
+    "89": {
+      "attribute": {
+        "talentId": "talent_89_attr",
+        "name": "游刃",
+        "maxStage": 4
+      },
+      "skill1": {
+        "talentId": "talent_89_skill1",
+        "name": "本质瓦解",
+        "maxStage": 2
+      },
+      "skill2": {
+        "talentId": "talent_89_skill2",
+        "name": "现实静滞",
+        "maxStage": 2
+      }
+    },
+    "90": {
+      "attribute": {
+        "talentId": "talent_90_attr",
+        "name": "锤炼",
+        "maxStage": 4
+      },
+      "skill1": {
+        "talentId": "talent_90_skill1",
+        "name": "极地生存",
+        "maxStage": 2
+      },
+      "skill2": {
+        "talentId": "talent_90_skill2",
+        "name": "救援专家",
+        "maxStage": 2
+      }
+    },
+    "91": {
+      "attribute": {
+        "talentId": "talent_91_attr",
+        "name": "明晰",
+        "maxStage": 4
+      },
+      "skill1": {
+        "talentId": "talent_91_skill1",
+        "name": "即兴发挥",
+        "maxStage": 2
+      },
+      "skill2": {
+        "talentId": "talent_91_skill2",
+        "name": "下意识",
+        "maxStage": 2
+      }
+    },
+    "92": {
+      "attribute": {
+        "talentId": "talent_92_attr",
+        "name": "游刃",
+        "maxStage": 4
+      },
+      "skill1": {
+        "talentId": "talent_92_skill1",
+        "name": "落井下石爱好者",
+        "maxStage": 2
+      },
+      "skill2": {
+        "talentId": "talent_92_skill2",
+        "name": "捉摸不定",
+        "maxStage": 2
+      }
+    },
+    "93": {
+      "attribute": {
+        "talentId": "talent_93_attr",
+        "name": "守誓",
+        "maxStage": 4
+      },
+      "skill1": {
+        "talentId": "talent_93_skill1",
+        "name": "同病相怜",
+        "maxStage": 2
+      },
+      "skill2": {
+        "talentId": "talent_93_skill2",
+        "name": "惰性使然",
+        "maxStage": 2
+      }
+    },
+    "94": {
+      "attribute": {
+        "talentId": "talent_94_attr",
+        "name": "锤炼",
+        "maxStage": 4
+      },
+      "skill1": {
+        "talentId": "talent_94_skill1",
+        "name": "坚韧防线",
+        "maxStage": 2
+      },
+      "skill2": {
+        "talentId": "talent_94_skill2",
+        "name": "全局思维",
+        "maxStage": 2
+      }
+    },
+    "95": {
+      "attribute": {
+        "talentId": "talent_95_attr",
+        "name": "游刃",
+        "maxStage": 4
+      },
+      "skill1": {
+        "talentId": "talent_95_skill1",
+        "name": "胜利喝彩",
+        "maxStage": 2
+      },
+      "skill2": {
+        "talentId": "talent_95_skill2",
+        "name": "心流时间",
+        "maxStage": 1
+      }
+    },
+    "130": {
+      "attribute": {
+        "talentId": "talent_130_attr",
+        "name": "游刃",
+        "maxStage": 4
+      },
+      "skill1": {
+        "talentId": "talent_130_skill1",
+        "name": "顿悟",
+        "maxStage": 2
+      },
+      "skill2": {
+        "talentId": "talent_130_skill2",
+        "name": "伏魔",
+        "maxStage": 2
+      }
+    },
+    "131": {
+      "attribute": {
+        "talentId": "talent_131_attr",
+        "name": "守誓",
+        "maxStage": 4
+      },
+      "skill1": {
+        "talentId": "talent_131_skill1",
+        "name": "活着的旗帜",
+        "maxStage": 2
+      },
+      "skill2": {
+        "talentId": "talent_131_skill2",
+        "name": "战术教导",
+        "maxStage": 2
+      }
+    },
+    "150": {
+      "attribute": {
+        "talentId": "talent_150_attr",
+        "name": "守誓",
+        "maxStage": 4
+      },
+      "skill1": {
+        "talentId": "talent_150_skill1",
+        "name": "启动进程",
+        "maxStage": 2
+      },
+      "skill2": {
+        "talentId": "talent_150_skill2",
+        "name": "协议冻结",
+        "maxStage": 1
+      }
+    },
+    "156": {
+      "attribute": {
+        "talentId": "talent_156_attr",
+        "name": "游刃",
+        "maxStage": 4
+      },
+      "skill1": {
+        "talentId": "talent_156_skill1",
+        "name": "本质瓦解",
+        "maxStage": 2
+      },
+      "skill2": {
+        "talentId": "talent_156_skill2",
+        "name": "现实静滞",
+        "maxStage": 2
+      }
+    },
+    "157": {
+      "attribute": {
+        "talentId": "talent_157_attr",
+        "name": "明晰",
+        "maxStage": 4
+      },
+      "skill1": {
+        "talentId": "talent_157_skill1",
+        "name": "科技连击",
+        "maxStage": 2
+      },
+      "skill2": {
+        "talentId": "talent_157_skill2",
+        "name": "冰点",
+        "maxStage": 2
+      }
+    },
+    "159": {
+      "attribute": {
+        "talentId": "talent_159_attr",
+        "name": "守誓",
+        "maxStage": 4
+      },
+      "skill1": {
+        "talentId": "talent_159_skill1",
+        "name": "信使的歌声",
+        "maxStage": 2
+      },
+      "skill2": {
+        "talentId": "talent_159_skill2",
+        "name": "迟来的回信",
+        "maxStage": 2
+      }
+    },
+    "1130": {
+      "attribute": {
+        "talentId": "talent_1130_attr",
+        "name": "游刃",
+        "maxStage": 4
+      },
+      "skill1": {
+        "talentId": "talent_1130_skill1",
+        "name": "肝胆相照",
+        "maxStage": 2
+      },
+      "skill2": {
+        "talentId": "talent_1130_skill2",
+        "name": "呼风唤浪",
+        "maxStage": 2
+      }
+    },
+    "1132": {
+      "attribute": {
+        "talentId": "talent_1132_attr",
+        "name": "守誓",
+        "maxStage": 4
+      },
+      "skill1": {
+        "talentId": "talent_1132_skill1",
+        "name": "天地造化",
+        "maxStage": 2
+      },
+      "skill2": {
+        "talentId": "talent_1132_skill2",
+        "name": "承天之佑",
+        "maxStage": 2
+      }
+    }
+  },
+  "_partySynergies": {
+    "159": {
+      "talentId": "talent_159_skill1",
+      "effects": [
+        {
+          "requiredTalentStage": 1,
+          "requiredPotential": 0,
+          "targetProfessions": [
+            "Guard",
+            "Caster",
+            "Supporter"
+          ],
+          "bonuses": {
+            "ultimateGainEfficiency": 0.04
+          }
+        },
+        {
+          "requiredTalentStage": 2,
+          "requiredPotential": 0,
+          "targetProfessions": [
+            "Guard",
+            "Caster",
+            "Supporter"
+          ],
+          "bonuses": {
+            "ultimateGainEfficiency": 0.03
+          }
+        },
+        {
+          "requiredTalentStage": 1,
+          "requiredPotential": 3,
+          "targetProfessions": [
+            "Guard",
+            "Caster",
+            "Supporter"
+          ],
+          "bonuses": {
+            "ultimateGainEfficiency": 0.05
+          }
+        }
+      ]
+    }
   }
 }

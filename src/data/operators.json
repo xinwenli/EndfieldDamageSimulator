@@ -48,13 +48,356 @@
     "secondaryAbility": "intelligence",
     "avatar": "/avatars/1132.png",
     "description": "“能咬牙坚持下来，就不算输。”\n干员庄方宜，武陵科学发展区管代，息壤新材项目负责天师。经宏科院推荐加入终末地，进行裂隙相关的研究。\n庄方宜出身宏山，自幼便展现出非凡天赋，未成年就以优异成绩进入天师府学院。其后因才能卓越被选拔加入息壤项目，成为武陵科考站最年轻的成员。一场灾难中，科考站几乎全军覆没，资历最浅的她被推上台前，担任管代职位，背负起整个武陵。\n临危受命，她很快振作起来，不仅在短短十年间建设起繁荣的武陵城，她本人也在摸索中成为了一名尽职尽责的领袖。但十年前的灾难仍是悬在众人头顶的一把剑，时刻提醒着她，武陵城的安居乐业可能会转瞬即逝。\n“人还在，那就什么都在。”",
-    "skills": [],
-    "linkSkill": null,
-    "ultimate": null,
-    "attackSegments": [],
-    "talents": [],
+    "skills": [
+      {
+        "id": "skill_1",
+        "name": "惊霆诀",
+        "spCost": 100,
+        "initialSp": 0,
+        "duration": 2.5,
+        "gaugeGain": 10,
+        "damageTicks": [
+          {
+            "offset": 0.6,
+            "stagger": 15,
+            "sp": 100,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "battle"
+        ],
+        "anomalies": [
+          {
+            "type": "electrification",
+            "stacks": 1,
+            "duration": 3,
+            "offset": 0
+          }
+        ],
+        "multipliers": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      }
+    ],
+    "linkSkill": {
+      "id": "combo",
+      "name": "一息万变",
+      "spCost": 0,
+      "initialSp": 0,
+      "duration": 2.4,
+      "cooldown": 18,
+      "gaugeGain": 10,
+      "damageTicks": [
+        {
+          "offset": 0.3,
+          "stagger": 10,
+          "sp": 10,
+          "boundEffects": []
+        }
+      ],
+      "allowedTypes": [
+        "combo"
+      ],
+      "multipliers": [
+        1.6,
+        1.76,
+        1.92,
+        2.08,
+        2.24,
+        2.4,
+        2.56,
+        2.72,
+        2.88,
+        3.08,
+        3.32,
+        3.6
+      ],
+      "comboTrigger": {
+        "type": "on_status_hit",
+        "statusTypes": [
+          "electrification"
+        ]
+      }
+    },
+    "ultimate": {
+      "id": "ultimate",
+      "name": "万钧风雷",
+      "spCost": 0,
+      "initialSp": 0,
+      "duration": 8.4,
+      "gaugeMax": 240,
+      "gaugeReply": 0,
+      "animationTime": 2,
+      "enhancementTime": 0,
+      "gaugeGain": 0,
+      "damageTicks": [
+        {
+          "offset": 0.98,
+          "stagger": 20,
+          "sp": 0,
+          "boundEffects": []
+        }
+      ],
+      "allowedTypes": [
+        "ultimate"
+      ],
+      "multipliers": [
+        2.4,
+        2.4,
+        2.4,
+        2.4,
+        2.4,
+        2.4,
+        2.4,
+        2.4,
+        2.4,
+        2.4,
+        2.4,
+        2.4
+      ],
+      "ultEnhancedMultipliers": [
+        [
+          0.08,
+          0.09,
+          0.1,
+          0.11,
+          0.11,
+          0.12,
+          0.13,
+          0.14,
+          0.15,
+          0.16,
+          0.17,
+          0.18
+        ]
+      ]
+    },
+    "attackSegments": [
+      {
+        "index": 0,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.3,
+            "stagger": 3,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.16,
+          0.18,
+          0.19,
+          0.21,
+          0.22,
+          0.24,
+          0.26,
+          0.27,
+          0.29,
+          0.31,
+          0.33,
+          0.36
+        ]
+      },
+      {
+        "index": 1,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.3,
+            "stagger": 6,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.24,
+          0.26,
+          0.29,
+          0.31,
+          0.34,
+          0.36,
+          0.38,
+          0.41,
+          0.43,
+          0.46,
+          0.5,
+          0.54
+        ]
+      },
+      {
+        "index": 2,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.52,
+            "stagger": 9,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.32,
+          0.35,
+          0.39,
+          0.42,
+          0.45,
+          0.48,
+          0.52,
+          0.55,
+          0.58,
+          0.62,
+          0.67,
+          0.72
+        ]
+      },
+      {
+        "index": 3,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.39,
+            "stagger": 12,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.45,
+          0.5,
+          0.54,
+          0.59,
+          0.63,
+          0.68,
+          0.72,
+          0.77,
+          0.81,
+          0.87,
+          0.93,
+          1.01
+        ]
+      },
+      {
+        "index": 4,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.78,
+            "stagger": 15,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.48,
+          0.53,
+          0.58,
+          0.62,
+          0.67,
+          0.72,
+          0.77,
+          0.82,
+          0.86,
+          0.92,
+          1,
+          1.08
+        ]
+      }
+    ],
+    "talents": [
+      {
+        "id": "talent_1132_0",
+        "name": "守誓",
+        "description": "守誓·一: 干员意志能力值提升10\n守誓·二: 干员意志能力值提升15\n守誓·三: 干员意志能力值提升15\n守誓·四: 干员意志能力值提升20"
+      },
+      {
+        "id": "talent_1132_1",
+        "name": "装备适配",
+        "description": "装备适配·一: 激活后，允许干员穿戴蓝色品质装备。\n装备适配·二: 激活后，允许干员穿戴紫色品质装备。\n装备适配·三: 激活后，允许干员穿戴金色品质装备。"
+      },
+      {
+        "id": "talent_1132_2",
+        "name": "天师养气法",
+        "description": "天师养气法·β: 进驻制造舱时，干员经验素材的生产效率提升20%\n天师养气法·γ: 进驻制造舱时，干员经验素材的生产效率提升30%"
+      },
+      {
+        "id": "talent_1132_3",
+        "name": "承天之佑",
+        "description": "承天之佑·一: 有9%的概率免疫受到的伤害，附近每存在1柄青霆剑，此概率+1%。\n承天之佑·二: 有9%的概率免疫受到的伤害，附近每存在1柄青霆剑，此概率+1%。"
+      },
+      {
+        "id": "talent_1132_4",
+        "name": "天地造化",
+        "description": "天地造化·一: 施放战技惊霆诀时对自身施加9%电磁增幅，持续5秒。\n天地造化·二: 施放战技惊霆诀时对自身施加18%电磁增幅，持续5秒。"
+      },
+      {
+        "id": "talent_1132_5",
+        "name": "管代经验",
+        "description": "管代经验·β: 进驻制造舱时，舱室内干员心情消耗降低14%\n管代经验·γ: 进驻制造舱时，舱室内干员心情消耗降低18%"
+      }
+    ],
     "acceptTeamGauge": true,
-    "nameEn": "Zhuang Fangyi"
+    "nameEn": "Zhuang Fangyi",
+    "finisherMultipliers": [
+      4,
+      4.4,
+      4.8,
+      5.2,
+      5.6,
+      6,
+      6.4,
+      6.8,
+      7.2,
+      7.7,
+      8.3,
+      9
+    ],
+    "diveMultipliers": [
+      0.8,
+      0.88,
+      0.96,
+      1.04,
+      1.12,
+      1.2,
+      1.28,
+      1.36,
+      1.44,
+      1.54,
+      1.66,
+      1.8
+    ]
   },
   {
     "id": "8",
@@ -67,13 +410,341 @@
     "secondaryAbility": "intelligence",
     "avatar": "/avatars/8.png",
     "description": "“对于精锐来说小菜一碟！”\n洛茜娜·狼珀·卢皮诺，狼卫的妹妹，狼群的掌上明珠。在一场狼群氏族与碾骨氏族的恩怨中，众多老狼为了救出她付出了血的代价，彼时的鲜血染红了襁褓……\n狼卫常年脱离氏族独自行动，但狼群需要一个领导者，洛茜接下了这一责任。她一直觉得年少成名的哥哥更应该执掌整个狼群，总是不停提醒和催促他这一点。氏族的老狼们希望洛茜能在这个年纪做更多自己喜欢的事，但洛茜最终还是无法将“责任”从心头挪开。她想为家人、为氏族变得更加可靠、强大。\n憧憬着英雄故事的洛茜，偶尔幻想着，有一天，自己能与传说中的英雄共同奋战——这是她给自己留下的一点点“自我时间”。\n“狼群从不畏惧留下伤痕！”",
-    "skills": [],
-    "linkSkill": null,
-    "ultimate": null,
-    "attackSegments": [],
-    "talents": [],
+    "skills": [
+      {
+        "id": "skill_1",
+        "name": "血红之影",
+        "spCost": 100,
+        "initialSp": 0,
+        "duration": 2.48,
+        "gaugeGain": 10,
+        "damageTicks": [
+          {
+            "offset": 1.28,
+            "stagger": 5,
+            "sp": 100,
+            "boundEffects": []
+          },
+          {
+            "offset": 1.76,
+            "stagger": 10,
+            "sp": 10,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "battle"
+        ],
+        "anomalies": [],
+        "multipliers": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      }
+    ],
+    "linkSkill": {
+      "id": "combo",
+      "name": "燎影时刻",
+      "spCost": 0,
+      "initialSp": 0,
+      "duration": 4.9,
+      "cooldown": 15,
+      "gaugeGain": 10,
+      "damageTicks": [
+        {
+          "offset": 1.2,
+          "stagger": 5,
+          "sp": 10,
+          "boundEffects": []
+        }
+      ],
+      "allowedTypes": [
+        "combo"
+      ],
+      "multipliers": [
+        0.67,
+        0.73,
+        0.8,
+        0.87,
+        0.93,
+        1,
+        1.07,
+        1.13,
+        1.2,
+        1.28,
+        1.38,
+        1.5
+      ],
+      "comboTrigger": {
+        "type": "on_dual_status",
+        "statusTypes": [
+          "breach",
+          "elemental"
+        ],
+        "requireBoth": true
+      }
+    },
+    "ultimate": {
+      "id": "ultimate",
+      "name": "“利爪”奇袭",
+      "spCost": 0,
+      "initialSp": 0,
+      "duration": 5.84,
+      "gaugeMax": 110,
+      "gaugeReply": 0,
+      "animationTime": 2,
+      "enhancementTime": 0,
+      "gaugeGain": 0,
+      "damageTicks": [
+        {
+          "offset": 0.16,
+          "stagger": 25,
+          "sp": 0,
+          "boundEffects": []
+        }
+      ],
+      "allowedTypes": [
+        "ultimate"
+      ],
+      "multipliers": [
+        2.75,
+        3,
+        3.25,
+        3.5,
+        3.75,
+        4,
+        4.25,
+        4.5,
+        4.75,
+        5.25,
+        5.5,
+        6
+      ]
+    },
+    "attackSegments": [
+      {
+        "index": 0,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.3,
+            "stagger": 3,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.27,
+          0.3,
+          0.32,
+          0.35,
+          0.38,
+          0.41,
+          0.43,
+          0.46,
+          0.49,
+          0.52,
+          0.56,
+          0.61
+        ]
+      },
+      {
+        "index": 1,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.3,
+            "stagger": 6,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.32,
+          0.35,
+          0.38,
+          0.41,
+          0.44,
+          0.47,
+          0.5,
+          0.54,
+          0.57,
+          0.61,
+          0.65,
+          0.71
+        ]
+      },
+      {
+        "index": 2,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.48,
+            "stagger": 9,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.34,
+          0.37,
+          0.41,
+          0.44,
+          0.48,
+          0.51,
+          0.54,
+          0.58,
+          0.61,
+          0.65,
+          0.71,
+          0.77
+        ]
+      },
+      {
+        "index": 3,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.3,
+            "stagger": 12,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.41,
+          0.45,
+          0.49,
+          0.53,
+          0.57,
+          0.61,
+          0.65,
+          0.69,
+          0.73,
+          0.78,
+          0.84,
+          0.91
+        ]
+      },
+      {
+        "index": 4,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.27,
+            "stagger": 15,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.5,
+          0.55,
+          0.6,
+          0.65,
+          0.7,
+          0.75,
+          0.8,
+          0.85,
+          0.9,
+          0.96,
+          1.04,
+          1.13
+        ]
+      }
+    ],
+    "talents": [
+      {
+        "id": "talent_8_0",
+        "name": "狩猎嗅觉",
+        "description": "狩猎嗅觉·β: 进驻会客室时，干员收集线索的效率提升20%。\n狩猎嗅觉·γ: 进驻会客室时，干员收集线索的效率提升30%。"
+      },
+      {
+        "id": "talent_8_1",
+        "name": "游刃",
+        "description": "游刃·一: 干员敏捷能力值提升10\n游刃·二: 干员敏捷能力值提升15\n游刃·三: 干员敏捷能力值提升15\n游刃·四: 干员敏捷能力值提升20"
+      },
+      {
+        "id": "talent_8_2",
+        "name": "装备适配",
+        "description": "装备适配·一: 激活后，允许干员穿戴蓝色品质装备。\n装备适配·二: 激活后，允许干员穿戴紫色品质装备。\n装备适配·三: 激活后，允许干员穿戴金色品质装备。"
+      },
+      {
+        "id": "talent_8_3",
+        "name": "氏族的礼仪",
+        "description": "氏族的礼仪·β: 进驻会客室时，舱室内干员心情消耗降低14%。\n氏族的礼仪·γ: 进驻会客室时，舱室内干员心情消耗降低18%。"
+      },
+      {
+        "id": "talent_8_4",
+        "name": "斫痕",
+        "description": "斫痕·一: 战技的狼之珀造成伤害后，会对目标施加爪印斫痕状态，\n斫痕·二: 战技的狼之珀造成伤害后，会对目标施加爪印斫痕状态，"
+      },
+      {
+        "id": "talent_8_5",
+        "name": "沸血",
+        "description": "沸血·一: 洛茜对处于爪印斫痕状态的敌人施放技能造成暴击伤害时，会额外触发一次攻击力12%的灼热伤害，并且为自身回复[智识×0.04]点生命值。若目标同时处于燃烧状态，则上述伤害和治疗效果提升至1.5倍。\n沸血·二: 洛茜对处于爪印斫痕状态的敌人施放技能造成暴击伤害时，会额外触发一次攻击力24%的灼热伤害，并且为自身回复[智识×0.08]点生命值。若目标同时处于燃烧状态，则上述伤害和治疗效果提升至1.5倍。"
+      }
+    ],
     "acceptTeamGauge": true,
-    "nameEn": "Rossi"
+    "nameEn": "Rossi",
+    "finisherMultipliers": [
+      4,
+      4.4,
+      4.8,
+      5.2,
+      5.6,
+      6,
+      6.4,
+      6.8,
+      7.2,
+      7.7,
+      8.3,
+      9
+    ],
+    "diveMultipliers": [
+      0.8,
+      0.88,
+      0.96,
+      1.04,
+      1.12,
+      1.2,
+      1.28,
+      1.36,
+      1.44,
+      1.54,
+      1.66,
+      1.8
+    ]
   },
   {
     "id": "1130",
@@ -86,13 +757,333 @@
     "secondaryAbility": "strength",
     "avatar": "/avatars/1130.png",
     "description": "“大当家在此，你、你，还有你，都听我指挥！”\n汤汤，性格直爽，讲究义气的清波寨大当家。\n婴儿时期的她顺着河水漂到了清波寨，被寨民收养。虽然年纪尚小，但她已经做好了承担清波寨未来的打算。\n经历过许多挫折的她依旧对世界充满热情。为了寻找问题的答案，也为了更好地发展清波寨，汤汤来到了终末地工业。\n别让她跟弭弗碰上，可能会砸坏东西——某位总后勤办事处的干员如是说。\n“把我叫过来，就是为了夸我呀？那你再夸点儿，我就爱听人说真话！”",
-    "skills": [],
-    "linkSkill": null,
-    "ultimate": null,
-    "attackSegments": [],
-    "talents": [],
+    "skills": [
+      {
+        "id": "skill_1",
+        "name": "踏潮卷浪！",
+        "spCost": 100,
+        "initialSp": 0,
+        "duration": 4.4,
+        "gaugeGain": 10,
+        "damageTicks": [
+          {
+            "offset": 1.2,
+            "stagger": 10,
+            "sp": 100,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "battle"
+        ],
+        "anomalies": [],
+        "multipliers": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      }
+    ],
+    "linkSkill": {
+      "id": "combo",
+      "name": "河水，助我！",
+      "spCost": 0,
+      "initialSp": 0,
+      "duration": 2.9,
+      "cooldown": 14,
+      "gaugeGain": 10,
+      "damageTicks": [
+        {
+          "offset": 0.1,
+          "stagger": 10,
+          "sp": 10,
+          "boundEffects": []
+        }
+      ],
+      "allowedTypes": [
+        "combo"
+      ],
+      "multipliers": [
+        1.07,
+        1.17,
+        1.28,
+        1.39,
+        1.49,
+        1.6,
+        1.71,
+        1.81,
+        1.92,
+        2.05,
+        2.21,
+        2.4
+      ]
+    },
+    "ultimate": {
+      "id": "ultimate",
+      "name": "大当家盯着呢！",
+      "spCost": 0,
+      "initialSp": 0,
+      "duration": 8.7,
+      "gaugeMax": 90,
+      "gaugeReply": 0,
+      "animationTime": 2,
+      "enhancementTime": 0,
+      "gaugeGain": 0,
+      "damageTicks": [
+        {
+          "offset": 0.3,
+          "stagger": 15,
+          "sp": 0,
+          "boundEffects": []
+        },
+        {
+          "offset": 0.6,
+          "stagger": 20,
+          "sp": 0,
+          "boundEffects": []
+        }
+      ],
+      "allowedTypes": [
+        "ultimate"
+      ],
+      "multipliers": [
+        1.42,
+        1.56,
+        1.71,
+        1.85,
+        1.99,
+        2.13,
+        2.28,
+        2.42,
+        2.56,
+        2.74,
+        2.95,
+        3.2
+      ]
+    },
+    "attackSegments": [
+      {
+        "index": 0,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.3,
+            "stagger": 3,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.23,
+          0.25,
+          0.27,
+          0.29,
+          0.32,
+          0.34,
+          0.36,
+          0.39,
+          0.41,
+          0.44,
+          0.47,
+          0.51
+        ]
+      },
+      {
+        "index": 1,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.3,
+            "stagger": 6,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.25,
+          0.28,
+          0.3,
+          0.33,
+          0.35,
+          0.38,
+          0.4,
+          0.43,
+          0.45,
+          0.48,
+          0.52,
+          0.56
+        ]
+      },
+      {
+        "index": 2,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.72,
+            "stagger": 9,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.35,
+          0.39,
+          0.42,
+          0.46,
+          0.49,
+          0.53,
+          0.56,
+          0.6,
+          0.63,
+          0.67,
+          0.73,
+          0.79
+        ]
+      },
+      {
+        "index": 3,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.3,
+            "stagger": 12,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.37,
+          0.4,
+          0.44,
+          0.47,
+          0.51,
+          0.55,
+          0.58,
+          0.62,
+          0.66,
+          0.7,
+          0.76,
+          0.82
+        ]
+      },
+      {
+        "index": 4,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.84,
+            "stagger": 15,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.5,
+          0.55,
+          0.6,
+          0.65,
+          0.7,
+          0.75,
+          0.8,
+          0.85,
+          0.9,
+          0.96,
+          1.04,
+          1.13
+        ]
+      }
+    ],
+    "talents": [
+      {
+        "id": "talent_1130_0",
+        "name": "游刃",
+        "description": "游刃·一: 干员敏捷能力值提升10\n游刃·二: 干员敏捷能力值提升15\n游刃·三: 干员敏捷能力值提升15\n游刃·四: 干员敏捷能力值提升20"
+      },
+      {
+        "id": "talent_1130_1",
+        "name": "呼风唤浪",
+        "description": "呼风唤浪·一: 主控干员在古老图形中进行下落攻击，提前结束演化时，形成一个\n呼风唤浪·二: 主控干员在古老图形中进行下落攻击，提前结束演化时，形成一个"
+      },
+      {
+        "id": "talent_1130_2",
+        "name": "河流的女儿",
+        "description": "河流的女儿·β: 进驻培养舱时，晶植质料的培养速度提升20%。\n河流的女儿·γ: 进驻培养舱时，晶植质料的培养速度提升30%。"
+      },
+      {
+        "id": "talent_1130_3",
+        "name": "肝胆相照",
+        "description": "肝胆相照·一: 涡流附近5米范围内，友方干员获得10%加速，\n肝胆相照·二: 涡流附近5米范围内，友方干员获得20%加速，"
+      },
+      {
+        "id": "talent_1130_4",
+        "name": "大当家",
+        "description": "大当家·β: 进驻培养舱时，舱室内干员心情消耗降低14%。\n大当家·γ: 进驻培养舱时，舱室内干员心情消耗降低18%。"
+      },
+      {
+        "id": "talent_1130_5",
+        "name": "装备适配",
+        "description": "装备适配·一: 激活后，允许干员穿戴蓝色品质装备。\n装备适配·二: 激活后，允许干员穿戴紫色品质装备。\n装备适配·三: 激活后，允许干员穿戴金色品质装备。"
+      }
+    ],
     "acceptTeamGauge": true,
-    "nameEn": "Tangtang"
+    "nameEn": "Tangtang",
+    "finisherMultipliers": [
+      4,
+      4.4,
+      4.8,
+      5.2,
+      5.6,
+      6,
+      6.4,
+      6.8,
+      7.2,
+      7.7,
+      8.3,
+      9
+    ],
+    "diveMultipliers": [
+      0.8,
+      0.88,
+      0.96,
+      1.04,
+      1.12,
+      1.2,
+      1.28,
+      1.36,
+      1.44,
+      1.54,
+      1.66,
+      1.8
+    ]
   },
   {
     "id": "157",
@@ -105,13 +1096,334 @@
     "secondaryAbility": "agility",
     "avatar": "/avatars/157.png",
     "description": "“这把铳手感不错！嗯……设计上还有拓展空间，我会把它改成我的专属款！”\n伊冯是终末地工业特种技术部门的干员，现负责对超域、侵蚀及相关装置的研究。\n单从外表来看，伊冯就像是一位叛逆的时尚少女：给自己的角、尾巴和指甲涂上惹眼的色彩；翘掉学术会议去购买时尚杂志和流行唱片……伊冯总会被新奇的事物吸引，以离经叛道的姿态走在潮流最前端。\n但没有任何人敢否认她是绝对的天才。从学生时代开始，伊冯就在科研领域获得了令人艳羡的成就，然而，当所有人都认为她会入职大型研究所，成为科研的领航人时，伊冯却选择离开那些地方，加入了终末地。\n理由？她从没说过，或许你能问出答案。\n“我能给装备改涂装吗？我觉得它的颜色跟我的头发不搭。”",
-    "skills": [],
-    "linkSkill": null,
-    "ultimate": null,
-    "attackSegments": [],
-    "talents": [],
+    "skills": [
+      {
+        "id": "skill_1",
+        "name": "冰冰弹·β型",
+        "spCost": 100,
+        "initialSp": 0,
+        "duration": 3.6,
+        "gaugeGain": 10,
+        "damageTicks": [
+          {
+            "offset": 0.6,
+            "stagger": 10,
+            "sp": 100,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "battle"
+        ],
+        "anomalies": [
+          {
+            "type": "solidification",
+            "stacks": 1,
+            "duration": 67,
+            "offset": 0
+          }
+        ],
+        "multipliers": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      }
+    ],
+    "linkSkill": {
+      "id": "combo",
+      "name": "速冻仔·u37",
+      "spCost": 0,
+      "initialSp": 0,
+      "duration": 6.0,
+      "cooldown": 20,
+      "gaugeGain": 10,
+      "damageTicks": [
+        {
+          "offset": 2.0,
+          "stagger": 10,
+          "sp": 10,
+          "boundEffects": []
+        }
+      ],
+      "allowedTypes": [
+        "combo"
+      ],
+      "multipliers": [
+        0.45,
+        0.49,
+        0.54,
+        0.58,
+        0.62,
+        0.67,
+        0.71,
+        0.76,
+        0.8,
+        0.86,
+        0.93,
+        1
+      ]
+    },
+    "ultimate": {
+      "id": "ultimate",
+      "name": "冷冻射手",
+      "spCost": 0,
+      "initialSp": 0,
+      "duration": 14.7,
+      "gaugeMax": 220,
+      "gaugeReply": 0,
+      "animationTime": 2,
+      "enhancementTime": 0,
+      "gaugeGain": 0,
+      "damageTicks": [
+        {
+          "offset": 1.4,
+          "stagger": 20,
+          "sp": 0,
+          "boundEffects": []
+        }
+      ],
+      "allowedTypes": [
+        "ultimate"
+      ],
+      "multipliers": [
+        0.08900000000000001,
+        0.098,
+        0.107,
+        0.11599999999999999,
+        0.125,
+        0.134,
+        0.14300000000000002,
+        0.151,
+        0.16,
+        0.172,
+        0.185,
+        0.2
+      ]
+    },
+    "attackSegments": [
+      {
+        "index": 0,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 1.2,
+            "stagger": 3,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.24,
+          0.26,
+          0.28,
+          0.31,
+          0.33,
+          0.35,
+          0.38,
+          0.4,
+          0.42,
+          0.45,
+          0.49,
+          0.53
+        ]
+      },
+      {
+        "index": 1,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.1,
+            "stagger": 6,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.25,
+          0.28,
+          0.3,
+          0.33,
+          0.35,
+          0.38,
+          0.4,
+          0.43,
+          0.45,
+          0.48,
+          0.52,
+          0.56
+        ]
+      },
+      {
+        "index": 2,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.3,
+            "stagger": 9,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.32,
+          0.35,
+          0.38,
+          0.41,
+          0.44,
+          0.47,
+          0.5,
+          0.54,
+          0.57,
+          0.61,
+          0.65,
+          0.71
+        ]
+      },
+      {
+        "index": 3,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.4,
+            "stagger": 12,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.41,
+          0.45,
+          0.49,
+          0.53,
+          0.58,
+          0.62,
+          0.66,
+          0.7,
+          0.74,
+          0.79,
+          0.85,
+          0.92
+        ]
+      },
+      {
+        "index": 4,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.3,
+            "stagger": 15,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.56,
+          0.62,
+          0.67,
+          0.73,
+          0.79,
+          0.84,
+          0.9,
+          0.96,
+          1.01,
+          1.08,
+          1.17,
+          1.26
+        ]
+      }
+    ],
+    "talents": [
+      {
+        "id": "talent_157_0",
+        "name": "科技连击",
+        "description": "科技连击·一: 战技冰冰弹·β型成功施加冻结后，下一次普通攻击直接施放重击。\n科技连击·二: 战技冰冰弹·β型成功施加冻结后，下一次普通攻击直接施放重击，"
+      },
+      {
+        "id": "talent_157_1",
+        "name": "时尚达人",
+        "description": "时尚达人·β: 进驻培养舱时，舱室内干员心情消耗降低14%。\n时尚达人·γ: 进驻培养舱时，舱室内干员心情消耗降低18%。"
+      },
+      {
+        "id": "talent_157_2",
+        "name": "菌类颜料提取",
+        "description": "菌类颜料提取·β: 进驻培养舱时，菌类质料的培养速度提升20%。\n菌类颜料提取·γ: 进驻培养舱时，菌类质料的培养速度提升30%。"
+      },
+      {
+        "id": "talent_157_3",
+        "name": "明晰",
+        "description": "明晰·一: 干员智识能力值提升10\n明晰·二: 干员智识能力值提升15\n明晰·三: 干员智识能力值提升15\n明晰·四: 干员智识能力值提升20"
+      },
+      {
+        "id": "talent_157_4",
+        "name": "冰点",
+        "description": "冰点·一: 对处于寒冷附着状态的敌人造成的暴击伤害+10%；\n冰点·二: 对处于寒冷附着状态的敌人造成的暴击伤害+20%；"
+      },
+      {
+        "id": "talent_157_5",
+        "name": "装备适配",
+        "description": "装备适配·一: 激活后，允许干员穿戴蓝色品质装备。\n装备适配·二: 激活后，允许干员穿戴紫色品质装备。\n装备适配·三: 激活后，允许干员穿戴金色品质装备。"
+      }
+    ],
     "acceptTeamGauge": true,
-    "nameEn": "Yvonne"
+    "nameEn": "Yvonne",
+    "finisherMultipliers": [
+      4,
+      4.4,
+      4.8,
+      5.2,
+      5.6,
+      6,
+      6.4,
+      6.8,
+      7.2,
+      7.7,
+      8.3,
+      9
+    ],
+    "diveMultipliers": [
+      0.8,
+      0.88,
+      0.96,
+      1.04,
+      1.12,
+      1.2,
+      1.28,
+      1.36,
+      1.44,
+      1.54,
+      1.66,
+      1.8
+    ]
   },
   {
     "id": "159",
@@ -124,13 +1436,297 @@
     "secondaryAbility": "intelligence",
     "avatar": "/avatars/159.png",
     "description": "“你好呀！你身上有一股令人怀念的气味……好像一封没有写完的信，我很好奇它会去往哪里。”\n洁尔佩塔来自罗德岛，在该公司与终末地工业的框架协议范围内，加入特种技术部门，以信使的身份为终末地工业提供服务。洁尔佩塔擅长使用一种十分罕见的源石技艺，可以影响身边的重力。\n在终末地，洁尔佩塔负责多个基地、据点间的书信传递与情报输送，常常游走在文明环带与开拓区的交界处，她似乎十分享受这份工作。近日，她开始表达“寻求挑战、磨练自己”的意图，要求承担更多高风险地区的任务。\n据华法琳所说，洁尔佩塔开朗乐观的模样，和对未来怀抱着的那一丝忐忑与憧憬，曾让自己既感到意外，又有点怀念。\n“看这里！瞧，信使小姐带着你的信飞来咯！”",
-    "skills": [],
-    "linkSkill": null,
-    "ultimate": null,
-    "attackSegments": [],
-    "talents": [],
+    "skills": [
+      {
+        "id": "skill_1",
+        "name": "秘杖·引力模式",
+        "spCost": 100,
+        "initialSp": 0,
+        "duration": 4.5,
+        "gaugeGain": 10,
+        "damageTicks": [
+          {
+            "offset": 1.6,
+            "stagger": 10,
+            "sp": 100,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "battle"
+        ],
+        "anomalies": [],
+        "multipliers": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      }
+    ],
+    "linkSkill": {
+      "id": "combo",
+      "name": "秘杖·矩阵位移",
+      "spCost": 0,
+      "initialSp": 0,
+      "duration": 4.7,
+      "cooldown": 20,
+      "gaugeGain": 10,
+      "damageTicks": [
+        {
+          "offset": 1.8,
+          "stagger": 5,
+          "sp": 10,
+          "boundEffects": []
+        }
+      ],
+      "allowedTypes": [
+        "combo"
+      ],
+      "multipliers": [
+        1.4,
+        1.54,
+        1.68,
+        1.82,
+        1.96,
+        2.1,
+        2.24,
+        2.38,
+        2.52,
+        2.7,
+        2.91,
+        3.15
+      ]
+    },
+    "ultimate": {
+      "id": "ultimate",
+      "name": "秘杖·重力场",
+      "spCost": 0,
+      "initialSp": 0,
+      "duration": 7.5,
+      "gaugeMax": 90,
+      "gaugeReply": 0,
+      "animationTime": 2,
+      "enhancementTime": 0,
+      "gaugeGain": 0,
+      "damageTicks": [
+        {
+          "offset": 0.3,
+          "stagger": 20,
+          "sp": 0,
+          "boundEffects": []
+        }
+      ],
+      "allowedTypes": [
+        "ultimate"
+      ],
+      "multipliers": [
+        3.33,
+        3.67,
+        4,
+        4.33,
+        4.67,
+        5,
+        5.34,
+        5.67,
+        6,
+        6.42,
+        6.92,
+        7.5
+      ]
+    },
+    "attackSegments": [
+      {
+        "index": 0,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.3,
+            "stagger": 3,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.3,
+          0.33,
+          0.36,
+          0.39,
+          0.42,
+          0.45,
+          0.48,
+          0.51,
+          0.54,
+          0.58,
+          0.62,
+          0.68
+        ]
+      },
+      {
+        "index": 1,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 1.27,
+            "stagger": 6,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.36,
+          0.4,
+          0.43,
+          0.47,
+          0.5,
+          0.54,
+          0.58,
+          0.61,
+          0.65,
+          0.69,
+          0.75,
+          0.81
+        ]
+      },
+      {
+        "index": 2,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.25,
+            "stagger": 9,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.41,
+          0.45,
+          0.49,
+          0.53,
+          0.57,
+          0.61,
+          0.65,
+          0.69,
+          0.73,
+          0.78,
+          0.84,
+          0.91
+        ]
+      },
+      {
+        "index": 3,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.33,
+            "stagger": 12,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.5,
+          0.55,
+          0.6,
+          0.65,
+          0.7,
+          0.75,
+          0.8,
+          0.85,
+          0.9,
+          0.96,
+          1.04,
+          1.12
+        ]
+      }
+    ],
+    "talents": [
+      {
+        "id": "talent_159_0",
+        "name": "装备适配",
+        "description": "装备适配·一: 激活后，允许干员穿戴蓝色品质装备。\n装备适配·二: 激活后，允许干员穿戴紫色品质装备。\n装备适配·三: 激活后，允许干员穿戴金色品质装备。"
+      },
+      {
+        "id": "talent_159_1",
+        "name": "信使的加工艺术",
+        "description": "信使的加工艺术·β: 进驻制造舱时，舱室内干员心情消耗降低14%。\n信使的加工艺术·γ: 进驻制造舱时，舱室内干员心情消耗降低18%。"
+      },
+      {
+        "id": "talent_159_2",
+        "name": "信使的歌声",
+        "description": "信使的歌声·一: 在场时，使小队内所有友方近卫、术师和辅助干员\n信使的歌声·二: 在场时，使小队内所有友方近卫、术师和辅助干员"
+      },
+      {
+        "id": "talent_159_3",
+        "name": "守誓",
+        "description": "守誓·一: 干员意志能力值提升10\n守誓·二: 干员意志能力值提升15\n守誓·三: 干员意志能力值提升15\n守誓·四: 干员意志能力值提升20"
+      },
+      {
+        "id": "talent_159_4",
+        "name": "迟来的回信",
+        "description": "迟来的回信·一: 战技秘杖·引力模式、连携技秘杖·矩阵位移效果加强：\n迟来的回信·二: 战技秘杖·引力模式、连携技秘杖·矩阵位移效果加强："
+      },
+      {
+        "id": "talent_159_5",
+        "name": "信使的武器知识",
+        "description": "信使的武器知识·β: 进驻制造舱时，武器经验素材的生产效率提升20%。\n信使的武器知识·γ: 进驻制造舱时，武器经验素材的生产效率提升30%。"
+      }
+    ],
     "acceptTeamGauge": true,
-    "nameEn": "Gilberta"
+    "nameEn": "Gilberta",
+    "finisherMultipliers": [
+      4,
+      4.4,
+      4.8,
+      5.2,
+      5.6,
+      6,
+      6.4,
+      6.8,
+      7.2,
+      7.7,
+      8.3,
+      9
+    ],
+    "diveMultipliers": [
+      0.8,
+      0.88,
+      1.04,
+      1.12,
+      1.2,
+      1.28,
+      1.28,
+      1.36,
+      1.44,
+      1.54,
+      1.66,
+      1.8
+    ]
   },
   {
     "id": "7",
@@ -143,13 +1739,363 @@
     "secondaryAbility": "strength",
     "avatar": "/avatars/7.png",
     "description": "“火焰，照亮黄昏！”\n莱万汀来自罗德岛，在该公司与终末地工业的框架协议范围内，通过管理员的直接引荐，以管理员直属干员的身份为终末地工业提供服务。\n在加入终末地工业之前，莱万汀曾独自游历，追寻一个属于她自己的目标。由于这样的经历，加之独立作战能力十分强大，她经常被误会成“不能沟通的人”——当然，这与事实相去甚远。只是因为她真诚、坦率的性格有时确实过于外显，导致一些人对她产生了误会。\n不过，她有时候会说一些令他人费解的事情，比如经常挂在嘴边的那些关于“记忆”的话题，就好像她刻意在与“自己”划清界限一样。\n她经常挥舞着火焰，又十分喜欢冰淇淋——于她而言，这也许是一件自然而然的事吧。\n“如果还觉得冷，可以往我这边靠。”",
-    "skills": [],
-    "linkSkill": null,
-    "ultimate": null,
-    "attackSegments": [],
-    "talents": [],
+    "skills": [
+      {
+        "id": "skill_1",
+        "name": "焚灭",
+        "spCost": 100,
+        "initialSp": 0,
+        "duration": 4.0,
+        "gaugeGain": 10,
+        "damageTicks": [
+          {
+            "offset": 1.1,
+            "stagger": 10,
+            "sp": 100,
+            "boundEffects": []
+          },
+          {
+            "offset": 1.8,
+            "stagger": 10,
+            "sp": 10,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "battle"
+        ],
+        "anomalies": [
+          {
+            "type": "combustion",
+            "stacks": 1,
+            "duration": 5,
+            "offset": 0
+          }
+        ],
+        "multipliers": [
+          0.62,
+          0.68,
+          0.75,
+          0.81,
+          0.87,
+          0.93,
+          0.99,
+          1.06,
+          1.12,
+          1.2,
+          1.29,
+          1.4
+        ]
+      }
+    ],
+    "linkSkill": {
+      "id": "combo",
+      "name": "沸腾",
+      "spCost": 0,
+      "initialSp": 0,
+      "duration": 6.5,
+      "cooldown": 10,
+      "gaugeGain": 10,
+      "damageTicks": [
+        {
+          "offset": 3.2,
+          "stagger": 10,
+          "sp": 10,
+          "boundEffects": []
+        }
+      ],
+      "allowedTypes": [
+        "combo"
+      ],
+      "multipliers": [
+        2.4,
+        2.64,
+        2.88,
+        3.12,
+        3.36,
+        3.6,
+        3.84,
+        4.08,
+        4.32,
+        4.62,
+        4.98,
+        5.4
+      ],
+      "comboTrigger": {
+        "type": "on_status_applied",
+        "statusTypes": [
+          "combustion",
+          "corrosion"
+        ]
+      }
+    },
+    "ultimate": {
+      "id": "ultimate",
+      "name": "黄昏",
+      "spCost": 0,
+      "initialSp": 0,
+      "duration": 12.3,
+      "gaugeMax": 300,
+      "gaugeReply": 0,
+      "animationTime": 2,
+      "enhancementTime": 0,
+      "gaugeGain": 0,
+      "damageTicks": [
+        {
+          "offset": 0.4,
+          "stagger": 20,
+          "sp": 0,
+          "boundEffects": []
+        }
+      ],
+      "allowedTypes": [
+        "ultimate"
+      ],
+      "multipliers": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "ultEnhancedMultipliers": [
+        [
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5
+        ]
+      ]
+    },
+    "attackSegments": [
+      {
+        "index": 0,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.3,
+            "stagger": 3,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.16,
+          0.18,
+          0.19,
+          0.21,
+          0.22,
+          0.24,
+          0.26,
+          0.27,
+          0.29,
+          0.31,
+          0.33,
+          0.36
+        ]
+      },
+      {
+        "index": 1,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.08,
+            "stagger": 6,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.24,
+          0.26,
+          0.29,
+          0.31,
+          0.34,
+          0.36,
+          0.38,
+          0.41,
+          0.43,
+          0.46,
+          0.5,
+          0.54
+        ]
+      },
+      {
+        "index": 2,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.16,
+            "stagger": 9,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.25,
+          0.28,
+          0.3,
+          0.33,
+          0.35,
+          0.38,
+          0.4,
+          0.43,
+          0.45,
+          0.48,
+          0.52,
+          0.56
+        ]
+      },
+      {
+        "index": 3,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.24,
+            "stagger": 12,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.39,
+          0.43,
+          0.47,
+          0.51,
+          0.55,
+          0.59,
+          0.62,
+          0.66,
+          0.7,
+          0.75,
+          0.81,
+          0.88
+        ]
+      },
+      {
+        "index": 4,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.12,
+            "stagger": 15,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.53,
+          0.58,
+          0.64,
+          0.69,
+          0.74,
+          0.8,
+          0.85,
+          0.9,
+          0.95,
+          1.02,
+          1.1,
+          1.19
+        ]
+      }
+    ],
+    "talents": [
+      {
+        "id": "talent_7_0",
+        "name": "装备适配",
+        "description": "装备适配·一: 激活后，允许干员穿戴蓝色品质装备。\n装备适配·二: 激活后，允许干员穿戴紫色品质装备。\n装备适配·三: 激活后，允许干员穿戴金色品质装备。"
+      },
+      {
+        "id": "talent_7_1",
+        "name": "灼心",
+        "description": "灼心·一: 主控干员重击或处决命中时，莱万汀会吸收周围敌人的灼热附着。\n灼心·二: 主控干员重击或处决命中时，莱万汀会吸收周围敌人的灼热附着。\n灼心·三: 主控干员重击或处决命中时，莱万汀会吸收周围敌人的灼热附着。"
+      },
+      {
+        "id": "talent_7_2",
+        "name": "记忆熔炉",
+        "description": "记忆熔炉·β: 进驻制造舱时，干员经验素材的生产效率提升20%。\n记忆熔炉·γ: 进驻制造舱时，干员经验素材的生产效率提升30%。"
+      },
+      {
+        "id": "talent_7_3",
+        "name": "复燃",
+        "description": "复燃·一: 当生命值低于40%时，获得90%庇护，并每秒回复5%最大生命值，\n复燃·二: 当生命值低于40%时，获得90%庇护，并每秒回复5%最大生命值，"
+      },
+      {
+        "id": "talent_7_4",
+        "name": "不熄炎火",
+        "description": "不熄炎火·β: 进驻制造舱时，舱室内干员心情消耗降低14%。\n不熄炎火·γ: 进驻制造舱时，舱室内干员心情消耗降低18%。"
+      },
+      {
+        "id": "talent_7_5",
+        "name": "明晰",
+        "description": "明晰·一: 干员智识能力值提升10\n明晰·二: 干员智识能力值提升15\n明晰·三: 干员智识能力值提升15\n明晰·四: 干员智识能力值提升20"
+      }
+    ],
     "acceptTeamGauge": true,
-    "nameEn": "Laevatain"
+    "nameEn": "Laevatain",
+    "finisherMultipliers": [
+      4,
+      4.4,
+      4.8,
+      5.2,
+      5.6,
+      6,
+      6.4,
+      6.8,
+      7.2,
+      7.7,
+      8.3,
+      9
+    ],
+    "diveMultipliers": [
+      0.8,
+      0.88,
+      0.96,
+      1.04,
+      1.12,
+      1.2,
+      1.28,
+      1.36,
+      1.44,
+      1.54,
+      1.66,
+      1.8
+    ]
   },
   {
     "id": "89",
@@ -162,13 +2108,317 @@
     "secondaryAbility": "strength",
     "avatar": "/avatars/89.png",
     "description": "终末地工业的“管理员”。\n在塔卫二成文记录的历史上，管理员是文明重要的保护者之一，曾多次在星球居民面临重大灾难时挺身而出，也因此留下了许多故事（以及传说，乃至流言）。\n但真正的管理员本人仍是一个无比神秘的人物，很少有人亲眼见过管理员。\n文明环带的大小阵营和组织普遍知晓终末地工业有着这样一张十分特别的“底牌”，但也仅限于此。\n管理员对源石和协议网络掌控的本质，和其必要的定期沉睡，是终末地工业最重要的秘密之一。",
-    "skills": [],
-    "linkSkill": null,
-    "ultimate": null,
-    "attackSegments": [],
-    "talents": [],
+    "skills": [
+      {
+        "id": "skill_1",
+        "name": "构成序列",
+        "spCost": 100,
+        "initialSp": 0,
+        "duration": 4.6,
+        "gaugeGain": 10,
+        "damageTicks": [
+          {
+            "offset": 0.1,
+            "stagger": 10,
+            "sp": 100,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "battle"
+        ],
+        "anomalies": [],
+        "multipliers": [
+          1.56,
+          1.71,
+          1.87,
+          2.02,
+          2.18,
+          2.34,
+          2.49,
+          2.65,
+          2.8,
+          3,
+          3.23,
+          3.5
+        ]
+      }
+    ],
+    "linkSkill": {
+      "id": "combo",
+      "name": "锁闭序列",
+      "spCost": 0,
+      "initialSp": 0,
+      "duration": 6.2,
+      "cooldown": 16,
+      "gaugeGain": 10,
+      "damageTicks": [
+        {
+          "offset": 1.7,
+          "stagger": 10,
+          "sp": 10,
+          "boundEffects": []
+        }
+      ],
+      "allowedTypes": [
+        "combo"
+      ],
+      "multipliers": [
+        0.45,
+        0.49,
+        0.54,
+        0.58,
+        0.62,
+        0.67,
+        0.71,
+        0.76,
+        0.8,
+        0.86,
+        0.93,
+        1
+      ]
+    },
+    "ultimate": {
+      "id": "ultimate",
+      "name": "轰击序列",
+      "spCost": 0,
+      "initialSp": 0,
+      "duration": 5.1,
+      "gaugeMax": 80,
+      "gaugeReply": 0,
+      "animationTime": 2,
+      "enhancementTime": 0,
+      "gaugeGain": 0,
+      "damageTicks": [
+        {
+          "offset": 0.1,
+          "stagger": 25,
+          "sp": 0,
+          "boundEffects": []
+        }
+      ],
+      "allowedTypes": [
+        "ultimate"
+      ],
+      "multipliers": [
+        3.56,
+        3.91,
+        4.27,
+        4.62,
+        4.98,
+        5.33,
+        5.69,
+        6.04,
+        6.4,
+        6.84,
+        7.38,
+        8
+      ]
+    },
+    "attackSegments": [
+      {
+        "index": 0,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 1.2,
+            "stagger": 3,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.23,
+          0.25,
+          0.27,
+          0.29,
+          0.32,
+          0.34,
+          0.36,
+          0.39,
+          0.41,
+          0.44,
+          0.47,
+          0.51
+        ]
+      },
+      {
+        "index": 1,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.2,
+            "stagger": 6,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.27,
+          0.3,
+          0.32,
+          0.35,
+          0.38,
+          0.41,
+          0.43,
+          0.46,
+          0.49,
+          0.52,
+          0.56,
+          0.61
+        ]
+      },
+      {
+        "index": 2,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.2,
+            "stagger": 9,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.3,
+          0.33,
+          0.36,
+          0.39,
+          0.42,
+          0.45,
+          0.48,
+          0.51,
+          0.54,
+          0.58,
+          0.63,
+          0.68
+        ]
+      },
+      {
+        "index": 3,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.3,
+            "stagger": 12,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.35,
+          0.38,
+          0.41,
+          0.45,
+          0.48,
+          0.52,
+          0.55,
+          0.59,
+          0.62,
+          0.67,
+          0.72,
+          0.78
+        ]
+      },
+      {
+        "index": 4,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.6,
+            "stagger": 15,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.4,
+          0.44,
+          0.48,
+          0.52,
+          0.56,
+          0.6,
+          0.64,
+          0.68,
+          0.72,
+          0.77,
+          0.83,
+          0.9
+        ]
+      }
+    ],
+    "talents": [
+      {
+        "id": "talent_89_0",
+        "name": "本质瓦解",
+        "description": "本质瓦解·一: 当敌人附着的源石结晶被消耗后，自身攻击力+15%，持续15秒，\n本质瓦解·二: 当敌人附着的源石结晶被消耗后，自身攻击力+30%，持续15秒，"
+      },
+      {
+        "id": "talent_89_1",
+        "name": "装备适配",
+        "description": "装备适配·一: 激活后，允许干员穿戴蓝色品质装备。\n装备适配·二: 激活后，允许干员穿戴紫色品质装备。\n装备适配·三: 激活后，允许干员穿戴金色品质装备。"
+      },
+      {
+        "id": "talent_89_2",
+        "name": "游刃",
+        "description": "游刃·一: 干员敏捷能力值提升10\n游刃·二: 干员敏捷能力值提升15\n游刃·三: 干员敏捷能力值提升15\n游刃·四: 干员敏捷能力值提升20"
+      },
+      {
+        "id": "talent_89_3",
+        "name": "现实静滞",
+        "description": "现实静滞·一: 附着源石结晶的敌人受到的物理伤害+10%。\n现实静滞·二: 附着源石结晶的敌人受到的物理伤害+20%。"
+      }
+    ],
     "acceptTeamGauge": true,
-    "nameEn": "Endministrator (M)"
+    "nameEn": "Endministrator (M)",
+    "finisherMultipliers": [
+      4,
+      4.4,
+      4.8,
+      5.2,
+      5.6,
+      6,
+      6.4,
+      6.8,
+      7.2,
+      7.7,
+      8.3,
+      9
+    ],
+    "diveMultipliers": [
+      0.8,
+      0.88,
+      0.96,
+      1.04,
+      1.12,
+      1.2,
+      1.28,
+      1.36,
+      1.44,
+      1.54,
+      1.66,
+      1.8
+    ]
   },
   {
     "id": "156",
@@ -181,13 +2431,317 @@
     "secondaryAbility": "strength",
     "avatar": "/avatars/156.png",
     "description": "终末地工业的“管理员”。\n在塔卫二成文记录的历史上，管理员是文明重要的保护者之一，曾多次在星球居民面临重大灾难时挺身而出，也因此留下了许多故事（以及传说，乃至流言）。\n但真正的管理员本人仍是一个无比神秘的人物，很少有人亲眼见过管理员。\n文明环带的大小阵营和组织普遍知晓终末地工业有着这样一张十分特别的“底牌”，但也仅限于此。\n管理员对源石和协议网络掌控的本质，和其必要的定期沉睡，是终末地工业最重要的秘密之一。",
-    "skills": [],
-    "linkSkill": null,
-    "ultimate": null,
-    "attackSegments": [],
-    "talents": [],
+    "skills": [
+      {
+        "id": "skill_1",
+        "name": "构成序列",
+        "spCost": 100,
+        "initialSp": 0,
+        "duration": 3.2,
+        "gaugeGain": 10,
+        "damageTicks": [
+          {
+            "offset": 0.3,
+            "stagger": 10,
+            "sp": 100,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "battle"
+        ],
+        "anomalies": [],
+        "multipliers": [
+          1.56,
+          1.71,
+          1.87,
+          2.02,
+          2.18,
+          2.34,
+          2.49,
+          2.65,
+          2.8,
+          3,
+          3.23,
+          3.5
+        ]
+      }
+    ],
+    "linkSkill": {
+      "id": "combo",
+      "name": "锁闭序列",
+      "spCost": 0,
+      "initialSp": 0,
+      "duration": 7.9,
+      "cooldown": 16,
+      "gaugeGain": 10,
+      "damageTicks": [
+        {
+          "offset": 2.3,
+          "stagger": 10,
+          "sp": 10,
+          "boundEffects": []
+        }
+      ],
+      "allowedTypes": [
+        "combo"
+      ],
+      "multipliers": [
+        0.45,
+        0.49,
+        0.54,
+        0.58,
+        0.62,
+        0.67,
+        0.71,
+        0.76,
+        0.8,
+        0.86,
+        0.93,
+        1
+      ]
+    },
+    "ultimate": {
+      "id": "ultimate",
+      "name": "轰击序列",
+      "spCost": 0,
+      "initialSp": 0,
+      "duration": 5.2,
+      "gaugeMax": 80,
+      "gaugeReply": 0,
+      "animationTime": 2,
+      "enhancementTime": 0,
+      "gaugeGain": 0,
+      "damageTicks": [
+        {
+          "offset": 0.4,
+          "stagger": 25,
+          "sp": 0,
+          "boundEffects": []
+        }
+      ],
+      "allowedTypes": [
+        "ultimate"
+      ],
+      "multipliers": [
+        3.56,
+        3.91,
+        4.27,
+        4.62,
+        4.98,
+        5.33,
+        5.69,
+        6.04,
+        6.4,
+        6.84,
+        7.38,
+        8
+      ]
+    },
+    "attackSegments": [
+      {
+        "index": 0,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 1.2,
+            "stagger": 3,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.23,
+          0.25,
+          0.27,
+          0.29,
+          0.32,
+          0.34,
+          0.36,
+          0.39,
+          0.41,
+          0.44,
+          0.47,
+          0.51
+        ]
+      },
+      {
+        "index": 1,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.92,
+            "stagger": 6,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.27,
+          0.3,
+          0.32,
+          0.35,
+          0.38,
+          0.41,
+          0.43,
+          0.46,
+          0.49,
+          0.52,
+          0.56,
+          0.61
+        ]
+      },
+      {
+        "index": 2,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.14,
+            "stagger": 9,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.3,
+          0.33,
+          0.36,
+          0.39,
+          0.42,
+          0.45,
+          0.48,
+          0.51,
+          0.54,
+          0.58,
+          0.63,
+          0.68
+        ]
+      },
+      {
+        "index": 3,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 1.26,
+            "stagger": 12,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.35,
+          0.38,
+          0.41,
+          0.45,
+          0.48,
+          0.52,
+          0.55,
+          0.59,
+          0.62,
+          0.67,
+          0.72,
+          0.78
+        ]
+      },
+      {
+        "index": 4,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.68,
+            "stagger": 15,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.4,
+          0.44,
+          0.48,
+          0.52,
+          0.56,
+          0.6,
+          0.64,
+          0.68,
+          0.72,
+          0.77,
+          0.83,
+          0.9
+        ]
+      }
+    ],
+    "talents": [
+      {
+        "id": "talent_156_0",
+        "name": "游刃",
+        "description": "游刃·一: 干员敏捷能力值提升10\n游刃·二: 干员敏捷能力值提升15\n游刃·三: 干员敏捷能力值提升15\n游刃·四: 干员敏捷能力值提升20"
+      },
+      {
+        "id": "talent_156_1",
+        "name": "现实静滞",
+        "description": "现实静滞·一: 附着源石结晶的敌人受到的物理伤害+10%。\n现实静滞·二: 附着源石结晶的敌人受到的物理伤害+20%。"
+      },
+      {
+        "id": "talent_156_2",
+        "name": "装备适配",
+        "description": "装备适配·一: 激活后，允许干员穿戴蓝色品质装备。\n装备适配·二: 激活后，允许干员穿戴紫色品质装备。\n装备适配·三: 激活后，允许干员穿戴金色品质装备。"
+      },
+      {
+        "id": "talent_156_3",
+        "name": "本质瓦解",
+        "description": "本质瓦解·一: 当敌人附着的源石结晶被消耗后，自身攻击力+15%，持续15秒，\n本质瓦解·二: 当敌人附着的源石结晶被消耗后，自身攻击力+30%，持续15秒，"
+      }
+    ],
     "acceptTeamGauge": true,
-    "nameEn": "Endministrator (F)"
+    "nameEn": "Endministrator (F)",
+    "finisherMultipliers": [
+      4,
+      4.4,
+      4.8,
+      5.2,
+      5.6,
+      6,
+      6.4,
+      6.8,
+      7.2,
+      7.7,
+      8.3,
+      9
+    ],
+    "diveMultipliers": [
+      0.8,
+      0.88,
+      0.96,
+      1.04,
+      1.12,
+      1.2,
+      1.28,
+      1.36,
+      1.44,
+      1.54,
+      1.66,
+      1.8
+    ]
   },
   {
     "id": "131",
@@ -200,13 +2754,364 @@
     "secondaryAbility": "agility",
     "avatar": "/avatars/131.png",
     "description": "“事态紧急，我希望尽快了解你的作战计划……最好就是现在。”\n骏卫来自罗德岛，以军事顾问的身份为终末地工业提供服务。\n骏卫拥有丰富的军事理论知识和团队作战经验，能够在战场上指挥应对各种突发状况。在他来到终末地工业之前，就已经在铁誓军中担任了盾卫旗队的指挥官。在抗击天使的最前线，他和他的盾卫被誉为最值得信赖的作战队伍之一。因为塔卫二日益复杂的局势需要，他毅然决然地选择加入终末地工业。\n他坚信着管理员会将塔卫二带往一条全新的道路，亦如他曾经所认为的那样。\n“我相信，管理员你所做的，会让这惨烈的循环得到一份庄严的结局。”",
-    "skills": [],
-    "linkSkill": null,
-    "ultimate": null,
-    "attackSegments": [],
-    "talents": [],
+    "skills": [
+      {
+        "id": "skill_1",
+        "name": "粉碎阵线",
+        "spCost": 100,
+        "initialSp": 0,
+        "duration": 5.3,
+        "gaugeGain": 10,
+        "damageTicks": [
+          {
+            "offset": 0.5,
+            "stagger": 5,
+            "sp": 100,
+            "boundEffects": []
+          },
+          {
+            "offset": 1.6,
+            "stagger": 5,
+            "sp": 10,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "battle"
+        ],
+        "anomalies": [
+          {
+            "type": "breach",
+            "stacks": 5,
+            "duration": 5,
+            "offset": 0
+          }
+        ],
+        "multipliers": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      }
+    ],
+    "linkSkill": {
+      "id": "combo",
+      "name": "盈月邀击",
+      "spCost": 0,
+      "initialSp": 0,
+      "duration": 7.5,
+      "cooldown": 18,
+      "gaugeGain": 10,
+      "damageTicks": [
+        {
+          "offset": 1.5,
+          "stagger": 3,
+          "sp": 10,
+          "boundEffects": []
+        },
+        {
+          "offset": 1.7,
+          "stagger": 3,
+          "sp": 10,
+          "boundEffects": []
+        },
+        {
+          "offset": 2.5,
+          "stagger": 4,
+          "sp": 10,
+          "boundEffects": []
+        },
+        {
+          "offset": 3.0,
+          "stagger": 9,
+          "sp": 10,
+          "boundEffects": []
+        }
+      ],
+      "allowedTypes": [
+        "combo"
+      ],
+      "multipliers": [
+        0.42,
+        0.46,
+        0.5,
+        0.55,
+        0.59,
+        0.63,
+        0.67,
+        0.71,
+        0.76,
+        0.81,
+        0.87,
+        0.95
+      ]
+    },
+    "ultimate": {
+      "id": "ultimate",
+      "name": "盾卫旗队，上前",
+      "spCost": 0,
+      "initialSp": 0,
+      "duration": 12.3,
+      "gaugeMax": 90,
+      "gaugeReply": 0,
+      "animationTime": 2,
+      "enhancementTime": 0,
+      "gaugeGain": 0,
+      "damageTicks": [
+        {
+          "offset": 0.3,
+          "stagger": 10,
+          "sp": 0,
+          "boundEffects": []
+        },
+        {
+          "offset": 1.0,
+          "stagger": 15,
+          "sp": 0,
+          "boundEffects": []
+        }
+      ],
+      "allowedTypes": [
+        "ultimate"
+      ],
+      "multipliers": [
+        1.33,
+        1.47,
+        1.6,
+        1.73,
+        1.86,
+        2,
+        2.13,
+        2.26,
+        2.4,
+        2.56,
+        2.76,
+        3
+      ]
+    },
+    "attackSegments": [
+      {
+        "index": 0,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 1.1,
+            "stagger": 3,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.23,
+          0.25,
+          0.28,
+          0.3,
+          0.32,
+          0.35,
+          0.37,
+          0.39,
+          0.41,
+          0.44,
+          0.48,
+          0.52
+        ]
+      },
+      {
+        "index": 1,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.48,
+            "stagger": 6,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.28,
+          0.31,
+          0.34,
+          0.36,
+          0.39,
+          0.42,
+          0.45,
+          0.48,
+          0.5,
+          0.54,
+          0.58,
+          0.63
+        ]
+      },
+      {
+        "index": 2,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.46,
+            "stagger": 9,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.33,
+          0.36,
+          0.4,
+          0.43,
+          0.46,
+          0.5,
+          0.53,
+          0.56,
+          0.59,
+          0.64,
+          0.68,
+          0.74
+        ]
+      },
+      {
+        "index": 3,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.24,
+            "stagger": 12,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.38,
+          0.42,
+          0.46,
+          0.5,
+          0.53,
+          0.57,
+          0.61,
+          0.65,
+          0.69,
+          0.73,
+          0.79,
+          0.86
+        ]
+      },
+      {
+        "index": 4,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.82,
+            "stagger": 15,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.43,
+          0.47,
+          0.52,
+          0.56,
+          0.6,
+          0.65,
+          0.69,
+          0.73,
+          0.77,
+          0.83,
+          0.89,
+          0.97
+        ]
+      }
+    ],
+    "talents": [
+      {
+        "id": "talent_131_0",
+        "name": "活着的旗帜",
+        "description": "活着的旗帜·一: 战斗中，通过自身技能每恢复80点技力后，\n活着的旗帜·二: 战斗中，通过自身技能每恢复80点技力后，"
+      },
+      {
+        "id": "talent_131_1",
+        "name": "装备适配",
+        "description": "装备适配·一: 激活后，允许干员穿戴蓝色品质装备。\n装备适配·二: 激活后，允许干员穿戴紫色品质装备。\n装备适配·三: 激活后，允许干员穿戴金色品质装备。"
+      },
+      {
+        "id": "talent_131_2",
+        "name": "鼓舞士气",
+        "description": "鼓舞士气·β: 进驻制造舱时，舱室内干员心情消耗降低14%。\n鼓舞士气·γ: 进驻制造舱时，舱室内干员心情消耗降低14%。"
+      },
+      {
+        "id": "talent_131_3",
+        "name": "先利其器",
+        "description": "先利其器·β: 进驻制造舱时，武器经验素材的生产效率提升20%。\n先利其器·γ: 进驻制造舱时，武器经验素材的生产效率提升30%。"
+      },
+      {
+        "id": "talent_131_4",
+        "name": "守誓",
+        "description": "守誓·一: 干员意志能力值提升10\n守誓·二: 干员意志能力值提升15\n守誓·三: 干员意志能力值提升15\n守誓·四: 干员意志能力值提升20"
+      },
+      {
+        "id": "talent_131_5",
+        "name": "战术教导",
+        "description": "战术教导·一: 当任意干员触发终结技盾卫旗队，上前的后续效果后，\n战术教导·二: 当任意干员触发终结技盾卫旗队，上前的后续效果后，"
+      }
+    ],
     "acceptTeamGauge": true,
-    "nameEn": "Pogranichnik"
+    "nameEn": "Pogranichnik",
+    "finisherMultipliers": [
+      4,
+      4.4,
+      4.8,
+      5.2,
+      5.6,
+      6,
+      6.4,
+      6.8,
+      7.2,
+      7.7,
+      8.3,
+      9
+    ],
+    "diveMultipliers": [
+      0.8,
+      0.88,
+      0.96,
+      1.04,
+      1.12,
+      1.2,
+      1.28,
+      1.36,
+      1.44,
+      1.54,
+      1.66,
+      1.8
+    ]
   },
   {
     "id": "24",
@@ -219,13 +3124,297 @@
     "secondaryAbility": "will",
     "avatar": "/avatars/24.png",
     "description": "“出发吧，战争没有终点，也没有退路。”\n余烬隶属于铁誓军——一个常年驻守北方险要之地的军事组织。为了征募阵亡战友的继任者，余烬回到了文明环带，受邀与终末地工业合作。\n作为铁誓军陷阵旗队的精锐，余烬的战斗技巧无可挑剔。她总是奋战在最前方，与战友组成坚不可摧的锋线，迎面搅碎敌方的攻势。在敌人面前，她是永不退却的堡垒；在同伴眼中，她是永不垮塌的高墙。要塞和航天母舰构成了铁誓军的筋骨，而像余烬这样的战士，则是铁誓军坚挺的脊梁。\n“那片极光下方，就是铁誓军的防线。”",
-    "skills": [],
-    "linkSkill": null,
-    "ultimate": null,
-    "attackSegments": [],
-    "talents": [],
+    "skills": [
+      {
+        "id": "skill_1",
+        "name": "进军",
+        "spCost": 100,
+        "initialSp": 0,
+        "duration": 4.5,
+        "gaugeGain": 10,
+        "damageTicks": [
+          {
+            "offset": 1.5,
+            "stagger": 10,
+            "sp": 100,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "battle"
+        ],
+        "anomalies": [],
+        "multipliers": [
+          1.73,
+          1.91,
+          2.08,
+          2.25,
+          2.43,
+          2.6,
+          2.77,
+          2.95,
+          3.12,
+          3.34,
+          3.6,
+          3.9
+        ]
+      }
+    ],
+    "linkSkill": {
+      "id": "combo",
+      "name": "前线援护",
+      "spCost": 0,
+      "initialSp": 0,
+      "duration": 5.2,
+      "cooldown": 19,
+      "gaugeGain": 10,
+      "damageTicks": [
+        {
+          "offset": 1.3,
+          "stagger": 10,
+          "sp": 10,
+          "boundEffects": []
+        }
+      ],
+      "allowedTypes": [
+        "combo"
+      ],
+      "multipliers": [
+        1.02,
+        1.12,
+        1.22,
+        1.33,
+        1.43,
+        1.53,
+        1.63,
+        1.73,
+        1.84,
+        1.96,
+        2.12,
+        2.3
+      ]
+    },
+    "ultimate": {
+      "id": "ultimate",
+      "name": "重燃誓约",
+      "spCost": 0,
+      "initialSp": 0,
+      "duration": 4.3,
+      "gaugeMax": 100,
+      "gaugeReply": 0,
+      "animationTime": 2,
+      "enhancementTime": 0,
+      "gaugeGain": 0,
+      "damageTicks": [
+        {
+          "offset": 0.2,
+          "stagger": 25,
+          "sp": 0,
+          "boundEffects": []
+        }
+      ],
+      "allowedTypes": [
+        "ultimate"
+      ],
+      "multipliers": [
+        2.89,
+        3.18,
+        3.47,
+        3.76,
+        4.04,
+        4.33,
+        4.62,
+        4.91,
+        5.2,
+        5.56,
+        5.99,
+        6.5
+      ]
+    },
+    "attackSegments": [
+      {
+        "index": 0,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 1.1,
+            "stagger": 3,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.38,
+          0.42,
+          0.46,
+          0.5,
+          0.54,
+          0.57,
+          0.61,
+          0.65,
+          0.69,
+          0.74,
+          0.79,
+          0.86
+        ]
+      },
+      {
+        "index": 1,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.02,
+            "stagger": 6,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.54,
+          0.59,
+          0.64,
+          0.7,
+          0.75,
+          0.8,
+          0.86,
+          0.91,
+          0.96,
+          1.03,
+          1.11,
+          1.2
+        ]
+      },
+      {
+        "index": 2,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.35,
+            "stagger": 9,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.66,
+          0.73,
+          0.8,
+          0.86,
+          0.93,
+          0.99,
+          1.06,
+          1.13,
+          1.19,
+          1.28,
+          1.38,
+          1.49
+        ]
+      },
+      {
+        "index": 3,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.08,
+            "stagger": 12,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.82,
+          0.9,
+          0.98,
+          1.06,
+          1.14,
+          1.22,
+          1.31,
+          1.39,
+          1.47,
+          1.57,
+          1.69,
+          1.84
+        ]
+      }
+    ],
+    "talents": [
+      {
+        "id": "talent_24_0",
+        "name": "陷阵之志",
+        "description": "陷阵之志·一: 战技进军和连携技前线援护的施放过程中获得30%庇护，\n陷阵之志·二: 战技进军和连携技前线援护的施放过程中获得50%庇护，"
+      },
+      {
+        "id": "talent_24_1",
+        "name": "锤炼",
+        "description": "锤炼·一: 干员力量能力值提升10\n锤炼·二: 干员力量能力值提升15\n锤炼·三: 干员力量能力值提升15\n锤炼·四: 干员力量能力值提升20"
+      },
+      {
+        "id": "talent_24_2",
+        "name": "装备适配",
+        "description": "装备适配·一: 激活后，允许干员穿戴蓝色品质装备。\n装备适配·二: 激活后，允许干员穿戴紫色品质装备。\n装备适配·三: 激活后，允许干员穿戴金色品质装备。"
+      },
+      {
+        "id": "talent_24_3",
+        "name": "以铁还铁",
+        "description": "以铁还铁·一: 受到来自敌人的伤害后，攻击力+6%，持续7秒，\n以铁还铁·二: 受到来自敌人的伤害后，攻击力+9%，持续7秒，"
+      },
+      {
+        "id": "talent_24_4",
+        "name": "北地特训",
+        "description": "北地特训·β: 进驻制造舱时，干员经验素材的生产效率提升20%。\n北地特训·γ: 进驻制造舱时，干员经验素材的生产效率提升30%。"
+      },
+      {
+        "id": "talent_24_5",
+        "name": "同袍相系",
+        "description": "同袍相系·α: 进驻会客室时，干员收集到线索4——铁誓军的概率小幅提升\n同袍相系·β: 进驻会客室时，干员收集到线索4——铁誓军的概率提升"
+      }
+    ],
     "acceptTeamGauge": true,
-    "nameEn": "Ember"
+    "nameEn": "Ember",
+    "finisherMultipliers": [
+      4,
+      4.4,
+      4.8,
+      5.2,
+      5.6,
+      6,
+      6.4,
+      6.8,
+      7.2,
+      7.7,
+      8.3,
+      9
+    ],
+    "diveMultipliers": [
+      0.8,
+      0.88,
+      0.96,
+      1.04,
+      1.12,
+      1.2,
+      1.28,
+      1.36,
+      1.44,
+      1.54,
+      1.66,
+      1.8
+    ]
   },
   {
     "id": "4",
@@ -238,13 +3427,315 @@
     "secondaryAbility": "will",
     "avatar": "/avatars/4.png",
     "description": "“我，即是战争的……什么来着？”\n在被悬空城上的萨卡兹们发现前，别礼只是一个被卡普里尼守墓人夫妇收养的善良女孩。由于养父母的熏陶，年轻的食腐者不愿惊扰任何一人的死亡，拒绝本能对“进食”的呼唤，这让她总是饿得昏天黑地，因为自卑而在人前畏畏缩缩。\n一次偶遇让塞什卡发现了别礼的潜力。在“超划算零工”和“抑制本能的特训”双重引诱下，别礼成为了商人们口中的“战争王庭公主”。如今，她身着巫术时刻的测试款作战服，为了终末地的目标挥舞霜雪和兵刃——既是履行合同，也是为了终末地向她展示的，真正能让生命平和安宁的明天。\n“如果塞什卡的合约到期了，您也可以继续找我……啊，这个不可以讲的，要、要对其他人保密哦！”",
-    "skills": [],
-    "linkSkill": null,
-    "ultimate": null,
-    "attackSegments": [],
-    "talents": [],
+    "skills": [
+      {
+        "id": "skill_1",
+        "name": "塞什卡的秘传",
+        "spCost": 100,
+        "initialSp": 0,
+        "duration": 8.9,
+        "gaugeGain": 10,
+        "damageTicks": [
+          {
+            "offset": 1.3,
+            "stagger": 10,
+            "sp": 100,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "battle"
+        ],
+        "anomalies": [],
+        "multipliers": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      }
+    ],
+    "linkSkill": {
+      "id": "combo",
+      "name": "噬冬",
+      "spCost": 0,
+      "initialSp": 0,
+      "duration": 7.9,
+      "cooldown": 9,
+      "gaugeGain": 10,
+      "damageTicks": [
+        {
+          "offset": 0.9,
+          "stagger": 15,
+          "sp": 10,
+          "boundEffects": []
+        }
+      ],
+      "allowedTypes": [
+        "combo"
+      ],
+      "multipliers": [
+        0.71,
+        0.78,
+        0.85,
+        0.92,
+        0.99,
+        1.07,
+        1.14,
+        1.21,
+        1.28,
+        1.37,
+        1.47,
+        1.6
+      ],
+      "comboTrigger": {
+        "type": "on_status_applied",
+        "statusTypes": [
+          "3层及以上寒冷附着"
+        ]
+      }
+    },
+    "ultimate": {
+      "id": "ultimate",
+      "name": "临终别礼",
+      "spCost": 0,
+      "initialSp": 0,
+      "duration": 7.2,
+      "gaugeMax": 240,
+      "gaugeReply": 0,
+      "animationTime": 2,
+      "enhancementTime": 0,
+      "gaugeGain": 0,
+      "damageTicks": [
+        {
+          "offset": 0.3,
+          "stagger": 5,
+          "sp": 0,
+          "boundEffects": []
+        },
+        {
+          "offset": 0.7,
+          "stagger": 5,
+          "sp": 0,
+          "boundEffects": []
+        },
+        {
+          "offset": 1.3,
+          "stagger": 10,
+          "sp": 0,
+          "boundEffects": []
+        }
+      ],
+      "allowedTypes": [
+        "ultimate"
+      ],
+      "multipliers": [
+        1.78,
+        1.96,
+        2.13,
+        2.31,
+        2.49,
+        2.67,
+        2.84,
+        3.02,
+        3.2,
+        3.42,
+        3.69,
+        4
+      ]
+    },
+    "attackSegments": [
+      {
+        "index": 0,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 1.1,
+            "stagger": 3,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.3,
+          0.33,
+          0.36,
+          0.39,
+          0.42,
+          0.45,
+          0.48,
+          0.51,
+          0.54,
+          0.58,
+          0.62,
+          0.68
+        ]
+      },
+      {
+        "index": 1,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.42,
+            "stagger": 6,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.55,
+          0.61,
+          0.66,
+          0.72,
+          0.77,
+          0.83,
+          0.88,
+          0.94,
+          0.99,
+          1.06,
+          1.14,
+          1.24
+        ]
+      },
+      {
+        "index": 2,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 1.05,
+            "stagger": 9,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.68,
+          0.75,
+          0.82,
+          0.88,
+          0.95,
+          1.02,
+          1.09,
+          1.16,
+          1.22,
+          1.31,
+          1.41,
+          1.53
+        ]
+      },
+      {
+        "index": 3,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.67,
+            "stagger": 12,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.9,
+          0.99,
+          1.08,
+          1.17,
+          1.26,
+          1.35,
+          1.44,
+          1.53,
+          1.62,
+          1.73,
+          1.87,
+          2.03
+        ]
+      }
+    ],
+    "talents": [
+      {
+        "id": "talent_4_0",
+        "name": "王庭盛名",
+        "description": "王庭盛名·α: 进驻会客室时，干员收集到线索7——塞什卡的概率小幅提升\n王庭盛名·β: 进驻会客室时，干员收集到线索7——塞什卡的概率提升"
+      },
+      {
+        "id": "talent_4_1",
+        "name": "锤炼",
+        "description": "锤炼·一: 干员力量能力值提升10\n锤炼·二: 干员力量能力值提升15\n锤炼·三: 干员力量能力值提升15\n锤炼·四: 干员力量能力值提升20"
+      },
+      {
+        "id": "talent_4_2",
+        "name": "低温症",
+        "description": "低温症·一: 当别礼消耗任何法术附着时对该目标施加寒冷脆弱，\n低温症·二: 当别礼消耗任何法术附着时对该目标施加寒冷脆弱，"
+      },
+      {
+        "id": "talent_4_3",
+        "name": "低温脆性",
+        "description": "低温脆性·一: 终结技临终别礼造成伤害时如果敌人处于寒冷脆弱状态，\n低温脆性·二: 终结技临终别礼造成伤害时如果敌人处于寒冷脆弱状态，"
+      },
+      {
+        "id": "talent_4_4",
+        "name": "墓地园艺",
+        "description": "墓地园艺·β: 进驻培养舱时，晶植质料的培养速度提升20%。\n墓地园艺·γ: 进驻培养舱时，晶植质料的培养速度提升30%。"
+      },
+      {
+        "id": "talent_4_5",
+        "name": "装备适配",
+        "description": "装备适配·一: 激活后，允许干员穿戴蓝色品质装备。\n装备适配·二: 激活后，允许干员穿戴紫色品质装备。\n装备适配·三: 激活后，允许干员穿戴金色品质装备。"
+      }
+    ],
     "acceptTeamGauge": true,
-    "nameEn": "Last Rite"
+    "nameEn": "Last Rite",
+    "finisherMultipliers": [
+      4,
+      4.4,
+      4.8,
+      5.2,
+      5.6,
+      6,
+      6.4,
+      6.8,
+      7.2,
+      7.7,
+      8.3,
+      9
+    ],
+    "diveMultipliers": [
+      0.8,
+      0.88,
+      0.96,
+      1.04,
+      1.12,
+      1.2,
+      1.28,
+      1.36,
+      1.44,
+      1.54,
+      1.66,
+      1.8
+    ]
   },
   {
     "id": "130",
@@ -257,13 +3748,312 @@
     "secondaryAbility": "strength",
     "avatar": "/avatars/130.png",
     "description": "“我来终末地就是为了学东西的！只是……这里的东西多得有点儿学不完啊……要加把劲！”\n黎风出生于武陵城，目前正在终末地工业特种技术部门学习实践。\n黎风是武陵闻名遐迩、人见人爱的孩子王。在大潘多年的教导下，黎风习得了一手漂亮的枪法，以此向他扬善惩恶的目标而努力。从他的外表来看，很难有人联想到他过去的阴影——事故击碎了原本幸福美满的家庭，也使得他失去了一条手臂。但灾难始终阻挡不了少年的锋芒，他认真而热情地成长，渴望承担更多的责任。有朝一日，他会独当一面，然后回到需要他保护的家乡。\n“有朝一日，我会扛起一切的。管理员，等我。”",
-    "skills": [],
-    "linkSkill": null,
-    "ultimate": null,
-    "attackSegments": [],
-    "talents": [],
+    "skills": [
+      {
+        "id": "skill_1",
+        "name": "荡浊身",
+        "spCost": 100,
+        "initialSp": 0,
+        "duration": 4.9,
+        "gaugeGain": 10,
+        "damageTicks": [
+          {
+            "offset": 0.3,
+            "stagger": 10,
+            "sp": 100,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "battle"
+        ],
+        "anomalies": [],
+        "multipliers": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      }
+    ],
+    "linkSkill": {
+      "id": "combo",
+      "name": "忿怒相",
+      "spCost": 0,
+      "initialSp": 0,
+      "duration": 3.6,
+      "cooldown": 16,
+      "gaugeGain": 10,
+      "damageTicks": [
+        {
+          "offset": 2.0,
+          "stagger": 10,
+          "sp": 10,
+          "boundEffects": []
+        }
+      ],
+      "allowedTypes": [
+        "combo"
+      ],
+      "multipliers": [
+        0.47,
+        0.51,
+        0.56,
+        0.61,
+        0.65,
+        0.7,
+        0.75,
+        0.79,
+        0.84,
+        0.9,
+        0.97,
+        1.05
+      ],
+      "comboTrigger": {
+        "type": "on_heavy_hit"
+      }
+    },
+    "ultimate": {
+      "id": "ultimate",
+      "name": "不动心",
+      "spCost": 0,
+      "initialSp": 0,
+      "duration": 7.1,
+      "gaugeMax": 90,
+      "gaugeReply": 0,
+      "animationTime": 2,
+      "enhancementTime": 0,
+      "gaugeGain": 0,
+      "damageTicks": [
+        {
+          "offset": 0.2,
+          "stagger": 5,
+          "sp": 0,
+          "boundEffects": []
+        },
+        {
+          "offset": 1.9,
+          "stagger": 5,
+          "sp": 0,
+          "boundEffects": []
+        },
+        {
+          "offset": 2.2,
+          "stagger": 5,
+          "sp": 0,
+          "boundEffects": []
+        }
+      ],
+      "allowedTypes": [
+        "ultimate"
+      ],
+      "multipliers": [
+        1.78,
+        1.96,
+        2.13,
+        2.31,
+        2.49,
+        2.67,
+        2.84,
+        3.02,
+        3.2,
+        3.42,
+        3.69,
+        4
+      ]
+    },
+    "attackSegments": [
+      {
+        "index": 0,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.3,
+            "stagger": 3,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.24,
+          0.27,
+          0.29,
+          0.32,
+          0.34,
+          0.36,
+          0.39,
+          0.41,
+          0.44,
+          0.47,
+          0.5,
+          0.55
+        ]
+      },
+      {
+        "index": 1,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 1.23,
+            "stagger": 6,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.29,
+          0.32,
+          0.35,
+          0.38,
+          0.41,
+          0.44,
+          0.47,
+          0.49,
+          0.52,
+          0.56,
+          0.6,
+          0.65
+        ]
+      },
+      {
+        "index": 2,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.55,
+            "stagger": 9,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.35,
+          0.39,
+          0.42,
+          0.46,
+          0.49,
+          0.53,
+          0.56,
+          0.6,
+          0.63,
+          0.67,
+          0.73,
+          0.79
+        ]
+      },
+      {
+        "index": 3,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.08,
+            "stagger": 12,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.68,
+          0.74,
+          0.81,
+          0.88,
+          0.95,
+          1.01,
+          1.08,
+          1.15,
+          1.22,
+          1.3,
+          1.4,
+          1.52
+        ]
+      }
+    ],
+    "talents": [
+      {
+        "id": "talent_130_0",
+        "name": "少年意气",
+        "description": "少年意气·β: 进驻总控中枢时，所有干员心情恢复提升12%。\n少年意气·γ: 进驻总控中枢时，所有干员心情恢复提升16%。"
+      },
+      {
+        "id": "talent_130_1",
+        "name": "伏魔",
+        "description": "伏魔·一: 每当自身造成倒地时，额外造成攻击力50%的物理伤害。\n伏魔·二: 每当自身造成倒地时，额外造成攻击力100%的物理伤害。"
+      },
+      {
+        "id": "talent_130_2",
+        "name": "装备适配",
+        "description": "装备适配·一: 激活后，允许干员穿戴蓝色品质装备。\n装备适配·二: 激活后，允许干员穿戴紫色品质装备。\n装备适配·三: 激活后，允许干员穿戴金色品质装备。"
+      },
+      {
+        "id": "talent_130_3",
+        "name": "顿悟",
+        "description": "顿悟·一: 每点智识和意志都会使攻击力额外+0.1%。\n顿悟·二: 每点智识和意志都会使攻击力额外+0.15%。"
+      },
+      {
+        "id": "talent_130_4",
+        "name": "游刃",
+        "description": "游刃·一: 干员敏捷能力值提升10\n游刃·二: 干员敏捷能力值提升15\n游刃·三: 干员敏捷能力值提升15\n游刃·四: 干员敏捷能力值提升20"
+      },
+      {
+        "id": "talent_130_5",
+        "name": "小大人",
+        "description": "小大人·α: 进驻会客室时，干员收集到线索3——宏山科学院的概率小幅提升\n小大人·β: 进驻会客室时，干员收集到线索3——宏山科学院的概率提升"
+      }
+    ],
     "acceptTeamGauge": true,
-    "nameEn": "Lifeng"
+    "nameEn": "Lifeng",
+    "finisherMultipliers": [
+      4,
+      4.4,
+      4.8,
+      5.2,
+      5.6,
+      6,
+      6.4,
+      6.8,
+      7.2,
+      7.7,
+      8.3,
+      9
+    ],
+    "diveMultipliers": [
+      0.8,
+      0.88,
+      0.96,
+      1.04,
+      1.12,
+      1.2,
+      1.28,
+      1.36,
+      1.44,
+      1.54,
+      1.66,
+      1.8
+    ]
   },
   {
     "id": "11",
@@ -276,13 +4066,308 @@
     "secondaryAbility": "will",
     "avatar": "/avatars/11.png",
     "description": "“我们必须了解脚下的这颗星球，就像……我们应该更加了解我们自己。对吧，前辈？”\n艾尔黛拉来自罗德岛，以地质研究专家的身份为终末地工业提供服务。\n艾尔黛拉曾专注于火山，但如今投身于超域与地质灾害研究。她常年独自奔走在灾害现场，亲自采集样本，分析结构，总结理论，为终末地制定侵蚀应对措施提供了重要依据。\n她始终谦逊、礼貌，内心仿佛有着永不枯竭的力量。只要还能爬更多山，走更多路，聆听属于这个世界的声音，尽情探索这颗星球的秘密，就能让她感到很开心。\n对了，如果能和艾尔黛拉成为好朋友，那么多利先生也会喜欢你的。\n“多利先生？别乱跑哦！和前辈打个招呼吧。”",
-    "skills": [],
-    "linkSkill": null,
-    "ultimate": null,
-    "attackSegments": [],
-    "talents": [],
+    "skills": [
+      {
+        "id": "skill_1",
+        "name": "奔腾的多利",
+        "spCost": 100,
+        "initialSp": 0,
+        "duration": 2.5,
+        "gaugeGain": 10,
+        "damageTicks": [
+          {
+            "offset": 2.0,
+            "stagger": 10,
+            "sp": 100,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "battle"
+        ],
+        "anomalies": [],
+        "multipliers": [
+          1.42,
+          1.56,
+          1.71,
+          1.85,
+          1.99,
+          2.13,
+          2.28,
+          2.42,
+          2.56,
+          2.74,
+          2.95,
+          3.2
+        ]
+      }
+    ],
+    "linkSkill": {
+      "id": "combo",
+      "name": "火山蘑菇云",
+      "spCost": 0,
+      "initialSp": 0,
+      "duration": 3.6,
+      "cooldown": 18,
+      "gaugeGain": 10,
+      "damageTicks": [
+        {
+          "offset": 1.8,
+          "stagger": 10,
+          "sp": 10,
+          "boundEffects": []
+        }
+      ],
+      "allowedTypes": [
+        "combo"
+      ],
+      "multipliers": [
+        0.45,
+        0.49,
+        0.54,
+        0.58,
+        0.62,
+        0.67,
+        0.71,
+        0.76,
+        0.8,
+        0.86,
+        0.93,
+        1
+      ],
+      "anomalies": [
+        {
+          "type": "corrosion",
+          "stacks": 1,
+          "duration": 7,
+          "offset": 0
+        }
+      ],
+      "comboTrigger": {
+        "type": "on_heavy_hit"
+      }
+    },
+    "ultimate": {
+      "id": "ultimate",
+      "name": "毛茸茸派对",
+      "spCost": 0,
+      "initialSp": 0,
+      "duration": 6.2,
+      "gaugeMax": 90,
+      "gaugeReply": 0,
+      "animationTime": 2,
+      "enhancementTime": 0,
+      "gaugeGain": 0,
+      "damageTicks": [
+        {
+          "offset": 0.7,
+          "stagger": 2,
+          "sp": 0,
+          "boundEffects": []
+        }
+      ],
+      "allowedTypes": [
+        "ultimate"
+      ],
+      "multipliers": [
+        0.73,
+        0.81,
+        0.88,
+        0.95,
+        1.03,
+        1.1,
+        1.17,
+        1.25,
+        1.32,
+        1.41,
+        1.52,
+        1.65
+      ]
+    },
+    "attackSegments": [
+      {
+        "index": 0,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.3,
+            "stagger": 3,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.3,
+          0.33,
+          0.36,
+          0.39,
+          0.42,
+          0.45,
+          0.48,
+          0.51,
+          0.54,
+          0.58,
+          0.62,
+          0.68
+        ]
+      },
+      {
+        "index": 1,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.2,
+            "stagger": 6,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.4,
+          0.44,
+          0.48,
+          0.52,
+          0.56,
+          0.6,
+          0.64,
+          0.68,
+          0.72,
+          0.77,
+          0.83,
+          0.9
+        ]
+      },
+      {
+        "index": 2,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 1.3,
+            "stagger": 9,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.53,
+          0.58,
+          0.63,
+          0.68,
+          0.74,
+          0.79,
+          0.84,
+          0.89,
+          0.95,
+          1.01,
+          1.09,
+          1.18
+        ]
+      },
+      {
+        "index": 3,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.8,
+            "stagger": 12,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.55,
+          0.61,
+          0.66,
+          0.72,
+          0.77,
+          0.83,
+          0.88,
+          0.94,
+          0.99,
+          1.06,
+          1.14,
+          1.24
+        ]
+      }
+    ],
+    "talents": [
+      {
+        "id": "talent_11_0",
+        "name": "山顶冲浪",
+        "description": "山顶冲浪: 当艾尔黛拉的战技奔腾的多利成功触发额外效果后，若附近存在其他处于腐蚀状态的敌人，会立即再对其发动一次战技。"
+      },
+      {
+        "id": "talent_11_1",
+        "name": "明晰",
+        "description": "明晰·一: 干员智识能力值提升10\n明晰·二: 干员智识能力值提升15\n明晰·三: 干员智识能力值提升15\n明晰·四: 干员智识能力值提升20"
+      },
+      {
+        "id": "talent_11_2",
+        "name": "多利先生的游戏",
+        "description": "多利先生的游戏·β: 进驻会客室时，舱室内干员心情消耗降低14%。\n多利先生的游戏·γ: 进驻会客室时，舱室内干员心情消耗降低18%。"
+      },
+      {
+        "id": "talent_11_3",
+        "name": "装备适配",
+        "description": "装备适配·一: 激活后，允许干员穿戴蓝色品质装备。\n装备适配·二: 激活后，允许干员穿戴紫色品质装备。\n装备适配·三: 激活后，允许干员穿戴金色品质装备。"
+      },
+      {
+        "id": "talent_11_4",
+        "name": "大地的故事",
+        "description": "大地的故事·β: 进驻会客室时，干员收集线索的效率提升20%。\n大地的故事·γ: 进驻会客室时，干员收集线索的效率提升30%。"
+      },
+      {
+        "id": "talent_11_5",
+        "name": "朋友的身影",
+        "description": "朋友的身影·一: 战技奔腾的多利命中敌人后生成3个多利先生的影子，终结技毛茸茸派对散射的多利先生的分身落地时有10%概率生成多利先生的影子。\n朋友的身影·二: 战技奔腾的多利命中敌人后生成3个多利先生的影子，终结技毛茸茸派对散射的多利先生的分身落地时有10%概率生成多利先生的影子。\n朋友的身影·三: 战技奔腾的多利命中敌人后生成3个多利先生的影子，终结技毛茸茸派对散射的多利先生的分身落地时有10%概率生成多利先生的影子。"
+      }
+    ],
     "acceptTeamGauge": true,
-    "nameEn": "Ardelia"
+    "nameEn": "Ardelia",
+    "finisherMultipliers": [
+      4,
+      4.4,
+      4.8,
+      5.2,
+      5.6,
+      6,
+      6.4,
+      6.8,
+      7.2,
+      7.7,
+      8.3,
+      9
+    ],
+    "diveMultipliers": [
+      0.8,
+      0.88,
+      0.96,
+      1.04,
+      1.12,
+      1.2,
+      1.28,
+      1.36,
+      1.44,
+      1.54,
+      1.66,
+      1.8
+    ]
   },
   {
     "id": "5",
@@ -295,13 +4380,308 @@
     "secondaryAbility": "will",
     "avatar": "/avatars/5.png",
     "description": "“我们曾这样不断抵抗……期待着你能再一次归来。”\n佩丽卡，终末地工业的监督和官方发言人，主要负责管理和推进协议源石技术的开发和应用，同时也承担帝江号的管理工作。\n作为一位杰出的协议技术专家，她的专业成果对于这种技术的适应性发展及其进一步应用产生了重要的影响，并推动了集成工业系统的完善。\n佩丽卡能够果断且冷静地应对各种危机，但终末地工业所面临的挑战总是超出预期。在管理员休眠期间，她正式接管了危机处理小组的指挥权，领导终末地工业的“英雄们”为了一个无私的目标而战。她来回奔波于文明环带的各处，为终末地的平稳发展竭尽全力。\n“只有徒步行走在这片大地上，我们才能感受到生命的气息……这也是终末地战斗的意义。”",
-    "skills": [],
-    "linkSkill": null,
-    "ultimate": null,
-    "attackSegments": [],
-    "talents": [],
+    "skills": [
+      {
+        "id": "skill_1",
+        "name": "协议ω·雷击",
+        "spCost": 100,
+        "initialSp": 0,
+        "duration": 2.3,
+        "gaugeGain": 10,
+        "damageTicks": [
+          {
+            "offset": 0.8,
+            "stagger": 10,
+            "sp": 100,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "battle"
+        ],
+        "anomalies": [],
+        "multipliers": [
+          1.78,
+          1.96,
+          2.13,
+          2.31,
+          2.49,
+          2.67,
+          2.85,
+          3.02,
+          3.2,
+          3.42,
+          3.69,
+          4
+        ]
+      }
+    ],
+    "linkSkill": {
+      "id": "combo",
+      "name": "即时协议·闪链",
+      "spCost": 0,
+      "initialSp": 0,
+      "duration": 2.7,
+      "cooldown": 20,
+      "gaugeGain": 10,
+      "damageTicks": [
+        {
+          "offset": 1.2,
+          "stagger": 10,
+          "sp": 10,
+          "boundEffects": []
+        }
+      ],
+      "allowedTypes": [
+        "combo"
+      ],
+      "multipliers": [
+        0.8,
+        0.88,
+        0.96,
+        1.04,
+        1.12,
+        1.2,
+        1.28,
+        1.36,
+        1.44,
+        1.54,
+        1.66,
+        1.8
+      ],
+      "anomalies": [
+        {
+          "type": "electrification",
+          "stacks": 1,
+          "duration": 5,
+          "offset": 0
+        }
+      ],
+      "comboTrigger": {
+        "type": "on_heavy_hit"
+      }
+    },
+    "ultimate": {
+      "id": "ultimate",
+      "name": "协议ε·70.41κ",
+      "spCost": 0,
+      "initialSp": 0,
+      "duration": 3.3,
+      "gaugeMax": 80,
+      "gaugeReply": 0,
+      "animationTime": 2,
+      "enhancementTime": 0,
+      "gaugeGain": 0,
+      "damageTicks": [
+        {
+          "offset": 0.6,
+          "stagger": 20,
+          "sp": 0,
+          "boundEffects": []
+        }
+      ],
+      "allowedTypes": [
+        "ultimate"
+      ],
+      "multipliers": [
+        4.45,
+        4.89,
+        5.34,
+        5.78,
+        6.22,
+        6.67,
+        7.11,
+        7.56,
+        8,
+        8.56,
+        9.23,
+        10
+      ]
+    },
+    "attackSegments": [
+      {
+        "index": 0,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.6,
+            "stagger": 3,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.25,
+          0.28,
+          0.31,
+          0.33,
+          0.36,
+          0.38,
+          0.41,
+          0.43,
+          0.46,
+          0.49,
+          0.53,
+          0.57
+        ]
+      },
+      {
+        "index": 1,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.55,
+            "stagger": 6,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.3,
+          0.33,
+          0.36,
+          0.39,
+          0.42,
+          0.45,
+          0.48,
+          0.51,
+          0.54,
+          0.58,
+          0.62,
+          0.68
+        ]
+      },
+      {
+        "index": 2,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.2,
+            "stagger": 9,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.37,
+          0.41,
+          0.45,
+          0.48,
+          0.52,
+          0.56,
+          0.59,
+          0.63,
+          0.67,
+          0.71,
+          0.77,
+          0.84
+        ]
+      },
+      {
+        "index": 3,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.65,
+            "stagger": 12,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.57,
+          0.62,
+          0.68,
+          0.73,
+          0.79,
+          0.85,
+          0.9,
+          0.96,
+          1.02,
+          1.09,
+          1.17,
+          1.27
+        ]
+      }
+    ],
+    "talents": [
+      {
+        "id": "talent_5_0",
+        "name": "明晰",
+        "description": "明晰·一: 干员智识能力值提升10\n明晰·二: 干员智识能力值提升15\n明晰·三: 干员智识能力值提升15\n明晰·四: 干员智识能力值提升20"
+      },
+      {
+        "id": "talent_5_1",
+        "name": "协议调度",
+        "description": "协议调度·β: 进驻制造舱时，武器经验素材的生产效率提升20%。\n协议调度·γ: 进驻制造舱时，武器经验素材的生产效率提升30%。"
+      },
+      {
+        "id": "talent_5_2",
+        "name": "循环协议",
+        "description": "循环协议: 连携技即时协议·闪链命中处于破防状态的敌人后，还会弹射1次。"
+      },
+      {
+        "id": "talent_5_3",
+        "name": "歼灭协议",
+        "description": "歼灭协议·一: 对失衡的敌人造成的伤害+20%。\n歼灭协议·二: 对失衡的敌人造成的伤害+30%。"
+      },
+      {
+        "id": "talent_5_4",
+        "name": "装备适配",
+        "description": "装备适配·一: 激活后，允许干员穿戴蓝色品质装备。\n装备适配·二: 激活后，允许干员穿戴紫色品质装备。\n装备适配·三: 激活后，允许干员穿戴金色品质装备。"
+      },
+      {
+        "id": "talent_5_5",
+        "name": "监督",
+        "description": "监督·α: 进驻总控中枢时，所有干员心情恢复提升8%。\n监督·β: 进驻总控中枢时，所有干员心情恢复提升12%。"
+      }
+    ],
     "acceptTeamGauge": true,
-    "nameEn": "Perlica"
+    "nameEn": "Perlica",
+    "finisherMultipliers": [
+      4,
+      4.4,
+      4.8,
+      5.2,
+      5.6,
+      6,
+      6.4,
+      6.8,
+      7.2,
+      7.7,
+      8.3,
+      9
+    ],
+    "diveMultipliers": [
+      0.8,
+      0.88,
+      0.96,
+      1.04,
+      1.12,
+      1.2,
+      1.28,
+      1.36,
+      1.44,
+      1.54,
+      1.66,
+      1.8
+    ]
   },
   {
     "id": "12",
@@ -314,13 +4694,339 @@
     "secondaryAbility": "strength",
     "avatar": "/avatars/12.png",
     "description": "“看来我不只在武学上有天赋嘛，当你的干员是不是也是一把好手？”\n陈千语是终末地工业的干员，是危机处理小组的核心成员之一。\n她自幼接受母亲和谈剑堂的教导，磨练武艺。刻苦的训练不仅让她收获了过硬的战斗素养，还练就了同龄人中少有的心理素质。尽管从未亲眼见过那把传说中的赤霄剑，陈千语还是以自己独创的“赤霄剑法”为荣，行侠仗义。\n只身仗剑游历塔卫二数年后，陈千语在佩丽卡的邀请下加入了终末地。作为天生的乐天派，陈千语以饱满的热情介入一切亟需解决的困难。\n“管理员，我曾听说，妈妈的剑能碰触到天上的云彩。我会做到的，然后，成为你和佩丽卡最信任的人！”",
-    "skills": [],
-    "linkSkill": null,
-    "ultimate": null,
-    "attackSegments": [],
-    "talents": [],
+    "skills": [
+      {
+        "id": "skill_1",
+        "name": "归穹宇",
+        "spCost": 100,
+        "initialSp": 0,
+        "duration": 3.4,
+        "gaugeGain": 10,
+        "damageTicks": [
+          {
+            "offset": 0.4,
+            "stagger": 10,
+            "sp": 100,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "battle"
+        ],
+        "anomalies": [],
+        "multipliers": [
+          1.69,
+          1.86,
+          2.03,
+          2.19,
+          2.36,
+          2.53,
+          2.7,
+          2.87,
+          3.04,
+          3.25,
+          3.5,
+          3.8
+        ]
+      }
+    ],
+    "linkSkill": {
+      "id": "combo",
+      "name": "见天河",
+      "spCost": 0,
+      "initialSp": 0,
+      "duration": 4.0,
+      "cooldown": 16,
+      "gaugeGain": 10,
+      "damageTicks": [
+        {
+          "offset": 1.0,
+          "stagger": 10,
+          "sp": 10,
+          "boundEffects": []
+        }
+      ],
+      "allowedTypes": [
+        "combo"
+      ],
+      "multipliers": [
+        1.2,
+        1.32,
+        1.44,
+        1.56,
+        1.68,
+        1.8,
+        1.92,
+        2.04,
+        2.16,
+        2.31,
+        2.49,
+        2.7
+      ],
+      "comboTrigger": {
+        "type": "on_status_applied",
+        "statusTypes": [
+          "breach"
+        ]
+      }
+    },
+    "ultimate": {
+      "id": "ultimate",
+      "name": "冽风霜",
+      "spCost": 0,
+      "initialSp": 0,
+      "duration": 4.9,
+      "gaugeMax": 70,
+      "gaugeReply": 0,
+      "animationTime": 2,
+      "enhancementTime": 0,
+      "gaugeGain": 0,
+      "damageTicks": [
+        {
+          "offset": 0.7,
+          "stagger": 15,
+          "sp": 0,
+          "boundEffects": []
+        },
+        {
+          "offset": 1.9,
+          "stagger": 20,
+          "sp": 0,
+          "boundEffects": []
+        }
+      ],
+      "allowedTypes": [
+        "ultimate"
+      ],
+      "multipliers": [
+        0.36,
+        0.4,
+        0.43,
+        0.47,
+        0.5,
+        0.54,
+        0.58,
+        0.61,
+        0.65,
+        0.69,
+        0.75,
+        0.81
+      ]
+    },
+    "attackSegments": [
+      {
+        "index": 0,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.3,
+            "stagger": 3,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.2,
+          0.22,
+          0.24,
+          0.26,
+          0.28,
+          0.3,
+          0.32,
+          0.34,
+          0.36,
+          0.39,
+          0.42,
+          0.45
+        ]
+      },
+      {
+        "index": 1,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.3,
+            "stagger": 6,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.24,
+          0.26,
+          0.29,
+          0.31,
+          0.34,
+          0.36,
+          0.38,
+          0.41,
+          0.43,
+          0.46,
+          0.5,
+          0.54
+        ]
+      },
+      {
+        "index": 2,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 1.16,
+            "stagger": 9,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.27,
+          0.29,
+          0.32,
+          0.35,
+          0.38,
+          0.4,
+          0.43,
+          0.46,
+          0.48,
+          0.52,
+          0.56,
+          0.6
+        ]
+      },
+      {
+        "index": 3,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.34,
+            "stagger": 12,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.3,
+          0.33,
+          0.36,
+          0.39,
+          0.42,
+          0.45,
+          0.48,
+          0.51,
+          0.54,
+          0.58,
+          0.62,
+          0.68
+        ]
+      },
+      {
+        "index": 4,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.52,
+            "stagger": 15,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.4,
+          0.44,
+          0.48,
+          0.52,
+          0.56,
+          0.6,
+          0.64,
+          0.68,
+          0.72,
+          0.77,
+          0.83,
+          0.9
+        ]
+      }
+    ],
+    "talents": [
+      {
+        "id": "talent_12_0",
+        "name": "装备适配",
+        "description": "装备适配·一: 激活后，允许干员穿戴蓝色品质装备。\n装备适配·二: 激活后，允许干员穿戴紫色品质装备。\n装备适配·三: 激活后，允许干员穿戴金色品质装备。"
+      },
+      {
+        "id": "talent_12_1",
+        "name": "破势",
+        "description": "破势·一: 技能打断敌人蓄力时，额外对其造成5点失衡。\n破势·二: 技能打断敌人蓄力时，额外对其造成10点失衡。"
+      },
+      {
+        "id": "talent_12_2",
+        "name": "游刃",
+        "description": "游刃·一: 干员敏捷能力值提升10\n游刃·二: 干员敏捷能力值提升15\n游刃·三: 干员敏捷能力值提升15\n游刃·四: 干员敏捷能力值提升20"
+      },
+      {
+        "id": "talent_12_3",
+        "name": "名剑选评",
+        "description": "名剑选评·α: 进驻制造舱时，武器经验素材的生产效率提升10%。\n名剑选评·β: 进驻制造舱时，武器经验素材的生产效率提升20%。"
+      },
+      {
+        "id": "talent_12_4",
+        "name": "琢玉",
+        "description": "琢玉·β: 进驻培养舱时，矿物质料的培养速度提升20%。\n琢玉·γ: 进驻培养舱时，矿物质料的培养速度提升30%。"
+      },
+      {
+        "id": "talent_12_5",
+        "name": "斩锋",
+        "description": "斩锋·一: 技能每次命中敌人时，攻击力+4%，持续10秒，\n斩锋·二: 技能每次命中敌人时，攻击力+8%，持续10秒，"
+      }
+    ],
     "acceptTeamGauge": true,
-    "nameEn": "Chen Qianyu"
+    "nameEn": "Chen Qianyu",
+    "finisherMultipliers": [
+      4,
+      4.4,
+      4.8,
+      5.2,
+      5.6,
+      6,
+      6.4,
+      6.8,
+      7.2,
+      7.7,
+      8.3,
+      9
+    ],
+    "diveMultipliers": [
+      0.8,
+      0.88,
+      0.96,
+      1.04,
+      1.12,
+      1.2,
+      1.28,
+      1.36,
+      1.44,
+      1.54,
+      1.66,
+      1.8
+    ]
   },
   {
     "id": "3",
@@ -333,13 +5039,312 @@
     "secondaryAbility": "agility",
     "avatar": "/avatars/3.png",
     "description": "“我知道力量并不代表一切，但在塔卫二，没有力量通常不是什么好事。”\n卡特洛·狼卫·卢皮诺是一名生活在文明环带边缘的裂地者佣兵，现以危机处理小组成员的身份接受终末地工业调遣。\n年轻的狼卫早已领教过人性中最黑暗的部分，但这并未消磨他的理智，反而砥砺出了远超他年龄的成熟。他不常主动与他人发生冲突，如果心存疑问，大部分情况下他会选择以回避冲突的方式表达。与此同时，他相当擅长隐匿与侦察作战。为了完成任务，他可以与敌人同行，直到对方彻底失去戒备，再予其致命一击。\n作为裂地者中狼群氏族的一员，狼卫可以成为忠实的朋友与可靠的队友——只要你能够赢得他的信任，但这可能并没有那么容易。\n“不切实际的理想主义总是害人也害己。”",
-    "skills": [],
-    "linkSkill": null,
-    "ultimate": null,
-    "attackSegments": [],
-    "talents": [],
+    "skills": [
+      {
+        "id": "skill_1",
+        "name": "灼热弹痕",
+        "spCost": 100,
+        "initialSp": 0,
+        "duration": 3.5,
+        "gaugeGain": 10,
+        "damageTicks": [
+          {
+            "offset": 0.6,
+            "stagger": 5,
+            "sp": 100,
+            "boundEffects": []
+          },
+          {
+            "offset": 1.5,
+            "stagger": 5,
+            "sp": 10,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "battle"
+        ],
+        "anomalies": [],
+        "multipliers": [
+          1.02,
+          1.12,
+          1.22,
+          1.33,
+          1.43,
+          1.53,
+          1.63,
+          1.74,
+          1.84,
+          1.96,
+          2.12,
+          2.3
+        ]
+      }
+    ],
+    "linkSkill": {
+      "id": "combo",
+      "name": "爆裂手雷·β型",
+      "spCost": 0,
+      "initialSp": 0,
+      "duration": 3.4,
+      "cooldown": 20,
+      "gaugeGain": 10,
+      "damageTicks": [
+        {
+          "offset": 1.0,
+          "stagger": 10,
+          "sp": 10,
+          "boundEffects": []
+        }
+      ],
+      "allowedTypes": [
+        "combo"
+      ],
+      "multipliers": [
+        0.6,
+        0.66,
+        0.72,
+        0.78,
+        0.84,
+        0.9,
+        0.96,
+        1.02,
+        1.08,
+        1.16,
+        1.25,
+        1.35
+      ],
+      "comboTrigger": {
+        "type": "on_status_applied",
+        "statusTypes": [
+          "combustion",
+          "electrification",
+          "solidification",
+          "corrosion"
+        ]
+      }
+    },
+    "ultimate": {
+      "id": "ultimate",
+      "name": "狼之怒",
+      "spCost": 0,
+      "initialSp": 0,
+      "duration": 4.0,
+      "gaugeMax": 90,
+      "gaugeReply": 0,
+      "animationTime": 2,
+      "enhancementTime": 0,
+      "gaugeGain": 0,
+      "damageTicks": [
+        {
+          "offset": 0.1,
+          "stagger": 15,
+          "sp": 0,
+          "boundEffects": []
+        }
+      ],
+      "allowedTypes": [
+        "ultimate"
+      ],
+      "multipliers": [
+        0.32,
+        0.35,
+        0.38,
+        0.42,
+        0.45,
+        0.48,
+        0.51,
+        0.54,
+        0.58,
+        0.62,
+        0.66,
+        0.72
+      ]
+    },
+    "attackSegments": [
+      {
+        "index": 0,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.3,
+            "stagger": 3,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.3,
+          0.33,
+          0.36,
+          0.39,
+          0.42,
+          0.45,
+          0.48,
+          0.51,
+          0.54,
+          0.58,
+          0.62,
+          0.68
+        ]
+      },
+      {
+        "index": 1,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.3,
+            "stagger": 6,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.35,
+          0.39,
+          0.42,
+          0.46,
+          0.49,
+          0.53,
+          0.56,
+          0.6,
+          0.63,
+          0.67,
+          0.73,
+          0.79
+        ]
+      },
+      {
+        "index": 2,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.85,
+            "stagger": 9,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.56,
+          0.61,
+          0.67,
+          0.72,
+          0.78,
+          0.83,
+          0.89,
+          0.94,
+          1,
+          1.07,
+          1.15,
+          1.25
+        ]
+      },
+      {
+        "index": 3,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.98,
+            "stagger": 12,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.68,
+          0.74,
+          0.81,
+          0.88,
+          0.95,
+          1.01,
+          1.08,
+          1.15,
+          1.22,
+          1.3,
+          1.4,
+          1.52
+        ]
+      }
+    ],
+    "talents": [
+      {
+        "id": "talent_3_0",
+        "name": "节制准则",
+        "description": "节制准则·一: 战技灼热弹痕成功消耗法术异常时，返还5点技力。\n节制准则·二: 战技灼热弹痕成功消耗法术异常时，返还10点技力。"
+      },
+      {
+        "id": "talent_3_1",
+        "name": "锤炼",
+        "description": "锤炼·一: 干员力量能力值提升10\n锤炼·二: 干员力量能力值提升15\n锤炼·三: 干员力量能力值提升15\n锤炼·四: 干员力量能力值提升20"
+      },
+      {
+        "id": "talent_3_2",
+        "name": "荒野卓识",
+        "description": "荒野卓识·β: 进驻培养舱时，矿物质料的培养速度提升20%。\n荒野卓识·γ: 进驻培养舱时，矿物质料的培养速度提升30%。"
+      },
+      {
+        "id": "talent_3_3",
+        "name": "灼热獠牙",
+        "description": "灼热獠牙·一: 每次施加燃烧后，获得灼热獠牙状态，持续10秒，该状态无法叠加。状态持续期间，自身造成的灼热伤害+20%。\n灼热獠牙·二: 每次施加燃烧后，获得灼热獠牙状态，持续10秒，该状态无法叠加。状态持续期间，自身造成的灼热伤害+30%。"
+      },
+      {
+        "id": "talent_3_4",
+        "name": "装备适配",
+        "description": "装备适配·一: 激活后，允许干员穿戴蓝色品质装备。\n装备适配·二: 激活后，允许干员穿戴紫色品质装备。\n装备适配·三: 激活后，允许干员穿戴金色品质装备。"
+      },
+      {
+        "id": "talent_3_5",
+        "name": "狼群的技巧",
+        "description": "狼群的技巧·α: 进驻制造舱时，干员经验素材的生产效率提升10%。\n狼群的技巧·β: 进驻制造舱时，干员经验素材的生产效率提升20%。"
+      }
+    ],
     "acceptTeamGauge": true,
-    "nameEn": "Wulfgard"
+    "nameEn": "Wulfgard",
+    "finisherMultipliers": [
+      4,
+      4.4,
+      4.8,
+      5.2,
+      5.6,
+      6,
+      6.4,
+      6.8,
+      7.2,
+      7.7,
+      8.3,
+      9
+    ],
+    "diveMultipliers": [
+      0.8,
+      0.88,
+      0.96,
+      1.04,
+      1.12,
+      1.2,
+      1.28,
+      1.36,
+      1.44,
+      1.54,
+      1.66,
+      1.8
+    ]
   },
   {
     "id": "57",
@@ -352,13 +5357,339 @@
     "secondaryAbility": "intelligence",
     "avatar": "/avatars/57.png",
     "description": "“我叫伊库特，代号是弧光，你好。我不会说什么漂亮话，就祝你像涨水的河流一样奔涌吧。”\n弧光是一位游人，在奥里莎师者的引荐下加入终末地工业，担任外勤干员，及器械车辆技术顾问。\n游荡在荒野上的人们，无论拥有怎样的小聪明，都会被饥馑和灾难追上。弧光是不幸的，荒野吞噬了她的家人，只让她活了下来；她又是幸运的，濒死时，遇到了众生长地的游人。\n众生长地接纳了她，她很快学会了如何在自然万物中生存，学会了如何像歌谣中的强者，救助困苦之人。她游走于荒野，让更多生命知晓如何在塔卫二活下去。\n或许你会觉得弧光有些冷淡，但这份简洁与直接，在荒野之上格外有效。\n“修摩托车就像给瘤兽看病一样，都需要仔细倾听，然后给出回应。”",
-    "skills": [],
-    "linkSkill": null,
-    "ultimate": null,
-    "attackSegments": [],
-    "talents": [],
+    "skills": [
+      {
+        "id": "skill_1",
+        "name": "疾风迅雷",
+        "spCost": 100,
+        "initialSp": 0,
+        "duration": 4.4,
+        "gaugeGain": 10,
+        "damageTicks": [
+          {
+            "offset": 0.7,
+            "stagger": 5,
+            "sp": 100,
+            "boundEffects": []
+          },
+          {
+            "offset": 1.3,
+            "stagger": 5,
+            "sp": 10,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "battle"
+        ],
+        "anomalies": [],
+        "multipliers": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      }
+    ],
+    "linkSkill": {
+      "id": "combo",
+      "name": "鸣雷",
+      "spCost": 0,
+      "initialSp": 0,
+      "duration": 4.4,
+      "cooldown": 300,
+      "gaugeGain": 10,
+      "damageTicks": [
+        {
+          "offset": 1.8,
+          "stagger": 5,
+          "sp": 10,
+          "boundEffects": []
+        }
+      ],
+      "allowedTypes": [
+        "combo"
+      ],
+      "multipliers": [
+        1.55,
+        1.71,
+        1.86,
+        2.02,
+        2.18,
+        2.33,
+        2.49,
+        2.64,
+        2.8,
+        2.99,
+        3.22,
+        3.5
+      ]
+    },
+    "ultimate": {
+      "id": "ultimate",
+      "name": "轰雷掣电",
+      "spCost": 0,
+      "initialSp": 0,
+      "duration": 4.4,
+      "gaugeMax": 90,
+      "gaugeReply": 0,
+      "animationTime": 2,
+      "enhancementTime": 0,
+      "gaugeGain": 0,
+      "damageTicks": [
+        {
+          "offset": 1.6,
+          "stagger": 7,
+          "sp": 0,
+          "boundEffects": []
+        },
+        {
+          "offset": 3.2,
+          "stagger": 7,
+          "sp": 0,
+          "boundEffects": []
+        }
+      ],
+      "allowedTypes": [
+        "ultimate"
+      ],
+      "multipliers": [
+        1.56,
+        1.71,
+        1.87,
+        2.02,
+        2.18,
+        2.34,
+        2.49,
+        2.65,
+        2.8,
+        3,
+        3.23,
+        3.5
+      ]
+    },
+    "attackSegments": [
+      {
+        "index": 0,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.3,
+            "stagger": 3,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.1,
+          0.11,
+          0.12,
+          0.13,
+          0.14,
+          0.15,
+          0.16,
+          0.17,
+          0.18,
+          0.19,
+          0.21,
+          0.23
+        ]
+      },
+      {
+        "index": 1,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.02,
+            "stagger": 6,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.13,
+          0.14,
+          0.15,
+          0.16,
+          0.18,
+          0.19,
+          0.2,
+          0.21,
+          0.23,
+          0.24,
+          0.26,
+          0.28
+        ]
+      },
+      {
+        "index": 2,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.34,
+            "stagger": 9,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.26,
+          0.29,
+          0.31,
+          0.34,
+          0.36,
+          0.39,
+          0.42,
+          0.44,
+          0.47,
+          0.5,
+          0.54,
+          0.59
+        ]
+      },
+      {
+        "index": 3,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.16,
+            "stagger": 12,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.36,
+          0.4,
+          0.43,
+          0.47,
+          0.5,
+          0.54,
+          0.58,
+          0.61,
+          0.65,
+          0.69,
+          0.75,
+          0.81
+        ]
+      },
+      {
+        "index": 4,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.38,
+            "stagger": 15,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.48,
+          0.52,
+          0.57,
+          0.62,
+          0.67,
+          0.71,
+          0.76,
+          0.81,
+          0.86,
+          0.91,
+          0.99,
+          1.07
+        ]
+      }
+    ],
+    "talents": [
+      {
+        "id": "talent_57_0",
+        "name": "荒野锋刃",
+        "description": "荒野锋刃·α: 进驻制造舱时，武器经验素材的生产效率提升10%。\n荒野锋刃·β: 进驻制造舱时，武器经验素材的生产效率提升20%。"
+      },
+      {
+        "id": "talent_57_1",
+        "name": "众生智慧",
+        "description": "众生智慧·一: 被施加法术附着时，有30%的概率忽略该效果。\n众生智慧·二: 被施加法术附着时，有50%的概率忽略该效果。"
+      },
+      {
+        "id": "talent_57_2",
+        "name": "荒野游人",
+        "description": "荒野游人·一: 使用战技疾风迅雷成功触发3次额外效果后，根据自身的智识，\n荒野游人·二: 使用战技疾风迅雷成功触发3次额外效果后，根据自身的智识，"
+      },
+      {
+        "id": "talent_57_3",
+        "name": "装备适配",
+        "description": "装备适配·一: 激活后，允许干员穿戴蓝色品质装备。\n装备适配·二: 激活后，允许干员穿戴紫色品质装备。\n装备适配·三: 激活后，允许干员穿戴金色品质装备。"
+      },
+      {
+        "id": "talent_57_4",
+        "name": "歌谣传唱",
+        "description": "歌谣传唱·α: 进驻会客室时，干员收集到线索6——众生长地的概率小幅提升\n歌谣传唱·β: 进驻会客室时，干员收集到线索6——众生长地的概率提升"
+      },
+      {
+        "id": "talent_57_5",
+        "name": "游刃",
+        "description": "游刃·一: 干员敏捷能力值提升10\n游刃·二: 干员敏捷能力值提升15\n游刃·三: 干员敏捷能力值提升15\n游刃·四: 干员敏捷能力值提升20"
+      }
+    ],
     "acceptTeamGauge": true,
-    "nameEn": "Arclight"
+    "nameEn": "Arclight",
+    "finisherMultipliers": [
+      4,
+      4.4,
+      4.8,
+      5.2,
+      5.6,
+      6,
+      6.4,
+      6.8,
+      7.2,
+      7.7,
+      8.3,
+      9
+    ],
+    "diveMultipliers": [
+      0.8,
+      0.88,
+      0.96,
+      1.04,
+      1.12,
+      1.2,
+      1.28,
+      1.36,
+      1.44,
+      1.54,
+      1.66,
+      1.8
+    ]
   },
   {
     "id": "150",
@@ -371,13 +5702,327 @@
     "secondaryAbility": "intelligence",
     "avatar": "/avatars/150.png",
     "description": "“当我们彼此联结，智慧便会涌现。”\n赛希来自寂语修会——由拉特兰派遣至塔卫二的技术研修组织。她所归属的会话派，将演算和语言分析视为通往真知的道路。\n相比起与人交流，赛希更擅长运用信息技术。就连寂语修会的修道院院长也无法否认，赛希拥有难得的天赋。因此，即便在她“擅自”对大教堂的穹顶实行了升级，引发了一连串事故后，院长仍然真挚地将她引荐到终末地工业，以便她能更好地发挥能力。\n如今，赛希在帝江号上参与协议源石网络的搭建与系统集成等信息工程事务。她对于源石网络的独到见解，辅以修会丰富的知识储备，令其成为终末地不可或缺的一员。\n“古老的知识，不要让我们陷入诱惑，但救我们免于险恶……我是赛希，管理员，愿您得到启迪。”",
-    "skills": [],
-    "linkSkill": null,
-    "ultimate": null,
-    "attackSegments": [],
-    "talents": [],
+    "skills": [
+      {
+        "id": "skill_1",
+        "name": "分布式拒绝服务",
+        "spCost": 100,
+        "initialSp": 0,
+        "duration": 7.0,
+        "gaugeGain": 10,
+        "damageTicks": [
+          {
+            "offset": 3.3,
+            "stagger": 10,
+            "sp": 100,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "battle"
+        ],
+        "anomalies": [],
+        "multipliers": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      }
+    ],
+    "linkSkill": {
+      "id": "combo",
+      "name": "压力测试",
+      "spCost": 0,
+      "initialSp": 0,
+      "duration": 6.6,
+      "cooldown": 8,
+      "gaugeGain": 10,
+      "damageTicks": [
+        {
+          "offset": 3.0,
+          "stagger": 10,
+          "sp": 10,
+          "boundEffects": []
+        }
+      ],
+      "allowedTypes": [
+        "combo"
+      ],
+      "multipliers": [
+        2,
+        2.2,
+        2.4,
+        2.6,
+        2.8,
+        3,
+        3.2,
+        3.4,
+        3.6,
+        3.85,
+        4.15,
+        4.5
+      ]
+    },
+    "ultimate": {
+      "id": "ultimate",
+      "name": "栈溢出",
+      "spCost": 0,
+      "initialSp": 0,
+      "duration": 4.1,
+      "gaugeMax": 80,
+      "gaugeReply": 0,
+      "animationTime": 2,
+      "enhancementTime": 0,
+      "gaugeGain": 0,
+      "damageTicks": [
+        {
+          "offset": 0.9,
+          "stagger": 20,
+          "sp": 0,
+          "boundEffects": []
+        }
+      ],
+      "allowedTypes": [
+        "ultimate"
+      ],
+      "multipliers": [
+        0.8,
+        0.8,
+        0.8,
+        0.8,
+        0.8,
+        0.8,
+        0.8,
+        0.8,
+        0.8,
+        0.8,
+        0.8,
+        0.8
+      ]
+    },
+    "attackSegments": [
+      {
+        "index": 0,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.3,
+            "stagger": 3,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.15,
+          0.17,
+          0.18,
+          0.2,
+          0.21,
+          0.23,
+          0.24,
+          0.26,
+          0.27,
+          0.29,
+          0.31,
+          0.34
+        ]
+      },
+      {
+        "index": 1,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.3,
+            "stagger": 6,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.16,
+          0.18,
+          0.19,
+          0.21,
+          0.22,
+          0.24,
+          0.26,
+          0.27,
+          0.29,
+          0.31,
+          0.33,
+          0.36
+        ]
+      },
+      {
+        "index": 2,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.3,
+            "stagger": 9,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.21,
+          0.23,
+          0.25,
+          0.27,
+          0.29,
+          0.32,
+          0.34,
+          0.36,
+          0.38,
+          0.4,
+          0.44,
+          0.47
+        ]
+      },
+      {
+        "index": 3,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.08,
+            "stagger": 12,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.33,
+          0.36,
+          0.4,
+          0.43,
+          0.46,
+          0.5,
+          0.53,
+          0.56,
+          0.59,
+          0.64,
+          0.68,
+          0.74
+        ]
+      },
+      {
+        "index": 4,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.14,
+            "stagger": 15,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.55,
+          0.61,
+          0.66,
+          0.72,
+          0.77,
+          0.83,
+          0.88,
+          0.94,
+          0.99,
+          1.06,
+          1.14,
+          1.24
+        ]
+      }
+    ],
+    "talents": [
+      {
+        "id": "talent_150_0",
+        "name": "标准化编译",
+        "description": "标准化编译·α: 进驻制造舱时，干员经验素材的生产效率提升10%。\n标准化编译·β: 进驻制造舱时，干员经验素材的生产效率提升20%。"
+      },
+      {
+        "id": "talent_150_1",
+        "name": "协议冻结",
+        "description": "协议冻结: 终结技栈溢出会额外净化全队的寒冷附着和冻结状态。"
+      },
+      {
+        "id": "talent_150_2",
+        "name": "装备适配",
+        "description": "装备适配·一: 激活后，允许干员穿戴蓝色品质装备。\n装备适配·二: 激活后，允许干员穿戴紫色品质装备。\n装备适配·三: 激活后，允许干员穿戴金色品质装备。"
+      },
+      {
+        "id": "talent_150_3",
+        "name": "会话与细语",
+        "description": "会话与细语·α: 进驻会客室时，干员收集到线索5——寂语修会的概率小幅提升\n会话与细语·β: 进驻会客室时，干员收集到线索5——寂语修会的概率提升"
+      },
+      {
+        "id": "talent_150_4",
+        "name": "守誓",
+        "description": "守誓·一: 干员意志能力值提升10\n守誓·二: 干员意志能力值提升15\n守誓·三: 干员意志能力值提升15\n守誓·四: 干员意志能力值提升20"
+      },
+      {
+        "id": "talent_150_5",
+        "name": "启动进程",
+        "description": "启动进程·一: 连携技压力测试命中敌人时，如果目标已经处于寒冷附着或\n启动进程·二: 连携技压力测试命中敌人时，如果目标已经处于寒冷附着或"
+      }
+    ],
     "acceptTeamGauge": true,
-    "nameEn": "Xaihi"
+    "nameEn": "Xaihi",
+    "finisherMultipliers": [
+      4,
+      4.4,
+      4.8,
+      5.2,
+      5.6,
+      6,
+      6.4,
+      6.8,
+      7.2,
+      7.7,
+      8.3,
+      9
+    ],
+    "diveMultipliers": [
+      0.8,
+      0.88,
+      0.96,
+      1.04,
+      1.12,
+      1.2,
+      1.28,
+      1.36,
+      1.44,
+      1.54,
+      1.66,
+      1.8
+    ]
   },
   {
     "id": "87",
@@ -390,13 +6035,327 @@
     "secondaryAbility": "intelligence",
     "avatar": "/avatars/87.png",
     "description": "“抛出去的竿随时可以收回，人一旦陷入漩涡，就无法轻易脱身。”\n阿列什，由前联盟工团安全局联络人推荐，加入终末地工业，在开拓区担任联络与掩护工作，兼终末地钓鳞兴趣课教师。\n他不是很愿意提及自己“无聊”的过去。只知道他曾在开拓区底层摸爬滚打，尝尽争斗与背叛。最终，带着一只失明的眼睛和满身疲惫离开了街头。\n在平时，阿列什的身份是一名贩鳞人，整日沉迷于垂钓。但这无法掩盖他的嗅觉与判断力，真到危急时刻，他的眼神会像钩尖一样锋利，而他应对麻烦的手段和他的钓鳞妙招一样多。任务中，他总是带着松弛的笑意，在最混乱的局面中出奇制胜。\n“一定要快快乐乐地活着。管理员，这是我作为过来人的经验。”",
-    "skills": [],
-    "linkSkill": null,
-    "ultimate": null,
-    "attackSegments": [],
-    "talents": [],
+    "skills": [
+      {
+        "id": "skill_1",
+        "name": "非常规路亚",
+        "spCost": 100,
+        "initialSp": 0,
+        "duration": 3.6,
+        "gaugeGain": 10,
+        "damageTicks": [
+          {
+            "offset": 2.2,
+            "stagger": 10,
+            "sp": 100,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "battle"
+        ],
+        "anomalies": [],
+        "multipliers": [
+          2,
+          2.2,
+          2.4,
+          2.6,
+          2.8,
+          3,
+          3.2,
+          3.4,
+          3.6,
+          3.85,
+          4.15,
+          4.5
+        ]
+      }
+    ],
+    "linkSkill": {
+      "id": "combo",
+      "name": "凿孔底钓术",
+      "spCost": 0,
+      "initialSp": 0,
+      "duration": 5.2,
+      "cooldown": 9,
+      "gaugeGain": 10,
+      "damageTicks": [
+        {
+          "offset": 0.1,
+          "stagger": 10,
+          "sp": 10,
+          "boundEffects": []
+        }
+      ],
+      "allowedTypes": [
+        "combo"
+      ],
+      "multipliers": [
+        1.33,
+        1.47,
+        1.6,
+        1.73,
+        1.87,
+        2,
+        2.13,
+        2.27,
+        2.4,
+        2.57,
+        2.77,
+        3
+      ]
+    },
+    "ultimate": {
+      "id": "ultimate",
+      "name": "大鳞，上钩!",
+      "spCost": 0,
+      "initialSp": 0,
+      "duration": 4.2,
+      "gaugeMax": 100,
+      "gaugeReply": 0,
+      "animationTime": 2,
+      "enhancementTime": 0,
+      "gaugeGain": 0,
+      "damageTicks": [
+        {
+          "offset": 0.4,
+          "stagger": 20,
+          "sp": 0,
+          "boundEffects": []
+        }
+      ],
+      "allowedTypes": [
+        "ultimate"
+      ],
+      "multipliers": [
+        4.36,
+        4.79,
+        5.23,
+        5.66,
+        6.1,
+        6.53,
+        6.97,
+        7.41,
+        7.84,
+        8.39,
+        9.04,
+        9.8
+      ]
+    },
+    "attackSegments": [
+      {
+        "index": 0,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.3,
+            "stagger": 3,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.18,
+          0.19,
+          0.21,
+          0.23,
+          0.25,
+          0.26,
+          0.28,
+          0.3,
+          0.32,
+          0.34,
+          0.36,
+          0.39
+        ]
+      },
+      {
+        "index": 1,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.74,
+            "stagger": 6,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.1,
+          0.11,
+          0.12,
+          0.13,
+          0.14,
+          0.15,
+          0.16,
+          0.17,
+          0.18,
+          0.19,
+          0.21,
+          0.23
+        ]
+      },
+      {
+        "index": 2,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.08,
+            "stagger": 9,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.28,
+          0.3,
+          0.33,
+          0.36,
+          0.39,
+          0.41,
+          0.44,
+          0.47,
+          0.5,
+          0.53,
+          0.57,
+          0.62
+        ]
+      },
+      {
+        "index": 3,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.52,
+            "stagger": 12,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.28,
+          0.3,
+          0.33,
+          0.36,
+          0.39,
+          0.41,
+          0.44,
+          0.47,
+          0.5,
+          0.53,
+          0.57,
+          0.62
+        ]
+      },
+      {
+        "index": 4,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.16,
+            "stagger": 15,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.55,
+          0.61,
+          0.66,
+          0.72,
+          0.77,
+          0.83,
+          0.88,
+          0.94,
+          0.99,
+          1.06,
+          1.16,
+          1.24
+        ]
+      }
+    ],
+    "talents": [
+      {
+        "id": "talent_87_0",
+        "name": "闪冻锁鲜",
+        "description": "闪冻锁鲜·一: 附近有敌人被冻结或被附着源石结晶时，自身获得3点终结技能量。\n闪冻锁鲜·二: 附近有敌人被冻结或被附着源石结晶时，自身获得4点终结技能量。"
+      },
+      {
+        "id": "talent_87_1",
+        "name": "钓鳞老手",
+        "description": "钓鳞老手·一: 每10点智识会使连携技凿孔底钓术钓起珍鱗的概率+0.2%，\n钓鳞老手·二: 每10点智识会使连携技凿孔底钓术钓起珍鱗的概率+0.5%，"
+      },
+      {
+        "id": "talent_87_2",
+        "name": "锤炼",
+        "description": "锤炼·一: 干员力量能力值提升10\n锤炼·二: 干员力量能力值提升15\n锤炼·三: 干员力量能力值提升15\n锤炼·四: 干员力量能力值提升20"
+      },
+      {
+        "id": "talent_87_3",
+        "name": "装备适配",
+        "description": "装备适配·一: 激活后，允许干员穿戴蓝色品质装备。\n装备适配·二: 激活后，允许干员穿戴紫色品质装备。\n装备适配·三: 激活后，允许干员穿戴金色品质装备。"
+      },
+      {
+        "id": "talent_87_4",
+        "name": "悠闲垂钓",
+        "description": "悠闲垂钓·α: 进驻总控中枢时，所有干员心情恢复提升8%。\n悠闲垂钓·β: 进驻总控中枢时，所有干员心情恢复提升12%。"
+      },
+      {
+        "id": "talent_87_5",
+        "name": "钓友情报网",
+        "description": "钓友情报网·α: 进驻会客室时，干员收集到线索1——联盟工团的概率小幅提升\n钓友情报网·β: 进驻会客室时，干员收集到线索1——联盟工团的概率提升"
+      }
+    ],
     "acceptTeamGauge": true,
-    "nameEn": "Alesh"
+    "nameEn": "Alesh",
+    "finisherMultipliers": [
+      4,
+      4.4,
+      4.8,
+      5.2,
+      5.6,
+      6,
+      6.4,
+      6.8,
+      7.2,
+      7.7,
+      8.3,
+      9
+    ],
+    "diveMultipliers": [
+      0.8,
+      0.88,
+      0.96,
+      1.04,
+      1.12,
+      1.2,
+      1.28,
+      1.36,
+      1.44,
+      1.54,
+      1.66,
+      1.8
+    ]
   },
   {
     "id": "13",
@@ -409,13 +6368,297 @@
     "secondaryAbility": "will",
     "avatar": "/avatars/13.png",
     "description": "“不会的菜式就得多练！这可不是为了出风头，我掌勺就图个做得敞亮，吃得爽心！”\n大潘出身于宏山科学院，在离开那里后，主要从事各项“离散型关键科研后勤支持工作”，也就是厨师、电工、司机、职业练摊儿等等。他最新的岗位调动则是以个人身份，加入终末地工业的特种技术部门。\n在众多身份中，最令他自豪的还是做一名游历四方的厨师。他热衷于钻研食谱、创新菜式，最大的乐趣是做出各种美味佳肴，赢得食客们的赞美。\n大潘有个从不离身的水杯，很少有人能够注意到。若注意到的人懂得炎国文字，便会好奇它的来历；若那人也来自宏山，便自然会明白这物件从何而来，以及它仅颁发给“先进科研工作者”的分量。\n“今天我掌勺，弄了点新鲜的，您先尝尝！”",
-    "skills": [],
-    "linkSkill": null,
-    "ultimate": null,
-    "attackSegments": [],
-    "talents": [],
+    "skills": [
+      {
+        "id": "skill_1",
+        "name": "颠勺！",
+        "spCost": 100,
+        "initialSp": 0,
+        "duration": 6.2,
+        "gaugeGain": 10,
+        "damageTicks": [
+          {
+            "offset": 1.4,
+            "stagger": 10,
+            "sp": 100,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "battle"
+        ],
+        "anomalies": [],
+        "multipliers": [
+          1.33,
+          1.47,
+          1.6,
+          1.73,
+          1.86,
+          2,
+          2.13,
+          2.26,
+          2.4,
+          2.56,
+          2.76,
+          3
+        ]
+      }
+    ],
+    "linkSkill": {
+      "id": "combo",
+      "name": "加料！",
+      "spCost": 0,
+      "initialSp": 0,
+      "duration": 3.5,
+      "cooldown": 20,
+      "gaugeGain": 10,
+      "damageTicks": [
+        {
+          "offset": 1.5,
+          "stagger": 15,
+          "sp": 10,
+          "boundEffects": []
+        }
+      ],
+      "allowedTypes": [
+        "combo"
+      ],
+      "multipliers": [
+        2.89,
+        3.18,
+        3.47,
+        3.75,
+        4.04,
+        4.33,
+        4.62,
+        4.91,
+        5.2,
+        5.66,
+        5.99,
+        6.5
+      ]
+    },
+    "ultimate": {
+      "id": "ultimate",
+      "name": "切丝入锅！",
+      "spCost": 0,
+      "initialSp": 0,
+      "duration": 5.1,
+      "gaugeMax": 90,
+      "gaugeReply": 0,
+      "animationTime": 2,
+      "enhancementTime": 0,
+      "gaugeGain": 0,
+      "damageTicks": [
+        {
+          "offset": 0.6,
+          "stagger": 20,
+          "sp": 0,
+          "boundEffects": []
+        }
+      ],
+      "allowedTypes": [
+        "ultimate"
+      ],
+      "multipliers": [
+        0.22,
+        0.24,
+        0.26,
+        0.29,
+        0.31,
+        0.33,
+        0.35,
+        0.37,
+        0.4,
+        0.42,
+        0.46,
+        0.5
+      ]
+    },
+    "attackSegments": [
+      {
+        "index": 0,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.3,
+            "stagger": 3,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.28,
+          0.31,
+          0.34,
+          0.37,
+          0.39,
+          0.42,
+          0.45,
+          0.48,
+          0.51,
+          0.54,
+          0.58,
+          0.63
+        ]
+      },
+      {
+        "index": 1,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.3,
+            "stagger": 6,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.34,
+          0.37,
+          0.4,
+          0.44,
+          0.47,
+          0.5,
+          0.54,
+          0.57,
+          0.6,
+          0.64,
+          0.7,
+          0.75
+        ]
+      },
+      {
+        "index": 2,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.3,
+            "stagger": 9,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.5,
+          0.55,
+          0.6,
+          0.65,
+          0.7,
+          0.75,
+          0.8,
+          0.85,
+          0.9,
+          0.97,
+          1.04,
+          1.13
+        ]
+      },
+      {
+        "index": 3,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.45,
+            "stagger": 12,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.6,
+          0.66,
+          0.72,
+          0.78,
+          0.84,
+          0.9,
+          0.96,
+          1.03,
+          1.09,
+          1.16,
+          1.25,
+          1.36
+        ]
+      }
+    ],
+    "talents": [
+      {
+        "id": "talent_13_0",
+        "name": "尝尝咸淡",
+        "description": "尝尝咸淡·一: 终结技切丝入锅！的最后一击每命中一个敌人，获得一层备料状态，持续20秒，最多叠加1层。当处于备料状态时，连携技命中敌人后立即恢复40%冷却时间并消耗一层备料状态。\n尝尝咸淡·二: 终结技切丝入锅！的最后一击每命中一个敌人，获得一层备料状态，持续20秒，最多叠加2层。当处于备料状态时，连携技命中敌人后立即恢复40%冷却时间并消耗一层备料状态。"
+      },
+      {
+        "id": "talent_13_1",
+        "name": "擅烹山珍",
+        "description": "擅烹山珍·α: 进驻培养舱时，菌类质料的培养速度提升10%。\n擅烹山珍·β: 进驻培养舱时，菌类质料的培养速度提升20%。"
+      },
+      {
+        "id": "talent_13_2",
+        "name": "装备适配",
+        "description": "装备适配·一: 激活后，允许干员穿戴蓝色品质装备。\n装备适配·二: 激活后，允许干员穿戴紫色品质装备。\n装备适配·三: 激活后，允许干员穿戴金色品质装备。"
+      },
+      {
+        "id": "talent_13_3",
+        "name": "锤炼",
+        "description": "锤炼·一: 干员力量能力值提升10\n锤炼·二: 干员力量能力值提升15\n锤炼·三: 干员力量能力值提升15\n锤炼·四: 干员力量能力值提升20"
+      },
+      {
+        "id": "talent_13_4",
+        "name": "勾芡",
+        "description": "勾芡·一: 每消耗1层破防后，造成的物理伤害+4%，持续10秒，\n勾芡·二: 每消耗1层破防后，造成的物理伤害+6%，持续10秒，"
+      },
+      {
+        "id": "talent_13_5",
+        "name": "人情练达",
+        "description": "人情练达·β: 进驻总控中枢时，所有干员心情恢复提升12%。\n人情练达·γ: 进驻总控中枢时，所有干员心情恢复提升16%。"
+      }
+    ],
     "acceptTeamGauge": true,
-    "nameEn": "Da Pan"
+    "nameEn": "Da Pan",
+    "finisherMultipliers": [
+      4,
+      4.4,
+      4.8,
+      5.2,
+      5.6,
+      6,
+      6.4,
+      6.8,
+      7.2,
+      7.7,
+      8.3,
+      9
+    ],
+    "diveMultipliers": [
+      0.8,
+      0.88,
+      0.96,
+      1.04,
+      1.12,
+      1.2,
+      1.28,
+      1.36,
+      1.44,
+      1.54,
+      1.66,
+      1.8
+    ]
   },
   {
     "id": "88",
@@ -428,13 +6671,342 @@
     "secondaryAbility": "agility",
     "avatar": "/avatars/88.png",
     "description": "“信使要护送许多秘密，每一个秘密都有昂贵的价格，但比它们更昂贵的，是……我的守口如瓶。”\n艾维文娜是一名武装信使。\n在加入终末地工业之前，艾维文娜曾在合金萝卜自由市里一个庞大的物流家族中生活，但寄寓在家族血脉中对于旅行的向往，驱使她主动离开了原来的生活，踏上旅途。在塔卫二众多不同的目的地之间，艾维文娜发现了它们共同的联系——神秘的管理员。\n艾维文娜擅长社交，她总能以成熟、职业的方式恰到好处地处理各类人际关系。至于她是不是像看起来那样脾气好，这恐怕就要在和她接触后，才能作出判断了。\n“没有人喜欢被人拒绝……所以，能好好说话就能解决的事儿，我当然不想动手啦。不过，我也不喜欢被人拒绝哦。”",
-    "skills": [],
-    "linkSkill": null,
-    "ultimate": null,
-    "attackSegments": [],
-    "talents": [],
+    "skills": [
+      {
+        "id": "skill_1",
+        "name": "雷枪·截回",
+        "spCost": 100,
+        "initialSp": 0,
+        "duration": 2.4,
+        "gaugeGain": 10,
+        "damageTicks": [
+          {
+            "offset": 0.2,
+            "stagger": 5,
+            "sp": 100,
+            "boundEffects": []
+          },
+          {
+            "offset": 0.6,
+            "stagger": 5,
+            "sp": 10,
+            "boundEffects": []
+          },
+          {
+            "offset": 0.9,
+            "stagger": 10,
+            "sp": 10,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "battle"
+        ],
+        "anomalies": [],
+        "multipliers": [
+          0.67,
+          0.73,
+          0.8,
+          0.87,
+          0.93,
+          1,
+          1.07,
+          1.13,
+          1.2,
+          1.28,
+          1.38,
+          1.5
+        ]
+      }
+    ],
+    "linkSkill": {
+      "id": "combo",
+      "name": "雷枪·掣击",
+      "spCost": 0,
+      "initialSp": 0,
+      "duration": 2.7,
+      "cooldown": 13,
+      "gaugeGain": 10,
+      "damageTicks": [
+        {
+          "offset": 1.8,
+          "stagger": 10,
+          "sp": 10,
+          "boundEffects": []
+        }
+      ],
+      "allowedTypes": [
+        "combo"
+      ],
+      "multipliers": [
+        1.69,
+        1.86,
+        2.03,
+        2.19,
+        2.36,
+        2.53,
+        2.7,
+        2.87,
+        3.04,
+        3.25,
+        3.5,
+        3.8
+      ],
+      "comboTrigger": {
+        "type": "on_heavy_hit"
+      }
+    },
+    "ultimate": {
+      "id": "ultimate",
+      "name": "雷枪·决颤",
+      "spCost": 0,
+      "initialSp": 0,
+      "duration": 5.3,
+      "gaugeMax": 100,
+      "gaugeReply": 0,
+      "animationTime": 2,
+      "enhancementTime": 0,
+      "gaugeGain": 0,
+      "damageTicks": [
+        {
+          "offset": 0.8,
+          "stagger": 15,
+          "sp": 0,
+          "boundEffects": []
+        }
+      ],
+      "allowedTypes": [
+        "ultimate"
+      ],
+      "multipliers": [
+        4.22,
+        4.64,
+        5.07,
+        5.49,
+        5.91,
+        6.33,
+        6.75,
+        7.18,
+        7.6,
+        8.13,
+        8.76,
+        9.5
+      ]
+    },
+    "attackSegments": [
+      {
+        "index": 0,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.3,
+            "stagger": 3,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.17,
+          0.18,
+          0.2,
+          0.21,
+          0.23,
+          0.25,
+          0.26,
+          0.28,
+          0.3,
+          0.32,
+          0.34,
+          0.37
+        ]
+      },
+      {
+        "index": 1,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.3,
+            "stagger": 6,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.22,
+          0.24,
+          0.26,
+          0.28,
+          0.3,
+          0.32,
+          0.34,
+          0.37,
+          0.39,
+          0.41,
+          0.45,
+          0.48
+        ]
+      },
+      {
+        "index": 2,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.64,
+            "stagger": 9,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.21,
+          0.23,
+          0.25,
+          0.27,
+          0.29,
+          0.31,
+          0.33,
+          0.35,
+          0.37,
+          0.39,
+          0.43,
+          0.46
+        ]
+      },
+      {
+        "index": 3,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.06,
+            "stagger": 12,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.3,
+          0.33,
+          0.36,
+          0.39,
+          0.42,
+          0.45,
+          0.48,
+          0.51,
+          0.54,
+          0.58,
+          0.62,
+          0.68
+        ]
+      },
+      {
+        "index": 4,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.18,
+            "stagger": 15,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.5,
+          0.55,
+          0.6,
+          0.65,
+          0.7,
+          0.75,
+          0.8,
+          0.85,
+          0.9,
+          0.96,
+          1.04,
+          1.13
+        ]
+      }
+    ],
+    "talents": [
+      {
+        "id": "talent_88_0",
+        "name": "委婉手段",
+        "description": "委婉手段·一: 终结技雷枪·决颤命中敌人时对其施加6%电磁脆弱，持续10秒。\n委婉手段·二: 终结技雷枪·决颤命中敌人时对其施加10%电磁脆弱，持续10秒。"
+      },
+      {
+        "id": "talent_88_1",
+        "name": "装备适配",
+        "description": "装备适配·一: 激活后，允许干员穿戴蓝色品质装备。\n装备适配·二: 激活后，允许干员穿戴紫色品质装备。\n装备适配·三: 激活后，允许干员穿戴金色品质装备。"
+      },
+      {
+        "id": "talent_88_2",
+        "name": "居家顾问",
+        "description": "居家顾问·α: 进驻总控中枢时，所有干员心情恢复提升8%。\n居家顾问·β: 进驻总控中枢时，所有干员心情恢复提升12%。"
+      },
+      {
+        "id": "talent_88_3",
+        "name": "守誓",
+        "description": "守誓·一: 干员意志能力值提升10\n守誓·二: 干员意志能力值提升15\n守誓·三: 干员意志能力值提升15\n守誓·四: 干员意志能力值提升20"
+      },
+      {
+        "id": "talent_88_4",
+        "name": "信使的秘密",
+        "description": "信使的秘密·α: 进驻会客室时，干员收集到线索2——环塔商会的概率小幅提升\n信使的秘密·β: 进驻会客室时，干员收集到线索2——环塔商会的概率提升"
+      },
+      {
+        "id": "talent_88_5",
+        "name": "高效派送",
+        "description": "高效派送·一: 掷出、召回雷枪、强雷枪命中敌人时获得3点终结技能量\n高效派送·二: 掷出、召回雷枪、强雷枪命中敌人时获得4点终结技能量"
+      }
+    ],
     "acceptTeamGauge": true,
-    "nameEn": "Avywenna"
+    "nameEn": "Avywenna",
+    "finisherMultipliers": [
+      4,
+      4.4,
+      4.8,
+      5.2,
+      5.6,
+      6,
+      6.4,
+      6.8,
+      7.2,
+      7.7,
+      8.3,
+      9
+    ],
+    "diveMultipliers": [
+      0.8,
+      0.88,
+      0.96,
+      1.04,
+      1.12,
+      1.2,
+      1.28,
+      1.36,
+      1.44,
+      1.54,
+      1.66,
+      1.8
+    ]
   },
   {
     "id": "90",
@@ -447,13 +7019,267 @@
     "secondaryAbility": "will",
     "avatar": "/avatars/90.png",
     "description": "“风速适中，能见度良好，是滑雪的好天气。”\n昼雪来自罗德岛，在该公司与终末地工业的框架协议范围内，以救援专家的身份为终末地工业提供服务。\n由于众所周知的原因，塔卫二真正的极地目前对于人类而言还是个禁区。但随着开拓区重新扩大，文明环带对像昼雪这样了解极地和高海拔区地理环境的专家的需求不言而喻。\n正因为这一巨大的人才缺口，即使没有特殊任务时，昼雪和她的救援队伍每天也很忙碌。\n不过她还是利用业余时间完成了她的《极地生存指南》，这本书已经成为了塔卫二冰雪条件下的生存与救援所不可或缺的关键参考。\n“我喜欢冰雪，喜欢雪山，喜欢这些严寒下依然璀璨的事物……所以我才更不希望它们给人带来痛苦的回忆。”",
-    "skills": [],
-    "linkSkill": null,
-    "ultimate": null,
-    "attackSegments": [],
-    "talents": [],
+    "skills": [
+      {
+        "id": "skill_1",
+        "name": "饱和性防御",
+        "spCost": 100,
+        "initialSp": 0,
+        "duration": 4.1,
+        "gaugeGain": 10,
+        "damageTicks": [
+          {
+            "offset": 1.4,
+            "stagger": 20,
+            "sp": 100,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "battle"
+        ],
+        "anomalies": [],
+        "multipliers": [
+          2,
+          2.2,
+          2.4,
+          2.6,
+          2.8,
+          3,
+          3.2,
+          3.4,
+          3.6,
+          3.85,
+          4.15,
+          4.5
+        ]
+      }
+    ],
+    "linkSkill": {
+      "id": "combo",
+      "name": "极地救援",
+      "spCost": 0,
+      "initialSp": 0,
+      "duration": 6.3,
+      "cooldown": 25,
+      "gaugeGain": 10,
+      "damageTicks": [
+        {
+          "offset": 1.5,
+          "stagger": 10,
+          "sp": 10,
+          "boundEffects": []
+        }
+      ],
+      "allowedTypes": [
+        "combo"
+      ],
+      "multipliers": [
+        25,
+        25,
+        25,
+        25,
+        25,
+        25,
+        25,
+        25,
+        24,
+        24,
+        24,
+        23
+      ]
+    },
+    "ultimate": {
+      "id": "ultimate",
+      "name": "凛冽寒霜",
+      "spCost": 0,
+      "initialSp": 0,
+      "duration": 7.8,
+      "gaugeMax": 80,
+      "gaugeReply": 0,
+      "animationTime": 2,
+      "enhancementTime": 0,
+      "gaugeGain": 0,
+      "damageTicks": [
+        {
+          "offset": 0.1,
+          "stagger": 15,
+          "sp": 0,
+          "boundEffects": []
+        }
+      ],
+      "allowedTypes": [
+        "ultimate"
+      ],
+      "multipliers": [
+        2,
+        2.2,
+        2.4,
+        2.6,
+        2.8,
+        3,
+        3.2,
+        3.4,
+        3.6,
+        3.85,
+        4.15,
+        4.5
+      ]
+    },
+    "attackSegments": [
+      {
+        "index": 0,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 1.8,
+            "stagger": 3,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.55,
+          0.61,
+          0.66,
+          0.72,
+          0.77,
+          0.83,
+          0.88,
+          0.94,
+          0.99,
+          1.06,
+          1.14,
+          1.24
+        ]
+      },
+      {
+        "index": 1,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 1.4,
+            "stagger": 6,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.59,
+          0.64,
+          0.7,
+          0.76,
+          0.82,
+          0.88,
+          0.94,
+          0.99,
+          1.05,
+          1.13,
+          1.21,
+          1.32
+        ]
+      },
+      {
+        "index": 2,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.1,
+            "stagger": 9,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          1,
+          1.1,
+          1.2,
+          1.3,
+          1.4,
+          1.5,
+          1.6,
+          1.7,
+          1.8,
+          1.93,
+          2.08,
+          2.25
+        ]
+      }
+    ],
+    "talents": [
+      {
+        "id": "talent_90_0",
+        "name": "救援专家",
+        "description": "救援专家·一: 战技饱和性防御成功反击敌人时，额外获得6终结技能量。\n救援专家·二: 战技饱和性防御成功反击敌人时，额外获得10终结技能量。"
+      },
+      {
+        "id": "talent_90_1",
+        "name": "救援者的恒心",
+        "description": "救援者的恒心·α: 进驻制造舱时，舱室内干员心情消耗降低10%。\n救援者的恒心·β: 进驻制造舱时，舱室内干员心情消耗降低14%。"
+      },
+      {
+        "id": "talent_90_2",
+        "name": "极地生存",
+        "description": "极地生存·一: 对生命值不高于45%的目标，治疗效果+15%。\n极地生存·二: 对生命值不高于55%的目标，治疗效果+25%。"
+      },
+      {
+        "id": "talent_90_3",
+        "name": "锤炼",
+        "description": "锤炼·一: 干员力量能力值提升10\n锤炼·二: 干员力量能力值提升15\n锤炼·三: 干员力量能力值提升15\n锤炼·四: 干员力量能力值提升20"
+      },
+      {
+        "id": "talent_90_4",
+        "name": "乐天派",
+        "description": "乐天派·β: 进驻总控中枢时，所有干员心情恢复提升12%。\n乐天派·γ: 进驻总控中枢时，所有干员心情恢复提升16%。"
+      },
+      {
+        "id": "talent_90_5",
+        "name": "装备适配",
+        "description": "装备适配·一: 激活后，允许干员穿戴蓝色品质装备。\n装备适配·二: 激活后，允许干员穿戴紫色品质装备。\n装备适配·三: 激活后，允许干员穿戴金色品质装备。"
+      }
+    ],
     "acceptTeamGauge": true,
-    "nameEn": "Snowshine"
+    "nameEn": "Snowshine",
+    "finisherMultipliers": [
+      4,
+      4.4,
+      4.8,
+      5.2,
+      5.6,
+      6,
+      6.4,
+      6.8,
+      7.2,
+      7.7,
+      8.3,
+      9
+    ],
+    "diveMultipliers": [
+      0.8,
+      0.88,
+      0.96,
+      1.04,
+      1.12,
+      1.2,
+      1.28,
+      1.36,
+      1.44,
+      1.54,
+      1.66,
+      1.8
+    ]
   },
   {
     "id": "95",
@@ -466,13 +7292,297 @@
     "secondaryAbility": "intelligence",
     "avatar": "/avatars/95.png",
     "description": "“Z7行动组，秋栗，很高兴加入这次行动！请期待我的表现！”\n特种技术部门Z7行动组组长秋栗，总会笑着说“交给我吧”，然后包揽从指挥到管理的大小事务。除了行动指挥和策划，她还擅长调度统筹，总能在有限资源下找到最优解；她也懂得关怀队员，能让大家相处融洽，在合适的岗位上展现最好的一面。\n她几乎凭一己之力把Z7行动组建立了起来，短短几个月内就完成了从招募、训练到投入实战的全过程，取得了令人瞩目的成绩。在那之前，她只是位自荐加入终末地的商学院优等生；谁都没想到，一个新人这么快就成了值得托付的组长。\n如果对她的热忱、上进和理想主义感到好奇，想了解驱动着她的那个小小心愿，那么……\n“管理员，要我帮您煮一壶热咖啡吗？”",
-    "skills": [],
-    "linkSkill": null,
-    "ultimate": null,
-    "attackSegments": [],
-    "talents": [],
+    "skills": [
+      {
+        "id": "skill_1",
+        "name": "热情迸发",
+        "spCost": 100,
+        "initialSp": 0,
+        "duration": 3.0,
+        "gaugeGain": 10,
+        "damageTicks": [
+          {
+            "offset": 2.1,
+            "stagger": 10,
+            "sp": 100,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "battle"
+        ],
+        "anomalies": [],
+        "multipliers": [
+          1.42,
+          1.56,
+          1.71,
+          1.85,
+          1.99,
+          2.13,
+          2.28,
+          2.42,
+          2.56,
+          2.74,
+          2.95,
+          3.2
+        ]
+      }
+    ],
+    "linkSkill": {
+      "id": "combo",
+      "name": "快闪冲击",
+      "spCost": 0,
+      "initialSp": 0,
+      "duration": 2.16,
+      "cooldown": 10,
+      "gaugeGain": 10,
+      "damageTicks": [
+        {
+          "offset": 0.52,
+          "stagger": 5,
+          "sp": 10,
+          "boundEffects": []
+        }
+      ],
+      "allowedTypes": [
+        "combo"
+      ],
+      "multipliers": [
+        0.8,
+        0.88,
+        0.96,
+        1.04,
+        1.12,
+        1.2,
+        1.28,
+        1.36,
+        1.44,
+        1.54,
+        1.66,
+        1.8
+      ]
+    },
+    "ultimate": {
+      "id": "ultimate",
+      "name": "小队，集结！",
+      "spCost": 0,
+      "initialSp": 0,
+      "duration": 2.1,
+      "gaugeMax": 120,
+      "gaugeReply": 0,
+      "animationTime": 2,
+      "enhancementTime": 0,
+      "gaugeGain": 0,
+      "damageTicks": [
+        {
+          "offset": 0.52,
+          "stagger": 20,
+          "sp": 0,
+          "boundEffects": []
+        }
+      ],
+      "allowedTypes": [
+        "ultimate"
+      ],
+      "multipliers": [
+        1.2,
+        1.2,
+        1.2,
+        1.2,
+        1.2,
+        1.2,
+        1.2,
+        1.2,
+        1.2,
+        1.2,
+        1.2,
+        1.2
+      ]
+    },
+    "attackSegments": [
+      {
+        "index": 0,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.3,
+            "stagger": 3,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.2,
+          0.22,
+          0.24,
+          0.26,
+          0.28,
+          0.3,
+          0.32,
+          0.34,
+          0.36,
+          0.39,
+          0.42,
+          0.45
+        ]
+      },
+      {
+        "index": 1,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 1.35,
+            "stagger": 6,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.28,
+          0.3,
+          0.33,
+          0.36,
+          0.39,
+          0.41,
+          0.44,
+          0.47,
+          0.5,
+          0.53,
+          0.57,
+          0.62
+        ]
+      },
+      {
+        "index": 2,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 1.0,
+            "stagger": 9,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.33,
+          0.36,
+          0.39,
+          0.42,
+          0.46,
+          0.49,
+          0.52,
+          0.55,
+          0.59,
+          0.63,
+          0.67,
+          0.73
+        ]
+      },
+      {
+        "index": 3,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.35,
+            "stagger": 12,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.5,
+          0.54,
+          0.59,
+          0.64,
+          0.69,
+          0.74,
+          0.79,
+          0.84,
+          0.89,
+          0.95,
+          1.03,
+          1.11
+        ]
+      }
+    ],
+    "talents": [
+      {
+        "id": "talent_95_0",
+        "name": "装备适配",
+        "description": "装备适配·一: 激活后，允许干员穿戴蓝色品质装备。\n装备适配·二: 激活后，允许干员穿戴紫色品质装备。\n装备适配·三: 激活后，允许干员穿戴金色品质装备。"
+      },
+      {
+        "id": "talent_95_1",
+        "name": "心流时间",
+        "description": "心流时间: 施放终结技小队，集结！期间，获得连击。"
+      },
+      {
+        "id": "talent_95_2",
+        "name": "咖啡或茶",
+        "description": "咖啡或茶·α: 进驻制造舱时，舱室内干员心情消耗降低10%。\n咖啡或茶·β: 进驻制造舱时，舱室内干员心情消耗降低14%。"
+      },
+      {
+        "id": "talent_95_3",
+        "name": "游刃",
+        "description": "游刃·一: 干员敏捷能力值提升10\n游刃·二: 干员敏捷能力值提升15\n游刃·三: 干员敏捷能力值提升15\n游刃·四: 干员敏捷能力值提升20"
+      },
+      {
+        "id": "talent_95_4",
+        "name": "胜利喝彩",
+        "description": "胜利喝彩·一: 每10点智识会使连携技快闪冲击的技力恢复量+1.0%，\n胜利喝彩·二: 每10点智识会使连携技快闪冲击的技力恢复量+1.5%，"
+      },
+      {
+        "id": "talent_95_5",
+        "name": "破冰游戏",
+        "description": "破冰游戏·β: 进驻会客室时，舱室内干员心情消耗降低14%。\n破冰游戏·γ: 进驻会客室时，舱室内干员心情消耗降低18%。"
+      }
+    ],
     "acceptTeamGauge": true,
-    "nameEn": "Akekuri"
+    "nameEn": "Akekuri",
+    "finisherMultipliers": [
+      4,
+      4.4,
+      4.8,
+      5.2,
+      5.6,
+      6,
+      6.4,
+      6.8,
+      7.2,
+      7.7,
+      8.3,
+      9
+    ],
+    "diveMultipliers": [
+      0.8,
+      0.88,
+      0.96,
+      1.04,
+      1.12,
+      1.2,
+      1.28,
+      1.36,
+      1.44,
+      1.54,
+      1.66,
+      1.8
+    ]
   },
   {
     "id": "93",
@@ -485,13 +7595,311 @@
     "secondaryAbility": "strength",
     "avatar": "/avatars/93.png",
     "description": "“呃……我感觉自己的身上正在承受整个世界的重担……主要是膝盖……”\n终末地Z7行动组成员，负责情报收集和通信任务，体力很差。埃特拉总是被不幸所环绕，偶尔恶趣味的犀利发言让小队之外的人有些敬而远之。她的理想是安稳地度过一生，她看到过太多和自己一样的人，没有选择，没有变化，没有未来。\n为了谋生而经历的危险和极限情况削弱了她对外界的感知，拉高了她的感官刺激阈值。这使她时不时会主动寻求一些更“激烈”的挑战，例如刺激的重金属音乐，这些来之不易的反馈能给予她些许“变化”和“实感”。\n埃特拉想要通过在终末地的工作让世界变得稍微好那么一些，让身边的人活得更轻松一些。\n“又过度劳动了……嗯……忙里偷闲的时光可要好好珍惜。”",
-    "skills": [],
-    "linkSkill": null,
-    "ultimate": null,
-    "attackSegments": [],
-    "talents": [],
+    "skills": [
+      {
+        "id": "skill_1",
+        "name": "凝声",
+        "spCost": 100,
+        "initialSp": 0,
+        "duration": 3.0,
+        "gaugeGain": 10,
+        "damageTicks": [
+          {
+            "offset": 1.9,
+            "stagger": 10,
+            "sp": 100,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "battle"
+        ],
+        "anomalies": [],
+        "multipliers": [
+          1.56,
+          1.71,
+          1.87,
+          2.02,
+          2.18,
+          2.34,
+          2.49,
+          2.65,
+          2.8,
+          3,
+          3.23,
+          3.5
+        ]
+      }
+    ],
+    "linkSkill": {
+      "id": "combo",
+      "name": "失真",
+      "spCost": 0,
+      "initialSp": 0,
+      "duration": 3.9,
+      "cooldown": 18,
+      "gaugeGain": 10,
+      "damageTicks": [
+        {
+          "offset": 0.6,
+          "stagger": 10,
+          "sp": 10,
+          "boundEffects": []
+        }
+      ],
+      "allowedTypes": [
+        "combo"
+      ],
+      "multipliers": [
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.15,
+        0.15,
+        0.15
+      ],
+      "anomalies": [
+        {
+          "type": "solidification",
+          "stacks": 1,
+          "duration": 160,
+          "offset": 0
+        }
+      ],
+      "comboTrigger": {
+        "type": "on_status_applied",
+        "statusTypes": [
+          "solidification"
+        ]
+      }
+    },
+    "ultimate": {
+      "id": "ultimate",
+      "name": "震音",
+      "spCost": 0,
+      "initialSp": 0,
+      "duration": 5.7,
+      "gaugeMax": 70,
+      "gaugeReply": 0,
+      "animationTime": 2,
+      "enhancementTime": 0,
+      "gaugeGain": 0,
+      "damageTicks": [
+        {
+          "offset": 0.7,
+          "stagger": 15,
+          "sp": 0,
+          "boundEffects": []
+        }
+      ],
+      "allowedTypes": [
+        "ultimate"
+      ],
+      "multipliers": [
+        4.89,
+        5.38,
+        5.86,
+        6.35,
+        6.84,
+        7.33,
+        7.82,
+        8.31,
+        8.8,
+        9.41,
+        10.14,
+        11
+      ]
+    },
+    "attackSegments": [
+      {
+        "index": 0,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 1.0,
+            "stagger": 3,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.25,
+          0.28,
+          0.3,
+          0.33,
+          0.35,
+          0.38,
+          0.4,
+          0.43,
+          0.45,
+          0.48,
+          0.52,
+          0.56
+        ]
+      },
+      {
+        "index": 1,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.7,
+            "stagger": 6,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.3,
+          0.33,
+          0.36,
+          0.39,
+          0.42,
+          0.45,
+          0.48,
+          0.51,
+          0.54,
+          0.58,
+          0.62,
+          0.68
+        ]
+      },
+      {
+        "index": 2,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.7,
+            "stagger": 9,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.35,
+          0.39,
+          0.42,
+          0.46,
+          0.49,
+          0.53,
+          0.56,
+          0.6,
+          0.63,
+          0.67,
+          0.73,
+          0.79
+        ]
+      },
+      {
+        "index": 3,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.9,
+            "stagger": 12,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.4,
+          0.44,
+          0.48,
+          0.52,
+          0.56,
+          0.6,
+          0.64,
+          0.68,
+          0.72,
+          0.77,
+          0.83,
+          0.9
+        ]
+      }
+    ],
+    "talents": [
+      {
+        "id": "talent_93_0",
+        "name": "同病相怜",
+        "description": "同病相怜·一: 每当触发碎冰效果后，下一次战技凝声会返还7.5技力，\n同病相怜·二: 每当触发碎冰效果后，下一次战技凝声会返还15技力，"
+      },
+      {
+        "id": "talent_93_1",
+        "name": "装备适配",
+        "description": "装备适配·一: 激活后，允许干员穿戴蓝色品质装备。\n装备适配·二: 激活后，允许干员穿戴紫色品质装备。\n装备适配·三: 激活后，允许干员穿戴金色品质装备。"
+      },
+      {
+        "id": "talent_93_2",
+        "name": "碎片化休息",
+        "description": "碎片化休息·α: 进驻总控中枢时，所有干员心情恢复提升8%。\n碎片化休息·β: 进驻总控中枢时，所有干员心情恢复提升12%。"
+      },
+      {
+        "id": "talent_93_3",
+        "name": "惰性使然",
+        "description": "惰性使然·一: 不会被寒冷附着，且受到的寒冷伤害-10%。\n惰性使然·二: 不会被寒冷附着，且受到的寒冷伤害-20%。"
+      },
+      {
+        "id": "talent_93_4",
+        "name": "守誓",
+        "description": "守誓·一: 干员意志能力值提升10\n守誓·二: 干员意志能力值提升15\n守誓·三: 干员意志能力值提升15\n守誓·四: 干员意志能力值提升20"
+      },
+      {
+        "id": "talent_93_5",
+        "name": "监听频段",
+        "description": "监听频段·β: 进驻会客室时，干员收集线索的效率提升20%。\n监听频段·γ: 进驻会客室时，干员收集线索的效率提升30%。"
+      }
+    ],
     "acceptTeamGauge": true,
-    "nameEn": "Estella"
+    "nameEn": "Estella",
+    "finisherMultipliers": [
+      4,
+      4.4,
+      4.8,
+      5.2,
+      5.6,
+      6,
+      6.4,
+      6.8,
+      7.2,
+      7.7,
+      8.3,
+      9
+    ],
+    "diveMultipliers": [
+      0.8,
+      0.88,
+      0.96,
+      1.04,
+      1.12,
+      1.2,
+      1.28,
+      1.36,
+      1.44,
+      1.54,
+      1.66,
+      1.8
+    ]
   },
   {
     "id": "94",
@@ -504,13 +7912,309 @@
     "secondaryAbility": "will",
     "avatar": "/avatars/94.png",
     "description": "“需要掩护吗？我会全力以赴的。”\n终末地Z7行动组成员，负责掩护和后勤工作。卡契尔曾接受过完整的军事训练，大量的相关知识储备让他常能在关键时刻为队友们提供合适的建议。他出生于环塔商会一个军人家庭，备受父母与兄姐的关爱。幼年时因意外导致的病痛没有将他击垮，反而促使他逐渐成长为一名坚忍不拔的战士。\n在小队中，卡契尔年纪最小，但心智的成熟程度却远超队内其他人。他能与每个队友都配合默契，能在队友出状况时主动善后，也能为队友们准备一顿照顾了每个人需求的营地晚餐。很显然，有卡契尔在的地方，总让他的队友们感到安心和自在。\n“根据大家的建议，最近我又改良了一版野炊浓汤……管理员，有空你可以来尝尝。”",
-    "skills": [],
-    "linkSkill": null,
-    "ultimate": null,
-    "attackSegments": [],
-    "talents": [],
+    "skills": [
+      {
+        "id": "skill_1",
+        "name": "刚性阻击",
+        "spCost": 100,
+        "initialSp": 0,
+        "duration": 6.2,
+        "gaugeGain": 10,
+        "damageTicks": [
+          {
+            "offset": 1.2,
+            "stagger": 20,
+            "sp": 100,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "battle"
+        ],
+        "anomalies": [],
+        "multipliers": [
+          1.78,
+          1.96,
+          2.13,
+          2.31,
+          2.49,
+          2.67,
+          2.85,
+          3.02,
+          3.2,
+          3.42,
+          3.69,
+          4
+        ]
+      }
+    ],
+    "linkSkill": {
+      "id": "combo",
+      "name": "即时压制",
+      "spCost": 0,
+      "initialSp": 0,
+      "duration": 5.3,
+      "cooldown": 35,
+      "gaugeGain": 10,
+      "damageTicks": [
+        {
+          "offset": 1.6,
+          "stagger": 10,
+          "sp": 10,
+          "boundEffects": []
+        }
+      ],
+      "allowedTypes": [
+        "combo"
+      ],
+      "multipliers": [
+        0.25,
+        0.27,
+        0.3,
+        0.32,
+        0.34,
+        0.37,
+        0.39,
+        0.42,
+        0.44,
+        0.47,
+        0.51,
+        0.55
+      ]
+    },
+    "ultimate": {
+      "id": "ultimate",
+      "name": "教科书式猛攻",
+      "spCost": 0,
+      "initialSp": 0,
+      "duration": 8.1,
+      "gaugeMax": 80,
+      "gaugeReply": 0,
+      "animationTime": 2,
+      "enhancementTime": 0,
+      "gaugeGain": 0,
+      "damageTicks": [
+        {
+          "offset": 1.6,
+          "stagger": 5,
+          "sp": 0,
+          "boundEffects": []
+        },
+        {
+          "offset": 4.0,
+          "stagger": 5,
+          "sp": 0,
+          "boundEffects": []
+        },
+        {
+          "offset": 4.3,
+          "stagger": 10,
+          "sp": 0,
+          "boundEffects": []
+        }
+      ],
+      "allowedTypes": [
+        "ultimate"
+      ],
+      "multipliers": [
+        0.89,
+        0.98,
+        1.07,
+        1.16,
+        1.25,
+        1.34,
+        1.43,
+        1.51,
+        1.6,
+        1.72,
+        1.85,
+        2
+      ]
+    },
+    "attackSegments": [
+      {
+        "index": 0,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.3,
+            "stagger": 3,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.35,
+          0.39,
+          0.42,
+          0.46,
+          0.49,
+          0.53,
+          0.56,
+          0.6,
+          0.63,
+          0.67,
+          0.73,
+          0.79
+        ]
+      },
+      {
+        "index": 1,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 1.57,
+            "stagger": 6,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.39,
+          0.42,
+          0.46,
+          0.5,
+          0.54,
+          0.58,
+          0.62,
+          0.65,
+          0.69,
+          0.74,
+          0.8,
+          0.87
+        ]
+      },
+      {
+        "index": 2,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 1.15,
+            "stagger": 9,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.54,
+          0.59,
+          0.65,
+          0.7,
+          0.76,
+          0.81,
+          0.86,
+          0.92,
+          0.97,
+          1.04,
+          1.12,
+          1.22
+        ]
+      },
+      {
+        "index": 3,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.02,
+            "stagger": 12,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.71,
+          0.78,
+          0.85,
+          0.92,
+          0.99,
+          1.07,
+          1.14,
+          1.21,
+          1.28,
+          1.37,
+          1.47,
+          1.6
+        ]
+      }
+    ],
+    "talents": [
+      {
+        "id": "talent_94_0",
+        "name": "坚韧防线",
+        "description": "坚韧防线·一: 每有10点意志，防御力+1.0。\n坚韧防线·二: 每有10点意志，防御力+1.2。"
+      },
+      {
+        "id": "talent_94_1",
+        "name": "锤炼",
+        "description": "锤炼·一: 干员力量能力值提升10\n锤炼·二: 干员力量能力值提升15\n锤炼·三: 干员力量能力值提升15\n锤炼·四: 干员力量能力值提升20"
+      },
+      {
+        "id": "talent_94_2",
+        "name": "缄默关怀",
+        "description": "缄默关怀·α: 进驻总控中枢时，所有干员心情恢复提升8%。\n缄默关怀·β: 进驻总控中枢时，所有干员心情恢复提升12%。"
+      },
+      {
+        "id": "talent_94_3",
+        "name": "务实心态",
+        "description": "务实心态·β: 进驻培养舱时，舱室内干员心情消耗降低14%。\n务实心态·γ: 进驻培养舱时，舱室内干员心情消耗降低18%。"
+      },
+      {
+        "id": "talent_94_4",
+        "name": "全局思维",
+        "description": "全局思维·一: 终结技教科书式猛攻的最后一击产生2次冲击波，\n全局思维·二: 终结技教科书式猛攻的最后一击产生3次冲击波，"
+      },
+      {
+        "id": "talent_94_5",
+        "name": "装备适配",
+        "description": "装备适配·一: 激活后，允许干员穿戴蓝色品质装备。\n装备适配·二: 激活后，允许干员穿戴紫色品质装备。\n装备适配·三: 激活后，允许干员穿戴金色品质装备。"
+      }
+    ],
     "acceptTeamGauge": true,
-    "nameEn": "Catcher"
+    "nameEn": "Catcher",
+    "finisherMultipliers": [
+      4,
+      4.4,
+      4.8,
+      5.2,
+      5.6,
+      6,
+      6.4,
+      6.8,
+      7.2,
+      7.7,
+      8.3,
+      9
+    ],
+    "diveMultipliers": [
+      0.8,
+      0.88,
+      0.96,
+      1.04,
+      1.12,
+      1.2,
+      1.28,
+      1.36,
+      1.44,
+      1.54,
+      1.66,
+      1.8
+    ]
   },
   {
     "id": "92",
@@ -523,13 +8227,297 @@
     "secondaryAbility": "intelligence",
     "avatar": "/avatars/92.png",
     "description": "“扰乱？牵制？还是……一步到位？”\n终末地Z7行动组成员，负责侦察和战线扰乱工作。萤石对街头规矩和宵小伎俩的了解和她的铳法一样，已经为小队避免了不计其数的麻烦。她来自文明环带边缘的开拓区，在一次又一次迁移和流浪中锻炼出了与众不同的观察力。大部分时候，她只是在房间一角似笑非笑地旁听，就能让人感到自己的每一丝纰漏都已经被看穿，压力倍增。\n然而，这绝不意味着萤石是个善解人意的人——对人心的敏锐把握不仅给萤石带来了出色的战场嗅觉，却也让她成为了小队当中最擅长用几句话招惹任何人，给工作带来无数麻烦的不稳定因素。\n“不说点什么吗？嗯……要不，散会？”",
-    "skills": [],
-    "linkSkill": null,
-    "ultimate": null,
-    "attackSegments": [],
-    "talents": [],
+    "skills": [
+      {
+        "id": "skill_1",
+        "name": "小惊喜",
+        "spCost": 100,
+        "initialSp": 0,
+        "duration": 6.3,
+        "gaugeGain": 10,
+        "damageTicks": [
+          {
+            "offset": 0.9,
+            "stagger": 10,
+            "sp": 100,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "battle"
+        ],
+        "anomalies": [],
+        "multipliers": [
+          1.87,
+          2.06,
+          2.24,
+          2.43,
+          2.62,
+          2.8,
+          2.99,
+          3.18,
+          3.36,
+          3.6,
+          3.88,
+          4.2
+        ]
+      }
+    ],
+    "linkSkill": {
+      "id": "combo",
+      "name": "免费赠礼",
+      "spCost": 0,
+      "initialSp": 0,
+      "duration": 3.9,
+      "cooldown": 40,
+      "gaugeGain": 10,
+      "damageTicks": [
+        {
+          "offset": 0.9,
+          "stagger": 10,
+          "sp": 10,
+          "boundEffects": []
+        }
+      ],
+      "allowedTypes": [
+        "combo"
+      ],
+      "multipliers": [
+        1.69,
+        1.86,
+        2.03,
+        2.2,
+        2.37,
+        2.54,
+        2.7,
+        2.87,
+        3.04,
+        3.25,
+        3.51,
+        3.8
+      ]
+    },
+    "ultimate": {
+      "id": "ultimate",
+      "name": "巅峰闹剧",
+      "spCost": 0,
+      "initialSp": 0,
+      "duration": 6.9,
+      "gaugeMax": 100,
+      "gaugeReply": 0,
+      "animationTime": 2,
+      "enhancementTime": 0,
+      "gaugeGain": 0,
+      "damageTicks": [
+        {
+          "offset": 4.9,
+          "stagger": 20,
+          "sp": 0,
+          "boundEffects": []
+        }
+      ],
+      "allowedTypes": [
+        "ultimate"
+      ],
+      "multipliers": [
+        1.11,
+        1.22,
+        1.33,
+        1.44,
+        1.56,
+        1.67,
+        1.78,
+        1.89,
+        2,
+        2.14,
+        2.31,
+        2.5
+      ]
+    },
+    "attackSegments": [
+      {
+        "index": 0,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.3,
+            "stagger": 3,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.25,
+          0.28,
+          0.3,
+          0.33,
+          0.35,
+          0.38,
+          0.4,
+          0.43,
+          0.45,
+          0.48,
+          0.52,
+          0.56
+        ]
+      },
+      {
+        "index": 1,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.1,
+            "stagger": 6,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.33,
+          0.36,
+          0.39,
+          0.42,
+          0.46,
+          0.49,
+          0.52,
+          0.55,
+          0.59,
+          0.63,
+          0.67,
+          0.73
+        ]
+      },
+      {
+        "index": 2,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.3,
+            "stagger": 9,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.26,
+          0.28,
+          0.31,
+          0.33,
+          0.36,
+          0.38,
+          0.41,
+          0.43,
+          0.46,
+          0.49,
+          0.53,
+          0.57
+        ]
+      },
+      {
+        "index": 3,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.1,
+            "stagger": 12,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.6,
+          0.66,
+          0.72,
+          0.78,
+          0.84,
+          0.9,
+          0.96,
+          1.02,
+          1.08,
+          1.16,
+          1.25,
+          1.35
+        ]
+      }
+    ],
+    "talents": [
+      {
+        "id": "talent_92_0",
+        "name": "知人所想",
+        "description": "知人所想·β: 进驻总控中枢时，所有干员心情恢复提升12%。\n知人所想·γ: 进驻总控中枢时，所有干员心情恢复提升16%。"
+      },
+      {
+        "id": "talent_92_1",
+        "name": "落井下石爱好者",
+        "description": "落井下石爱好者·一: 萤石对处于缓速状态的目标造成的伤害+10%。\n落井下石爱好者·二: 萤石对处于缓速状态的目标造成的伤害+20%。"
+      },
+      {
+        "id": "talent_92_2",
+        "name": "装备适配",
+        "description": "装备适配·一: 激活后，允许干员穿戴蓝色品质装备。\n装备适配·二: 激活后，允许干员穿戴紫色品质装备。\n装备适配·三: 激活后，允许干员穿戴金色品质装备。"
+      },
+      {
+        "id": "talent_92_3",
+        "name": "捉摸不定",
+        "description": "捉摸不定·一: 有20%的概率免疫法术伤害，之后使自身攻击力+10%，持续10秒，该效果无法叠加。\n捉摸不定·二: 有20%的概率免疫法术伤害，之后使自身攻击力+20%，持续10秒，该效果无法叠加。"
+      },
+      {
+        "id": "talent_92_4",
+        "name": "荒芜行者",
+        "description": "荒芜行者·α: 进驻培养舱时，矿物质料的培养速度提升10%。\n荒芜行者·β: 进驻培养舱时，矿物质料的培养速度提升20%。"
+      },
+      {
+        "id": "talent_92_5",
+        "name": "游刃",
+        "description": "游刃·一: 干员敏捷能力值提升10\n游刃·二: 干员敏捷能力值提升15\n游刃·三: 干员敏捷能力值提升15\n游刃·四: 干员敏捷能力值提升20"
+      }
+    ],
     "acceptTeamGauge": true,
-    "nameEn": "Fluorite"
+    "nameEn": "Fluorite",
+    "finisherMultipliers": [
+      4,
+      4.4,
+      4.8,
+      5.2,
+      5.6,
+      6,
+      6.4,
+      6.8,
+      7.2,
+      7.7,
+      8.3,
+      9
+    ],
+    "diveMultipliers": [
+      0.8,
+      0.88,
+      0.96,
+      1.04,
+      1.12,
+      1.2,
+      1.28,
+      1.36,
+      1.44,
+      1.54,
+      1.66,
+      1.8
+    ]
   },
   {
     "id": "91",
@@ -542,12 +8530,311 @@
     "secondaryAbility": "strength",
     "avatar": "/avatars/91.png",
     "description": "“轮到我出任务了么？正好，我也想找机会测试浮游炮的改造成效。”\n终末地Z7行动组成员，负责辅助与源石技术顾问的工作。头脑聪明，思维跳跃，不擅于感知他人情绪，与人沟通时常常会作出和氛围格格不入的发言，让队员们颇为头疼。不过，在源石技艺上，安塔尔其实拥有着极为出众的天赋，虽说对此他并无太多自觉。\n受祖母的影响，安塔尔对世俗的成功毫不在意，他几乎将所有注意力都投注在了自己感兴趣的事物上。比如一件他没见过的源石装置，又比如一个让他啧啧称奇的冷笑话，都能让这位年轻的萨弗拉废寝忘食地研究数个日夜，直到他觉得自己弄明白了为止。\n“很奇怪，一见到您，我的分享欲就格外强烈。”",
-    "skills": [],
-    "linkSkill": null,
-    "ultimate": null,
-    "attackSegments": [],
-    "talents": [],
+    "skills": [
+      {
+        "id": "skill_1",
+        "name": "指定研究对象",
+        "spCost": 100,
+        "initialSp": 0,
+        "duration": 2.9,
+        "gaugeGain": 10,
+        "damageTicks": [
+          {
+            "offset": 1.2,
+            "stagger": 10,
+            "sp": 100,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "battle"
+        ],
+        "anomalies": [
+          {
+            "type": "combustion",
+            "stacks": 5,
+            "duration": 5,
+            "offset": 0
+          }
+        ],
+        "multipliers": [
+          0.89,
+          0.98,
+          1.07,
+          1.16,
+          1.24,
+          1.33,
+          1.42,
+          1.51,
+          1.6,
+          1.71,
+          1.85,
+          2
+        ]
+      }
+    ],
+    "linkSkill": {
+      "id": "combo",
+      "name": "磁暴试验场",
+      "spCost": 0,
+      "initialSp": 0,
+      "duration": 3.0,
+      "cooldown": 25,
+      "gaugeGain": 10,
+      "damageTicks": [
+        {
+          "offset": 0.8,
+          "stagger": 10,
+          "sp": 10,
+          "boundEffects": []
+        }
+      ],
+      "allowedTypes": [
+        "combo"
+      ],
+      "multipliers": [
+        1.51,
+        1.66,
+        1.81,
+        1.96,
+        2.11,
+        2.27,
+        2.42,
+        2.57,
+        2.72,
+        2.91,
+        3.13,
+        3.4
+      ]
+    },
+    "ultimate": {
+      "id": "ultimate",
+      "name": "超频时刻",
+      "spCost": 0,
+      "initialSp": 0,
+      "duration": 2.3,
+      "gaugeMax": 100,
+      "gaugeReply": 0,
+      "animationTime": 2,
+      "enhancementTime": 0,
+      "gaugeGain": 0,
+      "damageTicks": [
+        {
+          "offset": 0.1,
+          "stagger": 20,
+          "sp": 0,
+          "boundEffects": []
+        }
+      ],
+      "allowedTypes": [
+        "ultimate"
+      ],
+      "multipliers": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "anomalies": [
+        {
+          "type": "combustion",
+          "stacks": 8,
+          "duration": 5,
+          "offset": 0
+        }
+      ]
+    },
+    "attackSegments": [
+      {
+        "index": 0,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.8,
+            "stagger": 3,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.23,
+          0.25,
+          0.28,
+          0.3,
+          0.32,
+          0.35,
+          0.37,
+          0.39,
+          0.41,
+          0.44,
+          0.48,
+          0.52
+        ]
+      },
+      {
+        "index": 1,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.97,
+            "stagger": 6,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.28,
+          0.31,
+          0.34,
+          0.36,
+          0.39,
+          0.42,
+          0.45,
+          0.48,
+          0.5,
+          0.54,
+          0.58,
+          0.63
+        ]
+      },
+      {
+        "index": 2,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.05,
+            "stagger": 9,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.34,
+          0.37,
+          0.41,
+          0.44,
+          0.48,
+          0.51,
+          0.54,
+          0.58,
+          0.61,
+          0.65,
+          0.71,
+          0.77
+        ]
+      },
+      {
+        "index": 3,
+        "duration": 0.5,
+        "gaugeGain": 5,
+        "damageTicks": [
+          {
+            "offset": 0.03,
+            "stagger": 12,
+            "sp": 5,
+            "boundEffects": []
+          }
+        ],
+        "allowedTypes": [
+          "basic"
+        ],
+        "multipliers": [
+          0.51,
+          0.56,
+          0.61,
+          0.66,
+          0.71,
+          0.77,
+          0.82,
+          0.87,
+          0.92,
+          0.98,
+          1.06,
+          1.15
+        ]
+      }
+    ],
+    "talents": [
+      {
+        "id": "talent_91_0",
+        "name": "冷笑话学习",
+        "description": "冷笑话学习·β: 进驻培养舱时，舱室内干员心情消耗降低14%。\n冷笑话学习·γ: 进驻培养舱时，舱室内干员心情消耗降低18%。"
+      },
+      {
+        "id": "talent_91_1",
+        "name": "装备适配",
+        "description": "装备适配·一: 激活后，允许干员穿戴蓝色品质装备。\n装备适配·二: 激活后，允许干员穿戴紫色品质装备。\n装备适配·三: 激活后，允许干员穿戴金色品质装备。"
+      },
+      {
+        "id": "talent_91_2",
+        "name": "下意识",
+        "description": "下意识·一: 有30%的概率免疫物理伤害，\n下意识·二: 有30%的概率免疫物理伤害，"
+      },
+      {
+        "id": "talent_91_3",
+        "name": "明晰",
+        "description": "明晰·一: 干员智识能力值提升10\n明晰·二: 干员智识能力值提升15\n明晰·三: 干员智识能力值提升15\n明晰·四: 干员智识能力值提升20"
+      },
+      {
+        "id": "talent_91_4",
+        "name": "即兴发挥",
+        "description": "即兴发挥·一: 队伍中处于增幅状态的干员造成技能伤害后，安塔尔为其回复\n即兴发挥·二: 队伍中处于增幅状态的干员造成技能伤害后，安塔尔为其回复[108+力量×0.9]点生命值，"
+      },
+      {
+        "id": "talent_91_5",
+        "name": "实验性施术单元",
+        "description": "实验性施术单元·α: 进驻制造舱时，武器经验素材的生产效率提升10%。\n实验性施术单元·β: 进驻制造舱时，武器经验素材的生产效率提升20%。"
+      }
+    ],
     "acceptTeamGauge": true,
-    "nameEn": "Antal"
+    "nameEn": "Antal",
+    "finisherMultipliers": [
+      4,
+      4.4,
+      4.8,
+      5.2,
+      5.6,
+      6,
+      6.4,
+      6.8,
+      7.2,
+      7.7,
+      8.3,
+      9
+    ],
+    "diveMultipliers": [
+      0.8,
+      0.88,
+      0.96,
+      1.04,
+      1.12,
+      1.2,
+      1.28,
+      1.36,
+      1.44,
+      1.54,
+      1.66,
+      1.8
+    ]
   }
 ]

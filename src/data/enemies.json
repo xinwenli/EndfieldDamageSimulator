@@ -1,0 +1,3098 @@
+[
+  {
+    "id": "acid_originium_slug",
+    "name": "Acid Originium Slug",
+    "category": "Wildlife",
+    "enemyType": "common",
+    "def": 100,
+    "physicalResist": 0,
+    "heatResist": 0,
+    "electricResist": 0,
+    "cryoResist": 0,
+    "natureResist": 0,
+    "aetherResist": 0,
+    "staggerThreshold": 60,
+    "staggerDuration": 5,
+    "levelStats": {
+      "hp": [
+        152,
+        1093,
+        6916,
+        27225,
+        65489,
+        100888
+      ],
+      "atk": [
+        26,
+        124,
+        386,
+        958,
+        1442,
+        1652
+      ],
+      "def": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ]
+    },
+    "cover": "/enemies/acid_originium_slug.png",
+    "nameCN": "酸液源石虫"
+  },
+  {
+    "id": "acid_originium_slug__",
+    "name": "Acid Originium Slug α",
+    "category": "Wildlife",
+    "enemyType": "common",
+    "def": 100,
+    "physicalResist": 0,
+    "heatResist": 0,
+    "electricResist": 0,
+    "cryoResist": 0,
+    "natureResist": 0,
+    "aetherResist": 0,
+    "staggerThreshold": 60,
+    "staggerDuration": 5,
+    "levelStats": {
+      "hp": [
+        249,
+        1788,
+        11316,
+        44551,
+        107164,
+        165089
+      ],
+      "atk": [
+        30,
+        140,
+        434,
+        1078,
+        1622,
+        1858
+      ],
+      "def": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ]
+    },
+    "cover": "/enemies/acid_originium_slug__.png",
+    "nameCN": "酸液源石虫·α"
+  },
+  {
+    "id": "_thillu",
+    "name": "Æthillu",
+    "category": "Wildlife",
+    "enemyType": "common",
+    "def": 100,
+    "physicalResist": 20,
+    "heatResist": 20,
+    "electricResist": 20,
+    "cryoResist": 20,
+    "natureResist": 20,
+    "aetherResist": 0,
+    "staggerThreshold": 80,
+    "staggerDuration": 5,
+    "levelStats": {
+      "hp": [
+        111,
+        795,
+        5029,
+        19800,
+        47629,
+        73373
+      ],
+      "atk": [
+        49,
+        233,
+        723,
+        1796,
+        2703,
+        3097
+      ],
+      "def": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ]
+    },
+    "cover": "/enemies/_thillu.png",
+    "nameCN": "表象"
+  },
+  {
+    "id": "blazemist_originium_slug",
+    "name": "Blazemist Originium Slug",
+    "category": "Wildlife",
+    "enemyType": "common",
+    "def": 100,
+    "physicalResist": 20,
+    "heatResist": 20,
+    "electricResist": 0,
+    "cryoResist": 0,
+    "natureResist": 20,
+    "aetherResist": 0,
+    "staggerThreshold": 60,
+    "staggerDuration": 5,
+    "levelStats": {
+      "hp": [
+        270,
+        1937,
+        12259,
+        48263,
+        116095,
+        178847
+      ],
+      "atk": [
+        30,
+        140,
+        434,
+        1078,
+        1622,
+        1858
+      ],
+      "def": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ]
+    },
+    "cover": "/enemies/blazemist_originium_slug.png",
+    "nameCN": "焚雾源石虫"
+  },
+  {
+    "id": "bonekrusher_ambusher",
+    "name": "Bonekrusher Ambusher",
+    "category": "Landbreakers",
+    "enemyType": "common",
+    "def": 100,
+    "physicalResist": 0,
+    "heatResist": 0,
+    "electricResist": 0,
+    "cryoResist": 0,
+    "natureResist": 0,
+    "aetherResist": 0,
+    "staggerThreshold": 80,
+    "staggerDuration": 5,
+    "levelStats": {
+      "hp": [
+        180,
+        1292,
+        8173,
+        32175,
+        77396,
+        119231
+      ],
+      "atk": [
+        28,
+        132,
+        410,
+        1018,
+        1532,
+        1755
+      ],
+      "def": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ]
+    },
+    "cover": "/enemies/bonekrusher_ambusher.png",
+    "nameCN": "碾骨伏击射手"
+  },
+  {
+    "id": "bonekrusher_infiltrator",
+    "name": "Bonekrusher Infiltrator",
+    "category": "Landbreakers",
+    "enemyType": "common",
+    "def": 100,
+    "physicalResist": 0,
+    "heatResist": 0,
+    "electricResist": 0,
+    "cryoResist": 0,
+    "natureResist": 0,
+    "aetherResist": 0,
+    "staggerThreshold": 80,
+    "staggerDuration": 5,
+    "levelStats": {
+      "hp": [
+        166,
+        1192,
+        7544,
+        29700,
+        71443,
+        110060
+      ],
+      "atk": [
+        33,
+        155,
+        482,
+        1198,
+        1802,
+        2065
+      ],
+      "def": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ]
+    },
+    "cover": "/enemies/bonekrusher_infiltrator.png",
+    "nameCN": "碾骨渗透者"
+  },
+  {
+    "id": "bonekrusher_raider",
+    "name": "Bonekrusher Raider",
+    "category": "Landbreakers",
+    "enemyType": "common",
+    "def": 100,
+    "physicalResist": 0,
+    "heatResist": 0,
+    "electricResist": 0,
+    "cryoResist": 0,
+    "natureResist": 0,
+    "aetherResist": 0,
+    "staggerThreshold": 80,
+    "staggerDuration": 5,
+    "levelStats": {
+      "hp": [
+        194,
+        1391,
+        8802,
+        34651,
+        83350,
+        128403
+      ],
+      "atk": [
+        36,
+        171,
+        531,
+        1317,
+        1982,
+        2271
+      ],
+      "def": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ]
+    },
+    "cover": "/enemies/bonekrusher_raider.png",
+    "nameCN": "碾骨劫掠者"
+  },
+  {
+    "id": "bonekrusher_ripptusk",
+    "name": "Bonekrusher Ripptusk",
+    "category": "Landbreakers",
+    "enemyType": "common",
+    "def": 100,
+    "physicalResist": 0,
+    "heatResist": 0,
+    "electricResist": 0,
+    "cryoResist": 0,
+    "natureResist": 0,
+    "aetherResist": 0,
+    "staggerThreshold": 60,
+    "staggerDuration": 5,
+    "levelStats": {
+      "hp": [
+        152,
+        1093,
+        6916,
+        27225,
+        65489,
+        100888
+      ],
+      "atk": [
+        30,
+        140,
+        434,
+        1078,
+        1622,
+        1858
+      ],
+      "def": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ]
+    },
+    "cover": "/enemies/bonekrusher_ripptusk.png",
+    "nameCN": "碾骨撕裂牙兽"
+  },
+  {
+    "id": "bonekrusher_vanguard",
+    "name": "Bonekrusher Vanguard",
+    "category": "Landbreakers",
+    "enemyType": "common",
+    "def": 100,
+    "physicalResist": 20,
+    "heatResist": 0,
+    "electricResist": 0,
+    "cryoResist": 0,
+    "natureResist": 0,
+    "aetherResist": 0,
+    "staggerThreshold": 80,
+    "staggerDuration": 5,
+    "levelStats": {
+      "hp": [
+        166,
+        1192,
+        7544,
+        29700,
+        71443,
+        110060
+      ],
+      "atk": [
+        26,
+        124,
+        386,
+        958,
+        1442,
+        1652
+      ],
+      "def": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ]
+    },
+    "cover": "/enemies/bonekrusher_vanguard.png",
+    "nameCN": "碾骨先锋"
+  },
+  {
+    "id": "brutal_pincerbeast",
+    "name": "Brutal Pincerbeast",
+    "category": "Wildlife",
+    "enemyType": "common",
+    "def": 100,
+    "physicalResist": 0,
+    "heatResist": 0,
+    "electricResist": 0,
+    "cryoResist": 0,
+    "natureResist": 0,
+    "aetherResist": 0,
+    "staggerThreshold": 60,
+    "staggerDuration": 5,
+    "levelStats": {
+      "hp": [
+        277,
+        1987,
+        12574,
+        49501,
+        119071,
+        183433
+      ],
+      "atk": [
+        30,
+        140,
+        434,
+        1078,
+        1622,
+        1858
+      ],
+      "def": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ]
+    },
+    "cover": "/enemies/brutal_pincerbeast.png",
+    "nameCN": "残暴原生钳兽"
+  },
+  {
+    "id": "elite_ambusher",
+    "name": "Elite Ambusher",
+    "category": "Landbreakers",
+    "enemyType": "common",
+    "def": 100,
+    "physicalResist": 0,
+    "heatResist": 0,
+    "electricResist": 0,
+    "cryoResist": 0,
+    "natureResist": 0,
+    "aetherResist": 0,
+    "staggerThreshold": 110,
+    "staggerDuration": 5,
+    "levelStats": {
+      "hp": [
+        263,
+        1888,
+        11945,
+        47026,
+        113118,
+        174261
+      ],
+      "atk": [
+        38,
+        178,
+        555,
+        1377,
+        2073,
+        2375
+      ],
+      "def": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ]
+    },
+    "cover": "/enemies/elite_ambusher.png",
+    "nameCN": "精锐伏击射手"
+  },
+  {
+    "id": "elite_raider",
+    "name": "Elite Raider",
+    "category": "Landbreakers",
+    "enemyType": "common",
+    "def": 100,
+    "physicalResist": 0,
+    "heatResist": 0,
+    "electricResist": 0,
+    "cryoResist": 0,
+    "natureResist": 0,
+    "aetherResist": 0,
+    "staggerThreshold": 110,
+    "staggerDuration": 5,
+    "levelStats": {
+      "hp": [
+        291,
+        2086,
+        13202,
+        51976,
+        125025,
+        192604
+      ],
+      "atk": [
+        49,
+        233,
+        723,
+        1796,
+        2703,
+        3097
+      ],
+      "def": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ]
+    },
+    "cover": "/enemies/elite_raider.png",
+    "nameCN": "精锐劫掠者"
+  },
+  {
+    "id": "elite_ripptusk",
+    "name": "Elite Ripptusk",
+    "category": "Landbreakers",
+    "enemyType": "common",
+    "def": 100,
+    "physicalResist": 0,
+    "heatResist": 0,
+    "electricResist": 0,
+    "cryoResist": 0,
+    "natureResist": 0,
+    "aetherResist": 0,
+    "staggerThreshold": 90,
+    "staggerDuration": 5,
+    "levelStats": {
+      "hp": [
+        228,
+        1639,
+        10373,
+        40838,
+        98234,
+        151332
+      ],
+      "atk": [
+        39,
+        186,
+        579,
+        1437,
+        2163,
+        2478
+      ],
+      "def": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ]
+    },
+    "cover": "/enemies/elite_ripptusk.png",
+    "nameCN": "精锐撕裂牙兽"
+  },
+  {
+    "id": "falsewings",
+    "name": "Falsewings",
+    "category": "Aggeloi",
+    "enemyType": "common",
+    "def": 100,
+    "physicalResist": 0,
+    "heatResist": 0,
+    "electricResist": 0,
+    "cryoResist": 0,
+    "natureResist": 0,
+    "aetherResist": 0,
+    "staggerThreshold": 60,
+    "staggerDuration": 5,
+    "levelStats": {
+      "hp": [
+        111,
+        795,
+        5029,
+        19800,
+        47629,
+        73373
+      ],
+      "atk": [
+        26,
+        124,
+        386,
+        958,
+        1442,
+        1652
+      ],
+      "def": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ]
+    },
+    "cover": "/enemies/falsewings.png",
+    "nameCN": "仿生翅天使"
+  },
+  {
+    "id": "falsewings__",
+    "name": "Falsewings α",
+    "category": "Aggeloi",
+    "enemyType": "common",
+    "def": 100,
+    "physicalResist": 0,
+    "heatResist": 0,
+    "electricResist": 0,
+    "cryoResist": 0,
+    "natureResist": 0,
+    "aetherResist": 0,
+    "staggerThreshold": 60,
+    "staggerDuration": 5,
+    "levelStats": {
+      "hp": [
+        166,
+        1192,
+        7544,
+        29700,
+        71443,
+        110060
+      ],
+      "atk": [
+        30,
+        140,
+        434,
+        1078,
+        1622,
+        1858
+      ],
+      "def": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ]
+    },
+    "cover": "/enemies/falsewings__.png",
+    "nameCN": "仿生翅天使α"
+  },
+  {
+    "id": "firemist_originium_slug",
+    "name": "Firemist Originium Slug",
+    "category": "Wildlife",
+    "enemyType": "common",
+    "def": 100,
+    "physicalResist": 20,
+    "heatResist": 20,
+    "electricResist": 0,
+    "cryoResist": 0,
+    "natureResist": 20,
+    "aetherResist": 0,
+    "staggerThreshold": 80,
+    "staggerDuration": 5,
+    "levelStats": {
+      "hp": [
+        180,
+        1292,
+        8173,
+        32175,
+        77396,
+        119231
+      ],
+      "atk": [
+        26,
+        124,
+        386,
+        958,
+        1442,
+        1652
+      ],
+      "def": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ]
+    },
+    "cover": "/enemies/firemist_originium_slug.png",
+    "nameCN": "火雾源石虫"
+  },
+  {
+    "id": "grove_archer",
+    "name": "Grove Archer",
+    "category": "Cangzei Pirates",
+    "enemyType": "common",
+    "def": 100,
+    "physicalResist": 0,
+    "heatResist": 0,
+    "electricResist": 0,
+    "cryoResist": 0,
+    "natureResist": 0,
+    "aetherResist": 0,
+    "staggerThreshold": 80,
+    "staggerDuration": 5,
+    "levelStats": {
+      "hp": [
+        180,
+        1292,
+        8173,
+        32175,
+        77396,
+        119231
+      ],
+      "atk": [
+        28,
+        132,
+        410,
+        1018,
+        1532,
+        1755
+      ],
+      "def": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ]
+    },
+    "cover": "/enemies/grove_archer.png",
+    "nameCN": "穿林箭"
+  },
+  {
+    "id": "hazefyre_claw",
+    "name": "Hazefyre Claw",
+    "category": "Landbreakers",
+    "enemyType": "common",
+    "def": 100,
+    "physicalResist": 20,
+    "heatResist": 20,
+    "electricResist": 20,
+    "cryoResist": 20,
+    "natureResist": 20,
+    "aetherResist": 0,
+    "staggerThreshold": 100,
+    "staggerDuration": 5,
+    "levelStats": {
+      "hp": [
+        249,
+        1788,
+        11316,
+        44551,
+        107164,
+        165089
+      ],
+      "atk": [
+        36,
+        171,
+        531,
+        1317,
+        1982,
+        2271
+      ],
+      "def": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ]
+    },
+    "cover": "/enemies/hazefyre_claw.png",
+    "nameCN": "雾火爪牙"
+  },
+  {
+    "id": "hazefyre_tuskbeast",
+    "name": "Hazefyre Tuskbeast",
+    "category": "Landbreakers",
+    "enemyType": "common",
+    "def": 100,
+    "physicalResist": 20,
+    "heatResist": 20,
+    "electricResist": 20,
+    "cryoResist": 20,
+    "natureResist": 20,
+    "aetherResist": 0,
+    "staggerThreshold": 80,
+    "staggerDuration": 5,
+    "levelStats": {
+      "hp": [
+        194,
+        1391,
+        8802,
+        34651,
+        83350,
+        128403
+      ],
+      "atk": [
+        33,
+        155,
+        482,
+        1198,
+        1802,
+        2065
+      ],
+      "def": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ]
+    },
+    "cover": "/enemies/hazefyre_tuskbeast.png",
+    "nameCN": "雾火牙兽"
+  },
+  {
+    "id": "hedron",
+    "name": "Hedron",
+    "category": "Aggeloi",
+    "enemyType": "common",
+    "def": 100,
+    "physicalResist": 0,
+    "heatResist": 0,
+    "electricResist": 20,
+    "cryoResist": 20,
+    "natureResist": 0,
+    "aetherResist": 0,
+    "staggerThreshold": 60,
+    "staggerDuration": 5,
+    "levelStats": {
+      "hp": [
+        152,
+        1093,
+        6916,
+        27225,
+        65489,
+        100888
+      ],
+      "atk": [
+        26,
+        124,
+        386,
+        958,
+        1442,
+        1652
+      ],
+      "def": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ]
+    },
+    "cover": "/enemies/hedron.png",
+    "nameCN": "晶锥天使"
+  },
+  {
+    "id": "hedron__",
+    "name": "Hedron δ",
+    "category": "Aggeloi",
+    "enemyType": "common",
+    "def": 100,
+    "physicalResist": 0,
+    "heatResist": 0,
+    "electricResist": 20,
+    "cryoResist": 20,
+    "natureResist": 0,
+    "aetherResist": 0,
+    "staggerThreshold": 90,
+    "staggerDuration": 5,
+    "levelStats": {
+      "hp": [
+        208,
+        1490,
+        9430,
+        37126,
+        89303,
+        137575
+      ],
+      "atk": [
+        30,
+        140,
+        434,
+        1078,
+        1622,
+        1858
+      ],
+      "def": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ]
+    },
+    "cover": "/enemies/hedron__.png",
+    "nameCN": "晶锥天使δ"
+  },
+  {
+    "id": "highway_reaver",
+    "name": "Highway Reaver",
+    "category": "Cangzei Pirates",
+    "enemyType": "common",
+    "def": 100,
+    "physicalResist": 0,
+    "heatResist": 0,
+    "electricResist": 0,
+    "cryoResist": 0,
+    "natureResist": 0,
+    "aetherResist": 0,
+    "staggerThreshold": 80,
+    "staggerDuration": 5,
+    "levelStats": {
+      "hp": [
+        291,
+        2086,
+        13202,
+        51976,
+        125025,
+        192604
+      ],
+      "atk": [
+        43,
+        202,
+        627,
+        1557,
+        2343,
+        2684
+      ],
+      "def": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ]
+    },
+    "cover": "/enemies/highway_reaver.png",
+    "nameCN": "莫惜命"
+  },
+  {
+    "id": "indigenous_pincerbeast",
+    "name": "Indigenous Pincerbeast",
+    "category": "Wildlife",
+    "enemyType": "common",
+    "def": 100,
+    "physicalResist": 0,
+    "heatResist": 0,
+    "electricResist": 0,
+    "cryoResist": 0,
+    "natureResist": 0,
+    "aetherResist": 0,
+    "staggerThreshold": 60,
+    "staggerDuration": 5,
+    "levelStats": {
+      "hp": [
+        166,
+        1192,
+        7544,
+        29700,
+        71443,
+        110060
+      ],
+      "atk": [
+        26,
+        124,
+        386,
+        958,
+        1442,
+        1652
+      ],
+      "def": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ]
+    },
+    "cover": "/enemies/indigenous_pincerbeast.png",
+    "nameCN": "原生钳兽"
+  },
+  {
+    "id": "mudflow",
+    "name": "Mudflow",
+    "category": "Aggeloi",
+    "enemyType": "common",
+    "def": 100,
+    "physicalResist": 0,
+    "heatResist": 0,
+    "electricResist": 20,
+    "cryoResist": 20,
+    "natureResist": 0,
+    "aetherResist": 0,
+    "staggerThreshold": 60,
+    "staggerDuration": 5,
+    "levelStats": {
+      "hp": [
+        180,
+        1292,
+        8173,
+        32175,
+        77396,
+        119231
+      ],
+      "atk": [
+        26,
+        124,
+        386,
+        958,
+        1442,
+        1652
+      ],
+      "def": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ]
+    },
+    "cover": "/enemies/mudflow.png",
+    "nameCN": "浊流天使"
+  },
+  {
+    "id": "mudflow__",
+    "name": "Mudflow δ",
+    "category": "Aggeloi",
+    "enemyType": "common",
+    "def": 100,
+    "physicalResist": 0,
+    "heatResist": 0,
+    "electricResist": 20,
+    "cryoResist": 20,
+    "natureResist": 0,
+    "aetherResist": 0,
+    "staggerThreshold": 90,
+    "staggerDuration": 5,
+    "levelStats": {
+      "hp": [
+        291,
+        2086,
+        13202,
+        51976,
+        125025,
+        192604
+      ],
+      "atk": [
+        30,
+        140,
+        434,
+        1078,
+        1622,
+        1858
+      ],
+      "def": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ]
+    },
+    "cover": "/enemies/mudflow__.png",
+    "nameCN": "浊流天使δ"
+  },
+  {
+    "id": "prism",
+    "name": "Prism",
+    "category": "Aggeloi",
+    "enemyType": "common",
+    "def": 100,
+    "physicalResist": 0,
+    "heatResist": 0,
+    "electricResist": 20,
+    "cryoResist": 20,
+    "natureResist": 0,
+    "aetherResist": 0,
+    "staggerThreshold": 60,
+    "staggerDuration": 5,
+    "levelStats": {
+      "hp": [
+        111,
+        795,
+        5029,
+        19800,
+        47629,
+        73373
+      ],
+      "atk": [
+        26,
+        124,
+        386,
+        958,
+        1442,
+        1652
+      ],
+      "def": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ]
+    },
+    "cover": "/enemies/prism.png",
+    "nameCN": "棱镜天使"
+  },
+  {
+    "id": "ram",
+    "name": "Ram",
+    "category": "Aggeloi",
+    "enemyType": "common",
+    "def": 100,
+    "physicalResist": 0,
+    "heatResist": 0,
+    "electricResist": 0,
+    "cryoResist": 0,
+    "natureResist": 0,
+    "aetherResist": 0,
+    "staggerThreshold": 60,
+    "staggerDuration": 5,
+    "levelStats": {
+      "hp": [
+        138,
+        994,
+        6287,
+        24750,
+        59536,
+        91716
+      ],
+      "atk": [
+        33,
+        155,
+        482,
+        1198,
+        1802,
+        2065
+      ],
+      "def": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ]
+    },
+    "cover": "/enemies/ram.png",
+    "nameCN": "大角天使"
+  },
+  {
+    "id": "ram__",
+    "name": "Ram α",
+    "category": "Aggeloi",
+    "enemyType": "common",
+    "def": 100,
+    "physicalResist": 0,
+    "heatResist": 0,
+    "electricResist": 0,
+    "cryoResist": 0,
+    "natureResist": 0,
+    "aetherResist": 0,
+    "staggerThreshold": 90,
+    "staggerDuration": 5,
+    "levelStats": {
+      "hp": [
+        208,
+        1490,
+        9430,
+        37126,
+        89303,
+        137575
+      ],
+      "atk": [
+        46,
+        217,
+        675,
+        1677,
+        2523,
+        2891
+      ],
+      "def": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ]
+    },
+    "cover": "/enemies/ram__.png",
+    "nameCN": "大角天使α"
+  },
+  {
+    "id": "road_plunderer",
+    "name": "Road Plunderer",
+    "category": "Cangzei Pirates",
+    "enemyType": "common",
+    "def": 100,
+    "physicalResist": 0,
+    "heatResist": 0,
+    "electricResist": 0,
+    "cryoResist": 0,
+    "natureResist": 0,
+    "aetherResist": 0,
+    "staggerThreshold": 80,
+    "staggerDuration": 5,
+    "levelStats": {
+      "hp": [
+        194,
+        1391,
+        8802,
+        34651,
+        83350,
+        128403
+      ],
+      "atk": [
+        33,
+        155,
+        482,
+        1198,
+        1802,
+        2065
+      ],
+      "def": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ]
+    },
+    "cover": "/enemies/road_plunderer.png",
+    "nameCN": "莫留财"
+  },
+  {
+    "id": "skydrummer",
+    "name": "Skydrummer",
+    "category": "Wildlife",
+    "enemyType": "common",
+    "def": 100,
+    "physicalResist": 0,
+    "heatResist": 0,
+    "electricResist": 0,
+    "cryoResist": 0,
+    "natureResist": 0,
+    "aetherResist": 0,
+    "staggerThreshold": 320,
+    "staggerDuration": 5,
+    "levelStats": {
+      "hp": [
+        1661,
+        11923,
+        75442,
+        297005,
+        714428,
+        1100596
+      ],
+      "atk": [
+        66,
+        310,
+        965,
+        2395,
+        3604,
+        4130
+      ],
+      "def": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ]
+    },
+    "cover": "/enemies/skydrummer.png",
+    "nameCN": "天鼓"
+  },
+  {
+    "id": "sting",
+    "name": "Sting",
+    "category": "Aggeloi",
+    "enemyType": "common",
+    "def": 100,
+    "physicalResist": 0,
+    "heatResist": 0,
+    "electricResist": 0,
+    "cryoResist": 0,
+    "natureResist": 0,
+    "aetherResist": 0,
+    "staggerThreshold": 60,
+    "staggerDuration": 5,
+    "levelStats": {
+      "hp": [
+        138,
+        994,
+        6287,
+        24750,
+        59536,
+        91716
+      ],
+      "atk": [
+        26,
+        124,
+        386,
+        958,
+        1442,
+        1652
+      ],
+      "def": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ]
+    },
+    "cover": "/enemies/sting.png",
+    "nameCN": "钉刺天使"
+  },
+  {
+    "id": "sting__",
+    "name": "Sting α",
+    "category": "Aggeloi",
+    "enemyType": "common",
+    "def": 100,
+    "physicalResist": 0,
+    "heatResist": 0,
+    "electricResist": 0,
+    "cryoResist": 0,
+    "natureResist": 0,
+    "aetherResist": 0,
+    "staggerThreshold": 90,
+    "staggerDuration": 5,
+    "levelStats": {
+      "hp": [
+        208,
+        1490,
+        9430,
+        37126,
+        89303,
+        137575
+      ],
+      "atk": [
+        36,
+        171,
+        531,
+        1317,
+        1982,
+        2271
+      ],
+      "def": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ]
+    },
+    "cover": "/enemies/sting__.png",
+    "nameCN": "钉刺天使α"
+  },
+  {
+    "id": "sweeping_wind",
+    "name": "Sweeping Wind",
+    "category": "Cangzei Pirates",
+    "enemyType": "common",
+    "def": 100,
+    "physicalResist": 0,
+    "heatResist": 0,
+    "electricResist": 0,
+    "cryoResist": 0,
+    "natureResist": 0,
+    "aetherResist": 0,
+    "staggerThreshold": 110,
+    "staggerDuration": 5,
+    "levelStats": {
+      "hp": [
+        166,
+        1192,
+        7544,
+        29700,
+        71443,
+        110060
+      ],
+      "atk": [
+        33,
+        155,
+        482,
+        1198,
+        1802,
+        2065
+      ],
+      "def": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ]
+    },
+    "cover": "/enemies/sweeping_wind.png",
+    "nameCN": "过堂风"
+  },
+  {
+    "id": "tidalklast",
+    "name": "Tidalklast",
+    "category": "Aggeloi",
+    "enemyType": "common",
+    "def": 100,
+    "physicalResist": 0,
+    "heatResist": 0,
+    "electricResist": 20,
+    "cryoResist": 20,
+    "natureResist": 0,
+    "aetherResist": 0,
+    "staggerThreshold": 640,
+    "staggerDuration": 5,
+    "levelStats": {
+      "hp": [
+        1385,
+        9936,
+        62869,
+        247504,
+        595357,
+        917164
+      ],
+      "atk": [
+        66,
+        310,
+        965,
+        2395,
+        3604,
+        4130
+      ],
+      "def": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ]
+    },
+    "cover": "/enemies/tidalklast.png",
+    "nameCN": "破潮之像"
+  },
+  {
+    "id": "walking_chrysopolis",
+    "name": "Walking Chrysopolis",
+    "category": "Aggeloi",
+    "enemyType": "common",
+    "def": 100,
+    "physicalResist": 20,
+    "heatResist": 20,
+    "electricResist": 0,
+    "cryoResist": 20,
+    "natureResist": 20,
+    "aetherResist": 0,
+    "staggerThreshold": 320,
+    "staggerDuration": 5,
+    "levelStats": {
+      "hp": [
+        1385,
+        9936,
+        62869,
+        247504,
+        595357,
+        917164
+      ],
+      "atk": [
+        59,
+        279,
+        868,
+        2156,
+        3244,
+        3717
+      ],
+      "def": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ]
+    },
+    "cover": "/enemies/walking_chrysopolis.png",
+    "nameCN": "跂步晶城"
+  },
+  {
+    "id": "waterlamp",
+    "name": "Waterlamp",
+    "category": "Wildlife",
+    "enemyType": "common",
+    "def": 100,
+    "physicalResist": 0,
+    "heatResist": 0,
+    "electricResist": 20,
+    "cryoResist": 0,
+    "natureResist": 20,
+    "aetherResist": 0,
+    "staggerThreshold": 80,
+    "staggerDuration": 5,
+    "levelStats": {
+      "hp": [
+        111,
+        795,
+        5029,
+        19800,
+        47629,
+        73373
+      ],
+      "atk": [
+        26,
+        124,
+        386,
+        958,
+        1442,
+        1652
+      ],
+      "def": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ]
+    },
+    "cover": "/enemies/waterlamp.png",
+    "nameCN": "水灯虫"
+  },
+  {
+    "id": "wild_tuskbeast",
+    "name": "Wild Tuskbeast",
+    "category": "Landbreakers",
+    "enemyType": "common",
+    "def": 100,
+    "physicalResist": 0,
+    "heatResist": 0,
+    "electricResist": 0,
+    "cryoResist": 0,
+    "natureResist": 0,
+    "aetherResist": 0,
+    "staggerThreshold": 60,
+    "staggerDuration": 5,
+    "levelStats": {
+      "hp": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "atk": [
+        16,
+        78,
+        241,
+        599,
+        901,
+        1032
+      ],
+      "def": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ]
+    },
+    "cover": "",
+    "nameCN": "野生牙兽"
+  },
+  {
+    "id": "bonekrusher_arsonist",
+    "name": "Bonekrusher Arsonist",
+    "category": "Landbreakers",
+    "enemyType": "advanced",
+    "def": 100,
+    "physicalResist": 0,
+    "heatResist": 50,
+    "electricResist": 0,
+    "cryoResist": 0,
+    "natureResist": 0,
+    "aetherResist": 0,
+    "staggerThreshold": 170,
+    "staggerDuration": 5,
+    "levelStats": {
+      "hp": [
+        831,
+        5961,
+        37721,
+        148502,
+        357214,
+        550298
+      ],
+      "atk": [
+        49,
+        233,
+        723,
+        1796,
+        2703,
+        3097
+      ],
+      "def": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ]
+    },
+    "cover": "/enemies/bonekrusher_arsonist.png",
+    "nameCN": "碾骨清道夫"
+  },
+  {
+    "id": "bonekrusher_pyromancer",
+    "name": "Bonekrusher Pyromancer",
+    "category": "Landbreakers",
+    "enemyType": "advanced",
+    "def": 100,
+    "physicalResist": 0,
+    "heatResist": 50,
+    "electricResist": 0,
+    "cryoResist": 0,
+    "natureResist": 0,
+    "aetherResist": 0,
+    "staggerThreshold": 160,
+    "staggerDuration": 5,
+    "levelStats": {
+      "hp": [
+        761,
+        5465,
+        34578,
+        136127,
+        327446,
+        504440
+      ],
+      "atk": [
+        49,
+        233,
+        723,
+        1796,
+        2703,
+        3097
+      ],
+      "def": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ]
+    },
+    "cover": "/enemies/bonekrusher_pyromancer.png",
+    "nameCN": "碾骨焰术师"
+  },
+  {
+    "id": "cloud_stalker",
+    "name": "Cloud Stalker",
+    "category": "Cangzei Pirates",
+    "enemyType": "advanced",
+    "def": 100,
+    "physicalResist": 0,
+    "heatResist": 20,
+    "electricResist": 20,
+    "cryoResist": 20,
+    "natureResist": 20,
+    "aetherResist": 0,
+    "staggerThreshold": 110,
+    "staggerDuration": 5,
+    "levelStats": {
+      "hp": [
+        761,
+        5465,
+        34578,
+        136127,
+        327446,
+        504440
+      ],
+      "atk": [
+        49,
+        233,
+        723,
+        1796,
+        2703,
+        3097
+      ],
+      "def": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ]
+    },
+    "cover": "/enemies/cloud_stalker.png",
+    "nameCN": "劫云客"
+  },
+  {
+    "id": "heavy_ram",
+    "name": "Heavy Ram",
+    "category": "Aggeloi",
+    "enemyType": "advanced",
+    "def": 100,
+    "physicalResist": 20,
+    "heatResist": 20,
+    "electricResist": 0,
+    "cryoResist": 0,
+    "natureResist": 20,
+    "aetherResist": 0,
+    "staggerThreshold": 160,
+    "staggerDuration": 5,
+    "levelStats": {
+      "hp": [
+        831,
+        5961,
+        37721,
+        148502,
+        357214,
+        550298
+      ],
+      "atk": [
+        66,
+        310,
+        965,
+        2395,
+        3604,
+        4130
+      ],
+      "def": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ]
+    },
+    "cover": "/enemies/heavy_ram.png",
+    "nameCN": "刚角天使"
+  },
+  {
+    "id": "heavy_ram__",
+    "name": "Heavy Ram α",
+    "category": "Aggeloi",
+    "enemyType": "advanced",
+    "def": 100,
+    "physicalResist": 20,
+    "heatResist": 20,
+    "electricResist": 0,
+    "cryoResist": 0,
+    "natureResist": 20,
+    "aetherResist": 0,
+    "staggerThreshold": 200,
+    "staggerDuration": 5,
+    "levelStats": {
+      "hp": [
+        1246,
+        8942,
+        56582,
+        222753,
+        535821,
+        825447
+      ],
+      "atk": [
+        72,
+        341,
+        1061,
+        2635,
+        3965,
+        4543
+      ],
+      "def": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ]
+    },
+    "cover": "/enemies/heavy_ram__.png",
+    "nameCN": "刚角天使α"
+  },
+  {
+    "id": "heavy_sting",
+    "name": "Heavy Sting",
+    "category": "Aggeloi",
+    "enemyType": "advanced",
+    "def": 100,
+    "physicalResist": 20,
+    "heatResist": 20,
+    "electricResist": 0,
+    "cryoResist": 0,
+    "natureResist": 20,
+    "aetherResist": 0,
+    "staggerThreshold": 140,
+    "staggerDuration": 5,
+    "levelStats": {
+      "hp": [
+        734,
+        5266,
+        33320,
+        131177,
+        315539,
+        486097
+      ],
+      "atk": [
+        49,
+        233,
+        723,
+        1796,
+        2703,
+        3097
+      ],
+      "def": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ]
+    },
+    "cover": "/enemies/heavy_sting.png",
+    "nameCN": "重刺天使"
+  },
+  {
+    "id": "heavy_sting__",
+    "name": "Heavy Sting α",
+    "category": "Aggeloi",
+    "enemyType": "advanced",
+    "def": 100,
+    "physicalResist": 20,
+    "heatResist": 20,
+    "electricResist": 0,
+    "cryoResist": 0,
+    "natureResist": 20,
+    "aetherResist": 0,
+    "staggerThreshold": 180,
+    "staggerDuration": 5,
+    "levelStats": {
+      "hp": [
+        1094,
+        7849,
+        49666,
+        195528,
+        470332,
+        724559
+      ],
+      "atk": [
+        59,
+        279,
+        868,
+        2156,
+        3244,
+        3717
+      ],
+      "def": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ]
+    },
+    "cover": "/enemies/heavy_sting__.png",
+    "nameCN": "重刺天使α"
+  },
+  {
+    "id": "imbued_quillbeast",
+    "name": "Imbued Quillbeast",
+    "category": "Wildlife",
+    "enemyType": "advanced",
+    "def": 100,
+    "physicalResist": 0,
+    "heatResist": 20,
+    "electricResist": 20,
+    "cryoResist": 0,
+    "natureResist": 0,
+    "aetherResist": 0,
+    "staggerThreshold": 200,
+    "staggerDuration": 5,
+    "levelStats": {
+      "hp": [
+        1246,
+        8942,
+        56582,
+        222753,
+        535821,
+        825447
+      ],
+      "atk": [
+        44,
+        209,
+        651,
+        1617,
+        2433,
+        2788
+      ],
+      "def": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ]
+    },
+    "cover": "/enemies/imbued_quillbeast.png",
+    "nameCN": "充能球刺兽"
+  },
+  {
+    "id": "nimbus_razor",
+    "name": "Nimbus Razor",
+    "category": "Cangzei Pirates",
+    "enemyType": "advanced",
+    "def": 100,
+    "physicalResist": 40,
+    "heatResist": 0,
+    "electricResist": 0,
+    "cryoResist": 20,
+    "natureResist": 20,
+    "aetherResist": 0,
+    "staggerThreshold": 110,
+    "staggerDuration": 5,
+    "levelStats": {
+      "hp": [
+        761,
+        5465,
+        34578,
+        136127,
+        327446,
+        504440
+      ],
+      "atk": [
+        49,
+        233,
+        723,
+        1796,
+        2703,
+        3097
+      ],
+      "def": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ]
+    },
+    "cover": "/enemies/nimbus_razor.png",
+    "nameCN": "割云翁"
+  },
+  {
+    "id": "quillbeast",
+    "name": "Quillbeast",
+    "category": "Wildlife",
+    "enemyType": "advanced",
+    "def": 100,
+    "physicalResist": 0,
+    "heatResist": 20,
+    "electricResist": 20,
+    "cryoResist": 0,
+    "natureResist": 0,
+    "aetherResist": 0,
+    "staggerThreshold": 200,
+    "staggerDuration": 5,
+    "levelStats": {
+      "hp": [
+        831,
+        5961,
+        37721,
+        148502,
+        357214,
+        550298
+      ],
+      "atk": [
+        39,
+        186,
+        579,
+        1437,
+        2163,
+        2478
+      ],
+      "def": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ]
+    },
+    "cover": "/enemies/quillbeast.png",
+    "nameCN": "球刺兽"
+  },
+  {
+    "id": "tunneling_nidwyrm",
+    "name": "Tunneling Nidwyrm",
+    "category": "Wildlife",
+    "enemyType": "advanced",
+    "def": 100,
+    "physicalResist": 0,
+    "heatResist": 0,
+    "electricResist": 0,
+    "cryoResist": 0,
+    "natureResist": 30,
+    "aetherResist": 0,
+    "staggerThreshold": 160,
+    "staggerDuration": 5,
+    "levelStats": {
+      "hp": [
+        692,
+        4968,
+        31434,
+        123752,
+        297678,
+        458582
+      ],
+      "atk": [
+        56,
+        264,
+        820,
+        2036,
+        3064,
+        3510
+      ],
+      "def": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ]
+    },
+    "cover": "/enemies/tunneling_nidwyrm.png",
+    "nameCN": "潜地虬兽"
+  },
+  {
+    "id": "axe_armorbeast",
+    "name": "Axe Armorbeast",
+    "category": "Wildlife",
+    "enemyType": "elite",
+    "def": 100,
+    "physicalResist": 0,
+    "heatResist": 0,
+    "electricResist": 0,
+    "cryoResist": 0,
+    "natureResist": 0,
+    "aetherResist": 0,
+    "staggerThreshold": 280,
+    "staggerDuration": 5,
+    "levelStats": {
+      "hp": [
+        1385,
+        9936,
+        62869,
+        247504,
+        595357,
+        917164
+      ],
+      "atk": [
+        66,
+        310,
+        965,
+        2395,
+        3604,
+        4130
+      ],
+      "def": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ]
+    },
+    "cover": "/enemies/axe_armorbeast.png",
+    "nameCN": "斧甲兽"
+  },
+  {
+    "id": "bonekrusher_ballista",
+    "name": "Bonekrusher Ballista",
+    "category": "Landbreakers",
+    "enemyType": "elite",
+    "def": 100,
+    "physicalResist": 0,
+    "heatResist": 0,
+    "electricResist": 0,
+    "cryoResist": 0,
+    "natureResist": 0,
+    "aetherResist": 0,
+    "staggerThreshold": 320,
+    "staggerDuration": 5,
+    "levelStats": {
+      "hp": [
+        1246,
+        8942,
+        56582,
+        222753,
+        535821,
+        825447
+      ],
+      "atk": [
+        72,
+        341,
+        1061,
+        2635,
+        3965,
+        4543
+      ],
+      "def": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ]
+    },
+    "cover": "/enemies/bonekrusher_ballista.png",
+    "nameCN": "碾骨射手"
+  },
+  {
+    "id": "bonekrusher_executioner",
+    "name": "Bonekrusher Executioner",
+    "category": "Landbreakers",
+    "enemyType": "elite",
+    "def": 100,
+    "physicalResist": 0,
+    "heatResist": 0,
+    "electricResist": 0,
+    "cryoResist": 0,
+    "natureResist": 0,
+    "aetherResist": 0,
+    "staggerThreshold": 320,
+    "staggerDuration": 5,
+    "levelStats": {
+      "hp": [
+        1108,
+        7948,
+        50295,
+        198003,
+        476285,
+        733731
+      ],
+      "atk": [
+        66,
+        310,
+        965,
+        2395,
+        3604,
+        4130
+      ],
+      "def": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ]
+    },
+    "cover": "/enemies/bonekrusher_executioner.png",
+    "nameCN": "碾骨行刑人"
+  },
+  {
+    "id": "bonekrusher_siegeknuckles",
+    "name": "Bonekrusher Siegeknuckles",
+    "category": "Landbreakers",
+    "enemyType": "elite",
+    "def": 100,
+    "physicalResist": 20,
+    "heatResist": 0,
+    "electricResist": 20,
+    "cryoResist": 20,
+    "natureResist": 20,
+    "aetherResist": 0,
+    "staggerThreshold": 320,
+    "staggerDuration": 5,
+    "levelStats": {
+      "hp": [
+        1246,
+        8942,
+        56582,
+        222753,
+        535821,
+        825447
+      ],
+      "atk": [
+        26,
+        124,
+        386,
+        958,
+        1442,
+        1652
+      ],
+      "def": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ]
+    },
+    "cover": "/enemies/bonekrusher_siegeknuckles.png",
+    "nameCN": "碾骨破城者"
+  },
+  {
+    "id": "breaking_gust",
+    "name": "Breaking Gust",
+    "category": "Cangzei Pirates",
+    "enemyType": "elite",
+    "def": 100,
+    "physicalResist": 60,
+    "heatResist": 0,
+    "electricResist": 0,
+    "cryoResist": 20,
+    "natureResist": 20,
+    "aetherResist": 0,
+    "staggerThreshold": 110,
+    "staggerDuration": 5,
+    "levelStats": {
+      "hp": [
+        1108,
+        7948,
+        50295,
+        198003,
+        476285,
+        733731
+      ],
+      "atk": [
+        56,
+        264,
+        820,
+        2036,
+        3064,
+        3510
+      ],
+      "def": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ]
+    },
+    "cover": "/enemies/breaking_gust.png",
+    "nameCN": "断云叟"
+  },
+  {
+    "id": "cloud_obliterator",
+    "name": "Cloud Obliterator",
+    "category": "Cangzei Pirates",
+    "enemyType": "elite",
+    "def": 100,
+    "physicalResist": 0,
+    "heatResist": 20,
+    "electricResist": 20,
+    "cryoResist": 20,
+    "natureResist": 20,
+    "aetherResist": 0,
+    "staggerThreshold": 320,
+    "staggerDuration": 5,
+    "levelStats": {
+      "hp": [
+        1661,
+        11923,
+        75442,
+        297005,
+        714428,
+        1100596
+      ],
+      "atk": [
+        66,
+        310,
+        965,
+        2395,
+        3604,
+        4130
+      ],
+      "def": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ]
+    },
+    "cover": "/enemies/cloud_obliterator.png",
+    "nameCN": "开天将"
+  },
+  {
+    "id": "effigy",
+    "name": "Effigy",
+    "category": "Aggeloi",
+    "enemyType": "elite",
+    "def": 100,
+    "physicalResist": 20,
+    "heatResist": 20,
+    "electricResist": 0,
+    "cryoResist": 0,
+    "natureResist": 20,
+    "aetherResist": 0,
+    "staggerThreshold": 340,
+    "staggerDuration": 5,
+    "levelStats": {
+      "hp": [
+        1246,
+        8942,
+        56582,
+        222753,
+        535821,
+        825447
+      ],
+      "atk": [
+        66,
+        310,
+        965,
+        2395,
+        3604,
+        4130
+      ],
+      "def": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ]
+    },
+    "cover": "/enemies/effigy.png",
+    "nameCN": "肖像天使"
+  },
+  {
+    "id": "elite_executioner",
+    "name": "Elite Executioner",
+    "category": "Landbreakers",
+    "enemyType": "elite",
+    "def": 100,
+    "physicalResist": 0,
+    "heatResist": 0,
+    "electricResist": 0,
+    "cryoResist": 0,
+    "natureResist": 0,
+    "aetherResist": 0,
+    "staggerThreshold": 340,
+    "staggerDuration": 5,
+    "levelStats": {
+      "hp": [
+        1661,
+        11923,
+        75442,
+        297005,
+        714428,
+        1100596
+      ],
+      "atk": [
+        105,
+        496,
+        1543,
+        3832,
+        5767,
+        6607
+      ],
+      "def": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ]
+    },
+    "cover": "/enemies/elite_executioner.png",
+    "nameCN": "精锐行刑人"
+  },
+  {
+    "id": "glaring_rakerbeast",
+    "name": "Glaring Rakerbeast",
+    "category": "Wildlife",
+    "enemyType": "elite",
+    "def": 100,
+    "physicalResist": 0,
+    "heatResist": 0,
+    "electricResist": 0,
+    "cryoResist": 20,
+    "natureResist": 20,
+    "aetherResist": 0,
+    "staggerThreshold": 320,
+    "staggerDuration": 5,
+    "levelStats": {
+      "hp": [
+        1869,
+        13413,
+        84872,
+        334130,
+        803731,
+        1238171
+      ],
+      "atk": [
+        72,
+        341,
+        1061,
+        2635,
+        3965,
+        4543
+      ],
+      "def": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ]
+    },
+    "cover": "/enemies/glaring_rakerbeast.png",
+    "nameCN": "怒目彪兽"
+  },
+  {
+    "id": "hazefyre_axe_armorbeast",
+    "name": "Hazefyre Axe Armorbeast",
+    "category": "Wildlife",
+    "enemyType": "elite",
+    "def": 100,
+    "physicalResist": 0,
+    "heatResist": 0,
+    "electricResist": 0,
+    "cryoResist": 0,
+    "natureResist": 0,
+    "aetherResist": 0,
+    "staggerThreshold": 320,
+    "staggerDuration": 5,
+    "levelStats": {
+      "hp": [
+        1800,
+        12916,
+        81729,
+        321755,
+        773964,
+        1192313
+      ],
+      "atk": [
+        72,
+        341,
+        1061,
+        2635,
+        3965,
+        4543
+      ],
+      "def": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ]
+    },
+    "cover": "/enemies/hazefyre_axe_armorbeast.png",
+    "nameCN": "雾火斧甲兽"
+  },
+  {
+    "id": "hill_smasher",
+    "name": "Hill Smasher",
+    "category": "Cangzei Pirates",
+    "enemyType": "elite",
+    "def": 100,
+    "physicalResist": 0,
+    "heatResist": 20,
+    "electricResist": 20,
+    "cryoResist": 20,
+    "natureResist": 20,
+    "aetherResist": 0,
+    "staggerThreshold": 320,
+    "staggerDuration": 5,
+    "levelStats": {
+      "hp": [
+        1108,
+        7948,
+        50295,
+        198003,
+        476285,
+        733731
+      ],
+      "atk": [
+        59,
+        279,
+        868,
+        2156,
+        3244,
+        3717
+      ],
+      "def": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ]
+    },
+    "cover": "/enemies/hill_smasher.png",
+    "nameCN": "摧山将"
+  },
+  {
+    "id": "sentinel",
+    "name": "Sentinel",
+    "category": "Aggeloi",
+    "enemyType": "elite",
+    "def": 100,
+    "physicalResist": 20,
+    "heatResist": 20,
+    "electricResist": 0,
+    "cryoResist": 0,
+    "natureResist": 20,
+    "aetherResist": 0,
+    "staggerThreshold": 200,
+    "staggerDuration": 5,
+    "levelStats": {
+      "hp": [
+        415,
+        2981,
+        18861,
+        74251,
+        178607,
+        275149
+      ],
+      "atk": [
+        49,
+        233,
+        723,
+        1796,
+        2703,
+        3097
+      ],
+      "def": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ]
+    },
+    "cover": "/enemies/sentinel.png",
+    "nameCN": "岗哨天使"
+  },
+  {
+    "id": "spotted_rakerbeast",
+    "name": "Spotted Rakerbeast",
+    "category": "Wildlife",
+    "enemyType": "elite",
+    "def": 100,
+    "physicalResist": 0,
+    "heatResist": 0,
+    "electricResist": 0,
+    "cryoResist": 20,
+    "natureResist": 20,
+    "aetherResist": 0,
+    "staggerThreshold": 320,
+    "staggerDuration": 5,
+    "levelStats": {
+      "hp": [
+        1108,
+        7948,
+        50295,
+        198003,
+        476285,
+        733731
+      ],
+      "atk": [
+        66,
+        310,
+        965,
+        2395,
+        3604,
+        4130
+      ],
+      "def": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ]
+    },
+    "cover": "/enemies/spotted_rakerbeast.png",
+    "nameCN": "百眼彪兽"
+  },
+  {
+    "id": "tidewalker",
+    "name": "Tidewalker",
+    "category": "Aggeloi",
+    "enemyType": "elite",
+    "def": 100,
+    "physicalResist": 0,
+    "heatResist": 0,
+    "electricResist": 20,
+    "cryoResist": 20,
+    "natureResist": 0,
+    "aetherResist": 0,
+    "staggerThreshold": 320,
+    "staggerDuration": 5,
+    "levelStats": {
+      "hp": [
+        1246,
+        8942,
+        56582,
+        222753,
+        535821,
+        825447
+      ],
+      "atk": [
+        66,
+        310,
+        965,
+        2395,
+        3604,
+        4130
+      ],
+      "def": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ]
+    },
+    "cover": "/enemies/tidewalker.png",
+    "nameCN": "潮行天使"
+  },
+  {
+    "id": "tidewalker__",
+    "name": "Tidewalker δ",
+    "category": "Aggeloi",
+    "enemyType": "elite",
+    "def": 100,
+    "physicalResist": 0,
+    "heatResist": 0,
+    "electricResist": 20,
+    "cryoResist": 20,
+    "natureResist": 0,
+    "aetherResist": 0,
+    "staggerThreshold": 320,
+    "staggerDuration": 5,
+    "levelStats": {
+      "hp": [
+        1869,
+        13413,
+        84872,
+        334130,
+        803731,
+        1238171
+      ],
+      "atk": [
+        72,
+        341,
+        1061,
+        2635,
+        3965,
+        4543
+      ],
+      "def": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ]
+    },
+    "cover": "/enemies/tidewalker__.png",
+    "nameCN": "潮行天使δ"
+  },
+  {
+    "id": "ereignis",
+    "name": "Ereignis",
+    "category": "Landbreakers",
+    "enemyType": "boss",
+    "def": 100,
+    "physicalResist": 0,
+    "heatResist": 0,
+    "electricResist": 0,
+    "cryoResist": 0,
+    "natureResist": 0,
+    "aetherResist": 0,
+    "staggerThreshold": 280,
+    "staggerDuration": 5,
+    "levelStats": {
+      "hp": [
+        886,
+        6359,
+        40236,
+        158402,
+        381028,
+        586985
+      ],
+      "atk": [
+        33,
+        155,
+        482,
+        1198,
+        1802,
+        2065
+      ],
+      "def": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ]
+    },
+    "cover": "/enemies/ereignis.png",
+    "nameCN": "埃尔埃格尼斯"
+  },
+  {
+    "id": "marble_aggelomoirai__palecore_",
+    "name": "Marble Aggelomoirai (palecore)",
+    "category": "Aggeloi",
+    "enemyType": "boss",
+    "def": 100,
+    "physicalResist": 0,
+    "heatResist": 0,
+    "electricResist": 0,
+    "cryoResist": 0,
+    "natureResist": 0,
+    "aetherResist": 0,
+    "staggerThreshold": 200,
+    "staggerDuration": 5,
+    "levelStats": {
+      "hp": [
+        2077,
+        14903,
+        94303,
+        371256,
+        893035,
+        1375745
+      ],
+      "atk": [
+        33,
+        155,
+        482,
+        1198,
+        1802,
+        2065
+      ],
+      "def": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ]
+    },
+    "cover": "/enemies/marble_aggelomoirai__palecore_.png",
+    "nameCN": "白垩界卫"
+  },
+  {
+    "id": "marble_aggelomoirai__palesent_",
+    "name": "Marble Aggelomoirai (palesent)",
+    "category": "Aggeloi",
+    "enemyType": "boss",
+    "def": 100,
+    "physicalResist": 0,
+    "heatResist": 0,
+    "electricResist": 0,
+    "cryoResist": 0,
+    "natureResist": 0,
+    "aetherResist": 0,
+    "staggerThreshold": 320,
+    "staggerDuration": 5,
+    "levelStats": {
+      "hp": [
+        4430,
+        31794,
+        201179,
+        792012,
+        1905141,
+        2934923
+      ],
+      "atk": [
+        78,
+        369,
+        1148,
+        2850,
+        4289,
+        4914
+      ],
+      "def": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ]
+    },
+    "cover": "/enemies/marble_aggelomoirai__palesent_.png",
+    "nameCN": "白垩界卫"
+  },
+  {
+    "id": "marble_appendage",
+    "name": "Marble Appendage",
+    "category": "Aggeloi",
+    "enemyType": "boss",
+    "def": 100,
+    "physicalResist": 0,
+    "heatResist": 0,
+    "electricResist": 0,
+    "cryoResist": 0,
+    "natureResist": 0,
+    "aetherResist": 0,
+    "staggerThreshold": 0,
+    "staggerDuration": 5,
+    "levelStats": {
+      "hp": [
+        235,
+        1689,
+        10688,
+        42076,
+        101211,
+        155918
+      ],
+      "atk": [
+        59,
+        279,
+        868,
+        2156,
+        3244,
+        3717
+      ],
+      "def": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ]
+    },
+    "cover": "/enemies/marble_appendage.png",
+    "nameCN": "白垩附肢"
+  },
+  {
+    "id": "nefarith___bonekrusher_",
+    "name": "Nefarith, \"Bonekrusher\"",
+    "category": "Landbreakers",
+    "enemyType": "boss",
+    "def": 100,
+    "physicalResist": 0,
+    "heatResist": 0,
+    "electricResist": 0,
+    "cryoResist": 0,
+    "natureResist": 0,
+    "aetherResist": 0,
+    "staggerThreshold": 480,
+    "staggerDuration": 5,
+    "levelStats": {
+      "hp": [
+        2354,
+        16890,
+        106876,
+        420756,
+        1012106,
+        1559178
+      ],
+      "atk": [
+        46,
+        217,
+        675,
+        1677,
+        2523,
+        2891
+      ],
+      "def": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ]
+    },
+    "cover": "/enemies/nefarith___bonekrusher_.png",
+    "nameCN": "聂菲斯，“碾骨”"
+  },
+  {
+    "id": "nefarith___conqueror_",
+    "name": "Nefarith, \"Conqueror\"",
+    "category": "Landbreakers",
+    "enemyType": "boss",
+    "def": 100,
+    "physicalResist": 0,
+    "heatResist": 0,
+    "electricResist": 0,
+    "cryoResist": 0,
+    "natureResist": 0,
+    "aetherResist": 0,
+    "staggerThreshold": 480,
+    "staggerDuration": 5,
+    "levelStats": {
+      "hp": [
+        2631,
+        18878,
+        119450,
+        470257,
+        1131178,
+        1742611
+      ],
+      "atk": [
+        39,
+        186,
+        579,
+        1437,
+        2163,
+        2478
+      ],
+      "def": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ]
+    },
+    "cover": "/enemies/nefarith___conqueror_.png",
+    "nameCN": "聂菲斯，“征服者”"
+  },
+  {
+    "id": "rhodagn_the_bonekrushing_fist",
+    "name": "Rhodagn the Bonekrushing Fist",
+    "category": "Landbreakers",
+    "enemyType": "boss",
+    "def": 100,
+    "physicalResist": 0,
+    "heatResist": 0,
+    "electricResist": 0,
+    "cryoResist": 0,
+    "natureResist": 0,
+    "aetherResist": 0,
+    "staggerThreshold": 280,
+    "staggerDuration": 5,
+    "levelStats": {
+      "hp": [
+        3461,
+        24839,
+        157171,
+        618759,
+        1488392,
+        2292909
+      ],
+      "atk": [
+        66,
+        310,
+        965,
+        2395,
+        3604,
+        4130
+      ],
+      "def": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ]
+    },
+    "cover": "/enemies/rhodagn_the_bonekrushing_fist.png",
+    "nameCN": "“碾骨之拳”罗丹"
+  },
+  {
+    "id": "ruan_yi",
+    "name": "Ruan Yi",
+    "category": "Cangzei Pirates",
+    "enemyType": "boss",
+    "def": 100,
+    "physicalResist": 0,
+    "heatResist": 0,
+    "electricResist": 20,
+    "cryoResist": 0,
+    "natureResist": 20,
+    "aetherResist": 0,
+    "staggerThreshold": 300,
+    "staggerDuration": 5,
+    "levelStats": {
+      "hp": [
+        3323,
+        23845,
+        150884,
+        594009,
+        1428856,
+        2201192
+      ],
+      "atk": [
+        66,
+        310,
+        965,
+        2395,
+        3604,
+        4130
+      ],
+      "def": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ]
+    },
+    "cover": "/enemies/ruan_yi.png",
+    "nameCN": "阮一"
+  },
+  {
+    "id": "triaggelos",
+    "name": "Triaggelos",
+    "category": "Aggeloi",
+    "enemyType": "boss",
+    "def": 100,
+    "physicalResist": 20,
+    "heatResist": 20,
+    "electricResist": 0,
+    "cryoResist": 0,
+    "natureResist": 20,
+    "aetherResist": 0,
+    "staggerThreshold": 280,
+    "staggerDuration": 5,
+    "levelStats": {
+      "hp": [
+        1385,
+        9936,
+        62869,
+        247504,
+        595357,
+        917164
+      ],
+      "atk": [
+        66,
+        310,
+        965,
+        2395,
+        3604,
+        4130
+      ],
+      "def": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ]
+    },
+    "cover": "/enemies/triaggelos.png",
+    "nameCN": "三位一体"
+  }
+]

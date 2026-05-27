@@ -10,6 +10,8 @@ interface ImportData {
   level: number;
   potential: number;
   talentStage: number;
+  talentSkill1Stage?: number;
+  talentSkill2Stage?: number;
   skillRanks: number[];
   weaponId: string | null;
   weaponLevel: number;
@@ -34,6 +36,8 @@ interface PartyState {
   setSkillRank: (slotIndex: number, skillIndex: number, rank: number) => void;
   setPotential: (slotIndex: number, potential: number) => void;
   setTalentStage: (slotIndex: number, stage: number) => void;
+  setTalentSkill1Stage: (slotIndex: number, stage: number) => void;
+  setTalentSkill2Stage: (slotIndex: number, stage: number) => void;
   setWeapon: (slotIndex: number, weapon: Weapon | null) => void;
   setWeaponLevel: (slotIndex: number, level: number) => void;
   setWeaponSkillRank: (slotIndex: number, skillIndex: number, rank: number) => void;
@@ -51,8 +55,10 @@ function createEmptySlot(index: number): PartyMember {
     slotIndex: index,
     operator: null,
     level: 90,
-    skillRanks: [12, 12, 12, 12],
+    skillRanks: [12, 12, 12, 12], // [basic, battle, combo, ultimate]
     talentStage: 4,
+    talentSkill1Stage: 2,
+    talentSkill2Stage: 2,
     potential: 0,
     weapon: null,
     weaponLevel: 90,
@@ -108,6 +114,20 @@ export const usePartyStore = create<PartyState>((set) => ({
     set((state) => {
       const members = [...state.members];
       members[slotIndex] = { ...members[slotIndex], talentStage: stage };
+      return { members };
+    }),
+
+  setTalentSkill1Stage: (slotIndex, stage) =>
+    set((state) => {
+      const members = [...state.members];
+      members[slotIndex] = { ...members[slotIndex], talentSkill1Stage: stage };
+      return { members };
+    }),
+
+  setTalentSkill2Stage: (slotIndex, stage) =>
+    set((state) => {
+      const members = [...state.members];
+      members[slotIndex] = { ...members[slotIndex], talentSkill2Stage: stage };
       return { members };
     }),
 
@@ -190,6 +210,8 @@ export const usePartyStore = create<PartyState>((set) => ({
           level: d.level ?? 90,
           potential: d.potential ?? 0,
           talentStage: d.talentStage ?? 4,
+          talentSkill1Stage: d.talentSkill1Stage ?? 2,
+          talentSkill2Stage: d.talentSkill2Stage ?? 2,
           skillRanks: d.skillRanks ?? [12, 12, 12, 12],
           weapon,
           weaponLevel: d.weaponLevel ?? 90,

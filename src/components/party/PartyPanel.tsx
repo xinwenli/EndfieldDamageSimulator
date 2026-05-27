@@ -55,6 +55,8 @@ export function PartyPanel() {
       level: m.level,
       potential: m.potential,
       talentStage: m.talentStage,
+      talentSkill1Stage: m.talentSkill1Stage,
+      talentSkill2Stage: m.talentSkill2Stage,
       skillRanks: m.skillRanks,
       weaponId: m.weapon?.id ?? null,
       weaponLevel: m.weaponLevel,

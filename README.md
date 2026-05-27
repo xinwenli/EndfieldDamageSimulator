@@ -15,12 +15,13 @@ Configure your party of 4 operators with levels, skill ranks, weapons, and gear.
 ## Data Pipeline
 
 Data sourced from the [official Endfield wiki ENG](https://wiki.skport.com/endfield).
+Suppliment data source [endfield.wiki.gg](https://endfield.wiki.gg/).
 
 ## Current Status
 
 - **Done** — Operator Setup: party builder, operator configuration panel, weapon selection.
-- **In Progress** — Bug fixing, testing the operater stat with different set up.
-- **Planned** — Simulator: timeline editor, DPS engine, damage charts.
+- **Done** — Damage Simulator: timeline editor, DPS engine, damage charts.
+- **In Progress** — Each Skill modeling
 
 ## Getting Started
 
@@ -57,12 +58,13 @@ MIT
 ## 数据来源
 
 数据来源于[终末地官方 中文WIKI](https://wiki.skland.com/endfield/catalog)。
+补充数据来源于[endfield.wiki.gg](https://endfield.wiki.gg/).
 
 ## 开发进度
 
 - **已完成** — 干员配置：队伍构建、配置面板、武器选择。
-- **进行中** — 修复Bug， 不同干员组合配置数据是否正确测试。
-- **计划中** — 模拟器：时间轴编辑器、DPS 引擎、伤害图表。
+- **已完成** — 伤害模拟器：时间轴编辑器、DPS 引擎、伤害图表。
+- **进行中** — 不同技能建模
 
 ## 快速开始
 
