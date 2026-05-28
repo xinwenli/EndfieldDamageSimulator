@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import type { TimelineTrack, SimulationResultFull, SimFrame, TargetStats } from "../engine/types";
+import type { TimelineTrack, SimulationResultFull, SimFrame, TargetStats, TimelineBlock } from "../engine/types";
 import { runSimulation } from "../engine/timeline";
 import type { Stats, Operator } from "../engine/types";
 import type { EnemyDef, EnemyConfig } from "../engine/enemyTypes";
@@ -19,7 +19,7 @@ interface TimelineState {
   isRunning: boolean;
   currentFrame: number;
   zoom: number; // pixels per second
-  selectedSkill: { operatorId: string; skillId: string } | null;
+  selectedSkill: TimelinePlacement | null;
 
   // Track management
   addTrack: (operatorId: string) => void;
@@ -27,7 +27,7 @@ interface TimelineState {
   clearTracks: () => void;
 
   // Block management
-  addBlock: (operatorId: string, skillId: string, startSecond: number, duration: number, label: string) => void;
+  addBlock: (operatorId: string, skillId: string, startSecond: number, duration: number, label: string, options?: TimelineBlockOptions) => void;
   moveBlock: (blockId: string, newStartFrame: number) => void;
   removeBlock: (blockId: string) => void;
 
@@ -46,7 +46,7 @@ interface TimelineState {
   setZoom: (zoom: number) => void;
 
   // Selection
-  setSelectedSkill: (skill: { operatorId: string; skillId: string } | null) => void;
+  setSelectedSkill: (skill: TimelinePlacement | null) => void;
 
   // Enemy system
   enemyDefs: EnemyDef[];
@@ -57,13 +57,21 @@ interface TimelineState {
   getTarget: () => TargetStats;
 }
 
+type TimelineBlockOptions = Pick<TimelineBlock, "eventType" | "eventValue">;
+
+type TimelinePlacement = {
+  operatorId: string;
+  skillId: string;
+  label?: string;
+  duration?: number;
+} & TimelineBlockOptions;
+
 let blockIdCounter = 0;
 
 const DEFAULT_ENEMY_CONFIG: EnemyConfig = {
   source: "existing",
   enemyId: null,
   customName: "",
-  level: 50,
   customStats: null,
 };
 
@@ -100,7 +108,7 @@ export const useTimelineStore = create<TimelineState>((set, get) => ({
 
   clearTracks: () => set({ tracks: [], simulationResult: null, currentFrame: 0 }),
 
-  addBlock: (operatorId, skillId, startSecond, duration, label) => {
+  addBlock: (operatorId, skillId, startSecond, duration, label, options) => {
     const fps = get().fps;
     const id = `block_${++blockIdCounter}`;
     set((state) => ({
@@ -117,6 +125,7 @@ export const useTimelineStore = create<TimelineState>((set, get) => ({
               startFrame: Math.round(startSecond * fps),
               duration: Math.round(duration * fps),
               label,
+              ...options,
             },
           ],
         };

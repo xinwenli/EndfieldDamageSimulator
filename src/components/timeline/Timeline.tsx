@@ -23,9 +23,11 @@ const TYPE_COLORS: Record<string, string> = {
   ultimate: "#f0c040",
   skill_1: "#e87040",
   skill_2: "#e55d30",
+  event: "#5aa6c4",
 };
 
 function getBlockColor(block: TimelineBlock): string {
+  if (block.eventType) return TYPE_COLORS.event;
   if (block.skillId === "basic") return TYPE_COLORS.basic;
   if (block.skillId === "combo") return TYPE_COLORS.combo;
   if (block.skillId === "ultimate") return TYPE_COLORS.ultimate;
@@ -66,6 +68,7 @@ export function Timeline() {
   const [draggingBlock, setDraggingBlock] = useState<string | null>(null);
   const [dragStartX, setDragStartX] = useState(0);
   const [dragOrigFrame, setDragOrigFrame] = useState(0);
+  const [hoverTooltip, setHoverTooltip] = useState<{ x: number; y: number; text: string } | null>(null);
 
   // Calculate time range
   const maxFrames = simulationResult
@@ -105,8 +108,12 @@ export function Timeline() {
     if (!rect) return;
     const x = e.clientX - rect.left - 120; // subtract label column
     const second = Math.max(0, x / zoom);
-    const duration = getSkillDuration(selectedSkill.skillId, opId);
-    addBlock(opId, selectedSkill.skillId, second, duration, getSkillLabel(selectedSkill.skillId, opId));
+    const duration = selectedSkill.duration ?? getSkillDuration(selectedSkill.skillId, opId);
+    const label = selectedSkill.label ?? getSkillLabel(selectedSkill.skillId, opId);
+    addBlock(opId, selectedSkill.skillId, second, duration, label, {
+      eventType: selectedSkill.eventType,
+      eventValue: selectedSkill.eventValue,
+    });
   };
 
   // Handle drop from palette
@@ -119,9 +126,14 @@ export function Timeline() {
       if (!rect) return;
       const x = e.clientX - rect.left - 120;
       const second = Math.max(0, x / zoom);
-      addBlock(opId, data.skillId, second, data.duration, data.skillName);
+      addBlock(opId, data.skillId, second, data.duration, data.skillName, {
+        eventType: data.eventType,
+        eventValue: data.eventValue,
+      });
       setSelectedSkill(null);
-    } catch {}
+    } catch {
+      return;
+    }
   };
 
   // Handle block drag start
@@ -187,6 +199,7 @@ export function Timeline() {
 
   // Get damage hit offsets for a skill block
   const getHitOffsets = (operatorId: string, skillId: string): number[] => {
+    if (skillId.startsWith("event_")) return [];
     const member = partyMembers.find(m => m.operator?.id === operatorId);
     if (!member?.operator) return [];
     const op = member.operator;
@@ -391,7 +404,20 @@ export function Timeline() {
                               : undefined,
                         }}
                         onMouseDown={(e) => handleBlockMouseDown(e, block)}
-                        title={`${block.label}\nStart: ${formatTime(block.startFrame / fps)}\nDuration: ${(block.duration / fps).toFixed(1)}s\nRight-click to remove`}
+                        onMouseEnter={(e) => {
+                          const hitInfo = hitOffsets.map((o, i) => `  Hit ${i + 1}: +${o.toFixed(2)}s`).join("\n");
+                          setHoverTooltip({
+                            x: e.clientX,
+                            y: e.clientY - 20,
+                            text: `${block.label}\nStart: ${formatTime(block.startFrame / fps)}\nDuration: ${(block.duration / fps).toFixed(1)}s\nHits: ${hitOffsets.length}\n${hitInfo}\nRight-click to remove`
+                          });
+                        }}
+                        onMouseMove={(e) => {
+                          if (hoverTooltip) {
+                            setHoverTooltip(prev => prev ? { ...prev, x: e.clientX, y: e.clientY - 20 } : null);
+                          }
+                        }}
+                        onMouseLeave={() => setHoverTooltip(null)}
                         onContextMenu={(e) => {
                           e.preventDefault();
                           removeBlock(block.id);
@@ -484,6 +510,170 @@ export function Timeline() {
         </div>
       </div>
 
+      {/* Buff track — shows all active buffs as bars on timeline */}
+      {simulationResult && (() => {
+        // Scan frames up to current playhead for buff intervals
+        const scanEnd = Math.min(currentFrame, simulationResult.frames.length - 1);
+        const buffIntervals: Array<{ name: string; source: string; startFrame: number; endFrame: number; maxFrame?: number; stackFrames?: number[] }> = [];
+        const activeBuffs: Array<{ key: string; name: string; source: string; startFrame: number; _maxFrame?: number; _stackFrames?: number[] }> = [];
+        for (let f = 0; f <= scanEnd; f++) {
+          const frame = simulationResult.frames[f];
+          for (const evt of frame.events) {
+            const buffName = evt.detail?.split(":")[0]?.split(" expired")[0] || "Buff";
+            // For stack updates, strip count/MAX suffix to get base name for matching
+            const baseName = buffName.replace(/^MAX /, "").split(" x")[0];
+            const lookupKey = `${evt.operatorId}_${baseName}`;
+            if (evt.type === "buff_apply") {
+              if (f === 0) continue;
+              // Check if this is a stack update (same base name, different label)
+              const existing = activeBuffs.find(b => b.key.startsWith(lookupKey) && b.name !== buffName);
+              if (existing) {
+                existing.name = buffName;
+                if (!existing._stackFrames) existing._stackFrames = [];
+                existing._stackFrames.push(f);
+                if (buffName.startsWith("MAX ")) {
+                  existing._maxFrame = f;
+                }
+                continue;
+              }
+              activeBuffs.push({
+                key: `${lookupKey}_${f}`,
+                name: buffName,
+                source: evt.operatorId,
+                startFrame: f,
+                _stackFrames: [f],
+              });
+            } else if (evt.type === "buff_expire") {
+              const idx = activeBuffs.findIndex(b => b.key.startsWith(lookupKey));
+              if (idx >= 0) {
+                const b = activeBuffs[idx];
+                buffIntervals.push({ name: b.name, source: b.source, startFrame: b.startFrame, endFrame: f, maxFrame: b._maxFrame, stackFrames: b._stackFrames });
+                activeBuffs.splice(idx, 1);
+              }
+            }
+          }
+        }
+        // Close any buffs still active at current scan point (show as "in progress")
+        for (const bi of activeBuffs) {
+          buffIntervals.push({ name: bi.name, source: bi.source, startFrame: bi.startFrame, endFrame: scanEnd, maxFrame: bi._maxFrame, stackFrames: bi._stackFrames });
+        }
+        if (buffIntervals.length === 0) return null;
+
+        const BUFF_TRACK_H = 20;
+        const rows: typeof buffIntervals[] = [];
+        for (const bi of buffIntervals) {
+          let placed = false;
+          for (const row of rows) {
+            if (!row.some(r => !(bi.endFrame <= r.startFrame || bi.startFrame >= r.endFrame))) {
+              row.push(bi);
+              placed = true;
+              break;
+            }
+          }
+          if (!placed) rows.push([bi]);
+        }
+
+        return (
+          <div style={{ height: rows.length * BUFF_TRACK_H + 8, position: "relative", paddingLeft: 120, borderTop: "1px solid rgba(74,222,128,0.3)" }}>
+            <div className="absolute left-0 top-0 bottom-0 w-[120px] flex items-center px-3 bg-[var(--color-surface-alt)] border-r border-[var(--color-border)] z-[5]">
+              <span className="text-[10px] font-medium text-green-400">Buffs</span>
+            </div>
+            <div style={{ position: "relative", height: "100%" }}>
+              {rows.map((row, ri) =>
+                row.map((bi, bii) => {
+                  const bx = bi.startFrame / fps * zoom;
+                  const bw = Math.max((bi.endFrame - bi.startFrame) / fps * zoom, 4);
+                  return (
+                    <div
+                      key={`${ri}-${bii}`}
+                      className="absolute rounded-sm flex items-center px-1"
+                      style={{
+                        left: bx,
+                        top: ri * BUFF_TRACK_H + 4,
+                        width: bw,
+                        height: BUFF_TRACK_H - 4,
+                        backgroundColor: "rgba(74,222,128,0.3)",
+                        borderLeft: "2px solid rgb(74,222,128)",
+                        zIndex: 5,
+                      }}
+                      onMouseMove={(e) => {
+                        const rect = (e.currentTarget as HTMLElement).getBoundingClientRect();
+                        const relX = e.clientX - rect.left;
+                        const relTime = bi.startFrame / fps + (relX / rect.width) * ((bi.endFrame - bi.startFrame) / fps);
+                        // Determine segment based on stack frames
+                        const baseName = bi.name.split(" (")[0];
+                        // Build ordered frames same as green lines: skip index 0, each frame is a boundary
+                        const pointFrames = [...new Set(bi.stackFrames || [])].sort((a, b) => a - b);
+                        // Boundaries: pointFrames[1], pointFrames[2], ... each is where stack increments
+                        let stackNum = 1;
+                        for (let i = pointFrames.length - 1; i >= 1; i--) {
+                          const boundaryPx = (pointFrames[i] - bi.startFrame) / fps * zoom;
+                          if (relX >= boundaryPx) { stackNum = i + 1; break; }
+                        }
+                        const isMax = bi.maxFrame && relX >= (bi.maxFrame - bi.startFrame) / fps * zoom;
+                        const stackLabel = isMax ? "MAX" : String(stackNum);
+                        // Compute per-segment stat from full name: "x5 (+25.0% ATK)" → per-stack = 25.0/5 = 5.0
+                        const fullPctMatch = bi.name.match(/\([+]?([\d.]+)%/);
+                        const xMatch = bi.name.match(/x(\d+)/);
+                        const fullPct = fullPctMatch ? parseFloat(fullPctMatch[1]) : 0;
+                        const maxStacks = xMatch ? parseInt(xMatch[1]) : 1;
+                        const perStack = fullPct / maxStacks;
+                        const segPct = perStack * Math.min(stackNum, maxStacks);
+                        const statTypeMatch = bi.name.match(/\([+]?[\d.]+%\s*([^)]+)/);
+                        const statType = statTypeMatch ? statTypeMatch[1].trim() : "";
+                        const segStat = `+${segPct.toFixed(1)}% ${statType}`;
+                        const critPart = isMax && bi.name.includes("crit") ? "\nCritical bonus active" : "";
+                        const tooltipText = `${baseName}\nStack: ${stackLabel}\n${segStat}${critPart}\nTime: ${relTime.toFixed(2)}s`;
+                        setHoverTooltip({ x: e.clientX, y: e.clientY - 40, text: tooltipText });
+                      }}
+                      onMouseLeave={() => setHoverTooltip(null)}
+                    >
+                      {/* Stack increment markers (subtle colored lines) */}
+                      {[...new Set(bi.stackFrames || [])].sort((a, b) => a - b).map((sf, i) => {
+                        if (i === 0) return null; // skip first (it's the bar start)
+                        const sx = (sf - bi.startFrame) / fps * zoom;
+                        return (
+                          <div key={`stk-${i}`} className="absolute top-0 bottom-0" style={{
+                            left: sx,
+                            width: 1,
+                            backgroundColor: "rgba(74,222,128,0.7)",
+                            zIndex: 6,
+                          }}
+                          title={`Stack +${i+1} at ${(sf/fps).toFixed(1)}s`}
+                          />
+                        );
+                      })}
+                      {/* Milestone marker for MAX/burst trigger */}
+                      {bi.maxFrame && (
+                        <div className="absolute top-0 bottom-0" style={{
+                          left: (bi.maxFrame - bi.startFrame) / fps * zoom,
+                          width: 2,
+                          backgroundColor: "rgb(250,204,21)",
+                          zIndex: 7,
+                        }}
+                        title={`MAX at ${(bi.maxFrame/fps).toFixed(1)}s`}
+                        />
+                      )}
+                      <span className="text-[9px] text-green-400 truncate">{bi.name.split(" (")[0]}</span>
+                    </div>
+                  );
+                })
+              )}
+            </div>
+          </div>
+        );
+      })()}
+
+      {/* Buff hover tooltip */}
+      {hoverTooltip && (
+        <div className="fixed z-50 pointer-events-none text-[10px] font-mono leading-relaxed"
+          style={{ left: hoverTooltip.x + 12, top: hoverTooltip.y }}>
+          <div className="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-lg px-2 py-1.5 shadow-lg whitespace-pre-line">
+            {hoverTooltip.text}
+          </div>
+        </div>
+      )}
+
       {/* Empty state */}
       {allTracks.length === 0 && (
         <div className="flex items-center justify-center h-24 text-sm text-[var(--color-text-muted)]">
@@ -497,6 +687,8 @@ export function Timeline() {
 // ── Helpers ──
 
 function getSkillDuration(skillId: string, operatorId: string): number {
+  if (skillId.startsWith("event_")) return 0.1;
+
   // Look up from party store
   const members = usePartyStore.getState().members;
   const member = members.find(m => m.operator?.id === operatorId);
@@ -513,6 +705,9 @@ function getSkillDuration(skillId: string, operatorId: string): number {
 }
 
 function getSkillLabel(skillId: string, operatorId: string): string {
+  if (skillId === "event_incoming_damage") return "Incoming Damage";
+  if (skillId === "event_enemy_kill") return "Enemy Kill";
+
   const members = usePartyStore.getState().members;
   const member = members.find(m => m.operator?.id === operatorId);
   if (!member?.operator) return skillId;

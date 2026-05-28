@@ -541,7 +541,8 @@
             "offset": 0.3,
             "stagger": 3,
             "sp": 5,
-            "boundEffects": []
+            "boundEffects": [],
+            "multiplier": 0.61
           }
         ],
         "allowedTypes": [
@@ -554,11 +555,11 @@
           0.35,
           0.38,
           0.41,
-          0.43,
-          0.46,
-          0.49,
-          0.52,
-          0.56,
+          0.44,
+          0.47,
+          0.5,
+          0.54,
+          0.58,
           0.61
         ]
       },
@@ -569,9 +570,17 @@
         "damageTicks": [
           {
             "offset": 0.3,
-            "stagger": 6,
-            "sp": 5,
-            "boundEffects": []
+            "stagger": 3,
+            "sp": 3,
+            "boundEffects": [],
+            "multiplier": 0.355
+          },
+          {
+            "offset": 0.38,
+            "stagger": 3,
+            "sp": 3,
+            "boundEffects": [],
+            "multiplier": 0.355
           }
         ],
         "allowedTypes": [
@@ -585,10 +594,10 @@
           0.44,
           0.47,
           0.5,
-          0.54,
-          0.57,
-          0.61,
-          0.65,
+          0.53,
+          0.56,
+          0.6,
+          0.64,
           0.71
         ]
       },
@@ -598,10 +607,18 @@
         "gaugeGain": 5,
         "damageTicks": [
           {
-            "offset": 0.48,
-            "stagger": 9,
-            "sp": 5,
-            "boundEffects": []
+            "offset": 0.3,
+            "stagger": 4,
+            "sp": 3,
+            "boundEffects": [],
+            "multiplier": 0.385
+          },
+          {
+            "offset": 0.38,
+            "stagger": 4,
+            "sp": 3,
+            "boundEffects": [],
+            "multiplier": 0.385
           }
         ],
         "allowedTypes": [
@@ -611,27 +628,56 @@
           0.34,
           0.37,
           0.41,
-          0.44,
-          0.48,
-          0.51,
-          0.54,
-          0.58,
+          0.45,
+          0.49,
+          0.53,
+          0.57,
           0.61,
           0.65,
-          0.71,
+          0.69,
+          0.73,
           0.77
         ]
       },
       {
         "index": 3,
-        "duration": 0.5,
+        "duration": 0.6,
         "gaugeGain": 5,
         "damageTicks": [
           {
-            "offset": 0.3,
-            "stagger": 12,
-            "sp": 5,
-            "boundEffects": []
+            "offset": 0.1,
+            "stagger": 3,
+            "sp": 2,
+            "boundEffects": [],
+            "multiplier": 0.182
+          },
+          {
+            "offset": 0.17,
+            "stagger": 3,
+            "sp": 2,
+            "boundEffects": [],
+            "multiplier": 0.182
+          },
+          {
+            "offset": 0.24,
+            "stagger": 3,
+            "sp": 2,
+            "boundEffects": [],
+            "multiplier": 0.182
+          },
+          {
+            "offset": 0.31,
+            "stagger": 3,
+            "sp": 2,
+            "boundEffects": [],
+            "multiplier": 0.182
+          },
+          {
+            "offset": 0.38,
+            "stagger": 3,
+            "sp": 2,
+            "boundEffects": [],
+            "multiplier": 0.182
           }
         ],
         "allowedTypes": [
@@ -661,7 +707,8 @@
             "offset": 0.27,
             "stagger": 15,
             "sp": 5,
-            "boundEffects": []
+            "boundEffects": [],
+            "multiplier": 1.13
           }
         ],
         "allowedTypes": [
@@ -678,7 +725,7 @@
           0.85,
           0.9,
           0.96,
-          1.04,
+          1.03,
           1.13
         ]
       }
@@ -1031,7 +1078,7 @@
       {
         "id": "talent_1130_1",
         "name": "呼风唤浪",
-        "description": "呼风唤浪·一: 主控干员在古老图形中进行下落攻击，提前结束演化时，形成一个\n呼风唤浪·二: 主控干员在古老图形中进行下落攻击，提前结束演化时，形成一个"
+        "description": "呼风唤浪·一: 主控干员在古老图形中进行下落攻击，提前结束演化时，形成一个水龙卷，并消耗附近所有涡流使其形成额外的水龙卷。此次形成的水龙卷效果同战技踏潮卷浪！，造成的伤害+40%。\n呼风唤浪·二: 主控干员在古老图形中进行下落攻击，提前结束演化时，形成一个水龙卷，并消耗附近所有涡流使其形成额外的水龙卷。此次形成的水龙卷效果同战技踏潮卷浪！，造成的伤害+60%。"
       },
       {
         "id": "talent_1130_2",
@@ -1144,12 +1191,12 @@
       "name": "速冻仔·u37",
       "spCost": 0,
       "initialSp": 0,
-      "duration": 6.0,
+      "duration": 6,
       "cooldown": 20,
       "gaugeGain": 10,
       "damageTicks": [
         {
-          "offset": 2.0,
+          "offset": 2,
           "stagger": 10,
           "sp": 10,
           "boundEffects": []
@@ -1745,7 +1792,7 @@
         "name": "焚灭",
         "spCost": 100,
         "initialSp": 0,
-        "duration": 4.0,
+        "duration": 4,
         "gaugeGain": 10,
         "damageTicks": [
           {
@@ -2831,7 +2878,7 @@
           "boundEffects": []
         },
         {
-          "offset": 3.0,
+          "offset": 3,
           "stagger": 9,
           "sp": 10,
           "boundEffects": []
@@ -2874,7 +2921,7 @@
           "boundEffects": []
         },
         {
-          "offset": 1.0,
+          "offset": 1,
           "stagger": 15,
           "sp": 0,
           "boundEffects": []
@@ -3794,7 +3841,7 @@
       "gaugeGain": 10,
       "damageTicks": [
         {
-          "offset": 2.0,
+          "offset": 2,
           "stagger": 10,
           "sp": 10,
           "boundEffects": []
@@ -4076,7 +4123,7 @@
         "gaugeGain": 10,
         "damageTicks": [
           {
-            "offset": 2.0,
+            "offset": 2,
             "stagger": 10,
             "sp": 100,
             "boundEffects": []
@@ -4735,12 +4782,12 @@
       "name": "见天河",
       "spCost": 0,
       "initialSp": 0,
-      "duration": 4.0,
+      "duration": 4,
       "cooldown": 16,
       "gaugeGain": 10,
       "damageTicks": [
         {
-          "offset": 1.0,
+          "offset": 1,
           "stagger": 10,
           "sp": 10,
           "boundEffects": []
@@ -5091,7 +5138,7 @@
       "gaugeGain": 10,
       "damageTicks": [
         {
-          "offset": 1.0,
+          "offset": 1,
           "stagger": 10,
           "sp": 10,
           "boundEffects": []
@@ -5129,7 +5176,7 @@
       "name": "狼之怒",
       "spCost": 0,
       "initialSp": 0,
-      "duration": 4.0,
+      "duration": 4,
       "gaugeMax": 90,
       "gaugeReply": 0,
       "animationTime": 2,
@@ -5642,7 +5689,7 @@
       {
         "id": "talent_57_2",
         "name": "荒野游人",
-        "description": "荒野游人·一: 使用战技疾风迅雷成功触发3次额外效果后，根据自身的智识，\n荒野游人·二: 使用战技疾风迅雷成功触发3次额外效果后，根据自身的智识，"
+        "description": "荒野游人·一: 使用战技疾风迅雷成功触发3次额外效果后，根据自身的智识，提升全队造成的电磁伤害，每点智识+0.05%，持续15秒，该效果无法叠加。\n荒野游人·二: 使用战技疾风迅雷成功触发3次额外效果后，根据自身的智识，提升全队造成的电磁伤害，每点智识+0.08%，持续15秒，该效果无法叠加。"
       },
       {
         "id": "talent_57_3",
@@ -5708,7 +5755,7 @@
         "name": "分布式拒绝服务",
         "spCost": 100,
         "initialSp": 0,
-        "duration": 7.0,
+        "duration": 7,
         "gaugeGain": 10,
         "damageTicks": [
           {
@@ -5748,7 +5795,7 @@
       "gaugeGain": 10,
       "damageTicks": [
         {
-          "offset": 3.0,
+          "offset": 3,
           "stagger": 10,
           "sp": 10,
           "boundEffects": []
@@ -5990,7 +6037,7 @@
       {
         "id": "talent_150_5",
         "name": "启动进程",
-        "description": "启动进程·一: 连携技压力测试命中敌人时，如果目标已经处于寒冷附着或\n启动进程·二: 连携技压力测试命中敌人时，如果目标已经处于寒冷附着或"
+        "description": "启动进程·一: 连携技压力测试命中敌人时，如果目标已经处于寒冷附着或冻结状态，还会使目标受到的寒冷伤害+7%，持续5秒，该效果无法叠加。\n启动进程·二: 连携技压力测试命中敌人时，如果目标已经处于寒冷附着或冻结状态，还会使目标受到的寒冷伤害+10%，持续5秒，该效果无法叠加。"
       }
     ],
     "acceptTeamGauge": true,
@@ -7298,7 +7345,7 @@
         "name": "热情迸发",
         "spCost": 100,
         "initialSp": 0,
-        "duration": 3.0,
+        "duration": 3,
         "gaugeGain": 10,
         "damageTicks": [
           {
@@ -7466,7 +7513,7 @@
         "gaugeGain": 5,
         "damageTicks": [
           {
-            "offset": 1.0,
+            "offset": 1,
             "stagger": 9,
             "sp": 5,
             "boundEffects": []
@@ -7601,7 +7648,7 @@
         "name": "凝声",
         "spCost": 100,
         "initialSp": 0,
-        "duration": 3.0,
+        "duration": 3,
         "gaugeGain": 10,
         "damageTicks": [
           {
@@ -7723,7 +7770,7 @@
         "gaugeGain": 5,
         "damageTicks": [
           {
-            "offset": 1.0,
+            "offset": 1,
             "stagger": 3,
             "sp": 5,
             "boundEffects": []
@@ -8001,7 +8048,7 @@
           "boundEffects": []
         },
         {
-          "offset": 4.0,
+          "offset": 4,
           "stagger": 5,
           "sp": 0,
           "boundEffects": []
@@ -8578,7 +8625,7 @@
       "name": "磁暴试验场",
       "spCost": 0,
       "initialSp": 0,
-      "duration": 3.0,
+      "duration": 3,
       "cooldown": 25,
       "gaugeGain": 10,
       "damageTicks": [

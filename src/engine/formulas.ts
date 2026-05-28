@@ -3,6 +3,13 @@ import operatorStats from "../data/operator_stats.json";
 import operatorsData from "../data/operators.json";
 import setEffects from "../data/set_effects.json";
 
+type GearWithSet = {
+  baseStats: Record<string, string>;
+  refinement: Array<{ name: string; base: string; rank1: string; rank2: string; rank3: string }>;
+  refinementRanks?: number[];
+  setId?: string;
+};
+
 export interface OperatorStatEntry {
   levels: number[];
   hp: number[];
@@ -209,7 +216,7 @@ export function getOperatorAbilitiesAtLevel(operatorId: string, level: number, p
   }
   const potBonus = computePotentialBonuses(operatorId, potential);
   // Add active talent stages (talentStage = number of unlocked stages, 0-4)
-  let talentBonus = { strength: 0, agility: 0, intelligence: 0, will: 0 };
+  const talentBonus = { strength: 0, agility: 0, intelligence: 0, will: 0 };
   if (entry.talentStages && talentStage > 0) {
     for (let s = 0; s < Math.min(talentStage, entry.talentStages.length); s++) {
       talentBonus.strength += entry.talentStages[s].strength || 0;
@@ -353,7 +360,7 @@ export function computeFinalStats(
   weaponLevel: number,
   weaponSkillRanks: number[],
   gear: {
-    armor: { baseStats: Record<string, string>; refinement: Array<{ name: string; base: string; rank1: string; rank2: string; rank3: string }>; refinementRanks?: number[] } | null;
+    armor: GearWithSet | null;
     gloves: typeof gear["armor"];
     kit1: typeof gear["armor"];
     kit2: typeof gear["armor"];
@@ -369,7 +376,7 @@ export function computeFinalStats(
   const gearSetBonus = { atkPercent: 0, hp: 0, strength: 0, agility: 0, intelligence: 0, will: 0, critRate: 0, allSkillDmgBonus: 0, artsIntensity: 0, ultimateGainEfficiency: 0, staggerEfficiencyBonus: 0, treatmentBonus: 0, comboSkillCdReduction: 0 };
   const setCounts: Record<string, number> = {};
   for (const g of [gear.armor, gear.gloves, gear.kit1, gear.kit2]) {
-    if (g && (g as any).setId) setCounts[(g as any).setId] = (setCounts[(g as any).setId] || 0) + 1;
+    if (g?.setId) setCounts[g.setId] = (setCounts[g.setId] || 0) + 1;
   }
   const effects = setEffects as Record<string, { name: string; stat: string; trait?: string }>;
   for (const [setId, count] of Object.entries(setCounts)) {
@@ -459,7 +466,7 @@ export function computeFinalStats(
   const abilityAtkBonus = primaryVal * 0.005 + secondaryVal * 0.002;
   const step1 = (base.atk + weaponAtk) * atkPercentTotal;
   const step2 = step1 + wpBonus.atk;
-  const finalAtk = Math.floor(step2 * (1 + abilityAtkBonus));
+  const finalAtk = Math.floor(step2 * (1 + abilityAtkBonus)) + gearBonus.atk;
 
   // HP bonus from strength: 5 * strength
   const hpFromStr = 5 * finalStr;
@@ -480,8 +487,14 @@ export function computeFinalStats(
 
   const stats: Stats = {
     hp: Math.round((base.hp + hpFromStr + gearSetBonus.hp) * (1 + wpBonus.hpPercent + gearBonus.hpPercent + potBonus.hpPercent)),
-    atk: finalAtk + gearBonus.atk + gearSetBonus.atkPercent, // ATK% from set applied differently
+    atk: finalAtk,
     def: Math.round((base.def + wpBonus.def + gearBonus.def) * (1 + wpBonus.defPercent + potBonus.defPercent)),
+    strength: finalStr,
+    agility: finalAgi,
+    intelligence: finalInt,
+    will: finalWil,
+    atkBeforeAbility,
+    abilityAtkBonus,
     critRate: pct(base.critRate + potBonus.critRate + wpBonus.critRate + gearBonus.critRate + gearSetBonus.critRate),
     critDmg: pct(base.critDmg + potBonus.critDmg + wpBonus.critDmg + gearBonus.critDmg),
     artsIntensity: base.artsIntensity + wpBonus.artsIntensity + gearBonus.artsIntensity + gearSetBonus.artsIntensity,
@@ -538,6 +551,7 @@ export function computeFinalStats(
 
 /** Default target (enemy) stats */
 export const DEFAULT_TARGET: TargetStats = {
+  enemyCount: 1,
   def: 100,
   physicalResist: 0,
   heatResist: 0,
@@ -793,12 +807,12 @@ export function calcStatusDamage(
 ): number {
   const baseMult = (STATUS_BASE_MULTS[statusType] || 0) + extraMultiplier;
 
-  // Hidden level-dependent multiplier
+  // Hidden level-dependent multiplier from wiki.gg damage calculation.
   let hiddenMult = 1;
   if (statusType === "lift" || statusType === "knockDown" || statusType === "crush" || statusType === "breach") {
-    hiddenMult = 1 + (operatorLevel - 13) / 92;
+    hiddenMult = 1 + (operatorLevel - 1) / 392;
   } else if (statusType === "artsBurst" || statusType === "artsReaction" || statusType === "shatter" || statusType === "combustion") {
-    hiddenMult = 1 + (operatorLevel - 11) / 96;
+    hiddenMult = 1 + (operatorLevel - 1) / 196;
   }
 
   // Arts Intensity multiplier: 1 + ArtsIntensity / 100

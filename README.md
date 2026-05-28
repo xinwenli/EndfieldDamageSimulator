@@ -10,7 +10,10 @@ A web-based damage calculator and skill rotation timeline tool for **Arknights: 
 Configure your party of 4 operators with levels, skill ranks, weapons, and gear.
 
 ### Damage Simulation
-*(Planned)* Build skill rotation timelines and simulate damage output.
+Build skill rotation timelines and simulate damage output.
+
+### Damage Verification
+**In Progress**
 
 ## Data Pipeline
 
@@ -53,7 +56,10 @@ MIT
 配置你的 4 人小队，设置干员等级、技能等级、武器与装备。
 
 ### 伤害模拟
-*(计划中)* 构建技能循环时间轴，模拟伤害输出。
+构建技能循环时间轴，模拟伤害输出。
+
+### 伤害检验
+进行中
 
 ## 数据来源
 

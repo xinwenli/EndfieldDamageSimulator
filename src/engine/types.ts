@@ -102,6 +102,7 @@ export interface Operator {
   ultimate: UltimateSkill | null;
   attackSegments: AttackSegment[];
   talents: Talent[];
+  potentialTalents?: Talent[];
   acceptTeamGauge: boolean;
   /** Per-rank finisher ATK multiplier (from wiki "处决攻击倍率" column) */
   finisherMultipliers?: number[];
@@ -115,6 +116,12 @@ export interface Stats {
   hp: number;
   atk: number;
   def: number;
+  strength?: number;
+  agility?: number;
+  intelligence?: number;
+  will?: number;
+  atkBeforeAbility?: number;
+  abilityAtkBonus?: number;
   // Offensive
   critRate: number;          // 0.05 = 5%
   critDmg: number;           // 0.5 = 50%
@@ -248,7 +255,9 @@ export interface PartyMember {
   finalStats: Stats | null;
 }
 
-/** A skill block placed on the timeline */
+export type TimelineEventType = "incoming_damage" | "enemy_kill";
+
+/** A skill or battle event block placed on the timeline */
 export interface TimelineBlock {
   id: string;
   skillId: string;
@@ -256,6 +265,8 @@ export interface TimelineBlock {
   startFrame: number;
   duration: number;
   label: string;
+  eventType?: TimelineEventType;
+  eventValue?: number;
 }
 
 /** One operator's track on the timeline */
@@ -292,6 +303,7 @@ export interface SkillDamageResult {
 // ── Target / Enemy Stats ──
 
 export interface TargetStats {
+  enemyCount?: number;
   def: number;
   physicalResist: number;
   heatResist: number;
@@ -333,13 +345,17 @@ export interface BuffInstance {
   value: number;        // amount (additive for most, flat for multipliers)
   remaining: number;    // seconds remaining
   maxDuration: number;
+  skillTypes?: SkillType[];
+  consumeOnSkillEnd?: boolean;
+  stackKey?: string;
 }
 
 export interface SimEvent {
   frame: number;
   time: number;
   type: "damage" | "buff_apply" | "buff_expire" | "skill_start" | "skill_end"
-    | "status_apply" | "stagger" | "combo_ready" | "energy_gain" | "sp_gain";
+    | "status_apply" | "stagger" | "combo_ready" | "energy_gain" | "sp_gain"
+    | "incoming_damage" | "enemy_kill";
   operatorId: string;
   skillId?: string;
   skillName?: string;
@@ -352,6 +368,8 @@ export interface OperatorSnapshot {
   operatorId: string;
   currentSP: number;
   currentEnergy: number;
+  currentHp: number;
+  shieldHp: number;
   activeCooldowns: Record<string, number>;  // skillId -> seconds remaining
   activeBuffs: BuffInstance[];
   comboSkillReady: boolean;

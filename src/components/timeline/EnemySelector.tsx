@@ -1,7 +1,8 @@
 import { useMemo, useState } from "react";
 import { useTimelineStore } from "../../stores/timelineStore";
-import { getLevelScale, enemyConfigToTarget } from "../../engine/enemyTypes";
+import { enemyConfigToTarget } from "../../engine/enemyTypes";
 import { useLangStore } from "../../i18n/context";
+import { assetUrl } from "../../lib/utils";
 import type { EnemyType, TargetStats } from "../../engine/types";
 
 const ENEMY_TYPE_LABELS: Record<EnemyType, string> = {
@@ -54,8 +55,6 @@ export function EnemySelector() {
     [enemyDefs],
   );
 
-  const levelScale = getLevelScale(enemyConfig.level || 50);
-
   const handleSelectEnemy = (id: string) => {
     setEnemyConfig({ source: "existing", enemyId: id });
     setSearch("");
@@ -72,6 +71,7 @@ export function EnemySelector() {
           natureResist: 0,
           aetherResist: 0,
           enemyType: "common",
+          enemyCount: 1,
           staggerThreshold: 500,
           staggerDuration: 5,
         },
@@ -95,10 +95,10 @@ export function EnemySelector() {
     if (!isCustom) return;
     // Apply reasonable defaults when switching type
     const defaults: Record<EnemyType, Partial<TargetStats>> = {
-      common: { def: 50, staggerThreshold: 300, staggerDuration: 5 },
-      advanced: { def: 100, staggerThreshold: 500, staggerDuration: 5 },
-      elite: { def: 200, staggerThreshold: 800, staggerDuration: 4 },
-      boss: { def: 400, staggerThreshold: 1500, staggerDuration: 3 },
+      common: { def: 50, enemyCount: 1, staggerThreshold: 300, staggerDuration: 5 },
+      advanced: { def: 100, enemyCount: 1, staggerThreshold: 500, staggerDuration: 5 },
+      elite: { def: 200, enemyCount: 1, staggerThreshold: 800, staggerDuration: 4 },
+      boss: { def: 400, enemyCount: 1, staggerThreshold: 1500, staggerDuration: 3 },
     };
     setEnemyConfig({
       customStats: {
@@ -181,7 +181,7 @@ export function EnemySelector() {
               >
                 {enemy.cover && (
                   <img
-                    src={enemy.cover}
+                    src={assetUrl(enemy.cover)}
                     alt=""
                     className="w-6 h-6 rounded object-cover flex-shrink-0"
                     loading="lazy"
@@ -197,7 +197,7 @@ export function EnemySelector() {
             ))}
           </div>
 
-          {/* Selected enemy: level slider */}
+          {/* Selected enemy summary */}
           {selectedDef && (
             <div className="space-y-1.5 p-2 rounded bg-[var(--color-surface)] border border-[var(--color-border)]">
               <div className="flex items-center justify-between">
@@ -206,30 +206,8 @@ export function EnemySelector() {
                   {CATEGORY_LABELS[selectedDef.category] || selectedDef.category}
                 </span>
               </div>
-              <div className="flex items-center gap-2">
-                <span className="text-[10px] text-[var(--color-text-muted)] w-6">Lv</span>
-                <input
-                  type="range"
-                  min={1}
-                  max={99}
-                  value={enemyConfig.level || 50}
-                  onChange={(e) => setEnemyConfig({ level: parseInt(e.target.value) })}
-                  className="flex-1 h-1 accent-[var(--color-accent)]"
-                />
-                <input
-                  type="number"
-                  min={1}
-                  max={99}
-                  value={enemyConfig.level || 50}
-                  onChange={(e) => {
-                    const v = Math.max(1, Math.min(99, parseInt(e.target.value) || 50));
-                    setEnemyConfig({ level: v });
-                  }}
-                  className="w-12 px-1 py-0.5 text-xs font-mono rounded bg-[var(--color-surface)] border border-[var(--color-border)] text-[var(--color-text)] text-center"
-                />
-                <span className="text-[10px] text-[var(--color-text-muted)] w-16 text-right">
-                  {Math.round(levelScale * 100)}% stat
-                </span>
+              <div className="text-[10px] text-[var(--color-text-muted)]">
+                Using concrete DEF, resistance, and stagger data from wiki.gg.
               </div>
             </div>
           )}
@@ -268,6 +246,7 @@ export function EnemySelector() {
           {/* Stats grid */}
           <div className="grid grid-cols-2 gap-x-3 gap-y-1">
             <StatRow label="DEF" value={enemyConfig.customStats?.def ?? 100} min={0} max={9999} onChange={(v) => handleCustomStat("def", v)} />
+            <StatRow label="Count" value={enemyConfig.customStats?.enemyCount ?? 1} min={1} max={12} onChange={(v) => handleCustomStat("enemyCount", v)} />
             <StatRow label="Phys Res" value={Math.round((enemyConfig.customStats?.physicalResist ?? 0) * 100)} min={0} max={100} suffix="%" onChange={(v) => handleCustomStat("physicalResist", v / 100)} />
             <StatRow label="Heat Res" value={Math.round((enemyConfig.customStats?.heatResist ?? 0) * 100)} min={0} max={100} suffix="%" onChange={(v) => handleCustomStat("heatResist", v / 100)} />
             <StatRow label="Elec Res" value={Math.round((enemyConfig.customStats?.electricResist ?? 0) * 100)} min={0} max={100} suffix="%" onChange={(v) => handleCustomStat("electricResist", v / 100)} />
@@ -290,6 +269,8 @@ export function EnemySelector() {
           <span className="col-span-2 text-[var(--color-text)]">{resolvedTarget.def}</span>
           <span className="text-[var(--color-text-muted)]">Type</span>
           <span className="col-span-2 text-[var(--color-text)]">{ENEMY_TYPE_LABELS[resolvedTarget.enemyType]}</span>
+          <span className="text-[var(--color-text-muted)]">Count</span>
+          <span className="col-span-2 text-[var(--color-text)]">{resolvedTarget.enemyCount ?? 1}</span>
           <span className="text-[var(--color-text-muted)]">RES</span>
           <span className="col-span-2 text-[var(--color-text)]">
             P:{Math.round(resolvedTarget.physicalResist)}% H:{Math.round(resolvedTarget.heatResist)}% E:{Math.round(resolvedTarget.electricResist)}%

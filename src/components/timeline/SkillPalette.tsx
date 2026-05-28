@@ -1,6 +1,6 @@
 import { usePartyStore } from "../../stores/partyStore";
 import { useTimelineStore } from "../../stores/timelineStore";
-import type { Element } from "../../engine/types";
+import type { Element, TimelineEventType } from "../../engine/types";
 
 const ELEMENT_COLORS: Record<string, string> = {
   physical: "#c4a35a",
@@ -15,6 +15,7 @@ const SKILL_TYPE_COLORS: Record<string, string> = {
   battle: "#e87040",
   combo: "#9b59b6",
   ultimate: "#f0c040",
+  event: "#5aa6c4",
 };
 
 function getSkillIcon(type: string): string {
@@ -33,13 +34,15 @@ interface SkillEntry {
   element: Element;
   skillId: string;
   skillName: string;
-  type: "basic" | "battle" | "combo" | "ultimate";
+  type: "basic" | "battle" | "combo" | "ultimate" | "event";
   spCost: number;
   cooldown: number;
   ultimateCost: number;
   duration: number;
   multiplier: number;
   color: string;
+  eventType?: TimelineEventType;
+  eventValue?: number;
 }
 
 function gatherSkills(): SkillEntry[] {
@@ -123,6 +126,39 @@ function gatherSkills(): SkillEntry[] {
         color: ELEMENT_COLORS[op.element] || "#888",
       });
     }
+
+    entries.push({
+      operatorId: op.id,
+      operatorName: op.name,
+      element: op.element,
+      skillId: "event_incoming_damage",
+      skillName: "Incoming Damage",
+      type: "event",
+      spCost: 0,
+      cooldown: 0,
+      ultimateCost: 0,
+      duration: 0.1,
+      multiplier: 0,
+      color: "#5aa6c4",
+      eventType: "incoming_damage",
+      eventValue: 1000,
+    });
+    entries.push({
+      operatorId: op.id,
+      operatorName: op.name,
+      element: op.element,
+      skillId: "event_enemy_kill",
+      skillName: "Enemy Kill",
+      type: "event",
+      spCost: 0,
+      cooldown: 0,
+      ultimateCost: 0,
+      duration: 0.1,
+      multiplier: 0,
+      color: "#5aa6c4",
+      eventType: "enemy_kill",
+      eventValue: 1,
+    });
   }
 
   return entries;
@@ -153,9 +189,18 @@ export function SkillPalette() {
       skillName: entry.skillName,
       type: entry.type,
       duration: entry.duration,
+      eventType: entry.eventType,
+      eventValue: entry.eventValue,
     }));
     e.dataTransfer.effectAllowed = "copy";
-    setSelectedSkill({ operatorId: entry.operatorId, skillId: entry.skillId });
+    setSelectedSkill({
+      operatorId: entry.operatorId,
+      skillId: entry.skillId,
+      label: entry.skillName,
+      duration: entry.duration,
+      eventType: entry.eventType,
+      eventValue: entry.eventValue,
+    });
   };
 
   const isSelected = (opId: string, skillId: string) =>
@@ -191,7 +236,14 @@ export function SkillPalette() {
               draggable
               onDragStart={(e) => handleDragStart(e, entry)}
               onClick={() => {
-                setSelectedSkill({ operatorId: entry.operatorId, skillId: entry.skillId });
+                setSelectedSkill({
+                  operatorId: entry.operatorId,
+                  skillId: entry.skillId,
+                  label: entry.skillName,
+                  duration: entry.duration,
+                  eventType: entry.eventType,
+                  eventValue: entry.eventValue,
+                });
                 // Auto-add track if not present
                 if (!tracks.some(t => t.operatorId === entry.operatorId)) {
                   addTrack(entry.operatorId);
@@ -209,7 +261,9 @@ export function SkillPalette() {
                 backgroundColor: SKILL_TYPE_COLORS[entry.type] + "33",
                 borderLeft: `3px solid ${SKILL_TYPE_COLORS[entry.type]}`,
               }}
-              title={`${entry.skillName}\nDMG: ${(entry.multiplier * 100).toFixed(0)}%` +
+              title={entry.eventType
+                ? `${entry.skillName}\nValue: ${entry.eventValue ?? 0}`
+                : `${entry.skillName}\nDMG: ${(entry.multiplier * 100).toFixed(0)}%` +
                 (entry.spCost ? `\nSP: ${entry.spCost}` : "") +
                 (entry.ultimateCost ? `\nEnergy: ${entry.ultimateCost}` : "") +
                 (entry.cooldown ? `\nCD: ${entry.cooldown}s` : "")}
@@ -227,7 +281,7 @@ export function SkillPalette() {
                 </span>
               )}
               <span className="text-[10px] opacity-60 font-mono">
-                {(entry.multiplier * 100).toFixed(0)}%
+                {entry.eventType ? "EVT" : `${(entry.multiplier * 100).toFixed(0)}%`}
               </span>
             </div>
           ))}

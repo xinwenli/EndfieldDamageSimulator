@@ -12,7 +12,9 @@ import type {
   TargetStats,
   Element,
 } from "./types";
-import { calcFinalDamage, calcStatusDamage, DEFAULT_TARGET } from "./formulas";
+import { calcFinalDamage, calcStatusDamage, DEFAULT_TARGET, getDEFMult, getOperatorTalentMeta } from "./formulas";
+import type { ParsedTraitEffect, ParsedTraitTrigger, TraitSkillCondition, TraitTarget } from "./traitParser";
+import { isBattleRelatedOperatorTalent, parseOperatorTalentTraitEffects } from "./operatorTalentParser";
 
 // ── Simulation Constants ──
 export const DEFAULT_FPS = 60;
@@ -44,6 +46,8 @@ interface OpState {
   skillRanks: number[];      // [basic, battle, combo, ultimate]
   currentEnergy: number;
   maxEnergy: number;
+  currentHp: number;
+  shieldHp: number;
   activeCooldowns: Map<string, number>; // skillId -> seconds remaining
   activeBuffs: BuffInstance[];
   comboSkillReady: boolean;
@@ -56,21 +60,41 @@ interface OpState {
   talentEffects: TalentEffect[]; // stored talent effects for conditional activation
   level: number;             // operator level for status damage scaling
   hitCounter: number;        // running count of damage hits for deterministic crit seeding
+  stackEffects: Map<string, { stacks: number; maxStacks: number; buffDuration: number; refreshOnStack: boolean; burstStat: string; burstValue: number; burstDuration: number; burstTimer: number; burstActive: boolean }>;
+  traitEffects: ParsedTraitEffect[];
+  traitCooldowns: Map<string, number>;
+  usedOnceTraits: Set<string>;
+  hpConditionStates: Set<string>;
 }
 
 interface SimState {
   operators: Map<string, OpState>;
+  controlledOperatorId?: string;
   target: TargetStats;
   targetStagger: number;
   targetStaggered: boolean;
   targetStaggerTimer: number; // seconds since stagger started
-  targetStatuses: Map<string, { stacks: number; remaining: number; sourceOpId: string }>;
+  targetBuffs: BuffInstance[];
+  targetStatuses: Map<string, { stacks: number; remaining: number; sourceOpId: string; sourceSkillType?: TraitSkillCondition }>;
   partySP: number;           // shared party SP (max 3 bars)
   maxPartySP: number;
   currentFrame: number;
   events: SimEvent[];
   fps: number;
   runSeed: number;           // varies per simulation invocation for crit variation
+}
+
+interface TraitRuntimeContext {
+  skillType?: TraitSkillCondition;
+  statusType?: string;
+  statusStacks?: number;
+  triggerOperatorId?: string;
+  consumedStatusTypes?: string[];
+  consumedStatusStacks?: number;
+  consumedStatusStacksByType?: Record<string, number>;
+  affectedAllyId?: string;
+  healOverflow?: boolean;
+  hpRatio?: number;
 }
 
 // ── Skill Rank Index Mapping ──
@@ -89,12 +113,53 @@ function getRankIndex(op: OpState, skillId: string): number {
 
 // ── Buff Helpers ──
 
+function skillTypeFromSkillId(skillId: string): TraitSkillCondition | undefined {
+  if (skillId === "basic") return "basic";
+  if (skillId.startsWith("skill_")) return "battle";
+  if (skillId === "combo") return "combo";
+  if (skillId === "ultimate") return "ultimate";
+  return undefined;
+}
+
+function resetStackEffectForBuff(op: OpState, buff: BuffInstance): void {
+  if (!buff.stackKey) return;
+  const stackEffect = op.stackEffects.get(buff.stackKey);
+  if (!stackEffect) return;
+  stackEffect.stacks = 0;
+  stackEffect.burstActive = false;
+}
+
+function refreshShieldHp(op: OpState): void {
+  op.shieldHp = Math.max(0, ...op.activeBuffs.filter(b => b.stat === "shield").map(b => b.value));
+}
+
+function absorbShieldDamage(op: OpState, amount: number): number {
+  let remaining = amount;
+  const shieldBuffs = op.activeBuffs
+    .filter(b => b.stat === "shield" && b.value > 0)
+    .sort((a, b) => b.value - a.value);
+
+  for (const buff of shieldBuffs) {
+    if (remaining <= 0) break;
+    const absorbed = Math.min(buff.value, remaining);
+    buff.value -= absorbed;
+    remaining -= absorbed;
+  }
+
+  op.activeBuffs = op.activeBuffs.filter(b => b.stat !== "shield" || b.value > 0);
+  refreshShieldHp(op);
+  return amount - remaining;
+}
+
 function tickBuffs(state: SimState): void {
   const dt = 1 / state.fps;
   for (const [, op] of state.operators) {
+    let shieldChanged = false;
     op.activeBuffs = op.activeBuffs.filter((b) => {
       b.remaining -= dt;
       if (b.remaining <= 0) {
+        resetStackEffectForBuff(op, b);
+        if (b.stat === "shield") shieldChanged = true;
         state.events.push({
           frame: state.currentFrame,
           time: state.currentFrame / state.fps,
@@ -106,11 +171,34 @@ function tickBuffs(state: SimState): void {
       }
       return true;
     });
+    if (shieldChanged) refreshShieldHp(op);
   }
 }
 
+function consumeSkillEndBuffs(state: SimState, op: OpState, skillType?: TraitSkillCondition): void {
+  if (!skillType) return;
+  let shieldChanged = false;
+  op.activeBuffs = op.activeBuffs.filter((b) => {
+    if (!b.consumeOnSkillEnd) return true;
+    if (b.skillTypes && !b.skillTypes.includes(skillType)) return true;
+    resetStackEffectForBuff(op, b);
+    if (b.stat === "shield") shieldChanged = true;
+    state.events.push({
+      frame: state.currentFrame,
+      time: state.currentFrame / state.fps,
+      type: "buff_expire",
+      operatorId: op.operatorId,
+      detail: `${b.name} consumed by ${skillType} skill`,
+    });
+    return false;
+  });
+  if (shieldChanged) refreshShieldHp(op);
+}
+
 function addBuff(state: SimState, op: OpState, buff: BuffInstance): void {
+  op.activeBuffs = op.activeBuffs.filter(b => b.id !== buff.id);
   op.activeBuffs.push({ ...buff });
+  if (buff.stat === "shield") refreshShieldHp(op);
   state.events.push({
     frame: state.currentFrame,
     time: state.currentFrame / state.fps,
@@ -118,11 +206,117 @@ function addBuff(state: SimState, op: OpState, buff: BuffInstance): void {
     operatorId: op.operatorId,
     detail: `${buff.name}: ${buff.stat} ${buff.value >= 0 ? "+" : ""}${buff.value}`,
   });
+
+  if (buff.stat === "amp") {
+    fireTraitEffects(state, op, "on_amp_gain", {});
+  }
+}
+
+function addTargetBuff(state: SimState, buff: BuffInstance): void {
+  state.targetBuffs = state.targetBuffs.filter(b => b.id !== buff.id);
+  state.targetBuffs.push({ ...buff });
+  state.events.push({
+    frame: state.currentFrame,
+    time: state.currentFrame / state.fps,
+    type: "buff_apply",
+    operatorId: buff.source,
+    detail: `Target ${buff.name}: ${buff.stat} ${buff.value >= 0 ? "+" : ""}${buff.value}`,
+  });
+}
+
+function tickTargetBuffs(state: SimState): void {
+  const dt = 1 / state.fps;
+  state.targetBuffs = state.targetBuffs.filter((b) => {
+    b.remaining -= dt;
+    if (b.remaining <= 0) {
+      state.events.push({
+        frame: state.currentFrame,
+        time: state.currentFrame / state.fps,
+        type: "buff_expire",
+        operatorId: b.source,
+        detail: `Target ${b.name} expired`,
+      });
+      return false;
+    }
+    return true;
+  });
+}
+
+function buffAppliesToDamage(
+  buff: BuffInstance,
+  isArts: boolean,
+  skillType?: TraitSkillCondition,
+  element?: Element,
+): boolean {
+  if (buff.skillTypes && (!skillType || !buff.skillTypes.includes(skillType))) return false;
+  if (buff.stat === "allElementDmg") return isArts;
+  if (buff.stat === "physicalDmgBonus") return element === "physical";
+  if (buff.stat === "heatDmgBonus") return element === "heat";
+  if (buff.stat === "electricDmgBonus") return element === "electric";
+  if (buff.stat === "cryoDmgBonus") return element === "cryo";
+  if (buff.stat === "natureDmgBonus") return element === "nature";
+  return true;
 }
 
 // ── Damage Context Builder ──
 
-function buildDamageContext(op: OpState, state: SimState, isArts: boolean, isFinisher: boolean = false): DamageContext {
+function resistanceFromAbility(value: number): number {
+  return Math.round(100 - 100 / (0.001 * value + 1));
+}
+
+function applyAllAbilityPercentBuff(op: OpState, stats: Stats, percent: number): number {
+  if (percent === 0) return 0;
+  const strength = op.stats.strength;
+  const agility = op.stats.agility;
+  const intelligence = op.stats.intelligence;
+  const will = op.stats.will;
+  if (strength === undefined || agility === undefined || intelligence === undefined || will === undefined) return 0;
+
+  const nextStrength = Math.floor(strength * (1 + percent));
+  const nextAgility = Math.floor(agility * (1 + percent));
+  const nextIntelligence = Math.floor(intelligence * (1 + percent));
+  const nextWill = Math.floor(will * (1 + percent));
+  const abilityValues = { strength, agility, intelligence, will };
+  const nextAbilityValues = {
+    strength: nextStrength,
+    agility: nextAgility,
+    intelligence: nextIntelligence,
+    will: nextWill,
+  };
+
+  const primary = op.operator.primaryAbility;
+  const secondary = op.operator.secondaryAbility;
+  const oldPrimary = abilityValues[primary] ?? intelligence;
+  const oldSecondary = abilityValues[secondary] ?? strength;
+  const nextPrimary = nextAbilityValues[primary] ?? nextIntelligence;
+  const nextSecondary = nextAbilityValues[secondary] ?? nextStrength;
+  const oldAbilityAtkBonus = op.stats.abilityAtkBonus ?? (oldPrimary * 0.005 + oldSecondary * 0.002);
+  const nextAbilityAtkBonus = nextPrimary * 0.005 + nextSecondary * 0.002;
+  const atkBeforeAbility = op.stats.atkBeforeAbility ?? Math.floor(op.stats.atk / (1 + oldAbilityAtkBonus));
+  const oldAtk = Math.floor(atkBeforeAbility * (1 + oldAbilityAtkBonus));
+  const nextAtk = Math.floor(atkBeforeAbility * (1 + nextAbilityAtkBonus));
+  const atkDelta = nextAtk - oldAtk;
+
+  stats.hp += 5 * (nextStrength - strength);
+  stats.physicalResistance += resistanceFromAbility(nextAgility) - resistanceFromAbility(agility);
+  const elementalResistanceDelta = resistanceFromAbility(nextIntelligence) - resistanceFromAbility(intelligence);
+  stats.heatResistance += elementalResistanceDelta;
+  stats.electricResistance += elementalResistanceDelta;
+  stats.cryoResistance += elementalResistanceDelta;
+  stats.natureResistance += elementalResistanceDelta;
+  stats.treatmentReceivedBonus += 0.001 * (nextWill - will);
+  stats.atk += atkDelta;
+  return atkDelta;
+}
+
+function buildDamageContext(
+  op: OpState,
+  state: SimState,
+  isArts: boolean,
+  isFinisher: boolean = false,
+  element?: Element,
+  skillType?: TraitSkillCondition,
+): DamageContext {
   const context: DamageContext = {
     isStaggered: state.targetStaggered,
     isFinisher,
@@ -141,6 +335,7 @@ function buildDamageContext(op: OpState, state: SimState, isArts: boolean, isFin
 
   // Compute buff contributions from all buffs on this operator
   for (const buff of op.activeBuffs) {
+    if (!buffAppliesToDamage(buff, isArts, skillType, element)) continue;
     switch (buff.stat) {
       case "amp":
         context.ampEffects.push(buff.value);
@@ -169,10 +364,101 @@ function buildDamageContext(op: OpState, state: SimState, isArts: boolean, isFin
     }
   }
 
+  for (const buff of state.targetBuffs) {
+    if (!buffAppliesToDamage(buff, isArts, skillType, element)) continue;
+    switch (buff.stat) {
+      case "allElementDmg":
+      case "physicalDmgBonus":
+      case "heatDmgBonus":
+      case "electricDmgBonus":
+      case "cryoDmgBonus":
+      case "natureDmgBonus":
+      case "incDMGTaken":
+        context.incDMGTakenEffects.push(buff.value);
+        break;
+      case "multiplicative":
+        context.multiplicativeBonuses.push(buff.value);
+        break;
+      case "susceptibility":
+        context.susceptibilityEffects.push(buff.value);
+        break;
+      case "weaken":
+        context.weakenEffects.push(buff.value);
+        break;
+    }
+  }
+
   return context;
 }
 
 // ── Damage Application ──
+
+function recordSkillDamage(op: OpState, skillId: string, damage: number, hits: number = 1): void {
+  const sd = op.skillDamage.get(skillId);
+  if (sd) {
+    sd.casts += hits;
+    sd.damage += damage;
+  } else {
+    op.skillDamage.set(skillId, { casts: hits, damage });
+  }
+}
+
+function getBuffedDamageInputs(
+  op: OpState,
+  skillType: TraitSkillCondition | undefined,
+  element: Element | undefined,
+): { atk: number; stats: Stats } {
+  const buffedStats = { ...op.stats };
+  let atkPercent = 0;
+  let allAbilityPercent = 0;
+  for (const buff of op.activeBuffs) {
+    if (!buffAppliesToDamage(buff, element !== "physical", skillType, element)) continue;
+    if (buff.stat === "atkPercent") {
+      atkPercent += buff.value;
+    } else if (buff.stat === "critRate") {
+      buffedStats.critRate += buff.value;
+    } else if (buff.stat === "critDmg") {
+      buffedStats.critDmg += buff.value;
+    } else if (buff.stat === "artsIntensity") {
+      buffedStats.artsIntensity += buff.value;
+    } else if (buff.stat === "physicalDmgBonus") {
+      buffedStats.physicalDmgBonus += buff.value;
+    } else if (buff.stat === "heatDmgBonus") {
+      buffedStats.heatDmgBonus += buff.value;
+    } else if (buff.stat === "electricDmgBonus") {
+      buffedStats.electricDmgBonus += buff.value;
+    } else if (buff.stat === "cryoDmgBonus") {
+      buffedStats.cryoDmgBonus += buff.value;
+    } else if (buff.stat === "natureDmgBonus") {
+      buffedStats.natureDmgBonus += buff.value;
+    } else if (buff.stat === "allElementDmg") {
+      buffedStats.heatDmgBonus += buff.value;
+      buffedStats.electricDmgBonus += buff.value;
+      buffedStats.cryoDmgBonus += buff.value;
+      buffedStats.natureDmgBonus += buff.value;
+    } else if (buff.stat === "basicDmgBonus") {
+      buffedStats.basicDmgBonus += buff.value;
+    } else if (buff.stat === "battleSkillDmgBonus") {
+      buffedStats.battleSkillDmgBonus += buff.value;
+    } else if (buff.stat === "comboSkillDmgBonus") {
+      buffedStats.comboSkillDmgBonus += buff.value;
+    } else if (buff.stat === "ultimateDmgBonus") {
+      buffedStats.ultimateDmgBonus += buff.value;
+    } else if (buff.stat === "allSkillDmgBonus") {
+      buffedStats.basicDmgBonus += buff.value;
+      buffedStats.battleSkillDmgBonus += buff.value;
+      buffedStats.comboSkillDmgBonus += buff.value;
+      buffedStats.ultimateDmgBonus += buff.value;
+    } else if (buff.stat === "allAbilityPercent") {
+      allAbilityPercent += buff.value;
+    }
+  }
+  const abilityAtkDelta = applyAllAbilityPercentBuff(op, buffedStats, allAbilityPercent);
+  return {
+    atk: Math.floor((op.stats.atk + abilityAtkDelta) * (1 + atkPercent)),
+    stats: buffedStats,
+  };
+}
 
 function applyDamage(
   state: SimState,
@@ -184,6 +470,8 @@ function applyDamage(
   skillName: string,
   isFinisher: boolean = false,
 ): { damage: number; isCrit: boolean } {
+  const { atk: buffedAtk, stats: buffedOpStats } = getBuffedDamageInputs(op, skillType, element);
+
   // Crit roll: deterministic per-run but varies across simulation invocations.
   // Using the simulation start time as a run-level seed so re-runs differ.
   op.hitCounter++;
@@ -194,20 +482,14 @@ function applyDamage(
   }
   const seed = idHash * 100000 + state.runSeed + state.currentFrame * 100 + op.hitCounter;
   const roll = seededRandom(seed);
-  const isCrit = roll < op.stats.critRate;
+  const isCrit = roll < buffedOpStats.critRate;
 
   const isArts = element !== "physical";
-  const context = buildDamageContext(op, state, isArts, isFinisher);
-  const damage = calcFinalDamage(op.stats.atk, baseMult, op.stats, state.target, context, skillType, element, isCrit);
+  const context = buildDamageContext(op, state, isArts, isFinisher, element, skillType);
+  const damage = calcFinalDamage(buffedAtk, baseMult, buffedOpStats, state.target, context, skillType, element, isCrit);
 
   op.totalDamage += damage;
-  const sd = op.skillDamage.get(skillId);
-  if (sd) {
-    sd.casts += 1;
-    sd.damage += damage;
-  } else {
-    op.skillDamage.set(skillId, { casts: 1, damage });
-  }
+  recordSkillDamage(op, skillId, damage);
 
   state.events.push({
     frame: state.currentFrame,
@@ -221,7 +503,60 @@ function applyDamage(
     detail: `${skillName}: ${damage} damage${isCrit ? " (CRIT)" : ""}`,
   });
 
+  if (isCrit) fireTraitEffects(state, op, "on_crit", { skillType });
+
   return { damage, isCrit };
+}
+
+function getIncomingDamageMultiplier(op: OpState): number {
+  let multiplier = 1;
+  let protect = 0;
+  for (const buff of op.activeBuffs) {
+    if (buff.stat === "dmgReduction" || buff.stat === "incomingDmgReduction") {
+      multiplier *= (1 - buff.value);
+    } else if (buff.stat === "protect") {
+      protect = Math.max(protect, buff.value);
+    }
+  }
+  return multiplier * (1 - protect);
+}
+
+function getBuffedIncomingDef(op: OpState): number {
+  let defPercent = 0;
+  for (const buff of op.activeBuffs) {
+    if (buff.stat === "defPercent") defPercent += buff.value;
+  }
+  return Math.floor(op.stats.def * (1 + defPercent));
+}
+
+function applyIncomingDamageEvent(state: SimState, op: OpState, rawAmount: number): void {
+  const amount = Math.max(0, Math.floor(rawAmount * getDEFMult(getBuffedIncomingDef(op)) * getIncomingDamageMultiplier(op)));
+  const shieldAbsorbed = absorbShieldDamage(op, amount);
+  const hpDamage = amount - shieldAbsorbed;
+  op.currentHp = Math.max(0, op.currentHp - hpDamage);
+
+  state.events.push({
+    frame: state.currentFrame,
+    time: state.currentFrame / state.fps,
+    type: "incoming_damage",
+    operatorId: op.operatorId,
+    damage: hpDamage,
+    detail: `Incoming damage: ${hpDamage} HP damage${shieldAbsorbed > 0 ? `, ${shieldAbsorbed} shield absorbed` : ""}`,
+  });
+
+  fireTraitEffects(state, op, "on_damaged");
+  fireHpThresholdTraits(state, op);
+}
+
+function applyEnemyKillEvent(state: SimState, op: OpState, count: number): void {
+  state.events.push({
+    frame: state.currentFrame,
+    time: state.currentFrame / state.fps,
+    type: "enemy_kill",
+    operatorId: op.operatorId,
+    detail: `Enemy kill x${Math.max(1, Math.floor(count))}`,
+  });
+  fireTraitEffects(state, op, "on_kill");
 }
 
 // ── Skill Casting ──
@@ -254,6 +589,505 @@ function startCasting(state: SimState, op: OpState, block: TimelineBlock): void 
     skillName: block.label,
     detail: `${block.label} cast start (${block.duration}s)`,
   });
+
+  // Fire trigger-based buffs for this skill type
+  const triggerType = block.skillId.startsWith("skill_") ? "on_skill"
+    : block.skillId === "combo" ? "on_combo"
+    : block.skillId === "ultimate" ? "on_ultimate" : null;
+  if (triggerType) {
+    const skillType = triggerType === "on_skill" ? "battle"
+      : triggerType === "on_combo" ? "combo"
+      : "ultimate";
+    fireSkillTraitEffects(state, op, triggerType, skillType);
+  }
+}
+
+function getTraitTargetOps(
+  state: SimState,
+  sourceOp: OpState,
+  trait: ParsedTraitEffect,
+  context: TraitRuntimeContext = {},
+): OpState[] {
+  if (trait.target === "team") return [...state.operators.values()];
+  if (trait.target === "other_allies") {
+    return [...state.operators.values()].filter(op => op.operatorId !== sourceOp.operatorId);
+  }
+  if (trait.target === "different_element_allies") {
+    return [...state.operators.values()].filter(op =>
+      op.operatorId !== sourceOp.operatorId && op.operator.element !== sourceOp.operator.element
+    );
+  }
+  if (trait.target === "controlled") {
+    const controlledOp = state.controlledOperatorId ? state.operators.get(state.controlledOperatorId) : undefined;
+    return controlledOp ? [controlledOp] : [sourceOp];
+  }
+  if (trait.target === "affected_ally") {
+    const affectedOp = context.affectedAllyId ? state.operators.get(context.affectedAllyId) : undefined;
+    return affectedOp ? [affectedOp] : [sourceOp];
+  }
+  if (trait.target === "trigger_actor") {
+    const triggerOp = context.triggerOperatorId ? state.operators.get(context.triggerOperatorId) : undefined;
+    return triggerOp ? [triggerOp] : [sourceOp];
+  }
+  return [sourceOp];
+}
+
+function removeTraitBuffFromAllTargets(state: SimState, buffId: string): void {
+  for (const [, targetOp] of state.operators) {
+    targetOp.activeBuffs = targetOp.activeBuffs.filter(b => b.id !== buffId);
+  }
+}
+
+function traitKey(trait: ParsedTraitEffect): string {
+  return [
+    trait.name,
+    trait.kind,
+    trait.trigger,
+    trait.target,
+    trait.stat ?? "",
+    trait.value ?? "",
+    trait.valuePerConsumedStack ?? "",
+    trait.valuePerEnemy ?? "",
+    trait.maxEnemyValue ?? "",
+    trait.stackGainFromConsumedStacks ? "stackGainFromConsumedStacks" : "",
+    trait.flatValue ?? "",
+  ].join("|");
+}
+
+function isHpThresholdTrait(trait: ParsedTraitEffect): boolean {
+  return trait.trigger === "hp_above" || trait.trigger === "hp_below";
+}
+
+function traitBuffId(sourceOp: OpState, targetId: string, trait: ParsedTraitEffect, frame: number): string {
+  const suffix = isHpThresholdTrait(trait) ? "hp_condition" : String(frame);
+  return `${sourceOp.operatorId}_${targetId}_${traitKey(trait)}_${suffix}`;
+}
+
+function traitBuffDuration(trait: ParsedTraitEffect): number {
+  return isHpThresholdTrait(trait) ? 999999 : (trait.duration ?? 15);
+}
+
+function removeHpThresholdTraitEffects(state: SimState, op: OpState, trait: ParsedTraitEffect, context: TraitRuntimeContext): void {
+  if (!isHpThresholdTrait(trait)) return;
+  if (trait.target === "enemy") {
+    const id = traitBuffId(op, "enemy", trait, state.currentFrame);
+    state.targetBuffs = state.targetBuffs.filter(b => b.id !== id);
+    return;
+  }
+
+  for (const targetOp of getTraitTargetOps(state, op, trait, context)) {
+    const id = traitBuffId(op, targetOp.operatorId, trait, state.currentFrame);
+    targetOp.activeBuffs = targetOp.activeBuffs.filter(b => b.id !== id);
+    refreshShieldHp(targetOp);
+  }
+}
+
+function beginTraitActivation(op: OpState, trait: ParsedTraitEffect): boolean {
+  const key = traitKey(trait);
+  if (trait.oncePerBattle && op.usedOnceTraits.has(key)) return false;
+  if ((op.traitCooldowns.get(key) ?? 0) > 0) return false;
+
+  if (trait.oncePerBattle) op.usedOnceTraits.add(key);
+  if (trait.cooldown && trait.cooldown > 0) op.traitCooldowns.set(key, trait.cooldown);
+  return true;
+}
+
+function statDisplay(stat: string): string {
+  return stat === "physicalDmgBonus" ? "phys DMG"
+    : stat === "heatDmgBonus" ? "heat DMG"
+    : stat === "electricDmgBonus" ? "electric DMG"
+    : stat === "cryoDmgBonus" ? "cryo DMG"
+    : stat === "natureDmgBonus" ? "nature DMG"
+    : stat === "allElementDmg" ? "arts DMG"
+    : stat === "correspondingElementDmg" ? "corresponding DMG"
+    : stat === "atkPercent" ? "ATK"
+    : stat === "critRate" ? "crit rate"
+    : stat === "artsIntensity" ? "arts intensity"
+    : stat === "defPercent" ? "DEF"
+    : stat === "allAbilityPercent" ? "all ability"
+    : stat === "staggerPercent" ? "stagger"
+    : stat;
+}
+
+function statusDamageStat(statusType: string): string | undefined {
+  const element = elementForStatusDamage(statusType);
+  if (element === "physical") return "physicalDmgBonus";
+  if (element === "heat") return "heatDmgBonus";
+  if (element === "electric") return "electricDmgBonus";
+  if (element === "cryo") return "cryoDmgBonus";
+  if (element === "nature") return "natureDmgBonus";
+  return undefined;
+}
+
+function resolveTraitStat(trait: ParsedTraitEffect, context: TraitRuntimeContext): string | undefined {
+  if (trait.stat !== "correspondingElementDmg") return trait.stat;
+  const statusType = context.consumedStatusTypes?.[0] ?? context.statusType;
+  return statusType ? statusDamageStat(statusType) : undefined;
+}
+
+function resolveTraitValue(state: SimState, trait: ParsedTraitEffect, context: TraitRuntimeContext): number | undefined {
+  if (trait.value === undefined) return undefined;
+  const consumedStackValue = (trait.valuePerConsumedStack ?? 0) * (context.consumedStatusStacks ?? 1);
+  const enemyCountValue = Math.min(
+    (trait.valuePerEnemy ?? 0) * (state.target.enemyCount ?? 1),
+    trait.maxEnemyValue ?? Number.POSITIVE_INFINITY,
+  );
+  return trait.value + consumedStackValue + enemyCountValue;
+}
+
+function resolveTraitFlatValue(op: OpState, trait: ParsedTraitEffect): number {
+  const base = trait.flatValue ?? 0;
+  if (trait.flatValueStat === "will") return base + (op.stats.will ?? 0) * (trait.flatValueStatMultiplier ?? 0);
+  return base;
+}
+
+function isTraitTarget(target: ParsedTraitEffect["target"]): target is TraitTarget {
+  return target === "self" || target === "team" || target === "other_allies";
+}
+
+function applyTraitStatBuff(state: SimState, op: OpState, trait: ParsedTraitEffect, context: TraitRuntimeContext): void {
+  if (!trait.stat || trait.value === undefined) return;
+
+  const stat = resolveTraitStat(trait, context);
+  if (!stat) return;
+  const value = resolveTraitValue(state, trait, context);
+  if (value === undefined) return;
+  const duration = traitBuffDuration(trait);
+  const maxStacks = trait.maxStacks;
+  const targetOps = trait.target === "enemy" ? [] : getTraitTargetOps(state, op, trait, context);
+  const buffTarget = trait.target === "enemy" ? "enemy" : "self";
+
+  if (trait.target === "enemy") {
+    addTargetBuff(state, {
+      id: traitBuffId(op, "enemy", trait, state.currentFrame),
+      name: trait.name,
+      source: op.operatorId,
+      target: "enemy",
+      stat,
+      value,
+      remaining: duration,
+      maxDuration: duration,
+      skillTypes: trait.affectedSkillConditions,
+      consumeOnSkillEnd: trait.consumeOnSkillEnd,
+    });
+    return;
+  }
+
+  if (!isTraitTarget(trait.target)
+    && trait.target !== "controlled"
+    && trait.target !== "affected_ally"
+    && trait.target !== "different_element_allies"
+    && trait.target !== "trigger_actor") return;
+
+  if (maxStacks && maxStacks > 0) {
+    const se = op.stackEffects.get(trait.name);
+    if (se) {
+      if (se.burstActive) return;
+      const gainsConsumedStacks = trait.stackGainFromConsumedStacks === true || /相同层数/.test(trait.sourceText);
+      const matchedConsumedStackValue = trait.statusConditions
+        ?.map(statusType => context.consumedStatusStacksByType?.[statusType])
+        .find((stacks): stacks is number => typeof stacks === "number");
+      const stackGain = gainsConsumedStacks
+        ? Math.max(1, matchedConsumedStackValue ?? context.consumedStatusStacks ?? 1)
+        : 1;
+      se.stacks = Math.min(se.stacks + stackGain, se.maxStacks);
+      const stackBuffId = `${op.operatorId}_${trait.name}_stack`;
+      const totalVal = value * se.stacks;
+      for (const targetOp of targetOps) {
+        const existingStack = targetOp.activeBuffs.find(b => b.id === stackBuffId);
+        if (existingStack) {
+          existingStack.name = `${trait.name} x${se.stacks} (+${(totalVal * 100).toFixed(1)}% ${statDisplay(stat)})`;
+          existingStack.value = totalVal;
+          existingStack.stat = stat;
+          existingStack.remaining = se.refreshOnStack ? se.buffDuration : existingStack.remaining;
+          existingStack.maxDuration = se.refreshOnStack ? se.buffDuration : existingStack.maxDuration;
+          existingStack.skillTypes = trait.affectedSkillConditions;
+          existingStack.consumeOnSkillEnd = trait.consumeOnSkillEnd;
+          existingStack.stackKey = trait.name;
+        } else {
+          addBuff(state, targetOp, {
+            id: stackBuffId,
+            name: `${trait.name} x${se.stacks} (+${(totalVal * 100).toFixed(1)}% ${statDisplay(stat)})`,
+            source: op.operatorId,
+            target: "self",
+            stat,
+            value: totalVal,
+            remaining: se.refreshOnStack ? se.buffDuration : 9999,
+            maxDuration: se.refreshOnStack ? se.buffDuration : 100,
+            skillTypes: trait.affectedSkillConditions,
+            consumeOnSkillEnd: trait.consumeOnSkillEnd,
+            stackKey: trait.name,
+          });
+        }
+      }
+      if (se.stacks >= se.maxStacks) {
+        fireTraitEffects(state, op, "on_stack_cap");
+      }
+    }
+    return;
+  }
+
+  for (const targetOp of targetOps) {
+    addBuff(state, targetOp, {
+      id: traitBuffId(op, targetOp.operatorId, trait, state.currentFrame),
+      name: trait.name,
+      source: op.operatorId,
+      target: buffTarget,
+      stat,
+      value,
+      remaining: duration,
+      maxDuration: duration,
+      skillTypes: trait.affectedSkillConditions,
+      consumeOnSkillEnd: trait.consumeOnSkillEnd,
+    });
+  }
+}
+
+function applyTraitExtraDamage(state: SimState, op: OpState, trait: ParsedTraitEffect): void {
+  if (!trait.value) return;
+  const element = trait.element && trait.element !== "arts" ? trait.element : op.operator.element;
+  const context = buildDamageContext(op, state, element !== "physical", false, element);
+  const { atk, stats } = getBuffedDamageInputs(op, undefined, element);
+  const damage = calcFinalDamage(atk, trait.value, stats, state.target, context, "battle", element, false);
+  op.totalDamage += damage;
+  recordSkillDamage(op, "trait", damage);
+  state.events.push({
+    frame: state.currentFrame,
+    time: state.currentFrame / state.fps,
+    type: "damage",
+    operatorId: op.operatorId,
+    skillId: "trait",
+    skillName: trait.name,
+    damage,
+    detail: `${trait.name}: ${damage} extra damage`,
+  });
+}
+
+function applyTraitResource(state: SimState, trait: ParsedTraitEffect): void {
+  if (trait.stat === "skillPoint" && trait.flatValue) {
+    gainPartySP(state, trait.flatValue / 100);
+  }
+}
+
+function applyTraitStagger(state: SimState, op: OpState, trait: ParsedTraitEffect): void {
+  if (trait.flatValue) {
+    applyStagger(state, trait.flatValue, op);
+  } else if (trait.stat === "staggerPercent" && trait.value !== undefined) {
+    addBuff(state, op, {
+      id: `${op.operatorId}_${trait.name}_${state.currentFrame}`,
+      name: trait.name,
+      source: op.operatorId,
+      target: "self",
+      stat: "staggerPercent",
+      value: trait.value,
+      remaining: trait.duration || 9999,
+      maxDuration: trait.duration || 100,
+    });
+  }
+}
+
+function getHealingBonus(op: OpState): number {
+  let bonus = op.stats.treatmentBonus;
+  for (const buff of op.activeBuffs) {
+    if (buff.stat === "healingBonus") bonus += buff.value;
+  }
+  return bonus;
+}
+
+function applyTraitHeal(state: SimState, op: OpState, trait: ParsedTraitEffect, context: TraitRuntimeContext): void {
+  const amount = Math.floor(resolveTraitFlatValue(op, trait) * (1 + getHealingBonus(op)));
+  if (amount <= 0) return;
+
+  for (const targetOp of getTraitTargetOps(state, op, trait, context)) {
+    const missingHp = Math.max(0, targetOp.stats.hp - targetOp.currentHp);
+    const healOverflow = amount > missingHp;
+    targetOp.currentHp = Math.min(targetOp.stats.hp, targetOp.currentHp + amount);
+    state.events.push({
+      frame: state.currentFrame,
+      time: state.currentFrame / state.fps,
+      type: "buff_apply",
+      operatorId: targetOp.operatorId,
+      detail: `${trait.name}: healed ${amount} HP`,
+    });
+    fireHpThresholdTraits(state, targetOp);
+    fireTraitEffects(state, op, "on_heal", { affectedAllyId: targetOp.operatorId, healOverflow });
+  }
+}
+
+function applyTraitShield(state: SimState, op: OpState, trait: ParsedTraitEffect, context: TraitRuntimeContext): void {
+  for (const targetOp of getTraitTargetOps(state, op, trait, context)) {
+    const amount = Math.floor((trait.value ?? 0) * op.stats.hp);
+    const duration = traitBuffDuration(trait);
+    targetOp.shieldHp = Math.max(targetOp.shieldHp, amount);
+    addBuff(state, targetOp, {
+      id: traitBuffId(op, targetOp.operatorId, trait, state.currentFrame),
+      name: trait.name,
+      source: op.operatorId,
+      target: "self",
+      stat: "shield",
+      value: amount,
+      remaining: duration,
+      maxDuration: duration,
+    });
+  }
+}
+
+function applyTraitDamageReduction(state: SimState, op: OpState, trait: ParsedTraitEffect, context: TraitRuntimeContext): void {
+  if (trait.value === undefined) return;
+  const duration = traitBuffDuration(trait);
+  for (const targetOp of getTraitTargetOps(state, op, trait, context)) {
+    addBuff(state, targetOp, {
+      id: traitBuffId(op, targetOp.operatorId, trait, state.currentFrame),
+      name: trait.name,
+      source: op.operatorId,
+      target: "self",
+      stat: "dmgReduction",
+      value: trait.value,
+      remaining: duration,
+      maxDuration: duration,
+    });
+  }
+}
+
+function applyTraitProtection(state: SimState, op: OpState, trait: ParsedTraitEffect, context: TraitRuntimeContext): void {
+  if (trait.value === undefined) return;
+  const duration = traitBuffDuration(trait);
+  for (const targetOp of getTraitTargetOps(state, op, trait, context)) {
+    addBuff(state, targetOp, {
+      id: traitBuffId(op, targetOp.operatorId, trait, state.currentFrame),
+      name: trait.name,
+      source: op.operatorId,
+      target: "self",
+      stat: "protect",
+      value: trait.value,
+      remaining: duration,
+      maxDuration: duration,
+    });
+  }
+}
+
+function applyTraitEffect(state: SimState, op: OpState, trait: ParsedTraitEffect, context: TraitRuntimeContext): void {
+  if (!beginTraitActivation(op, trait)) return;
+  switch (trait.kind) {
+    case "stat_buff":
+      applyTraitStatBuff(state, op, trait, context);
+      break;
+    case "extra_damage":
+      applyTraitExtraDamage(state, op, trait);
+      break;
+    case "resource":
+      applyTraitResource(state, trait);
+      break;
+    case "stagger_bonus":
+      applyTraitStagger(state, op, trait);
+      break;
+    case "heal":
+      applyTraitHeal(state, op, trait, context);
+      break;
+    case "shield":
+      applyTraitShield(state, op, trait, context);
+      break;
+    case "damage_reduction":
+      applyTraitDamageReduction(state, op, trait, context);
+      break;
+    case "protection":
+      applyTraitProtection(state, op, trait, context);
+      break;
+  }
+}
+
+function traitMatchesTrigger(trait: ParsedTraitEffect, trigger: ParsedTraitTrigger): boolean {
+  return trait.trigger === trigger || trait.triggers?.includes(trigger) === true;
+}
+
+function traitMatchesSkillCondition(trait: ParsedTraitEffect, context: TraitRuntimeContext): boolean {
+  if (!trait.skillConditions || trait.skillConditions.length === 0) return true;
+  return context.skillType ? trait.skillConditions.includes(context.skillType) : false;
+}
+
+function traitMatchesStatusCondition(state: SimState, trait: ParsedTraitEffect, context: TraitRuntimeContext): boolean {
+  if (!trait.statusConditions || trait.statusConditions.length === 0) return true;
+
+  const statusMatches = (statusType: string): boolean => trait.statusConditions?.includes(statusType) === true;
+  const hasEnoughStacks = (statusType: string): boolean => {
+    if (trait.statusMinStacks === undefined) return true;
+    return (state.targetStatuses.get(statusType)?.stacks ?? 0) >= trait.statusMinStacks;
+  };
+  if (trait.statusConditionMode === "present") {
+    return [...state.targetStatuses.keys()].some(statusType => statusMatches(statusType) && hasEnoughStacks(statusType));
+  }
+  if (trait.statusConditionMode === "consume") {
+    return (context.consumedStatusTypes ?? []).some(statusMatches);
+  }
+  return context.statusType ? statusMatches(context.statusType) && hasEnoughStacks(context.statusType) : false;
+}
+
+function traitMatchesHpCondition(trait: ParsedTraitEffect, context: TraitRuntimeContext): boolean {
+  if (trait.trigger !== "hp_above" && trait.trigger !== "hp_below") return true;
+  if (trait.conditionValue === undefined) return true;
+  if (context.hpRatio === undefined) return false;
+  return trait.trigger === "hp_above"
+    ? context.hpRatio > trait.conditionValue
+    : context.hpRatio < trait.conditionValue;
+}
+
+function traitMatchesHealOverflowCondition(trait: ParsedTraitEffect, context: TraitRuntimeContext): boolean {
+  if (!trait.healOverflowCondition) return true;
+  if (context.healOverflow === undefined) return false;
+  return trait.healOverflowCondition === "required" ? context.healOverflow : !context.healOverflow;
+}
+
+function traitMatchesContext(state: SimState, trait: ParsedTraitEffect, context: TraitRuntimeContext): boolean {
+  return traitMatchesSkillCondition(trait, context)
+    && traitMatchesStatusCondition(state, trait, context)
+    && traitMatchesHpCondition(trait, context)
+    && traitMatchesHealOverflowCondition(trait, context);
+}
+
+function fireTraitEffects(
+  state: SimState,
+  op: OpState,
+  trigger: ParsedTraitTrigger,
+  context: TraitRuntimeContext = {},
+  options: { teamOnly?: boolean } = {},
+): void {
+  for (const trait of op.traitEffects) {
+    if (options.teamOnly && trait.triggerSource !== "team") continue;
+    if (!options.teamOnly && trait.triggerSource === "team") continue;
+    if (traitMatchesTrigger(trait, trigger) && traitMatchesContext(state, trait, context)) {
+      applyTraitEffect(state, op, trait, context);
+    }
+  }
+}
+
+function fireSkillTraitEffects(
+  state: SimState,
+  caster: OpState,
+  trigger: ParsedTraitTrigger,
+  skillType: TraitSkillCondition,
+): void {
+  const context = { skillType, triggerOperatorId: caster.operatorId };
+  fireTraitEffects(state, caster, trigger, context);
+  for (const [, op] of state.operators) {
+    fireTraitEffects(state, op, trigger, context, { teamOnly: true });
+  }
+}
+
+function fireHpThresholdTraits(state: SimState, op: OpState): void {
+  const hpRatio = op.stats.hp > 0 ? op.currentHp / op.stats.hp : 0;
+  for (const trait of op.traitEffects) {
+    if (trait.trigger !== "hp_above" && trait.trigger !== "hp_below") continue;
+    const key = traitKey(trait);
+    const active = op.hpConditionStates.has(key);
+    const matches = traitMatchesContext(state, trait, { hpRatio });
+    if (matches && !active) {
+      op.hpConditionStates.add(key);
+      applyTraitEffect(state, op, trait, { hpRatio });
+    } else if (!matches && active) {
+      op.hpConditionStates.delete(key);
+      removeHpThresholdTraitEffects(state, op, trait, { hpRatio });
+    }
+  }
 }
 
 // ── Process damage ticks during casting ──
@@ -315,14 +1149,14 @@ function processDamageTicks(state: SimState, op: OpState): void {
       const tickMult = tick.multiplier ?? baseMult;
       applyDamage(state, op, tickMult, skillType, element, block.skillId,
         `${block.label} hit ${i + 1}`);
-      if (tick.stagger) applyStagger(state, tick.stagger);
+      if (tick.stagger) applyStagger(state, tick.stagger, op);
       if (tick.sp) {
         gainPartySP(state, tick.sp * 0.1); // scale tick SP to party SP bars
-        gainEnergy(op, tick.sp * 0.5, state);
+        gainEnergy(op, tick.sp * 0.5, state, skillType);
       }
       // Apply bound effects
       for (const effect of tick.boundEffects || []) {
-        if (effect) applyStatus(state, effect, 1, 5, op.operatorId);
+        if (effect) applyStatus(state, effect, 1, 5, op.operatorId, skillType);
       }
     }
   }
@@ -334,6 +1168,7 @@ function finishCasting(state: SimState, op: OpState): void {
 
   const rankIdx = getRankIndex(op, block.skillId);
   const element: Element = op.operator.element;
+  const finishedSkillType = skillTypeFromSkillId(block.skillId);
 
   if (block.skillId === "basic") {
     // Fire any remaining ticks
@@ -344,6 +1179,7 @@ function finishCasting(state: SimState, op: OpState): void {
 
     // Trigger combo skills that activate on heavy hit
     tryAutoTriggerCombo(state, op.operatorId);
+    fireTraitEffects(state, op, "on_heavy_hit", { skillType: "basic" });
 
     // Finisher: only first basic attack on newly staggered target
     if (state.targetStaggered && state.targetStaggerTimer <= 0.1) {
@@ -379,7 +1215,7 @@ function finishCasting(state: SimState, op: OpState): void {
     : null;
   if (skill && "anomalies" in skill && skill.anomalies) {
     for (const anomaly of skill.anomalies) {
-      applyStatus(state, anomaly.type, anomaly.stacks, anomaly.duration, op.operatorId);
+      applyStatus(state, anomaly.type, anomaly.stacks, anomaly.duration, op.operatorId, finishedSkillType);
     }
   }
 
@@ -392,20 +1228,29 @@ function finishCasting(state: SimState, op: OpState): void {
     skillName: block.label,
   });
 
+  consumeSkillEndBuffs(state, op, finishedSkillType);
   op.currentCasting = null;
 }
 
 // ── Status Effects ──
 
-function applyStatus(state: SimState, type: string, stacks: number, duration: number, sourceOpId?: string): void {
+function applyStatus(
+  state: SimState,
+  type: string,
+  stacks: number,
+  duration: number,
+  sourceOpId?: string,
+  sourceSkillType?: TraitSkillCondition,
+): void {
   const srcId = sourceOpId || "";
   const existing = state.targetStatuses.get(type);
   if (existing) {
     existing.stacks = Math.min(existing.stacks + stacks, 10);
     existing.remaining = Math.max(existing.remaining, duration);
     existing.sourceOpId = srcId || existing.sourceOpId;
+    existing.sourceSkillType = sourceSkillType ?? existing.sourceSkillType;
   } else {
-    state.targetStatuses.set(type, { stacks, remaining: duration, sourceOpId: srcId });
+    state.targetStatuses.set(type, { stacks, remaining: duration, sourceOpId: srcId, sourceSkillType });
   }
   state.events.push({
     frame: state.currentFrame,
@@ -414,6 +1259,15 @@ function applyStatus(state: SimState, type: string, stacks: number, duration: nu
     operatorId: sourceOpId || "",
     detail: `${type} x${stacks} applied (${duration}s)`,
   });
+
+  // Fire on_apply_status buffs for the operator who applied the status
+  if (sourceOpId) {
+    const srcOp = state.operators.get(sourceOpId);
+    if (srcOp) {
+      const statusStacks = state.targetStatuses.get(type)?.stacks ?? stacks;
+      fireTraitEffects(state, srcOp, "on_apply_status", { statusType: type, statusStacks, skillType: sourceSkillType });
+    }
+  }
 
   // Check for elemental reaction: two different statuses → Arts Reaction
   if (state.targetStatuses.size >= 2) {
@@ -426,15 +1280,19 @@ function applyStatus(state: SimState, type: string, stacks: number, duration: nu
       // Trigger Arts Reaction — attribute to the operator who applied the newest status
       const newestStatus = elementalStatuses[elementalStatuses.length - 1];
       const newestSrcId = state.targetStatuses.get(newestStatus)?.sourceOpId;
+      const reactionSkillType = state.targetStatuses.get(newestStatus)?.sourceSkillType ?? sourceSkillType;
       const reactionOp = newestSrcId ? state.operators.get(newestSrcId) : state.operators.values().next().value;
       if (reactionOp) {
         const totalStacks = elementalStatuses.reduce((sum, s) => sum + (state.targetStatuses.get(s)?.stacks || 1), 0);
+        const { atk, stats } = getBuffedDamageInputs(reactionOp, reactionSkillType, undefined);
         const reactionDmg = calcStatusDamage(
-          reactionOp.stats.atk, 'artsReaction', totalStacks,
-          reactionOp.level, reactionOp.stats.artsIntensity,
+          atk, 'artsReaction', totalStacks,
+          reactionOp.level, stats.artsIntensity,
           (totalStacks - 1) * 0.8
         );
-        reactionOp.totalDamage += reactionDmg;
+        const damage = Math.floor(reactionDmg);
+        reactionOp.totalDamage += damage;
+        recordSkillDamage(reactionOp, "reaction", damage);
         state.events.push({
           frame: state.currentFrame,
           time: state.currentFrame / state.fps,
@@ -442,11 +1300,23 @@ function applyStatus(state: SimState, type: string, stacks: number, duration: nu
           operatorId: reactionOp.operatorId,
           skillId: 'reaction',
           skillName: 'Arts Reaction',
-          damage: Math.floor(reactionDmg),
-          detail: `Arts Reaction (${elementalStatuses.join('+')}): ${Math.floor(reactionDmg)} damage`,
+          damage,
+          detail: `Arts Reaction (${elementalStatuses.join('+')}): ${damage} damage`,
         });
         // Consume the oldest status
-        state.targetStatuses.delete(elementalStatuses[0]);
+        const consumedStatusStacksByType = Object.fromEntries(
+          elementalStatuses.map(statusType => [statusType, state.targetStatuses.get(statusType)?.stacks ?? 1]),
+        );
+        const consumedStatus = elementalStatuses[0];
+        const consumedStatusStacks = state.targetStatuses.get(consumedStatus)?.stacks ?? 1;
+        state.targetStatuses.delete(consumedStatus);
+        fireTraitEffects(state, reactionOp, "on_apply_status", {
+          statusType: "artsReaction",
+          consumedStatusTypes: [consumedStatus],
+          consumedStatusStacks,
+          consumedStatusStacksByType,
+          skillType: reactionSkillType,
+        });
       }
     }
   }
@@ -532,6 +1402,16 @@ function tickStatuses(state: SimState): void {
   }
 }
 
+function elementForStatusDamage(statusType: string): Element | undefined {
+  if (statusType === "combustion") return "heat";
+  if (statusType === "electrification") return "electric";
+  if (statusType === "solidification") return "cryo";
+  if (statusType === "corrosion") return "nature";
+  if (statusType === "shatter") return "cryo";
+  if (statusType === "breach" || statusType === "crush" || statusType === "lift" || statusType === "knockDown") return "physical";
+  return undefined;
+}
+
 // Apply damage-over-time from status effects (Combustion, Electrification, etc.)
 function tickStatusDamage(state: SimState): void {
   const dt = 1 / state.fps;
@@ -546,17 +1426,19 @@ function tickStatusDamage(state: SimState): void {
     if (type === "electrification" || type === "导电") statusType = "electrification";
     if (!statusType) continue;
 
+    const { atk, stats } = getBuffedDamageInputs(sourceOp, status.sourceSkillType, elementForStatusDamage(statusType));
     const dmgPerTick = calcStatusDamage(
-      sourceOp.stats.atk,
+      atk,
       statusType,
       status.stacks,
       sourceOp.level,
-      sourceOp.stats.artsIntensity,
+      stats.artsIntensity,
       (status.stacks - 1) * (statusType === "combustion" ? 0.12 : 0.08),
     );
     const frameDmg = dmgPerTick * dt / tickInterval;
     if (frameDmg > 0) {
       sourceOp.totalDamage += frameDmg;
+      recordSkillDamage(sourceOp, "status", frameDmg, 0);
       state.events.push({
         frame: state.currentFrame,
         time: state.currentFrame / state.fps,
@@ -564,8 +1446,8 @@ function tickStatusDamage(state: SimState): void {
         operatorId: sourceOp.operatorId,
         skillId: "status",
         skillName: type,
-        damage: Math.floor(frameDmg),
-        detail: `${type} DoT: ${Math.floor(frameDmg)} damage`,
+        damage: frameDmg,
+        detail: `${type} DoT: ${frameDmg.toFixed(2)} damage`,
       });
     }
   }
@@ -593,11 +1475,12 @@ function tickPartySP(state: SimState): void {
   gainPartySP(state, regenRate * dt);
 }
 
-function gainEnergy(op: OpState, amount: number, state: SimState): void {
+function gainEnergy(op: OpState, amount: number, state: SimState, skillType?: TraitSkillCondition): void {
   const efficiency = op.stats.ultimateGainEfficiency;
   const gained = amount * efficiency;
   op.currentEnergy = Math.min(op.currentEnergy + gained, op.maxEnergy);
   if (gained > 0.01) {
+    fireTraitEffects(state, op, "on_energy_recover", { skillType });
     state.events.push({
       frame: state.currentFrame,
       time: state.currentFrame / state.fps,
@@ -610,8 +1493,17 @@ function gainEnergy(op: OpState, amount: number, state: SimState): void {
 
 // ── Stagger ──
 
-function applyStagger(state: SimState, amount: number): void {
-  state.targetStagger += amount;
+function applyStagger(state: SimState, amount: number, sourceOp?: OpState): void {
+  let adjustedAmount = amount;
+  if (sourceOp) {
+    for (const buff of sourceOp.activeBuffs) {
+      if (buff.stat === "staggerPercent") adjustedAmount *= (1 + buff.value);
+      if (buff.stat === "staggerFlat") adjustedAmount += buff.value;
+    }
+    adjustedAmount *= (1 + sourceOp.stats.staggerEfficiencyBonus);
+  }
+
+  state.targetStagger += adjustedAmount;
   if (state.targetStagger >= state.target.staggerThreshold && !state.targetStaggered) {
     state.targetStaggered = true;
     state.targetStaggerTimer = 0;
@@ -623,6 +1515,7 @@ function applyStagger(state: SimState, amount: number): void {
       operatorId: "",
       detail: "Target staggered!",
     });
+    if (sourceOp) fireTraitEffects(state, sourceOp, "on_stagger_or_cc");
   }
 }
 
@@ -662,6 +1555,18 @@ function tickCooldowns(op: OpState, state: SimState): void {
   }
 }
 
+function tickTraitCooldowns(op: OpState, state: SimState): void {
+  const dt = 1 / state.fps;
+  for (const [key, remaining] of op.traitCooldowns) {
+    const newRemaining = remaining - dt;
+    if (newRemaining <= 0) {
+      op.traitCooldowns.delete(key);
+    } else {
+      op.traitCooldowns.set(key, newRemaining);
+    }
+  }
+}
+
 // ── Ultimate Enhancement ──
 
 function tickUltimateState(op: OpState, state: SimState): void {
@@ -687,6 +1592,8 @@ function takeSnapshot(state: SimState): SimFrame {
       operatorId: id,
       currentSP: Math.floor(state.partySP),
       currentEnergy: Math.floor(op.currentEnergy),
+      currentHp: Math.floor(op.currentHp),
+      shieldHp: Math.floor(op.shieldHp),
       activeCooldowns: cooldowns,
       activeBuffs: [...op.activeBuffs],
       comboSkillReady: op.comboSkillReady,
@@ -714,6 +1621,7 @@ interface TalentEffect {
   value: number;
   target: "self" | "team" | "enemy";
   condition: string; // when this effect applies (e.g. "always", "on_stagger", "on_combo")
+  conditionValue?: number;
 }
 
 /**
@@ -723,6 +1631,8 @@ interface TalentEffect {
 export function parseTalentEffect(name: string, description: string): TalentEffect[] {
   const effects: TalentEffect[] = [];
   const fullText = name + " " + description;
+  const lowHpMatch = fullText.match(/生命值(?:低于|不高于)\s*(\d+)\s*%/);
+  const lowHpThreshold = lowHpMatch ? parseInt(lowHpMatch[1]) / 100 : 0.4;
 
   // Pattern: ability +N (e.g. "智识能力值提升10" → INT +10)
   const abilityMatch = fullText.match(/(力量|敏捷|智识|意志).*?提升(\d+)/);
@@ -789,6 +1699,7 @@ export function parseTalentEffect(name: string, description: string): TalentEffe
       value: parseInt(protectMatch[1]) / 100,
       target: "self",
       condition: "low_hp",
+      conditionValue: lowHpThreshold,
     });
   }
 
@@ -800,6 +1711,7 @@ export function parseTalentEffect(name: string, description: string): TalentEffe
       value: parseInt(healMatch[1]) / 100,
       target: "self",
       condition: "low_hp",
+      conditionValue: lowHpThreshold,
     });
   }
 
@@ -835,7 +1747,7 @@ export function parseTalentEffect(name: string, description: string): TalentEffe
   const comboDmgMatch = fullText.match(/连携技.*?伤害\s*[+＋]\s*(\d+)\s*%/);
   if (comboDmgMatch) {
     effects.push({
-      stat: "comboDmgBonus",
+      stat: "comboSkillDmgBonus",
       value: parseInt(comboDmgMatch[1]) / 100,
       target: "self",
       condition: "always",
@@ -884,6 +1796,7 @@ export function parseTalentEffect(name: string, description: string): TalentEffe
  */
 function initTalentBuffs(operator: Operator, op: OpState, state: SimState): void {
   for (const talent of operator.talents) {
+    if (isBattleRelatedOperatorTalent(talent.name, talent.description)) continue;
     const effects = parseTalentEffect(talent.name, talent.description);
     for (const effect of effects) {
       op.talentEffects.push(effect);
@@ -923,6 +1836,56 @@ function removeTalentBuff(state: SimState, op: OpState, talentId: string, stat: 
   }
 }
 
+function tickHpRegen(state: SimState, op: OpState): void {
+  const dt = 1 / state.fps;
+  let regenPercent = 0;
+  for (const buff of op.activeBuffs) {
+    if (buff.stat === "hpRegenPercent") regenPercent += buff.value;
+  }
+  if (regenPercent <= 0 || op.currentHp >= op.stats.hp) return;
+  op.currentHp = Math.min(op.stats.hp, op.currentHp + op.stats.hp * regenPercent * dt);
+  fireHpThresholdTraits(state, op);
+}
+
+// Per-frame: check stack effect burst timers and clear on expire
+function tickStackEffects(state: SimState, op: OpState): void {
+  const dt = 1 / state.fps;
+  for (const [name, se] of op.stackEffects) {
+    const stackBuffId = `${op.operatorId}_${name}_stack`;
+    const burstBuffId = `${op.operatorId}_${name}_burst`;
+    if (se.refreshOnStack) {
+      // Refresh mechanic: check if stack buff expired (not refreshed in time)
+      const stackBuff = [...state.operators.values()].some(targetOp =>
+        targetOp.activeBuffs.some(b => b.id === stackBuffId)
+      );
+      if (!stackBuff && se.stacks > 0) {
+        // Buff was removed (expired via tickBuffs) — reset stacks
+        se.stacks = 0;
+        se.burstActive = false;
+        se.burstTimer = 0;
+        removeTraitBuffFromAllTargets(state, stackBuffId);
+        removeTraitBuffFromAllTargets(state, burstBuffId);
+      }
+    }
+    if (!se.burstActive) continue;
+    se.burstTimer -= dt;
+    if (se.burstTimer <= 0) {
+      se.burstActive = false;
+      se.burstTimer = 0;
+      se.stacks = 0;
+      removeTraitBuffFromAllTargets(state, stackBuffId);
+      removeTraitBuffFromAllTargets(state, burstBuffId);
+      state.events.push({
+        frame: state.currentFrame,
+        time: state.currentFrame / state.fps,
+        type: "buff_expire",
+        operatorId: op.operatorId,
+        detail: `${name} expired (all stacks cleared)`,
+      });
+    }
+  }
+}
+
 // Per-frame: check conditional talent buffs
 function tickConditionalBuffs(state: SimState, op: OpState): void {
   for (const effect of op.talentEffects) {
@@ -937,21 +1900,21 @@ function tickConditionalBuffs(state: SimState, op: OpState): void {
         shouldApply = state.targetStaggered;
         break;
       case "low_hp":
-        // Low HP condition: assume triggers when operator would be low (simulate with stagger state for now)
-        shouldApply = false; // HP tracking not implemented
+        shouldApply = op.stats.hp > 0 && op.currentHp / op.stats.hp < (effect.conditionValue ?? 0.4);
         break;
       case "on_combo":
         shouldApply = !op.comboSkillReady; // combo was recently used (on cooldown)
         break;
     }
 
+    const talent = op.operator.talents.find(t =>
+      parseTalentEffect(t.name, t.description).some(e => e.stat === effect.stat && e.value === effect.value)
+    );
+
     if (shouldApply && !hasBuff) {
-      const talent = op.operator.talents.find(t =>
-        parseTalentEffect(t.name, t.description).some(e => e.stat === effect.stat && e.value === effect.value)
-      );
       if (talent) applyTalentBuff(state, op, effect, talent);
     } else if (!shouldApply && hasBuff) {
-      removeTalentBuff(state, op, `talent_${op.operatorId}`, effect.stat);
+      if (talent) removeTalentBuff(state, op, talent.id, effect.stat);
     }
   }
 }
@@ -963,6 +1926,30 @@ interface OperatorSkillData {
   stats: Stats;
   skillRanks: number[];
   level: number;
+  traitEffects?: ParsedTraitEffect[];
+  talentStage?: number;
+  talentSkill1Stage?: number;
+  talentSkill2Stage?: number;
+}
+
+function operatorTalentSourcesForRuntime(data: OperatorSkillData) {
+  const meta = getOperatorTalentMeta(data.operator.id);
+  return [
+    ...data.operator.talents.map(talent => {
+      const stage = meta?.attribute.name === talent.name
+        ? data.talentStage
+        : meta?.skill1.name === talent.name
+          ? data.talentSkill1Stage
+          : meta?.skill2.name === talent.name
+            ? data.talentSkill2Stage
+            : undefined;
+      return { name: talent.name, description: talent.description, stage };
+    }),
+    ...(data.operator.potentialTalents ?? []).map(talent => ({
+      name: talent.name,
+      description: talent.description,
+    })),
+  ];
 }
 
 /**
@@ -979,10 +1966,12 @@ export function runSimulation(
   // Initialize state
   const state: SimState = {
     operators: new Map(),
+    controlledOperatorId: tracks[0]?.operatorId,
     target: { ...target },
     targetStagger: 0,
     targetStaggered: false,
     targetStaggerTimer: 0,
+    targetBuffs: [],
     targetStatuses: new Map(),
     runSeed: Date.now() & 0x7fffffff, // varies per run for different crit patterns
     partySP: 2,       // start with 2 bars
@@ -1003,6 +1992,8 @@ export function runSimulation(
       skillRanks: data.skillRanks,
       currentEnergy: data.operator.ultimate?.gaugeReply ?? 0,
       maxEnergy: data.operator.ultimate?.gaugeMax ?? 80,
+      currentHp: data.stats.hp,
+      shieldHp: 0,
       activeCooldowns: new Map(),
       activeBuffs: [],
       comboSkillReady: true,
@@ -1014,13 +2005,44 @@ export function runSimulation(
       linkStacks: 0,
       talentEffects: [],
       hitCounter: 0,
+      stackEffects: new Map(),
+      traitEffects: [
+        ...parseOperatorTalentTraitEffects(
+          operatorTalentSourcesForRuntime(data),
+          data.operator.element,
+        ),
+        ...(data.traitEffects ?? []),
+      ],
+      traitCooldowns: new Map(),
+      usedOnceTraits: new Set(),
+      hpConditionStates: new Set(),
       level: data.level || 90,
     });
+    {
+      // Init stack effects for traits with maxStacks
+      for (const trait of state.operators.get(track.operatorId)!.traitEffects) {
+        if (trait.maxStacks && trait.maxStacks > 0) {
+          state.operators.get(track.operatorId)!.stackEffects.set(trait.name, {
+            stacks: 0,
+            maxStacks: trait.maxStacks,
+            buffDuration: trait.duration ?? 15,
+            refreshOnStack: trait.refreshOnStack || false,
+            burstStat: "",
+            burstValue: 0,
+            burstDuration: 0,
+            burstTimer: 0,
+            burstActive: false,
+          });
+        }
+      }
+    }
   }
 
   // Initialize talent-based buffs for all operators
   for (const [, op] of state.operators) {
     initTalentBuffs(op.operator, op, state);
+    fireTraitEffects(state, op, "always");
+    fireHpThresholdTraits(state, op);
   }
 
   // Build sorted queue of skill blocks
@@ -1068,36 +2090,48 @@ export function runSimulation(
           (b) => b.operatorId === op.operatorId && b.block.startFrame === frame,
         );
         if (queued) {
-          let canCast = true;
-          if (queued.block.skillId.startsWith("skill_")) {
-            // Battle skills cost 1 shared SP bar
-            if (state.partySP < 1) canCast = false;
-            if (canCast) state.partySP -= 1;
-          } else if (queued.block.skillId === "ultimate") {
-            if (op.currentEnergy < op.maxEnergy) canCast = false;
-          } else if (queued.block.skillId === "combo") {
-            if (!op.comboSkillReady) canCast = false;
-            if (op.activeCooldowns.has("combo")) canCast = false;
-          }
+          if (queued.block.eventType === "incoming_damage") {
+            applyIncomingDamageEvent(state, op, queued.block.eventValue ?? 1000);
+          } else if (queued.block.eventType === "enemy_kill") {
+            applyEnemyKillEvent(state, op, queued.block.eventValue ?? 1);
+          } else {
+            let canCast = true;
+            if (queued.block.skillId.startsWith("skill_")) {
+              // Battle skills cost 1 shared SP bar
+              if (state.partySP < 1) canCast = false;
+              if (canCast) state.partySP -= 1;
+            } else if (queued.block.skillId === "ultimate") {
+              if (op.currentEnergy < op.maxEnergy) canCast = false;
+            } else if (queued.block.skillId === "combo") {
+              if (!op.comboSkillReady) canCast = false;
+              if (op.activeCooldowns.has("combo")) canCast = false;
+            }
 
-          if (canCast) {
-            startCasting(state, op, queued.block);
+            if (canCast) {
+              startCasting(state, op, queued.block);
+            }
           }
         }
       }
 
       // 3. Tick cooldowns
       tickCooldowns(op, state);
+      tickTraitCooldowns(op, state);
 
       // 4. Tick ultimate state
       tickUltimateState(op, state);
 
       // 5. Tick conditional talent buffs
       tickConditionalBuffs(state, op);
+      tickHpRegen(state, op);
+
+      // 5b. Tick stack effects (burst timers, clear on expire)
+      tickStackEffects(state, op);
     }
 
     // 6. Tick buffs
     tickBuffs(state);
+    tickTargetBuffs(state);
 
     // 7. Tick status effects on target
     tickStatuses(state);
@@ -1130,7 +2164,8 @@ export function runSimulation(
     for (const [skillId, data] of op.skillDamage) {
       const labelMap: Record<string, string> = {
         "basic": "Basic ATK", "skill_1": "Battle Skill",
-        "combo": "Combo Skill", "ultimate": "Ultimate", "status": "Status DoT",
+        "combo": "Combo Skill", "ultimate": "Ultimate",
+        "status": "Status DoT", "reaction": "Arts Reaction", "trait": "Trait",
       };
       skillBreakdown.push({
         skillId,

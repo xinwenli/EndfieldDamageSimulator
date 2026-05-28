@@ -42,10 +42,31 @@ export function RuntimeContext() {
         <h3 className="text-xs font-semibold uppercase tracking-wide text-[var(--color-text-muted)]">
           Runtime Context
         </h3>
-        <span className="text-[10px] font-mono text-[var(--color-accent)]">
-          t={frameData.time.toFixed(2)}s &middot; frame {currentFrame}/{simulationResult.totalFrames}
-          &middot; Σ {formatNumber(totalDmg)} dmg
-        </span>
+        <div className="flex items-center gap-3">
+          {/* Party SP */}
+          <div className="flex items-center gap-1" title={`Party SP: ${frameData.operators ? Object.values(frameData.operators)[0]?.currentSP ?? 2 : 2}`}>
+            <span className="text-[10px] text-[var(--color-text-muted)]">SP</span>
+            <div className="flex gap-0.5">
+              {[0, 1, 2].map(i => {
+                const sp = Object.values(frameData.operators)[0]?.currentSP ?? 2;
+                const filled = i < Math.floor(sp);
+                const partial = !filled && i < Math.ceil(sp) && sp % 1 > 0;
+                return (
+                  <div key={i} className="w-2.5 h-2.5 rounded-sm border border-[var(--color-border)]"
+                    style={{
+                      backgroundColor: filled ? 'var(--color-accent)' : partial ? 'var(--color-accent)' : 'transparent',
+                      opacity: partial ? 0.4 : filled ? 1 : 0.2,
+                    }}
+                  />
+                );
+              })}
+            </div>
+          </div>
+          <span className="text-[10px] font-mono text-[var(--color-accent)]">
+            t={frameData.time.toFixed(2)}s &middot; frame {currentFrame}/{simulationResult.totalFrames}
+            &middot; Σ {formatNumber(totalDmg)} dmg
+          </span>
+        </div>
       </div>
 
       <div className="p-3 grid grid-cols-2 lg:grid-cols-4 gap-3">
@@ -90,7 +111,7 @@ export function RuntimeContext() {
                   <div className="text-[var(--color-accent)]">Combo Ready</div>
                 )}
 
-                {snap.activeBuffs.filter(b => b.remaining > 0).slice(0, 4).map((b, i) => {
+                {snap.activeBuffs.filter(b => b.remaining > 0 && b.maxDuration < 999).slice(0, 4).map((b, i) => {
                   const justTriggered = b.maxDuration - b.remaining < 0.5;
                   return (
                   <div key={i} className={`truncate text-[9px] ${justTriggered ? "text-green-400 font-bold" : "text-[var(--color-accent)]"}`}
@@ -99,9 +120,9 @@ export function RuntimeContext() {
                   </div>
                   );
                 })}
-                {snap.activeBuffs.filter(b => b.remaining > 0).length > 4 && (
+                {snap.activeBuffs.filter(b => b.remaining > 0 && b.maxDuration < 999).length > 4 && (
                   <div className="text-[var(--color-text-muted)] text-[9px]">
-                    +{snap.activeBuffs.filter(b => b.remaining > 0).length - 4} more
+                    +{snap.activeBuffs.filter(b => b.remaining > 0 && b.maxDuration < 999).length - 4} more
                   </div>
                 )}
               </div>

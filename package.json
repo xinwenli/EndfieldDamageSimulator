@@ -7,6 +7,11 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
+    "validate:data": "node tools/validate-data.mjs",
+    "validate:data:live": "node tools/validate-data.mjs --live",
+    "validate:traits": "node tools/validate-trait-parser.mjs",
+    "validate:operator-talents": "node tools/validate-operator-talent-parser.mjs",
+    "validate:trait-runtime": "node tools/validate-trait-runtime.mjs",
     "preview": "vite preview"
   },
   "dependencies": {

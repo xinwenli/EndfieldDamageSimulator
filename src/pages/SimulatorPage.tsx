@@ -8,9 +8,13 @@ import { useTimelineStore } from "../stores/timelineStore";
 import { usePartyStore } from "../stores/partyStore";
 import { computeFinalStats, computePartySynergies, applySynergyBonuses } from "../engine/formulas";
 import type { PartyMemberInfo } from "../engine/formulas";
+import { parseBattleTraitEffects } from "../engine/traitParser";
+import type { ParsedTraitEffect } from "../engine/traitParser";
+import { useLangStore } from "../i18n/context";
 import type { EnemyDef } from "../engine/enemyTypes";
-import type { Operator, Stats, EnemyType } from "../engine/types";
+import type { Operator, Stats, EnemyType, GearPiece } from "../engine/types";
 import enemyData from "../data/enemies.json";
+import setEffects from "../data/set_effects.json";
 
 const ENEMY_TYPE_LABELS: Record<EnemyType, string> = {
   common: "Common",
@@ -18,6 +22,8 @@ const ENEMY_TYPE_LABELS: Record<EnemyType, string> = {
   elite: "Elite",
   boss: "Boss",
 };
+
+type GearWithSet = GearPiece & { setId?: string };
 
 export function SimulatorPage() {
   const tracks = useTimelineStore((s) => s.tracks);
@@ -46,9 +52,10 @@ export function SimulatorPage() {
     }
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
-  const target = useMemo(() => getTarget(), [getTarget, enemyDefs, enemyConfig]);
+  const target = getTarget();
   const [showEnemyPanel, setShowEnemyPanel] = useState(false);
 
+  const { lang } = useLangStore();
   const filledMembers = useMemo(() => partyMembers.filter(m => m.operator), [partyMembers]);
 
   // Sync tracks with party members: add tracks for new members, remove for removed ones.
@@ -133,18 +140,57 @@ export function SimulatorPage() {
     const synergyBonuses = computePartySynergies(synergyMembers);
 
     // Apply synergies and build opData
-    const opData = new Map();
+    const opData = new Map<string, {
+      operator: Operator;
+      stats: Stats;
+      skillRanks: number[];
+      level: number;
+      traitEffects?: ParsedTraitEffect[];
+      talentStage?: number;
+      talentSkill1Stage?: number;
+      talentSkill2Stage?: number;
+    }>();
     for (const member of partyMembers) {
       if (!member.operator) continue;
       const operator: Operator = member.operator;
       const stats = individualStats.get(operator.id)!;
       const finalStats = applySynergyBonuses(stats, synergyBonuses.get(operator.id));
 
+      const traitEffects: ParsedTraitEffect[] = [];
+      if (member.weapon) {
+        for (let si = 0; si < member.weapon.skills.length; si++) {
+          const skill = member.weapon.skills[si];
+          const rank = member.weaponSkillRanks[si] ?? 1;
+          const trait = skill.ranks?.[Math.min(rank - 1, skill.ranks.length - 1)]?.trait;
+          if (!trait) continue;
+
+          traitEffects.push(...parseBattleTraitEffects(skill.name, trait, operator.element));
+        }
+      }
+
+      // Parse gear set traits
+      const gearSetCounts: Record<string, number> = {};
+      for (const g of [member.armor, member.gloves, member.kit1, member.kit2]) {
+        const setId = (g as GearWithSet | null)?.setId;
+        if (setId) gearSetCounts[setId] = (gearSetCounts[setId] || 0) + 1;
+      }
+      for (const [setId, count] of Object.entries(gearSetCounts)) {
+        if (count >= 3) {
+          const eff = (setEffects as Record<string, { name: string; stat: string; trait?: string }>)[setId];
+          if (!eff?.trait) continue;
+          traitEffects.push(...parseBattleTraitEffects(eff.name, eff.trait, operator.element));
+        }
+      }
+
       opData.set(operator.id, {
         operator,
         stats: finalStats,
         skillRanks: member.skillRanks,
         level: member.level,
+        talentStage: member.talentStage,
+        talentSkill1Stage: member.talentSkill1Stage,
+        talentSkill2Stage: member.talentSkill2Stage,
+        traitEffects: traitEffects.length > 0 ? traitEffects : undefined,
       });
     }
 
@@ -190,27 +236,6 @@ export function SimulatorPage() {
             : isPlaying ? "⏸ Pause"
             : "▶ Resume"}
         </button>
-
-        {/* Party SP indicator */}
-        <div className="flex items-center gap-1.5 text-xs" title="Shared party SP (3 bars max)">
-          <span className="text-[var(--color-text-muted)]">SP</span>
-          <div className="flex gap-0.5">
-            {[0, 1, 2].map(i => {
-              const frame = simulationResult?.frames?.[currentFrame];
-              const sp = frame?.operators ? Object.values(frame.operators)[0]?.currentSP ?? 2 : 2;
-              const filled = i < Math.floor(sp);
-              const partial = !filled && i < Math.ceil(sp) && sp % 1 > 0;
-              return (
-                <div key={i} className="w-3 h-3 rounded-sm border border-[var(--color-border)]"
-                  style={{
-                    backgroundColor: filled ? 'var(--color-accent)' : partial ? 'var(--color-accent)' : 'transparent',
-                    opacity: partial ? 0.4 : filled ? 1 : 0.2,
-                  }}
-                />
-              );
-            })}
-          </div>
-        </div>
 
         {simulationResult && (
           <>
@@ -290,11 +315,18 @@ export function SimulatorPage() {
               text-[var(--color-text)] hover:border-[var(--color-accent)]/50 transition-colors"
           >
             <span className="text-[10px] text-[var(--color-text-muted)] uppercase tracking-wide">Target:</span>
-            <span className="text-[var(--color-accent)]">
-              {target.def} DEF
+            <span className="text-[var(--color-accent)] font-medium truncate max-w-[160px]">
+              {enemyConfig.source === "custom" && enemyConfig.customName
+                ? enemyConfig.customName
+                : (() => {
+                    const def = enemyDefs.find(e => e.id === enemyConfig.enemyId);
+                    if (!def) return "None";
+                    return (lang === "zh" && def.nameCN) ? def.nameCN : def.name;
+                  })()
+              }
             </span>
             <span className="text-[10px] text-[var(--color-text-muted)]">
-              | {ENEMY_TYPE_LABELS[target.enemyType]}
+              {target.def} DEF · {ENEMY_TYPE_LABELS[target.enemyType]}
             </span>
             <span className="text-[10px] text-[var(--color-text-muted)] ml-0.5">{showEnemyPanel ? "▲" : "▼"}</span>
           </button>
